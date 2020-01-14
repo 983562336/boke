@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/psc.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/psc.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://www.hexoblog.top').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="提示：1.本文章适用于使用Linux系统的服务器（centos7.5） 2.举例的服务器的提供商为腾讯云 3.本文使用的软件有 xshell6 和 xftp6（可以去官网下载） 好了，开始正文吧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何快速把网页部署到服务器上">
+<meta property="og:url" content="http://www.hexoblog.top/2020/01/10/20200110-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8A%8A%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/index.html">
+<meta property="og:site_name" content="杨帆的博客">
+<meta property="og:description" content="提示：1.本文章适用于使用Linux系统的服务器（centos7.5） 2.举例的服务器的提供商为腾讯云 3.本文使用的软件有 xshell6 和 xftp6（可以去官网下载） 好了，开始正文吧">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/d75afcca5bb8e59fe592ee96a071b7807ebb808f.jpg@1320w_1226h.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/watermark/27fcf537d50236284392166ee4dc0b279851c987.png@1320w_1226h.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/14a9de7438e82d50ab0bcf162b7cfdd6071c6ec8.png@1320w_586h.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/0bf2b54856e93752b390097d655bd2500f195b84.png@1276w_1658h.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/06d5faa11aedd5356b101c71d96702f5fd342072.png@1320w_708h.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/2e03b99cdf23c15c455fffabce309da58f4b9638.png@1320w_710h.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/16701789fb94becc39309d26404f562c79c1e02f.png@366w_244h.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/7fbd8530de7b4532be7c0bdf8297c90784f66b40.png@1320w_518h.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/2d83d9fc1848e859206a6b57601ea59f372f9375.png@1320w_690h.webp">
+<meta property="article:published_time" content="2020-01-10T05:39:37.000Z">
+<meta property="article:modified_time" content="2020-01-14T06:45:19.266Z">
+<meta property="article:author" content="杨帆">
+<meta property="article:tag" content="html">
+<meta property="article:tag" content="server">
+<meta property="article:tag" content="xshell">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i0.hdslb.com/bfs/article/d75afcca5bb8e59fe592ee96a071b7807ebb808f.jpg@1320w_1226h.webp">
+
+<link rel="canonical" href="http://www.hexoblog.top/2020/01/10/20200110-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8A%8A%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>如何快速把网页部署到服务器上 | 杨帆的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+<!-- tianqi -->
+<script type="text/javascript">
+WIDGET = {FID: 'FnE0dHeou8'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">杨帆的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录我的一点一滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-照片">
+
+    <a href="/photos/" rel="section"><i class="fa fa-fw fa-image"></i>照片</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/983562336" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hexoblog.top/2020/01/10/20200110-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8A%8A%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨帆">
+      <meta itemprop="description" content="每天都在努力学习，希望未来找到好工作！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨帆的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何快速把网页部署到服务器上
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-10 13:39:37" itemprop="dateCreated datePublished" datetime="2020-01-10T13:39:37+08:00">2020-01-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 14:45:19" itemprop="dateModified" datetime="2020-01-14T14:45:19+08:00">2020-01-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Webpage/" itemprop="url" rel="index">
+                    <span itemprop="name">Webpage</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/01/10/20200110-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8A%8A%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/10/20200110-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8A%8A%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>提示：1.本文章适用于使用Linux系统的服务器（centos7.5）</p>
+<p>2.举例的服务器的提供商为腾讯云</p>
+<p>3.本文使用的软件有 xshell6 和 xftp6（可以去官网下载）</p>
+<p>好了，开始正文吧</p>
+<a id="more"></a>
+
+<p>首先进入你服务器的控制台界面，记下服务器的IP（注意是公网IP）</p>
+<p>然后打开xshell</p>
+<p>这里说一下，xshell 和 xftp 到官网去下载可以选择免费版的，留电子邮件地址就行，下载链接会发到你留的电子邮件里，只不过免费版的有些功能有限制而已</p>
+<hr>
+<p>打开xshell后，点击红圈处<br>主机里面填服务器的公网IP</p>
+<p><img src="https://i0.hdslb.com/bfs/article/d75afcca5bb8e59fe592ee96a071b7807ebb808f.jpg@1320w_1226h.webp" alt="webp"><br>点击左侧的用户身份验证，用户名填root<del>应该都知道吧</del></p>
+<p><img src="https://i0.hdslb.com/bfs/article/watermark/27fcf537d50236284392166ee4dc0b279851c987.png@1320w_1226h.webp" alt="webp"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">密码就是服务器的密码，一般开了服务器都会告诉你</span><br><span class="line">别说什么不知道</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>填写完成后，就可以连接你的服务器了！<br>看到这个就是连接成功了</p>
+<p><img src="https://i0.hdslb.com/bfs/article/14a9de7438e82d50ab0bcf162b7cfdd6071c6ec8.png@1320w_586h.webp" alt="webp"></p>
+<p>然后就可以对服务器进行操作了</p>
+<p>不过要用到另一个软件 —— XFTP</p>
+<p>按<code>ctrl + N</code>新建对话，主机填服务器ip，用户名填root，密码就是服务器密码</p>
+<p><img src="https://i0.hdslb.com/bfs/article/0bf2b54856e93752b390097d655bd2500f195b84.png@1276w_1658h.webp" alt="webp"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">当然其实管理服务器还有种方法，就是使用宝塔面板</span><br><span class="line">这个可以百度搜索的到，界面蛮好的，数据都是图形化</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>出现这个就是连接成功了</p>
+<p>左边是你电脑文件，右边则是你服务器的目录</p>
+<p><img src="https://i0.hdslb.com/bfs/article/06d5faa11aedd5356b101c71d96702f5fd342072.png@1320w_708h.webp" alt="webp">  </p>
+<p>找到服务器目录的html文件夹 <code>路径是 /var/www/html</code></p>
+<p>如果没有的话就创建一个这样的路径（像我就是没有www文件夹，然后创建一个www文件夹再在里面创建html文件夹）</p>
+<p>XFTP可以很方便的创建文件夹，就和在电脑上一样</p>
+<p>然后把你电脑里的网页文件传输到服务器的<code>html</code>文件夹里</p>
+<hr>
+<h3 id="接下来就是传输文件到服务器了"><a href="#接下来就是传输文件到服务器了" class="headerlink" title="接下来就是传输文件到服务器了"></a>接下来就是传输文件到服务器了</h3><p><img src="https://i0.hdslb.com/bfs/article/2e03b99cdf23c15c455fffabce309da58f4b9638.png@1320w_710h.webp" alt="webp">  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">左边的文件全选</span><br><span class="line">然后右键选择传输就行</span><br></pre></td></tr></table></figure>
+
+<p>传输完成后，就可以通过 https:// + 服务器ip 的方式来访问你的网页</p>
+<p>不过这样好像还是不太好，因为不太好记 ，如果你有域名的话，可以通过绑定域名来使用域名访问</p>
+<hr>
+<p>我的是腾讯云买的域名，就拿这个当例子</p>
+<p>打开提供商的界面，选择域名，选择域名解析</p>
+<p>点击添加记录<br><img src="https://i0.hdslb.com/bfs/article/16701789fb94becc39309d26404f562c79c1e02f.png@366w_244h.webp" alt="webp">  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">上面两个记录</span><br><span class="line"></span><br><span class="line">记录类型A，线路类型默认即可，记录值填写你购买的云主机的公网IP，TTL默认</span><br><span class="line"></span><br><span class="line">然后保存</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i0.hdslb.com/bfs/article/7fbd8530de7b4532be7c0bdf8297c90784f66b40.png@1320w_518h.webp" alt="webp"></p>
+<p>然后等待个10分钟左右 <del>启动明日方舟来把剿灭</del></p>
+<p>下面检查看看能不能ping通</p>
+<p>按WIN+R，输入cmd然后回车 <del>别告诉我还有人不知道回车是哪个键</del></p>
+<p>输入<code>ping + 你的域名</code>，然后回车</p>
+<p>如果看到<code>ping</code>成功，而且 <code>IP</code> 和你的服务器 <code>IP</code> 一致（就是黄色涂抹处）</p>
+<p>说明成功了</p>
+<p><img src="https://i0.hdslb.com/bfs/article/2d83d9fc1848e859206a6b57601ea59f372f9375.png@1320w_690h.webp" alt="webp"></p>
+<p>然后你就可以使用域名来访问你的网页了</p>
+<p>直接在浏览器里输入你的域名，然后就可以打开你放上去的网页了，是不是很好？</p>
+<hr>
+<p>其实最开始我是用git把网页文件上传到GitHub，然后用GitHub来发布的。</p>
+<p>不过GitHub那个访问速度真的是慢啊…….，于是就想放到自己服务器上</p>
+<p><strong>呐呐</strong>，其实我网页这些东西没学多久的，基本都是自学来的，算萌萌新了</p>
+<p>如果不嫌弃的话可以看看我的网页  ——&gt; <a href="www.wdnmd233.top">明日方舟主题网页</a> （点击即可）</p>
+<p>拿电脑打开吧，我响应式布局那些还没开始emmmm，手机上那个效果唉。可能有些地方有点错误 <del>好吧是一定会</del> ，这个是早期作品，前面的地方有些可能会有bug</p>
+<p>但是看的效果还是不错的</p>
+<p>不过那个<code>live2d</code>小人有时候不稳定，加载不出来，没看到就算了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">作者：木得睡醒的XM8</span><br><span class="line">链接: https:&#x2F;&#x2F;www.bilibili.com&#x2F;read&#x2F;cv4301760</span><br><span class="line">出处：bilibili</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
+              <a href="/tags/server/" rel="tag"><i class="fa fa-tag"></i> server</a>
+              <a href="/tags/xshell/" rel="tag"><i class="fa fa-tag"></i> xshell</a>
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/09/20200109-hello-%E6%9D%A5%E8%AE%BF%E8%80%85/" rel="prev" title="hello,来访者">
+      <i class="fa fa-chevron-left"></i> hello,来访者
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/10/20200110-markdown%E8%AF%AD%E6%B3%95/" rel="next" title="markdown语法">
+      markdown语法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#接下来就是传输文件到服务器了"><span class="nav-number">1.</span> <span class="nav-text">接下来就是传输文件到服务器了</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="杨帆"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">杨帆</p>
+  <div class="site-description" itemprop="description">每天都在努力学习，希望未来找到好工作！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/983562336" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;983562336" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/983562336@qq.com" title="E-Mail → 983562336@qq.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/6971647196/profile?topnav=1&wvr=6&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;6971647196&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">火星备案局  编号20200113号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">杨帆</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">41k</span>
+</div>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'hPBQEVeNShPwgYffzbrNpHug-gzGzoHsz',
+      appKey: 'pjj3E8i6eVqtnI5WVP2TssoU',
+      placeholder: "把你的疑问写下来吧！留下电子邮箱可以收到我的回复哦",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+  </pre>
+
+<link rel="stylesheet" href="/live2d/css/live2d.css" />
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://www.hexoblog.top'  //此处修改为你的域名
+</script>
+
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/tia/model.json");  //此处为你是用的模型文件，可以修改
+</script>
+
+<script type="text/javascript" src="/js/src/dynamic-title.js" ></script>
+
+</body>
+</html>

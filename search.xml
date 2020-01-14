@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>VT5-tank</title>
+    <url>/2020/01/12/20200112-VT5-tank/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>军事</category>
+      </categories>
+      <tags>
+        <tag>tank</tag>
+        <tag>tieba</tag>
+        <tag>weapon</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客的更新日志</title>
+    <url>/2020/01/12/20200112-%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<h1 id="银川的博客-更新日志"><a href="#银川的博客-更新日志" class="headerlink" title="银川的博客 - 更新日志"></a>银川的博客 - 更新日志</h1><p>这里记录着我博客每一次的更新，就是写添加了什么，删除了什么</p>
+<p>不定期更新</p>
+<a id="more"></a>
+
+<p>当然文章是不算在里面的</p>
+<p>以下开始记录</p>
+<hr>
+<h3 id="2020-1-9"><a href="#2020-1-9" class="headerlink" title="2020.1.9"></a>2020.1.9</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">博客初步搭建完成</span><br><span class="line"></span><br><span class="line">GitHub 仓库准备完毕</span><br><span class="line"></span><br><span class="line">博客上传部署</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2020-1-10"><a href="#2020-1-10" class="headerlink" title="2020.1.10"></a>2020.1.10</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主题更换为 --&gt; replica</span><br><span class="line"></span><br><span class="line">主页的介绍部分完成</span><br><span class="line"></span><br><span class="line">博客的主题样式显示不出（已解决）</span><br></pre></td></tr></table></figure>
+
+<h3 id="2020-1-11"><a href="#2020-1-11" class="headerlink" title="2020.1.11"></a>2020.1.11</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">博客迁移到 coding 发布</span><br><span class="line"></span><br><span class="line">修复了无法给文章添加 tags 和 categories 的问题</span><br><span class="line"></span><br><span class="line">给博客添加了统计代码，用来统计访问量（在主页底部看到的）</span><br><span class="line"></span><br><span class="line">绑定域名，并提交到百度站长平台（抽风行为，蜘蛛九成九看不上）</span><br><span class="line"></span><br><span class="line">修复了 markdown 渲染的问题</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>bug</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>萌新的python记录</title>
+    <url>/2020/01/12/20200112-%E8%90%8C%E6%96%B0%E7%9A%84python%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>这个是长期更新的，记录我自己的 <code>python</code> 学习笔记，当然我是刚学没多久的</p>
+<p>所以咳咳，没什么特别的地方</p>
+<h1 id="python的语法和使用相关"><a href="#python的语法和使用相关" class="headerlink" title="python的语法和使用相关"></a>python的语法和使用相关</h1><a id="more"></a>
+
+<p>先从一个文字游戏来分析吧</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;----------------这是一个文字游戏哈哈哈-----------------&#39;)</span><br><span class="line">temp &#x3D; input(&quot;你来猜下现在我抽到的数字:&quot;)</span><br><span class="line">guess &#x3D; int(temp)</span><br><span class="line">if guess &#x3D;&#x3D; 6:</span><br><span class="line">    print(&quot;wdnmd，你是偷看了把&quot;)</span><br><span class="line">    print(&quot;老实交代&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;哈哈，弄错了，数字是6&quot;)</span><br><span class="line">print(&quot;GAME OVER!&quot;)</span><br></pre></td></tr></table></figure>
+<p>==print：== 作用是把括号里面的内容打印出来</p>
+<p>==input：== 内置函数，把里面的内容打印出来而且把输入值返回给temp</p>
+<p><strong>int</strong>的作用是把<strong>temp</strong>里面的东西变成整型。之后<strong>temp</strong>的值被返回给<strong>guess</strong>，然后比较。<br>代码缩进很重要，因为一起执行的代码要一样的缩进方式，不然不一样的缩进方式会没用的！</p>
+<p>==BIF=Built-in functions== 意思是内置函数</p>
+<p><strong>python</strong>并不是把值存储在变量中，更像是把名字贴在值的上面<br>注意  </p>
+<ul>
+<li>在使用变量前，需要先对其赋值  </li>
+<li>变量名可以是大写或小写，但是大小写是不同的  </li>
+<li>变量名可以包括字母，数字，下划线，但变量名不能以数字开头  </li>
+<li>等号（=）是赋值的意思，左边是名字，右边是值，不能搞反了  </li>
+</ul>
+<p><em>如果要创建字符串，就要在字符两边加上引号，可以是单引号或者双引号，但是必须成对。</em> 如果字符串包含引号的话，可以用转义符号 <code>\</code>来进行。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">例子  </span><br><span class="line"> Let\&#39;s go</span><br></pre></td></tr></table></figure>
+<p>还有个办法是在字符串前面加一个英文字母 <strong>r</strong> 即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str &#x3D; r&#39;C:\now&#39;</span><br></pre></td></tr></table></figure>
+<p>对于长字符串来说，要用三重引号来实现</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str &#x3D; &#39;&#39;&#39; C\dfdf\gf\hgh &#39;&#39;&#39;</span><br></pre></td></tr></table></figure>
+<p>python比较操作符  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;     左边大于右边</span><br><span class="line">&gt;&#x3D;    左边大于等于右边</span><br><span class="line">&lt;     左边小于右边</span><br><span class="line">&lt;&#x3D;    左边小于等于右边</span><br><span class="line">&#x3D;&#x3D;    左边等于右边</span><br><span class="line">！&#x3D;   左边不等于右边</span><br><span class="line"></span><br><span class="line">关于返回值，返回True意思是真的。返回False意思是假的</span><br></pre></td></tr></table></figure>
+<p>==TAB==是代码缩进的快捷键</p>
+<p><strong>and</strong>操作符，当两边都是结果都是<strong>True</strong>时，输出<strong>True</strong>。如果有一边结果是<strong>False</strong>，那么输出就是<strong>False</strong><br><strong>or</strong>操作符，只要两边有一边为真，就输出<strong>True</strong>，如果两边都是假，那就输出<strong>False</strong><br><strong>not</strong>操作符，输出相反的结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">示例如下</span><br><span class="line">（3&gt;2）and (1&lt;2)    左右两边都是正确的时候</span><br><span class="line"> True</span><br><span class="line"> </span><br><span class="line"> (3&gt;2) and (1&gt;2)    有一边是错误的时候</span><br><span class="line"> False</span><br><span class="line"> &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"> （3&gt;2) or (4&gt;5)    只要有一边正确就输出正确</span><br><span class="line"> True</span><br><span class="line"> &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"> not 0              0表示False，在not的作用下输出了Ture</span><br><span class="line"> True</span><br></pre></td></tr></table></figure>
+
+<p><strong>python的数据类型</strong><br>==Ture==   表示1<br>==False==  表示0</p>
+<p>==int()== 表示转换成整数型<br>==str()== 表示转换成字符串<br>==float()== 表示转换成浮点数</p>
+<p>获得类型信息的方法<br>==type()== 在括号里面输入数据就可以了<br>==isinstance== 使用方法在下面  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a &#x3D; &#39;憨憨&#39;</span><br><span class="line">isinstance(a,str)</span><br><span class="line">True</span><br><span class="line"></span><br><span class="line">a表示你要知道类型的，str则是类型名</span><br><span class="line">如果下面出现的是True的话，表示a就是str类型的数据</span><br></pre></td></tr></table></figure>
+<p><strong>python的运算符</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">大部分运算符和其他语言一样</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 这个除法运算符会把结果变成整型</span><br><span class="line">** 这个运算符的意思是平方，a**3 就是a的3次方</span><br><span class="line"></span><br><span class="line">但是运算可以简化的</span><br><span class="line">比如</span><br><span class="line"></span><br><span class="line">a*3</span><br><span class="line"></span><br><span class="line">可以简化成</span><br><span class="line"></span><br><span class="line">a*&#x3D;3</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">优先级问题，第一个是最高优先级</span><br><span class="line"></span><br><span class="line">幕运算  **</span><br><span class="line"></span><br><span class="line">正负号  +x  -x</span><br><span class="line"></span><br><span class="line">算术操作符  * &#x2F; &#x2F;&#x2F; + -</span><br><span class="line"></span><br><span class="line">比较操作符  &lt;  &lt;&#x3D;  &gt;  &gt;&#x3D;  &#x3D;&#x3D;  !&#x3D;</span><br><span class="line"></span><br><span class="line">逻辑运算符  not  and  or</span><br></pre></td></tr></table></figure>
+
+<p><strong>python的分支和循环</strong></p>
+<p>==elif：== 这相当于C语言里的<strong>else if</strong>，但是注意下这些循环什么的后面要加上<code>:</code>才可以正常使用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">例子</span><br><span class="line">判断成绩属于什么层次</span><br><span class="line"></span><br><span class="line">score &#x3D; int(input(&#39;输入成绩&#39;))</span><br><span class="line">if 100 &gt;&#x3D; score &gt;&#x3D; 90:</span><br><span class="line">    print(&#39;A&#39;)</span><br><span class="line">elif 90 &gt; score &gt;&#x3D; 80:        这里的elif就是else if的意思</span><br><span class="line">    print(&#39;B&#39;)</span><br><span class="line">elif 80 &gt; score &gt;&#x3D; 60:  注意if，else等等这些后面要加：才行</span><br><span class="line">    print(&#39;C&#39;)</span><br><span class="line">elif 60 &gt; score &gt;&#x3D; 0:</span><br><span class="line">    print(&#39;D&#39;)</span><br><span class="line">else:</span><br><span class="line">    print(&#39;非法输入&#39;)</span><br></pre></td></tr></table></figure>
+<p><strong>条件表达式（三元操作符）</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">用这个可以实现一条语句实现条件判断和赋值操作</span><br><span class="line"></span><br><span class="line">原来</span><br><span class="line">x,y &#x3D; 4,5 </span><br><span class="line">if x &lt; y:       如果x大于y</span><br><span class="line">    small &#x3D; x   把x的值赋给small</span><br><span class="line">else:           如果不是</span><br><span class="line">    small &#x3D; y   把y的值赋给small</span><br><span class="line"></span><br><span class="line">改进后</span><br><span class="line">small &#x3D; x if x &lt; y else y</span><br></pre></td></tr></table></figure>
+
+<p><strong>断言</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>例子<br>assert 3 &gt; 4</p>
+<p>一般来说，当需要确保程序中某个条件一定为真的时候，才能让程序<br>正常工作的话，assert关键字就很有用了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">**for**循环</span><br></pre></td></tr></table></figure>
+<p>语法是</p>
+<p>for 目标 in 表达式：<br>    循环体</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">**range**语法  </span><br><span class="line">包含&#96;&#96;&#96;range([strat,] stop[, step&#x3D;1])&#96;&#96;&#96;  </span><br><span class="line">- 有三个参数，其中用中括号括起来的表示这两个参数是可选的  。</span><br><span class="line">- &#96;&#96;&#96;step&#x3D;1&#96;&#96;&#96;表示第三个参数的值默认是1 。 </span><br><span class="line">- &#96;&#96;&#96;range&#96;&#96;&#96;的作用是生成一个从**start**参数的值开始到**stop**参数的值结束的数字序列。  </span><br><span class="line">- 当然&#96;&#96;&#96;range&#96;&#96;&#96;里面的数字是可以自己定义范围的，比如&#96;&#96;&#96;range(2,9)&#96;&#96;&#96;就是包含了数字&#96;&#96;&#96;2~8&#96;&#96;&#96;  </span><br><span class="line">- 还有种情况，&#96;&#96;&#96;range(1,10,2)&#96;&#96;&#96;意思是把&#96;&#96;&#96;1~9&#96;&#96;&#96;包含，但是每两个数字之间相隔&#96;&#96;&#96;2&#96;&#96;&#96;，也就是说包含了&#96;&#96;&#96;1,3,5,7,9&#96;&#96;&#96;这些数字</span><br></pre></td></tr></table></figure>
+<p>range(5)</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>range(0,5)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>list(range(5))      &lt;–这样是把它用列表方式打印出来</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>[0，1，2，3，4]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>与for循环的配合</p>
+<p>for i in range(5)<br>    print(i)</p>
+<p>0          &lt;——结果就是这样<br>1          &lt; for循环会把range里的<br>2          &lt; 打印出来<br>3<br>4</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">**break 和 continue**  </span><br><span class="line">&#96;&#96;&#96;continue&#96;&#96;&#96;:当条件不成立，退出循环体；条件成立，继续执行。</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;**列表**&#x3D;&#x3D;  </span><br><span class="line">向列表里添加元素的方法是，使用&#96;&#96;&#96;append&#96;&#96;&#96;实现  </span><br><span class="line">比方说向**member数组**里面添加**emm**</span><br></pre></td></tr></table></figure>
+<p>例子<br>member.append(‘emmm’) </p>
+<p>还有<br>len可以获取数组包含的元素个数</p>
+<p>len(member)     括号里填的是数组名字</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">如果要添加多个的话，就要用到&#96;&#96;&#96;extend&#96;&#96;&#96;了  </span><br><span class="line">比如向 *member* 添加两个元素(emmm 和 emm)</span><br></pre></td></tr></table></figure>
+<p>注意添加的时候要用中括号来括起来</p>
+<p>member.extend([‘emmm’,’emm’])</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">假使你要把元素放到数组的指定位置上，就要使用&#96;&#96;&#96;insert&#96;&#96;&#96;了</span><br><span class="line">比如把 first 放到数组第一个去。</span><br></pre></td></tr></table></figure>
+<p>括号里的 0 表示的是放到数组里的位置是第几个<br>‘’ 里面的则是添加的元素</p>
+<p>member.insert(0,’first’)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;**从列表里删除元素**&#x3D;&#x3D;  </span><br><span class="line">使用&#96;&#96;&#96;remove&#96;&#96;&#96;语法实现的</span><br></pre></td></tr></table></figure>
+<p>‘’ 里面就是输入你要删除的元素</p>
+<p>member.remove(‘emm’)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用&#96;&#96;&#96;del&#96;&#96;&#96;语法实现的</span><br></pre></td></tr></table></figure>
+<p>[] 里面的数字是你要删除的元素的位置，就是第几个的意思<br>如果只是执行    del member  那就会删除整个member列表</p>
+<p>del member[1]       &lt;—-示例</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">还有，使用&#96;&#96;&#96;pop&#96;&#96;&#96;语法可以把列表最后一个元素踢出来</span><br></pre></td></tr></table></figure>
+<p>member.pop()      而且被踢出的元素会显示出来</p>
+<p>因为会显示出来，相当于有返回值，所以可以把踢出来的值<br>赋值给另一个列表</p>
+<p>name = member.pop()  就是把踢出的元素赋给name</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;列表分片&#x3D;&#x3D;  </span><br><span class="line">快速从列表里提取出元素，但是不会改变被提取列表</span><br></pre></td></tr></table></figure>
+<p>中括号里的就是要提取的元素范围</p>
+<p>member[1:3]         &lt;— 提取1到2号元素</p>
+<p>如果是 [:] 的话，那么就是得到一个列表的拷贝，因为这相当于提<br>取第一个到最后一个元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;列表的常用操作符&#x3D;&#x3D;</span><br><span class="line">- 比较操作符</span><br></pre></td></tr></table></figure>
+<p>列表可以通过下面的比较符来进行比较<br>list1 &gt; list2<br>list1 = list2<br>list1 &lt; list2<br>如果正确就是 Ture ，错误就是False</p>
+<p>如果列表里有多个元素的话，拿去比较的是第一个元素<br>list1 = [111,222]<br>list2 = [222,111]<br>list1 &gt; list2       &lt;—比较的是每个列表的第一个元素<br>结果是 False</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- 逻辑操作符</span><br></pre></td></tr></table></figure>
+<p>就是 and 这些</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- 连接操作符</span><br></pre></td></tr></table></figure>
+<p>有 list1 和 list2 两个列表<br>如果想把两个列表拼接到一起</p>
+<p>list3 = list1 + list2    &lt;— list3就是拼接好的列表</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- 重复操作符</span><br></pre></td></tr></table></figure>
+<p>list3 *=3</p>
+<p>意思是把列表 list3 给复制了三遍<br>如果 list3 = [1,2,3]<br>那么执行上面的命令后就是<br>list3 = [1,2,3,1,2,3,1,2,3]</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- 成员关系操作符</span><br></pre></td></tr></table></figure>
+<p>11 in list1<br>意思是查询 list1 列表里有没有元素 11 ，如果有返回Ture，没有<br>就返回False</p>
+<p>11 not in list1<br>意思是 11 元素不在列表 list1 里面，正确返回Ture，错误<br>返回False</p>
+<p>但是注意，如果列表里面还包含列表的话，那么上面那个就无效了<br>如果想要的话，就要使用另一个方法</p>
+<p>22 in list1[1]<br>中括号里的数字是第几个列表的意思（从0开始）</p>
+<p>list1[1][1]<br>意思是访问 list1 数组中，第[1]个数组的第[1]个元素，并返回值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 计数  </span><br><span class="line">通过&#96;&#96;&#96;count&#96;&#96;&#96;来实现</span><br></pre></td></tr></table></figure>
+<p>list1.count(123)<br>意思是记录元素 123 在 list1 这个列表里出现了多少次，并返回<br>出现次数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- &#96;&#96;&#96;index&#96;&#96;&#96;用法</span><br></pre></td></tr></table></figure>
+<p>list1.index(123)<br>意思是返回元素 123 在列表 list1 中的位置</p>
+<p>list1.index(123,3,7)<br>意思是寻找第3~7号元素里 123 的位置，并返回<br>如果范围里出现多次 123 ，那么返回的就是第一次出现的位置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- &#96;&#96;&#96;reverse&#96;&#96;&#96;用法</span><br></pre></td></tr></table></figure>
+<p>list1.reverse<br>意思是把列表 list1 给反转，通俗的讲就是第一个变倒数第一个<br>倒数第二个变第二个</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- &#96;&#96;&#96;sort&#96;&#96;&#96;用法</span><br></pre></td></tr></table></figure>
+<p>list1.sort()<br>意思是把列表 list1 的元素从小到大排序</p>
+<p>list1.sort(reverse=True)<br>意思是把列表 list1 的元素从大到小排序。<br>其实就是把执行 sort() 的结果反转过来了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;元组&#x3D;&#x3D;  </span><br><span class="line">由于和列表是近亲关系，所以元组和列表在实际使用上是非常相似的  </span><br><span class="line">操作符也可以通用</span><br><span class="line">- 创建和访问一个元组  </span><br><span class="line">注意元组的标志性符号是&#96;&#96;&#96;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tuple1 &#x3D; (1,2,3,4)</span><br><span class="line">这样就创建了一个名为 tuple1 的元组</span><br><span class="line"></span><br><span class="line">但是元组是不可以修改的！</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更新一个元组<br>如果要给一个元组里添加元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">temp &#x3D; (&#39;dsad&#39;,&#39;ffa&#39;,222,&#39;dff&#39;)</span><br><span class="line">这是一个元组，现在要向里面添加元素 nmd</span><br><span class="line"></span><br><span class="line">temp &#x3D; temp[:2] + (&#39;nmd&#39;,) + temp[2:]   &lt;---就是这样</span><br><span class="line">里面的 2 是你要添加的位置， nmd 则是添加进去的元素</span><br><span class="line"></span><br><span class="line">原理是把元组 temp 拆成两部分，然后把元素添加进去，然后给</span><br><span class="line">新元组贴上 temp 标签，旧元组被抛弃</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除元组里的元素  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">del temp</span><br><span class="line">意思就是删除名字为 temp 元组</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>==各种奇葩的内置方法（字符串）==  </p>
+<ul>
+<li>如果要查询某个位置的元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str1 &#x3D; &#39;nmd wsm&#39;    &lt;-- 一个字符串</span><br><span class="line"></span><br><span class="line">str1[ :6]</span><br><span class="line">这样会提取出 0~5 号元素并返回</span><br><span class="line"></span><br><span class="line">str1[5]</span><br><span class="line">这样会把排在第5号的元素返回</span><br></pre></td></tr></table></figure>
+<ul>
+<li>插入元素<br>字符串和元组一样是不能轻易修改的<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str1[ :6] + &#39;插入的字符串&#39; + str1[6: ]</span><br><span class="line">用这个方法来把元素插入到指定的位置</span><br><span class="line"></span><br><span class="line">但是这相当于弄了个新的字符串，原来的那个 str1 的内容还是</span><br><span class="line">没有改变</span><br><span class="line"></span><br><span class="line">str1 &#x3D; str1[ :6] + &#39;插入的字符串&#39; + str1[6: ]</span><br><span class="line">这样子才可以</span><br></pre></td></tr></table></figure></li>
+<li><code>capitalize()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str2.capitalize()</span><br><span class="line">意思是把 str2 字符串里的第一个字符变成大写</span><br><span class="line"></span><br><span class="line">示例</span><br><span class="line">str2 &#x3D; &#39;xiaoxie&#39;</span><br><span class="line">str2.capitalize()</span><br><span class="line">&gt;&gt;&gt; Xiaoxie      &lt;--- 看，第一个字符变成了大写</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>casefold()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">把整个字符串的所有字符改为小写</span><br><span class="line"></span><br><span class="line">str2 &#x3D; &#39;DAXIE&#39;</span><br><span class="line">str2.casefold()</span><br><span class="line">&gt;&gt;&gt; daxie        &lt;--全部变成小写了</span><br><span class="line"></span><br><span class="line">但是注意这返回的是一个新的字符串，并没有改变 str2 的内容</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>center(width)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">将字符串居中，并使用空格填充至长度 width 的新字符串</span><br><span class="line"></span><br><span class="line">str2.center(40)</span><br><span class="line">&gt;&gt;&gt;&#39;        daxie        &#39;</span><br><span class="line">可以看到字符串被居中了，而且左右两边空的距离为 40</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>count(sub[,start[,end]])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">返回 sub(这个自己选) 在字符串里出现的次数</span><br><span class="line">start 和 end 参数表示统计的范围，可选（如果没有就是整个字</span><br><span class="line">符串里统计）</span><br><span class="line"></span><br><span class="line">str2.count(&#39;xi&#39;)</span><br><span class="line">意思是查找字符 xi 在字符串里出现的次数，并返回</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>endswith(sub[,start[end]])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">检查字符串是不是以 sub(自己定义) 结束，如果是就返回True</span><br><span class="line">不是就返回False</span><br><span class="line">同样 start 和 end 参数表示统计的范围，可选（如果没有就</span><br><span class="line">是整个字符串里统计）</span><br><span class="line"></span><br><span class="line">str2.endswith(&#39;xie&#39;)</span><br><span class="line">&gt;&gt;&gt; True    &lt;-- 如果字符串是以 xie 结尾</span><br><span class="line">&gt;&gt;&gt; False   &lt;-- 如果字符串不是以 xie 结尾</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>expandtabs([tabsize=8])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">把字符串里的 tab 符号(\t)转换成空格，如果不指定参数</span><br><span class="line">默认空格数就是 tabsize&#x3D;8</span><br><span class="line"></span><br><span class="line">str3 &#x3D; &#39;wdnmd\t233\temm&#39;   &lt;-- 创建字符串 str3</span><br><span class="line">str3.expandtabs()          &lt;-- 没有指定参数，所以就是使用默认参数</span><br><span class="line">&gt;&gt;&gt;wdnmd       233       emm    &lt;-- \t 都变成了8个空格</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>find(sub[,start[,end]])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">检查 sub(自己定义) 是不是包含在字符串中，如果有返回索引值</span><br><span class="line">否则返回-1</span><br><span class="line">同样 start 和 end 参数表示统计的范围，可选（如果没有就</span><br><span class="line">是整个字符串里统计）</span><br><span class="line"></span><br><span class="line">str3.find(&#39;nfc&#39;)</span><br><span class="line">&gt;&gt;&gt; -1             &lt;-- 没有找到返回-1</span><br><span class="line">&gt;&gt;&gt; 如果找到就是返回它的位置</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>index(sub[,start[,end]])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">和上面的 find 使用方法一样</span><br><span class="line">唯一的不同在于如果没有找到就会报错</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">下面这些发用法和 find 的使用方法一样</span><br><span class="line"></span><br><span class="line">isalnum()       &lt;-- 如果字符串至少有一个字符并且所有字符都</span><br><span class="line">是字母或数字则返回True，否则返回False</span><br><span class="line"></span><br><span class="line">isalpha()       &lt;-- 如果字符串至少有一个字符并且所有字符都</span><br><span class="line">是字母则返回True，否则返回False</span><br><span class="line"></span><br><span class="line">isdecimal()     &lt;-- 如果字符串只包含十进制数字则返回True，</span><br><span class="line">否则返回False</span><br><span class="line"></span><br><span class="line">isdigit()       &lt;-- 如果字符串只包含数字则返回True，否则</span><br><span class="line">返回False</span><br><span class="line"></span><br><span class="line">islower()       &lt;-- 如果字符串至少包含一个区分大小写的字符</span><br><span class="line">，并且这些字符都是小写，则返回True，否则返回False</span><br><span class="line"></span><br><span class="line">isnumeric()     &lt;-- 如果字符串只包含数字字符，则返回True，</span><br><span class="line">否则返回False</span><br><span class="line"></span><br><span class="line">isspace()       &lt;-- 如果字符串只包含空格，则返回True，否则</span><br><span class="line">返回False</span><br><span class="line"></span><br><span class="line">istitle()       &lt;-- 如果字符串是标题化（所有单词以大写开</span><br><span class="line">始，其余都是小写），则返回True，否则返回False</span><br><span class="line"></span><br><span class="line">isupper()       &lt;-- 如果字符串至少包含一个区分大小写的字符</span><br><span class="line">并且这些字符都是大写，则返回True，否则返回False</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>jojn(sub)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">以字符串为分隔，插入到 sub 中所有的字符之间，并返回</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;emm&#39;          &lt;-- 创建一个字符串</span><br><span class="line">str1.jojn(&#39;1234&#39;)     &lt;-- sub 可以替换成你想插入的字符</span><br><span class="line">&gt;&gt;&gt; 1emm2emm3emm4</span><br><span class="line">结果就是这样</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>ljust(width)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">返回个左对齐的字符串，并用空格填充至长度为 width 的新字符串</span><br><span class="line">用法参考 center(width)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>lower()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转换字符串中所有大写字符为小写</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>lstrip()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">去掉字符串左边的所有空格并返回</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;    emmm&#39;       &lt;-- 创建字符串</span><br><span class="line">str1.lstrip()</span><br><span class="line">&gt;&gt;&gt; emmm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">rstrip() 这个则是相反的，它是删除字符串末尾的空格</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>partition(sub)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">找到子字符串 sub ，把字符串分成一个3元组(pre_sub,sub,fol_sub)</span><br><span class="line">如果字符串不包含 sub 则返回(&#39;原字符串&#39;,&#39;&#39;,&#39;&#39;)</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;a bign boss&#39;     &lt;-- 创建字符串</span><br><span class="line">str1.partition(&#39;ig&#39;)       &lt;-- 设定为 ig</span><br><span class="line">&gt;&gt;&gt; (&#39;a b&#39;,&#39;ig&#39;,&#39;n boss&#39;)</span><br><span class="line">可以看到字符串被分成了3个元组</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>replace(old,new[,count])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">把字符串中的 old 子字符串替换成 new 子字符串，如果 count 指定，则替换不超过 count 次</span><br><span class="line">count 可以不指定</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;bili old&#39;       &lt;-- 创建字符串</span><br><span class="line">str1.replace(&#39;old&#39;,&#39;new&#39;)</span><br><span class="line">&gt;&gt;&gt; &#39;bili new&#39;</span><br><span class="line">可以发现原来的 old 被替换成了 new</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>rfinf(sub,[,start[,end]])</code> 用法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">类似于 find() 的用法，不过是从右边开始查找</span><br></pre></td></tr></table></figure></li>
+<li><code>rindex(sub,[,start[,end]])</code> 用法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">类似于 index() 的用法，不过是从右边开始查找</span><br></pre></td></tr></table></figure></li>
+<li><code>rjust(width)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">返回一个右对齐的字符串，并使用空格填充至长度为 width 的新字符串</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rpartition(sub)         &lt;-- 类似 partition() 方法，不过是从右边开始查找</span><br><span class="line"></span><br><span class="line">rstrip()        &lt;-- 删除字符串末尾的空格</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>split(sep=None,maxsplit=-1)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">不带参数默认是以空格为分隔符切片字符串，如果 maxsplit 参数有设置，则仅分隔 maxsplit 个子字符串，并返回切片后的子字符串拼接的列表</span><br><span class="line"></span><br><span class="line">如果没参数的情况下</span><br><span class="line">str1 &#x3D; &#39;we are family&#39;      &lt;-- 创建字符串</span><br><span class="line">str1.split()        &lt;-- 没有设置参数</span><br><span class="line">&gt;&gt;&gt; [&#39;we&#39;,&#39;are&#39;,&#39;family&#39;]</span><br><span class="line">发现它以空格为标识来切片</span><br><span class="line"></span><br><span class="line">如果有参数的情况下</span><br><span class="line">str1 &#x3D; &#39;i love fishc&#39;       &lt;-- 创建字符串</span><br><span class="line">str1.split(&#39;i&#39;)     &lt;-- 设置参数为 i</span><br><span class="line">&gt;&gt;&gt; [&#39;&#39;,&#39; love f&#39;,&#39;shc&#39;]</span><br><span class="line">可以看到以 i 为标识来切片，而 i 则是被切没了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>splitlines(([keepends]))</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">按照 &#39;\n&#39; 分隔，返回一个包含各行作为元素的列表，如果 keepends 参数指定，则返回前 keepends 行</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>startswith(prefix[,start[,end]])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">检查字符串是否以 prefix 开头，是则返回True，否则返回False</span><br><span class="line"></span><br><span class="line">使用方法以及注意事项和上面的 endswith(sub[,start[,end]])  一样</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>strip([chars])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">删除字符串前边和后边所有的空格并返回， chars 参数可以指定范围（可选）</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;       ssaass       &#39;      &lt;-- 创建字符串</span><br><span class="line">str1.strip()        &lt;-- 不指定参数</span><br><span class="line">&gt;&gt;&gt; &#39;ssaass&#39;</span><br><span class="line">可以发现字符两边的空格被删除了</span><br><span class="line"></span><br><span class="line">str1.strip(&#39;s&#39;)     &lt;-- 指定参数 s 字符</span><br><span class="line">&gt;&gt;&gt; &#39;aa&#39;</span><br><span class="line">发现两边的 s 字符都被删除了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>swapcase()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">翻转字符串中的大小写并返回</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;Add&#39;        &lt;-- 创建字符串</span><br><span class="line">str1.swapcase()</span><br><span class="line">&gt;&gt;&gt; &#39;aDD&#39;</span><br><span class="line">可以看到大小写被翻转了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>title()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">返回标题化（所有的单词都是以大写开始，其余字母均小写）的字符串</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;lAST&#39;       &lt;-- 创建字符串</span><br><span class="line">str1.title()</span><br><span class="line">&gt;&gt;&gt; &#39;Last&#39;</span><br><span class="line">可以看到除了首字母大写外，其他的都变成小写了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>translat(table)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">根据 table 的规则(可以由 str.maketrans(&#39;a&#39;,&#39;b&#39;)定制)转换字符串中的字符</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;sssssaaaassss&#39;      &lt;-- 创建字符串</span><br><span class="line">str1.translate(str.maketrans(&#39;s&#39;,&#39;b&#39;))      &lt;-- 把所有 s 字符变成 b 字符</span><br><span class="line">&gt;&gt;&gt; &#39;bbbbbaaaabbbb&#39;</span><br><span class="line">可以看到字符 s 都变成了字符 b</span><br><span class="line"></span><br><span class="line">str.maketrans(&#39;s&#39;,&#39;b&#39;)      &lt;-- 如果只这样输入</span><br><span class="line">&#123;115:98&#125;        &lt;-- 就会返回 s 和 b 的ASCII编码</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>upper()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转换字符串中的所有小写字符为大写</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;last&#39;       &lt;-- 创建字符串</span><br><span class="line">str1.upper()</span><br><span class="line">&gt;&gt;&gt; &#39;LAST&#39;</span><br><span class="line">可以看到都变成了大写</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>zfill(width)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">返回长度为 width 的字符串，原字符串右对齐，前边用0填充</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;last&#39;</span><br><span class="line">str1.zfill(10)      &lt;-- width 参数指定为10</span><br><span class="line">&gt;&gt;&gt; &#39;000000last&#39;</span><br><span class="line">可以看到返回了长度10的字符串，前面用0来填充</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#39;&#123;0&#125; love &#123;1&#125;.&#123;2&#125;&#39;.format(&#39;I&#39;,&#39;Fishc&#39;,&#39;com&#39;)</span><br><span class="line">&gt;&gt;&gt; &#39;I love Fishc.com&#39;</span><br><span class="line">可以看到 format 后面的字符被插入进去了。依照 &#123;&#125; 里面的数字编号</span><br><span class="line"></span><br><span class="line">除此之外还有一种方法，用字母来代替数字</span><br><span class="line">&#39;&#123;a&#125; love &#123;b&#125;.&#123;c&#125;&#39;.format(a&#x3D;&#39;I&#39;,b&#x3D;&#39;Fishc&#39;,c&#x3D;&#39;com&#39;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#39;&#123;0:.1f&#125;&#123;1&#125;&#39;.format(27.658,&#39;GB&#39;)</span><br><span class="line">&gt;&gt;&gt; &#39;27.7GB&#39;</span><br><span class="line">其中的 :.1f 意思是四舍五入保留一位小数并打印，所以 27.658 就变成了 27.7</span><br></pre></td></tr></table></figure>
+<p><strong>字符串格式化符号含义</strong></p>
+<ul>
+<li><code>%c</code> 用法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">格式化字符及其ASCII码</span><br><span class="line"></span><br><span class="line">&#39;%c&#39; % 97       &lt;-- 对 97 使用该符号</span><br><span class="line">&gt;&gt;&gt; &#39;a&#39;</span><br><span class="line">可以看到 97 变成了其在 ASCII 里面对应的字符</span><br><span class="line"></span><br><span class="line">如果对进行多次操作，最好用 () 括起来</span><br><span class="line">&#39;%c %c %c&#39; % (97,98,99)</span><br><span class="line">&gt;&gt;&gt; &#39;a b c&#39;</span><br></pre></td></tr></table></figure></li>
+<li><code>%s</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">格式化字符串</span><br><span class="line"></span><br><span class="line">&#39;%s&#39; % &#39;I love Fishc.com&#39;</span><br><span class="line">&gt;&gt;&gt; &#39;I love Fishc.com&#39;</span><br><span class="line">相当于通过这个把字符串合并进去</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%d</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">格式化整数</span><br><span class="line"></span><br><span class="line">&#39;%d + %d &#x3D; %d&#39; % (4 , 5, 4+5)</span><br><span class="line">&gt;&gt;&gt; &#39;4 + 5 &#x3D; 9&#39;</span><br><span class="line">相当于把括号里的数字打印出来</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%o</code>用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">格式化无符号八进制数</span><br><span class="line"></span><br><span class="line">&#39;%o&#39; % 10</span><br><span class="line">&gt;&gt;&gt; &#39;12&#39;</span><br><span class="line">可以看到把 10 变成了八进制数字 12 并返回</span><br><span class="line"></span><br><span class="line">扩展</span><br><span class="line">%x      格式化无符号十六进制数</span><br><span class="line">%X      格式化无符号十六进制数(大写)    &lt;-- 因为十六进制数包含英文字母，这个意思是把字母都变成大写</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%f</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">格式化定点数，可指定小数点后精度</span><br><span class="line"></span><br><span class="line">&#39;%f&#39; % 27.658</span><br><span class="line">&gt;&gt;&gt; &#39;27.658000&#39;</span><br><span class="line">因为 %f 默认是6位。所以位数不够会用 0 补齐</span><br><span class="line"></span><br><span class="line">&#39;%.1f&#39; % 27.658     &lt;-- .1表示留一位，数字可以自定义</span><br><span class="line">&gt;&gt;&gt; &#39;27.7&#39;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%e</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">用科学计数法格式化定点数</span><br><span class="line"></span><br><span class="line">&#39;%e&#39; % 27.658</span><br><span class="line">&gt;&gt;&gt; &#39;2.765800E+01&#39;      &lt;-- 返回值用科学计数法表示了</span><br><span class="line">E+01 表示的意思是 10 的一次方</span><br><span class="line"></span><br><span class="line">还有种表示方式是 &#39;%E&#39;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%g</code> 和 <code>%G</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">其实这两个一样的</span><br><span class="line">根据值的大小决定使用 %f 或 %e</span><br><span class="line"></span><br><span class="line">&#39;%g&#39; % 27.658</span><br><span class="line">&gt;&gt;&gt; &#39;27.658&#39;</span><br></pre></td></tr></table></figure>
+<p><strong>格式化操作符辅助命令</strong></p>
+<ul>
+<li><code>m.n</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m 是显示的最小总宽度，n 是小数点后的位数</span><br><span class="line"></span><br><span class="line">&#39;%5.1f&#39; % 27.658        &lt;-- m 被指定位5，n 被指定为1</span><br><span class="line">&gt;&gt;&gt; &#39; 27.7&#39;</span><br><span class="line">5 是表示整个字符串宽度为5，而 1 则是表示小数点后只有一位数</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>-</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">用于左对齐</span><br><span class="line"></span><br><span class="line">&#39;%-10d&#39; % 5</span><br><span class="line">&gt;&gt;&gt; &#39;5         &#39;</span><br><span class="line">可以看到 5 被左对齐了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>+</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在正数前面显示加号。如果是个负数则原样输出</span><br><span class="line"></span><br><span class="line">&#39;%+d&#39; % 5</span><br><span class="line">&gt;&gt;&gt; &#39;+5&#39;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>#</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在八进制数前面显示零(&#39; 0&#39;)，在十六进制数前面显示 &#39; ox&#39; 或者 &#39; OX&#39;</span><br><span class="line"></span><br><span class="line">&#39;%#o&#39; % 10</span><br><span class="line">&gt;&gt;&gt; &#39;0o12&#39;      &lt;-- 0o 表示它是八进制数 12</span><br><span class="line"></span><br><span class="line">&#39;%#X&#39; % 108</span><br><span class="line">&#39;0X6C&#39;      &lt;-- 0X 表示它是十六进制数 6C</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>0</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">显示的数字前面填充 &#39;0&#39; 取代空格</span><br><span class="line"></span><br><span class="line">&#39;%010d&#39; % 5     &lt;-- 10 的意思是填充10个0</span><br><span class="line">&gt;&gt;&gt; &#39;0000000005&#39;</span><br><span class="line">可以看到前面被填充了10个0</span><br><span class="line"></span><br><span class="line">&#39;%-010d&#39; % 5        &lt;-- 如果多加一个 - 符号</span><br><span class="line">&gt;&gt;&gt; &#39;5         &#39;</span><br><span class="line">发现改成后面填充空格了</span><br></pre></td></tr></table></figure>
+<p><strong>字符串转义字符含义</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\&#39;      单引号</span><br><span class="line"></span><br><span class="line">\&quot;      双引号</span><br><span class="line"></span><br><span class="line">\a      发出系统响声(实际并不会)</span><br><span class="line"></span><br><span class="line">\b      退格符</span><br><span class="line"></span><br><span class="line">\n      换行符</span><br><span class="line"></span><br><span class="line">\t      横向制表符(TAB)</span><br><span class="line"></span><br><span class="line">\v      纵向制表符</span><br><span class="line"></span><br><span class="line">\r      回车符</span><br><span class="line"></span><br><span class="line">\f      换页符</span><br><span class="line"></span><br><span class="line">\o      八进制数代表的字符</span><br><span class="line"></span><br><span class="line">\x      十六进制数代表的字符</span><br><span class="line"></span><br><span class="line">\0      表示一个空字符</span><br><span class="line"></span><br><span class="line">\\      反斜杠</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">列表、元组和字符串的共同点</span><br><span class="line"></span><br><span class="line">-- 都可以通过索引得到每一个元素</span><br><span class="line"></span><br><span class="line">-- 默认索引值总是从0开始</span><br><span class="line"></span><br><span class="line">-- 可以通过分片的方法得到一个范围内的元素的集合</span><br><span class="line"></span><br><span class="line">-- 有很多共同的操作符(重复操作符、拼接操作符、成员关系操作符)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>list()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">把一个对象转换成列表</span><br><span class="line"></span><br><span class="line">a &#x3D; list()      &lt;-- 如果不带参数</span><br><span class="line">&gt;&gt;&gt; []</span><br><span class="line">就是一个空列表</span><br><span class="line"></span><br><span class="line">a &#x3D; &#39;add big boss&#39;      &lt;-- 给 a 添加元素</span><br><span class="line">a &#x3D; list(a)     &lt;-- 参数选择为 a</span><br><span class="line">&gt;&gt;&gt; [&#39;a&#39;, &#39;d&#39;, &#39;d&#39;, &#39; &#39;, &#39;b&#39;, &#39;i&#39;, &#39;g&#39;, &#39; &#39;, &#39;b&#39;, &#39;o&#39;, &#39;s&#39;, &#39;s&#39;]</span><br><span class="line">字符串 a 通过 list 变成了一个每个字符单独出来的列表</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>tuple([iterable])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">把一个对象转换成元组</span><br><span class="line">使用方法和 list 一样</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>str(ojb)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">把 ojb 对象转换为字符串</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>max()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">返回序列或者参数集合中的最大值</span><br><span class="line"></span><br><span class="line">numbers &#x3D; [1,18,13,0,-98,34,54,76,32]</span><br><span class="line">max(number)</span><br><span class="line">&gt;&gt;&gt; 76</span><br><span class="line">返回了 numbers 里面最大的数值</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>min()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">返回序列或者参数集合中的最小值</span><br><span class="line">使用方法和 max() 一样</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>sum(iterable[,start=0])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">返回序列 iterable 和可选参数 start 的总和</span><br><span class="line"></span><br><span class="line">tuple &#x3D; (3.1,2.3,3.4)</span><br><span class="line">sum(tuple)</span><br><span class="line">&gt;&gt;&gt; 8.8</span><br><span class="line">把 tuple 里面的数值总和返回</span><br><span class="line"></span><br><span class="line">a &#x3D; (1,2,3,4)</span><br><span class="line">sum(a,10)       &lt;-- 如果添加</span><br><span class="line">&gt;&gt;&gt; 20</span><br><span class="line">那么就会在原 a 的总和(10)后再加上 10，返回值</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>sorted()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">把参数从小到大排序并返回</span><br><span class="line"></span><br><span class="line">a &#x3D; [23,3423,123,445,632,452,35]</span><br><span class="line">sorted(a)</span><br><span class="line">&gt;&gt;&gt; [23, 35, 123, 445, 452, 632, 3423]</span><br><span class="line">a 里面的参数被从小到大排序了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>reversed()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a &#x3D; [23,3423,123,445,632,452,35]</span><br><span class="line">reversed(a)</span><br><span class="line">&gt;&gt;&gt; &lt;list_reverseiterator object at 0x0000029322767A00&gt;</span><br><span class="line">返回了迭代器对象</span><br><span class="line"></span><br><span class="line">list(reversed(a))       &lt;-- 用这个可以逆转回来</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>enumerate()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a &#x3D; [23,3423,123,445,632,452,35]</span><br><span class="line">enumerate(a)</span><br><span class="line">&lt;enumerate object at 0x0000029322769080&gt;</span><br><span class="line"></span><br><span class="line">list(enumerate(a))      &lt;-- 使用逆操作</span><br><span class="line">&gt;&gt;&gt; [(0, 23), (1, 3423), (2, 123), (3, 445), (4, 632), (5, 452), (6, 35)</span><br><span class="line">发现每一个元素都变成了元组，并且前面都有索引值</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>zip()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">返回由各个参数的序列组成的元组</span><br><span class="line"></span><br><span class="line">a &#x3D; [1,2,3,4,5,6,7,8]</span><br><span class="line">b &#x3D; [4,5,6,7,8]</span><br><span class="line">zip(a,b)</span><br><span class="line">&gt;&gt;&gt; &lt;zip object at 0x0000029322769080&gt;</span><br><span class="line"></span><br><span class="line">list(zip(a,b))      &lt;-- 使用逆操作</span><br><span class="line">&gt;&gt;&gt; [(1, 4), (2, 5), (3, 6), (4, 7), (5, 8)]</span><br><span class="line">发现 a 和 b 合在一起了，每两两元素组成一个元组，但是这是成对存在的，所以多出的部分被省略了</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="函数：python的乐高积木"><a href="#函数：python的乐高积木" class="headerlink" title="函数：python的乐高积木"></a>函数：python的乐高积木</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def MyFirstFunction():</span><br><span class="line">	print(&#39;这是我创建的第一个函数！&#39;)</span><br><span class="line">	print(&#39;我表示很激动&#39;)</span><br><span class="line">	</span><br><span class="line">def 就是定义了一个函数，而 ：后面则是函数的执行体</span><br><span class="line"></span><br><span class="line">如何调用一个函数</span><br><span class="line">MyFirstFunction()               &lt;-- 直接输入函数名字</span><br><span class="line">&gt;&gt;&gt; 这是我创建的第一个函数！</span><br><span class="line">    我表示很激动</span><br><span class="line">这样就是调用了这个函数</span><br><span class="line"></span><br><span class="line">其实实现的原理就是 def 定义了一个叫 MyFirstFunction() 的函数，然后调用这个函数的话就会执行这个函数里面的内容</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">同时可以给函数一个参数</span><br><span class="line">def MyFirstFunction(name):      &lt;-- 给了一个参数 name</span><br><span class="line">print(name + &#39;表示很激动&#39;)</span><br><span class="line">但是注意这里是不能直接调用的，因为需要一个参数</span><br><span class="line"></span><br><span class="line">MyFirstFunction(&#39;你爸爸&#39;)       &lt;-- 调用的时候给一个参数 &#39;你爸爸&#39;</span><br><span class="line">&gt;&gt;&gt; 你爸爸表示很激动</span><br><span class="line">这才是正确的调用方法</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">如果是多个参数</span><br><span class="line"></span><br><span class="line">def add(num1,num2):</span><br><span class="line">	result &#x3D; num1 + num2        &lt;-- result 的值等于 num1 + num2</span><br><span class="line">	print(result)</span><br><span class="line">add(1,2)        &lt;-- 调用函数 add ，参数给定 1 和 2</span><br><span class="line">&gt;&gt;&gt; 3</span><br></pre></td></tr></table></figure>
+<p><strong>函数的返回值</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用 return </span><br><span class="line"></span><br><span class="line">def add(num1,num2):</span><br><span class="line">	return (num1 + num2)        &lt;-- 使用 return 返回 num1 + num2 的值</span><br><span class="line">print(add(5,6))                 &lt;-- 给定参数 5 和 6，并打印结果</span><br><span class="line">&gt;&gt;&gt; 11</span><br></pre></td></tr></table></figure>
+<p><strong>收集参数</strong> <code>*</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">收集参数是使用 * 来定义的</span><br><span class="line"></span><br><span class="line"> def test(*pa):     &lt;- * 就是收集参数</span><br><span class="line">	print(&#39;参数的长度是：&#39;,len(pa));</span><br><span class="line">	print(&#39;第二个参数是：&#39;,pa[1]);</span><br><span class="line">	</span><br><span class="line"> test(1,&#39;apk&#39;,222,3.33,2,3,4,5,6)</span><br><span class="line">&gt;&gt;&gt; 参数的长度是： 9</span><br><span class="line">&gt;&gt;&gt; 第二个参数是： apk</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>python</tag>
+        <tag>IDLE</tag>
+        <tag>pycharm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客样式显示不出的解决办法</title>
+    <url>/2020/01/12/20200112-%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%87%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>在搭建好的博客上传以后，也许会遇到一个问题，就是</p>
+<p>你发现按照链接后打开，出现的博客居然没有主题！！！？？</p>
+<a id="more"></a>
+
+<p><img src="https://pic1.zhimg.com/v2-349327380668155c8125db0e0711c7ec_b.jpg" alt=""></p>
+<p>哇，真TM就剩个框架出来</p>
+<p>lz的主题呢，那么好看个主题就给我剩了个这个玩意》》？？</p>
+<p>其实百度是可以百度到方法的，只不过那个方法怎么说呢，有点感觉说不清的意思</p>
+<p><img src="https://pic3.zhimg.com/80/v2-c14307c0f6bade1101ac4647616e62d6_hd.jpg" alt=""></p>
+<p>我们换一个思路吧</p>
+<p>首先打开你的博客，依旧没有主题样式，只有个孤零零的框架在那儿</p>
+<p>按 <code>F12</code> 打开控制台，点到 <code>Neywork</code> </p>
+<p><img src="http://m.qpic.cn/psc?/V142tQBY1U8jyD/JFx.huugQnT.ko1ZRraxafY9ikYr7uJfg2.fj6iAnRTYt9IiQHYEKOzh0V1OkdLgJ2N8yEsz2xKKaIvVmUvqgdjcYou7VypGnYvl.i8yU.I!/b&bo=dwL8AncC*AIDByI!&rf=viewer_4" alt=""></p>
+<p><strong>发现样式什么的都没跟过来，唉</strong></p>
+<p>点一个文件，查看 <code>Headers</code></p>
+<p><img src="http://m.qpic.cn/psc?/V142tQBY1U8jyD/JFx.huugQnT.ko1ZRraxaQMeWEJO.qDjQIRrVpYc92Y6*bdmMjIc3.AHMTEpCZdaYdmdhcySDoghawmKb*bj85J9RUWqRrNQ99bMWFRIVM8!/b&bo=ewKEA3sChAMRBzA!&rf=viewer_4" alt=""></p>
+<p>结合上面百度到的方法，哇吼，知道了</p>
+<p>在博客的根目录里找到 <code>_config.yml</code> 文件，打开并找到下面</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: https:&#x2F;&#x2F;www.hexoblog.top&#x2F;     #网址</span><br><span class="line">root: &#x2F;       #网站根目录	</span><br><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;    #文章的网址链接格式</span><br><span class="line">permalink_defaults:     #永久链接中各部分的默认值</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>url</code> 处填入之前在 <code>Headers</code> 看到的请求位置，也就是<code>https://www.hexoblog.top/</code></p>
+<p>但是如果你是在 <code>Github</code> 或者其他地方发布博客的话还是要变通的，如果你是在 <code>Github</code> 发布博客的话， <code>root</code> 也是要填写的（就是填你仓库名字）</p>
+<p>顺利解决了！ 再次上传后，点开博客就正常了</p>
+<p>归根结底，还是自己当初没留意，一开始是可以正常访问的，只不过后面我绑定了域名后，忘记修改 <code>_config.yml</code> 配置文件里的相关内容导致的</p>
+<p>hhh，以后还是要多细心才行啊，亏我想了半天这个问题</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>git</tag>
+        <tag>url</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于博客迁移到coding</title>
+    <url>/2020/01/11/20200111-%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E5%88%B0coding/</url>
+    <content><![CDATA[<p>原本我这个博客是用 <code>Hexo + github</code>来搭建的</p>
+<p>虽然过程磕磕碰碰的，遇到很多bug啥的，但好歹搭建起来了</p>
+<p>不过因为<code>github</code>那个速度确实感人 <del>几十kb的下载速度</del></p>
+<p>觉得还是换一个托管吧。</p>
+<a id="more"></a>
+
+<hr>
+<p><strong>不过在此之前我还是要推荐一个网站</strong></p>
+<p>名字叫 <em>码云</em> <del>不是马云</del></p>
+<p>有的时候用 <code>git</code> 来 <code>clone</code> 仓库的时候，会发现那个下载速度真的是慢，很多时候就是<strong>几十kb</strong>的下，遇到大一点的东西，等都会等死在这里</p>
+<p>我之前 <code>clone</code> 一个仓库的时候，就遇到过，结果一下午都没弄下来，白浪费时间了</p>
+<p>至于为什么说到<font color=#FF0000 >码云</font>，别的什么不说，估计说了你们也没有兴趣。</p>
+<p>最直观的一点就是它的速度</p>
+<table>
+<thead>
+<tr>
+<th>GitHub</th>
+<th>码云</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>下载速度</td>
+<td>下载速度</td>
+</tr>
+<tr>
+<td>几十 K</td>
+<td>几 M（看你家网速）</td>
+</tr>
+</tbody></table>
+<p>很直接吧，而且 码云 也支持 <code>git</code>，可以使用 <code>git clone</code> 命令来克隆仓库到本地；不过如果你使用 <code>ssh</code> 协议的话，记得把 <code>ssh密钥</code> 保存到码云的设置里（这个大家都会吧）</p>
+<p>不过很多人还是用惯了 <code>GitHub</code> 吧，很多东西都在上面，不过不要紧！</p>
+<p><strong>码云</strong> 可以导入 <code>GitHub</code> 仓库，只需要把它们关联一下，你就可以把 <code>GitHub</code> 上的仓库复制到 码云 了</p>
+<p>嘿嘿嘿，以后 <code>clone</code> 就快多了</p>
+<p><a href="https://gitee.com/yang_fan_m" target="_blank" rel="noopener">我的码云主页，点此查看</a></p>
+<hr>
+<p>好，回到标题</p>
+<p>简单说一下 <code>coding</code> 吧，当然这个百度的到</p>
+<p>在了解这个之前，各位也可以去了解下 <code>slack</code> 这个软件，这是一个多人团队协作软件，相当于电话和邮件相结合，不过是英文的。</p>
+<p><code>coding</code> 官方名字是 <strong>一站式软件研发管理平台</strong></p>
+<p>你可以用它创建一个团队，然后合作一个项目</p>
+<p><a href="https://coding.net/" target="_blank" rel="noopener">coding官网</a></p>
+<p>说明一下，这个东西对于 5人以下 的团队是免费的，如果超过的话就是要付费的，具体费用按团队规模。</p>
+<p>里面其实和 <code>GitHub</code> 功能有些一样，只不过访问速度快得多，有些功能也增加了</p>
+<p>项目也可以在里面发布，可能最主要的是，它是中文界面</p>
+<p>中文界面</p>
+<p>中文界面</p>
+<p>中文界面</p>
+<p>一般用来进行小团队合作的话，是很不错的<br>毕竟5人以下免费不是么</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>coding</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hair-pink[明日方舟/德安]</title>
+    <url>/2020/01/10/20200110-Hair-pink-%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F-%E5%BE%B7%E5%AE%89/</url>
+    <content><![CDATA[<p>明日方舟的一个同人文章，就是颗糖</p>
+<p>有兴趣就看看吧</p>
+<a id="more"></a>
+
+<p><a href="https://www.bilibili.com/read/cv4283244" target="_blank" rel="noopener">点这里查看哔哩哔哩的原文链接</a></p>
+<h2 id="PH-1"><a href="#PH-1" class="headerlink" title="PH - 1"></a>PH - 1</h2><p>德克萨斯带着小队结束作战归来，经过基建的时候听到人力办公室那边吵吵闹闹的，经过的干员看到她们，解释说：“来了个新的萨科塔妹子，好像是安德切尔的故交，超可爱的。”</p>
+<p> 又一个萨科塔？小队成员已经兴奋起来，三三两两地往人力办公室的方向跑，罗德岛气氛向来很好，那边已经聚了不少看热闹的干员。</p>
+<p> 德克萨斯跟着一块走过去，倒不是为了凑热闹，这是去贸易站的必经之路。</p>
+<p> 德克萨斯经过办公室门口的时候新干员正好出来，她不算高，在人群中露出一个头顶，斜扎着一个小辫。德克萨斯愣了一下，想起刚认识能天使的时候。 </p>
+<p>这是拉特兰少女们的流行发型吗？</p>
+<p> 博士和凯尔希也走了出来，应该是要领着新干员去做入职体检了。围观的干员们让出一条路来，德克萨斯的目光落在了新干员的背在肩上的武器上。</p>
+<p> “李恩菲尔德步枪， No.4，MK1型。”德克萨斯下意识默念。 </p>
+<p>这是一把老式的铳，看起来和能天使的那几把简直不是一个时代的产物。德克萨斯在哥伦比亚的时候对铳有些许了解，对这样的老式武器颇有好感，现在还在用这样的武器的人已经不多了。</p>
+<p>德克萨斯有些好奇。会选择用它，一定是有些特别的原因的，或许也是个热爱老式武器的女孩，性格会是什么样呢？那种标准的古板拉特兰吗？</p>
+<h2 id="PH-2"><a href="#PH-2" class="headerlink" title="PH - 2"></a>PH - 2</h2><p>从贸易站下班的时候已经到了晚餐时间，德克萨斯吃完晚饭，去了边上的便利店。 </p>
+<p> 存货已经吃完，天灾季还有几天才会结束，之后才能去陆地上补充。好在可露希尔总会备上各类零食，包括百奇。</p>
+<p>  德克萨斯走进便利店，人不多，负责理货的工作人员正在忙碌着。货架上各类零食簇拥在一起，还有临近诞生节的装饰和小礼品。</p>
+<p>  德克萨斯顺着架子一路寻找，目光却并未搜寻到百奇的红色包装。她转头询问工作人员，却得到了“已经售罄”的答复 </p>
+<p>小姑娘指指收银台：“存货本来就少，最后一盒刚刚被她买走了。” </p>
+<p>德克萨斯顺着望过去，是一个粉头发女孩，看着有些眼熟。对方听到动静也转过头，斜扎的小马尾晃晃悠悠地。</p>
+<p> 噢，是那个新干员。</p>
+<p> 德克萨斯有点遗憾地准备离开，粉头发萨科塔却过来了，扬起手里的盒子：“你是在找这个吗？” </p>
+<p>德克萨斯点点头。</p>
+<p> “真不好意思。”新干员耸耸肩说道。 她拆开外包装，递到德克萨斯面前：“我叫安比尔，刚刚加入罗德岛。” </p>
+<p>德克萨斯犹豫了一下，抽出一根来叼在嘴里。她不太习惯分食，但这时候显然不该拒绝她的好意。</p>
+<p> 安比尔吃得很快，本来也就该吃的很快，像德克萨斯这样叼在嘴里当安慰剂的才是异端。她边吃边往外走，小马尾跟着她的步子一跳一跳的。</p>
+<p> 德克萨斯看着她的姿势，知道她这是邀请自己同行，于是跟了上去：“我叫德克萨斯，平时在企鹅物流。”</p>
+<p> “我知道你是德克萨斯。”安比尔笑起来，“你们可很有名呢。” </p>
+<p>德克萨斯没说话，她不知道自己该说什么。</p>
+<p> 安比尔一路跑去了露台，她靠在栏杆上往外看，远处的天空阴沉沉的，一方面是因为即将入夜，一方面也因为天灾。</p>
+<p> 她把盒子重递到德克萨斯面前，说：“我没想到你也这么喜欢吃巧克力。巧克力真好，听说它能抵御阴邪呢。” </p>
+<p>“是维多利亚的说法。”德克萨斯接口道，莫斯提马跟她提过。</p>
+<p> “是吗？我就是觉得味道很好，吃起来很让人开心。”安比尔说。 </p>
+<p>德克萨斯点了点头表示赞同。</p>
+<p> 一盒巧克力棒很快就被吃完，安比尔把纸盒捏扁，她退后几步伸出手，对着德克萨斯说：“很高兴认识你，德克萨斯。” </p>
+<p>德克萨斯和她握了握手。</p>
+<p> 安比尔带着兴奋的笑容说：“以后就可以常见面了，还能看看那些关于你们的传闻是不是真的，一定会很热闹。” </p>
+<p>德克萨斯有点茫然地：“什么？” </p>
+<p>安比尔说：“就是关于你们的八卦嘛，各种各样的，你的，能天使的，皇帝的，还有比做你们的同事更好的方法来收集独闻秘报吗！”</p>
+<p> 德克萨斯有点无奈地抿了抿嘴唇，又想起初见时的疑问：“你为什么会选李恩菲尔德步枪做武器？”</p>
+<p> 安比尔有点惊讶：“我以为鲁珀人没那么熟悉铳呢。”</p>
+<p> “刚巧认识。” </p>
+<p>安比尔了然地慢慢点头，顿了顿，歪头冲她笑：“暂时保密！”</p>
+<p> “那么，我就先回去了，明天见！”安比尔摇了摇手，转头跑回室内去了。</p>
+<p> 德克萨斯看着她的背影，和想象的不太一样，她看起来和她的发色一样活泼又有活力，或许这是拉特兰人的共性。</p>
+<h2 id="PH-3"><a href="#PH-3" class="headerlink" title="PH - 3"></a>PH - 3</h2><p>安比尔的第一次作战被安排进了德克萨斯的小队。这是一次突袭作战，对于狙击们来说压力会有些大。德克萨斯开战前照例交代了几句，心下想着若是安比尔适应不了，就将她从前线撤下来，没人会给一个新手太大的压力。</p>
+<p>事实上安比尔给所有人带来了惊喜，她改造了那把老式长铳，把子弹的特性融合进自己独有的战斗风格当中，她带来的辅助作战效果弥补了攻击力度的不足。</p>
+<p>结束后她和能天使一块陷入热烈的讨论，德克萨斯在边上听着。</p>
+<p>安比尔正在讲述自己的改造思路，她的战斗经验还不够丰富，但想法独特。她关于如何将射程最大化的研究方案引起了能天使和德克萨斯的兴趣。</p>
+<p>回到基建后，德克萨斯作为小队队长需要写一份报告来阐述安比尔的战斗表现。这并不难，安比尔尽管还有新人的稚嫩，但她今天的表现仍算得上可圈可点。</p>
+<p>完成了评估的部分，她略微思考了一会儿，在最后加上几句，建议罗德岛可以拨出部分资源以供安比尔完成她的射程研究项目，她的成果将成为十分关键的科研资料。</p>
+<p>几天后安比尔兴奋地敲响了德克萨斯的房门，她的手里拿了一个大袋子。</p>
+<p>德克萨斯侧身让她进来，看到袋子里全是红色的百奇巧克力。</p>
+<p>安比尔扬起手：“我是来道谢的！博士决定支持我完成我的研究。”</p>
+<p>德克萨斯笑着祝贺她。</p>
+<p>安比尔把袋子放到桌上，继续说道：“博士说你在我的评估报告里帮我说了好话，所以这是你的功劳！”</p>
+<p>德克萨斯说：“是你自己争取来的，这个思路很有意思。”</p>
+<p>她的蓝色光环发出清透的冷光——她还没有长出像能天使或者莫斯提马那样的翅膀，但她还年轻，有足够的时间。</p>
+<h2 id="PH-4"><a href="#PH-4" class="headerlink" title="PH - 4"></a>PH - 4</h2><p>安比尔的精英二级仪式那天，能天使拉着几个拉特兰的干员们一块帮她策划了一个派对。</p>
+<p>在企鹅物流们回龙门工作的几个月里，安比尔的研究成果突飞猛进，初步实验已经成功。作战技巧也越来越熟练，在战场上足以独当一面。她这段时间的刻苦练习谁都看得出来，她值得她得到的这一切。</p>
+<p>安比尔的肩上挂着绶带，正式的样子和她年轻的脸显得有些违和。刚刚的仪式上她强撑着一脸严肃，这会儿终于放松下来，眼睛里都带着兴奋。</p>
+<p>她和能天使聚在一起研究着怎么避开光环戴上派对帽，但最终只有安德切尔成功达成了这一目标，因为他的光环是歪着的。</p>
+<p>德克萨斯婉拒了她们给她戴派对帽的好意，但安比尔和能天使才不管她的意愿，在她的耳朵上一边挂了一个，看起来有点傻。</p>
+<p>德克萨斯抖抖耳朵，把帽子抖掉，把蛋糕刀递给姑娘们。安比尔接了过来，注意力还放在自己的背后，她不断地转过头去打量她新长出没多久的蓝色翅膀。</p>
+<p>“这代表我比以前更厉害了！”安比尔开心地冲德克萨斯炫耀，德克萨斯笑着点点头。</p>
+<p>“待会儿我就可以和你们一起加入更高难度的作战任务。”安比尔说，“我已经迫不及待要试试我新改造的铳了。”</p>
+<p>“我们也很期待。”能天使大声说。</p>
+<p>战斗效果非常好，足以让敌人们记住这个粉头发的萨科塔少女。</p>
+<p>结束任务后德克萨斯开着车带着队员们一块回去，能天使和后座上的安比尔一块激烈地讨论铳械和狙击技巧，兴奋得不得了。</p>
+<p>即使安比尔的天赋不如那些最拔尖的萨科塔，她对于战斗的思考和对铳械改造的热爱同样也为人称道。</p>
+<p>每位干员的作战风格因为受到性格和习惯的影响，向来是各有不同的。这是罗德岛最大的特点，它允许了这些不同点自由地发展，给需要的干员们提供帮助和支持，最后将他们凝结在一起。</p>
+<p>这样的凝聚力来源于博士，同样也来源于干员们自身。这是他们对于罗德岛的热爱，对于他们的工作和生活的热爱。</p>
+<p>早就说过了，罗德岛的氛围向来很好。</p>
+<p>回到基建后，安比尔走进德克萨斯的房间，她的步子蹦蹦跳跳的，小马尾也跟着蹦蹦跳跳的，就像德克萨斯第一次见到她的时候那样。</p>
+<p>她们有几个月没见了，但安比尔熟稔地在德克萨斯的书桌前坐下，打开柜子取出巧克力棒来吃。</p>
+<p>德克萨斯任由着她闹，凑过去也咬了一根叼在嘴里。</p>
+<p>今天是安比尔的主场，她想做什么都应当被允许。</p>
+<p>安比尔的脸上还挂着笑容，经过她改造的长铳立在门边的墙上，德克萨斯走过去，拿起来细细地观察。</p>
+<p>改造得很漂亮，兼具了复古风格和新式战斗，足以适应任何战斗环境，简直不像一个小姑娘的手笔。</p>
+<p>博士在仪式上半开玩笑地夸奖安比尔，谁能想得到最初见到的那个小萨科塔如今能走到这一步呢？</p>
+<p>德克萨斯摸了摸被亲的脸颊，心想着，是啊，谁能想得到如今会走到这一步呢？</p>
+<p>安比尔凑在德克萨斯面前，睁大了眼睛仰着脸歪头看她，神色可爱。</p>
+<p>德克萨斯想，好吧，我们确实走到这一步了。</p>
+<p>- end -</p>
+]]></content>
+      <categories>
+        <category>轻小说</category>
+      </categories>
+      <tags>
+        <tag>Lily</tag>
+        <tag>Chocolates</tag>
+        <tag>bilibili</tag>
+        <tag>HE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>过年抢票 12306 走起</title>
+    <url>/2020/01/10/20200110-%E8%BF%87%E5%B9%B4%E6%8A%A2%E7%A5%A8%2012306%20%E8%B5%B0%E8%B5%B7/</url>
+    <content><![CDATA[<p>每年恰逢国庆或新年，Github 的这个项目都会火，今天正好有时间，从头到尾带大家详细走两遍吧（本地预售+服务器捡漏）！  </p>
+<ul>
+<li>本机系统：Archlinux</li>
+<li>服务器系统：Ubuntu 19.04</li>
+<li>项目地址：<a href="https://github.com/testerSunshine/12306" target="_blank" rel="noopener">testerSunshine/12306</a></li>
+<li>git 版本：2.24.1</li>
+<li>python 版本：3.8.0</li>
+<li>docker 版本：19.03.5-ce</li>
+<li>docker-compose 版本：1.25.1-rc1</li>
+<li>视频教程：<a href="https://www.bilibili.com/video/av80673498#reply2210912155" target="_blank" rel="noopener">哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a></li>
+</ul>
+<a id="more"></a>
+
+
+<h4 id="安装Docker容器"><a href="#安装Docker容器" class="headerlink" title="安装Docker容器"></a>安装Docker容器</h4><p>安装 docker 我这里写了两种，一种本地 Archlinux 系统的，一种 Ubuntu 服务器的，看你是怎么选择，我是首先本地找个有票的目的地去抢，抢到票的话再搭建服务器捡漏</p>
+<details>
+<summary>本地系统</summary>
+
+
+<p><a href="https://wiki.archlinux.org/index.php/Docker_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">Arch Linux Docker</a>提供了两个版本，二选一喽（我选一）  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S docker    <span class="comment">#稳定版</span></span><br><span class="line">yaourt -S docker-git    <span class="comment">#开发版</span></span><br></pre></td></tr></table></figure>
+
+<p>启动Docker服务  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> docker.service</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，运行下面的命令，验证是否安装成功  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo docker version     <span class="comment">#由于还没把docker用户加入用户组，所以运行docker命令需要加sudo</span></span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line">sudo docker info</span><br></pre></td></tr></table></figure>
+
+<p><code>Docker</code>需要用户具有<code>sudo</code>权限，为了避免每次命令都输入<code>sudo</code>，可以把用户加入<code>Docker</code>用户组(系统重启后生效)  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docker <span class="variable">$USER</span>   <span class="comment">#自动创建docker用户并加入到用户组</span></span><br><span class="line">cat /etc/group  <span class="comment">#查看文件中有没有出现docker</span></span><br></pre></td></tr></table></figure>
+
+<p>列出本机的镜像  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker image ls     <span class="comment">#列出本机的所有image文件</span></span><br><span class="line">docker images       <span class="comment">#列出本机的所有image文件 (等同于docker image ls)</span></span><br></pre></td></tr></table></figure>
+
+<p>想设置你自己的存储驱动选项和<code>docker</code>源，编辑 <code>/etc/docker/daemon.json</code> (如果不存在就自己创建)  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo gedit &#x2F;etc&#x2F;docker&#x2F;daemon.json      #创建daemon.json文件</span><br><span class="line">#内容如下</span><br><span class="line">&#123;</span><br><span class="line">&quot;storage-driver&quot;: &quot;overlay2&quot;,   #存储驱动选项</span><br><span class="line">&quot;registry-mirrors&quot;: [&quot;http:&#x2F;&#x2F;hub-mirror.c.163.com&quot;]    #网易163源</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其他源如下：  </p>
+<blockquote>
+<p>阿里源：<a href="https://pee6w651.mirror.aliyuncs.com" target="_blank" rel="noopener">https://pee6w651.mirror.aliyuncs.com</a><br>网易163源：<a href="http://hub-mirror.c.163.com" target="_blank" rel="noopener">http://hub-mirror.c.163.com</a><br>docker中国区源：<a href="https://registry.docker-cn.com" target="_blank" rel="noopener">https://registry.docker-cn.com</a><br>中国科技大学：<a href="https://docker.mirrors.ustc.edu.cn" target="_blank" rel="noopener">https://docker.mirrors.ustc.edu.cn</a>  </p>
+</blockquote>
+<p>修改重新启动<code>docker</code>服务  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<p><strong>测试docker</strong><br>从远程仓库<a href="https://hub.docker.com/" target="_blank" rel="noopener">docker hub</a><code>pull</code>一个镜像到本地仓库<code>/var/lib/docker</code>，以<a href="https://hub.docker.com/_/hello-world" target="_blank" rel="noopener">hello-world</a>为例  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull hello-world     <span class="comment">#pull一个镜像</span></span><br><span class="line">docker images     <span class="comment">#查看本地镜像</span></span><br><span class="line">docker [container] run hello-world    <span class="comment">#运行hello-world镜像(本地仓库没有镜像，会自动运行远程仓库中的)</span></span><br></pre></td></tr></table></figure>
+
+<p><code>hello-world</code>镜像运行之后输出一大段文本，然后进程会自动停止，有的镜像不会自动停止(例如：<code>Ubuntu</code>系统<code>ubuntu bash</code>)，这时候就需要手动杀死进程<code>docker container kill &lt;CONTAINER ID&gt;</code>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -it ubuntu bash  <span class="comment">#使用bash运行ubuntu镜像</span></span><br></pre></td></tr></table></figure>
+
+<p>再打开一个终端窗口，查看容器运行情况  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker container ls     <span class="comment">#列出本机正在运行的容器</span></span><br><span class="line">docker ps   <span class="comment">#列出本机正在运行的容器，等效于 docker container ls</span></span><br><span class="line">docker container ls --all     <span class="comment">#列出本机所有容器，包括终止运行的容器</span></span><br><span class="line">docker ps --all   <span class="comment">##列出本机所有容器，包括终止运行的容器，等效于 docker container ls --all</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到以下内容  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#集装箱ID           图像                命令                   创建               状态                端口                名称</span></span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">dadf7d24b756        ubuntu              <span class="string">"bash"</span>              6 seconds ago       Up 5 seconds                            hungry_stallman</span><br></pre></td></tr></table></figure>
+
+<p>手动杀死<code>ubuntu</code>进程  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker [container] <span class="built_in">kill</span> dadf7d24b756    <span class="comment">#dadf7d24b756是上面查出的CONTAINER ID</span></span><br></pre></td></tr></table></figure>
+
+<p>杀死进程，容器还在，如果容器也不要了，可以删除  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker container ls --all     <span class="comment">#列出本机所有容器，包括终止运行的容器</span></span><br><span class="line">docker [container] rm &lt;CONTAINER ID&gt;...      <span class="comment">#删除指定容器</span></span><br></pre></td></tr></table></figure>
+
+<p>容器是运行镜像之后产生的，你可以理解为镜像是个压缩包，容器就是解压出来的文件夹，如果还要把本地镜像也删除，可以  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker image rm &lt;REPOSITORY&gt;...     <span class="comment">#根据镜像名称删除image文件</span></span><br><span class="line">docker rmi &lt;IMAGE ID&gt;...     <span class="comment">#根据镜像id删除image文件</span></span><br></pre></td></tr></table></figure>
+
+<p><span style="color:#ff0000;">注意：删除镜像之前，必须把该镜像的所有容器删除（包括正在运行的容器和停止使用的容器）才能删除镜像，否则会报错</span>  </p>
+</details>
+
+<details>
+<summary>Ubuntu 服务器</summary>
+
+
+<p>安装 docker 容器，服务器是 ubuntu 19.04，直接安装即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh root@55.66.77.88    <span class="comment">#ssh 登录</span></span><br><span class="line">curl https://get.docker.com | bash  <span class="comment">#下载</span></span><br><span class="line">sudo apt install docker.io      <span class="comment">#安装 docker</span></span><br><span class="line">docker --version    <span class="comment">#查看docker 版本</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#设置开机启动</span></span><br><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h4 id="安装docker-compose"><a href="#安装docker-compose" class="headerlink" title="安装docker-compose"></a>安装docker-compose</h4><p><a href="https://github.com/docker/compose/releases" target="_blank" rel="noopener">Compose</a> 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YAML 文件来配置应用程序的服务。然后，使用一个命令，就可以从配置中创建并启动所有服务。要了解有关 Compose 的所有功能的更多信息，请参阅<a href="https://github.com/docker/docker.github.io/blob/master/compose/index.md#features" target="_blank" rel="noopener">功能列表</a>，这个不管是本地系统还是服务器都是一样安装的 </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -i <span class="comment">#使用 root 账号</span></span><br><span class="line">curl -L https://github.com/docker/compose/releases/download/1.25.1-rc1/docker-compose-`uname -s`-`uname -m` -o /usr/<span class="built_in">local</span>/bin/docker-compose  <span class="comment">#直接下载docker-compose文件到/usr/local/bin</span></span><br><span class="line">chmod +x /usr/<span class="built_in">local</span>/bin/docker-compose  <span class="comment">#授权</span></span><br><span class="line"><span class="built_in">exit</span> <span class="comment">#退出root</span></span><br><span class="line">docker-compose --version    <span class="comment">#查看docker-compose版本</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="克隆项目"><a href="#克隆项目" class="headerlink" title="克隆项目"></a>克隆项目</h4><p>把 <a href="https://github.com/testerSunshine/12306" target="_blank" rel="noopener">testerSunshine/12306</a> 克隆到本地电脑或服务器  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/testerSunshine/12306.git</span><br><span class="line"><span class="built_in">cd</span> 12306    <span class="comment">#进入文件夹</span></span><br><span class="line">vim TickerConfig.py   <span class="comment">#编辑配置文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>配置文件 <a href="https://github.com/testerSunshine/12306/blob/master/TickerConfig.py" target="_blank" rel="noopener">TickerConfig.py</a> 中需要填写一些基本的参数，要我们按情况修改，这里我提供两种配置方案</p>
+<details>
+<summary>本机：刷票+本地打码+预售</summary>
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="comment"># 关于软件使用配置说明，一定要看！！！</span></span><br><span class="line"><span class="comment"># ps: 如果是候补车票，需要通过人证一致性核验的用户及激活的“铁路畅行”会员可以提交候补需求，请您按照操作说明在铁路12306app.上完成人证核验</span></span><br><span class="line"><span class="comment"># 关于候补了之后是否还能继续捡漏的问题在此说明： 软件为全自动候补加捡漏，如果软件候补成功则会停止抢票，发出邮件通知，但是不会影响你继续捡漏，</span></span><br><span class="line"><span class="comment"># 如果这个时候捡漏捡到的话，也是可以付款成功的，也就是说，捡漏+候补，可以最大程度提升抢票成功率</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 刷票模式：1=刷票 2=候补+刷票</span></span><br><span class="line">TICKET_TYPE = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 出发日期(list) "2018-01-06", "2018-01-07"</span></span><br><span class="line">STATION_DATES = [</span><br><span class="line">    <span class="string">"2020-01-23"</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 填入需要购买的车次(list)，"G1353"</span></span><br><span class="line"><span class="comment"># 修改车次填入规则，注：(以前设置的车次逻辑不变)，如果车次填入为空，那么就是当日乘车所有车次都纳入筛选返回</span></span><br><span class="line"><span class="comment"># 不填车次是整个list为空才算，如果不是为空，依然会判断车次的，这种是错误的写法 [""], 正确的写法 []</span></span><br><span class="line">STATION_TRAINS = [<span class="string">"D2357"</span>,<span class="string">"D6581"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 出发城市，比如深圳北，就填深圳就搜得到</span></span><br><span class="line">FROM_STATION = <span class="string">"赣州"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 到达城市 比如深圳北，就填深圳就搜得到</span></span><br><span class="line">TO_STATION = <span class="string">"于都"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 座位(list) 多个座位ex:</span></span><br><span class="line"><span class="comment"># "商务座",</span></span><br><span class="line"><span class="comment"># "一等座",</span></span><br><span class="line"><span class="comment"># "二等座",</span></span><br><span class="line"><span class="comment"># "特等座",</span></span><br><span class="line"><span class="comment"># "软卧",</span></span><br><span class="line"><span class="comment"># "硬卧",</span></span><br><span class="line"><span class="comment"># "硬座",</span></span><br><span class="line"><span class="comment"># "无座",</span></span><br><span class="line"><span class="comment"># "动卧",</span></span><br><span class="line">SET_TYPE = [<span class="string">"一等座"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当余票小于乘车人，如果选择优先提交，则删减联系人和余票数一致在提交</span></span><br><span class="line"><span class="comment"># bool</span></span><br><span class="line">IS_MORE_TICKET = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 乘车人(list) 多个乘车人ex:</span></span><br><span class="line"><span class="comment"># "张三",</span></span><br><span class="line"><span class="comment"># "李四"</span></span><br><span class="line">TICKET_PEOPLES = [<span class="string">"张三"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 12306登录账号</span></span><br><span class="line">USER = <span class="string">"teaper"</span></span><br><span class="line">PWD = <span class="string">"zdfvgh5g6"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 加入小黑屋时间默认为5分钟，此功能为了防止僵尸票导致一直下单不成功错过正常的票</span></span><br><span class="line">TICKET_BLACK_LIST_TIME = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动打码</span></span><br><span class="line">IS_AUTO_CODE = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置2本地自动打码，需要配置tensorflow和keras库，3为云打码，由于云打码服务器资源有限(为2h4C的cpu服务器)，请不要恶意请求，不然只能关闭服务器</span></span><br><span class="line"><span class="comment"># ps: 请不要一直依赖云服务器资源，在此向所有提供服务器同学表示感谢</span></span><br><span class="line">AUTO_CODE_TYPE = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 此处设置云打码服务器地址，如果有自建的服务器，可以自行更改</span></span><br><span class="line">HOST = <span class="string">"captcha:80"</span></span><br><span class="line">REQ_URL = <span class="string">"/verify/base64/"</span></span><br><span class="line">HTTP_TYPE = <span class="string">"http"</span></span><br><span class="line"><span class="comment"># HOST="12306.yinaoxiong.cn" #备用服务器稳定性较差</span></span><br><span class="line"><span class="comment"># REQ_URL="/verify/base64/"</span></span><br><span class="line"><span class="comment"># HTTP_TYPE="https"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  邮箱配置，如果抢票成功，将通过邮件配置通知给您</span></span><br><span class="line"><span class="comment">#  列举163</span></span><br><span class="line"><span class="comment">#  email: "xxx@163.com"</span></span><br><span class="line"><span class="comment">#  notice_email_list: "123@qq.com"</span></span><br><span class="line"><span class="comment">#  username: "xxxxx"</span></span><br><span class="line"><span class="comment">#  password: "xxxxx</span></span><br><span class="line"><span class="comment">#  host: "smtp.163.com"</span></span><br><span class="line"><span class="comment">#  列举qq  ，qq设置比较复杂，需要在邮箱--&gt;账户--&gt;开启smtp服务，取得授权码==邮箱登录密码</span></span><br><span class="line"><span class="comment">#  email: "xxx@qq.com"</span></span><br><span class="line"><span class="comment">#  notice_email_list: "123@qq.com"</span></span><br><span class="line"><span class="comment">#  username: "xxxxx"</span></span><br><span class="line"><span class="comment">#  password: "授权码"</span></span><br><span class="line"><span class="comment">#  host: "smtp.qq.com"</span></span><br><span class="line">EMAIL_CONF = &#123;</span><br><span class="line">    <span class="string">"IS_MAIL"</span>: <span class="literal">True</span>,</span><br><span class="line">    <span class="string">"email"</span>: <span class="string">"www@teaper.dev"</span>,</span><br><span class="line">    <span class="string">"notice_email_list"</span>: <span class="string">"www@teaper.dev"</span>,</span><br><span class="line">    <span class="string">"username"</span>: <span class="string">"www@teaper.dev"</span>,</span><br><span class="line">    <span class="string">"password"</span>: <span class="string">"sjfkf3fg"</span>,</span><br><span class="line">    <span class="string">"host"</span>: <span class="string">"smtp.exmail.qq.com"</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启 server酱 微信提醒， 使用前需要前往 http://sc.ftqq.com/3.version 扫码绑定获取 SECRET 并关注获得抢票结果通知的公众号</span></span><br><span class="line">SERVER_CHAN_CONF = &#123;</span><br><span class="line">    <span class="string">"is_server_chan"</span>: <span class="literal">False</span>,</span><br><span class="line">    <span class="string">"secret"</span>: <span class="string">"SCU71142T22f940ddgh34f9f369dc6d75e0072465f9e6"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启cdn查询，可以更快的检测票票 1为开启，2为关闭</span></span><br><span class="line">IS_CDN = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下单接口分为两种，1 模拟网页自动捡漏下单（不稳定），2 模拟车次后面的购票按钮下单（稳如老狗）</span></span><br><span class="line">ORDER_TYPE = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下单模式 1 为预售，整点刷新，刷新间隔0.1-0.5S, 然后会校验时间，比如12点的预售，那脚本就会在12.00整检票，刷新订单</span></span><br><span class="line"><span class="comment">#         2 是捡漏，捡漏的刷新间隔时间为0.5-3秒，时间间隔长，不容易封ip</span></span><br><span class="line">ORDER_MODEL = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启代理, 0代表关闭， 1表示开始</span></span><br><span class="line"><span class="comment"># 开启此功能的时候请确保代理ip是否可用，在测试放里面经过充分的测试，再开启此功能，不然可能会耽误你购票的宝贵时间</span></span><br><span class="line"><span class="comment"># 使用方法：</span></span><br><span class="line"><span class="comment"># 1、在agency/proxy_list列表下填入代理ip</span></span><br><span class="line"><span class="comment"># 2、测试UnitTest/TestAll/testProxy 测试代理是否可以用</span></span><br><span class="line"><span class="comment"># 3、开启代理ip</span></span><br><span class="line">IS_PROXY = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 预售放票时间, 如果是捡漏模式，可以忽略此操作</span></span><br><span class="line">OPEN_TIME = <span class="string">"12:59:57"</span></span><br><span class="line"><span class="comment"># 1=使用selenium获取devicesID</span></span><br><span class="line"><span class="comment"># 2=使用网页端/otn/HttpZF/logdevice获取devicesId，这个接口的算法目前可能有点问题，如果登录一直302的请改为配置1</span></span><br><span class="line"><span class="comment"># 3=自己打开浏览器在headers-Cookies中抓取RAIL_DEVICEID和RAIL_EXPIRATION，这个就不用配置selenium</span></span><br><span class="line">COOKIE_TYPE = <span class="number">3</span></span><br><span class="line"><span class="comment"># 如果COOKIE_TYPE=1，则需配置chromeDriver路径,下载地址http://chromedriver.storage.googleapis.com/index.html</span></span><br><span class="line"><span class="comment"># chromedriver配置版本只要和chrome的大版本匹配就行</span></span><br><span class="line">CHROME_PATH = <span class="string">"/opt/google/chrome/google-chrome"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 为了docker37 准备的环境变量，windows环境可以不用管这个参数</span></span><br><span class="line">CHROME_CHROME_PATH = <span class="string">"/opt/google/chrome/google-chrome"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果COOKIE_TYPE=3, 则需配置RAIL_EXPIRATION、RAIL_DEVICEID的值</span></span><br><span class="line">RAIL_EXPIRATION = <span class="string">"1577394287684"</span></span><br><span class="line">RAIL_DEVICEID = <span class="string">"VbwdRQJ8tWqbACs-rCEMSKgU-juNgkqdJQ7j9Nt6KMrrS8RBJotuRdyPyS1WS1fkJY6sw7NDpxkMEL7ScTEGLvytNL_IVT_QKEOT_5tBCs71_WeR3Jp3bwHIBoIieVcrI9yKWPHqR36oXpvq4J1p2BEubXmBricl"</span></span><br><span class="line"><span class="comment"># RAIL_EXPIRATION = "1577034533293"</span></span><br><span class="line"><span class="comment"># RAIL_DEVICEID = "CDno29Erc_Pf3FSXb4dzq-Op64EhWrsi5yUZKVIKR1MAfYo2qFlCeXD8VkexY7_1qg-ClV-fE8j9jgVlPZxRh3wVc54qLe_5A8sdr62qZx4B22JPF8lFCjpgTKZ5ODW90HJd5tiQsJ1KR9nOqHRxHj1FT5LEIwfw"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1=&gt;为一直随机ua,2-&gt;只启动的时候随机一次ua</span></span><br><span class="line">RANDOM_AGENT = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">PASSENGER_TICKER_STR = &#123;</span><br><span class="line">    <span class="string">'一等座'</span>: <span class="string">'M'</span>,</span><br><span class="line">    <span class="string">'特等座'</span>: <span class="string">'P'</span>,</span><br><span class="line">    <span class="string">'二等座'</span>: <span class="string">'O'</span>,</span><br><span class="line">    <span class="string">'商务座'</span>: <span class="number">9</span>,</span><br><span class="line">    <span class="string">'硬座'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'无座'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'软座'</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">'软卧'</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="string">'硬卧'</span>: <span class="number">3</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保护12306官网请求频率，设置随机请求时间，原则为5分钟不大于80次</span></span><br><span class="line"><span class="comment"># 最大间隔请求时间</span></span><br><span class="line">MAX_TIME = <span class="number">3</span></span><br><span class="line"><span class="comment"># 最小间隔请求时间</span></span><br><span class="line">MIN_TIME = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 软件版本</span></span><br><span class="line">RE_VERSION = <span class="string">"1.2.004"</span></span><br></pre></td></tr></table></figure>
+
+</details>
+
+<details>
+<summary>服务器：候补+刷票+本地打码+捡漏</summary>
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="comment"># 关于软件使用配置说明，一定要看！！！</span></span><br><span class="line"><span class="comment"># ps: 如果是候补车票，需要通过人证一致性核验的用户及激活的“铁路畅行”会员可以提交候补需求，请您按照操作说明在铁路12306app.上完成人证核验</span></span><br><span class="line"><span class="comment"># 关于候补了之后是否还能继续捡漏的问题在此说明： 软件为全自动候补加捡漏，如果软件候补成功则会停止抢票，发出邮件通知，但是不会影响你继续捡漏，</span></span><br><span class="line"><span class="comment"># 如果这个时候捡漏捡到的话，也是可以付款成功的，也就是说，捡漏+候补，可以最大程度提升抢票成功率</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 刷票模式：1=刷票 2=候补+刷票</span></span><br><span class="line">TICKET_TYPE = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 出发日期(list) "2018-01-06", "2018-01-07"</span></span><br><span class="line">STATION_DATES = [</span><br><span class="line">    <span class="string">"2020-01-23"</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 填入需要购买的车次(list)，"G1353"</span></span><br><span class="line"><span class="comment"># 修改车次填入规则，注：(以前设置的车次逻辑不变)，如果车次填入为空，那么就是当日乘车所有车次都纳入筛选返回</span></span><br><span class="line"><span class="comment"># 不填车次是整个list为空才算，如果不是为空，依然会判断车次的，这种是错误的写法 [""], 正确的写法 []</span></span><br><span class="line">STATION_TRAINS = [<span class="string">"D2357"</span>,<span class="string">"D6581"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 出发城市，比如深圳北，就填深圳就搜得到</span></span><br><span class="line">FROM_STATION = <span class="string">"赣州"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 到达城市 比如深圳北，就填深圳就搜得到</span></span><br><span class="line">TO_STATION = <span class="string">"于都"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 座位(list) 多个座位ex:</span></span><br><span class="line"><span class="comment"># "商务座",</span></span><br><span class="line"><span class="comment"># "一等座",</span></span><br><span class="line"><span class="comment"># "二等座",</span></span><br><span class="line"><span class="comment"># "特等座",</span></span><br><span class="line"><span class="comment"># "软卧",</span></span><br><span class="line"><span class="comment"># "硬卧",</span></span><br><span class="line"><span class="comment"># "硬座",</span></span><br><span class="line"><span class="comment"># "无座",</span></span><br><span class="line"><span class="comment"># "动卧",</span></span><br><span class="line">SET_TYPE = [<span class="string">"一等座"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当余票小于乘车人，如果选择优先提交，则删减联系人和余票数一致在提交</span></span><br><span class="line"><span class="comment"># bool</span></span><br><span class="line">IS_MORE_TICKET = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 乘车人(list) 多个乘车人ex:</span></span><br><span class="line"><span class="comment"># "张三",</span></span><br><span class="line"><span class="comment"># "李四"</span></span><br><span class="line">TICKET_PEOPLES = [<span class="string">"张三"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 12306登录账号</span></span><br><span class="line">USER = <span class="string">"teaper"</span></span><br><span class="line">PWD = <span class="string">"zdfvgh5g6"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 加入小黑屋时间默认为5分钟，此功能为了防止僵尸票导致一直下单不成功错过正常的票</span></span><br><span class="line">TICKET_BLACK_LIST_TIME = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动打码</span></span><br><span class="line">IS_AUTO_CODE = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置2本地自动打码，需要配置tensorflow和keras库，3为云打码，由于云打码服务器资源有限(为2h4C的cpu服务器)，请不要恶意请求，不然只能关闭服务器</span></span><br><span class="line"><span class="comment"># ps: 请不要一直依赖云服务器资源，在此向所有提供服务器同学表示感谢</span></span><br><span class="line">AUTO_CODE_TYPE = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 此处设置云打码服务器地址，如果有自建的服务器，可以自行更改</span></span><br><span class="line">HOST = <span class="string">"captcha:80"</span></span><br><span class="line">REQ_URL = <span class="string">"/verify/base64/"</span></span><br><span class="line">HTTP_TYPE = <span class="string">"http"</span></span><br><span class="line"><span class="comment"># HOST="12306.yinaoxiong.cn" #备用服务器稳定性较差</span></span><br><span class="line"><span class="comment"># REQ_URL="/verify/base64/"</span></span><br><span class="line"><span class="comment"># HTTP_TYPE="https"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  邮箱配置，如果抢票成功，将通过邮件配置通知给您</span></span><br><span class="line"><span class="comment">#  列举163</span></span><br><span class="line"><span class="comment">#  email: "xxx@163.com"</span></span><br><span class="line"><span class="comment">#  notice_email_list: "123@qq.com"</span></span><br><span class="line"><span class="comment">#  username: "xxxxx"</span></span><br><span class="line"><span class="comment">#  password: "xxxxx</span></span><br><span class="line"><span class="comment">#  host: "smtp.163.com"</span></span><br><span class="line"><span class="comment">#  列举qq  ，qq设置比较复杂，需要在邮箱--&gt;账户--&gt;开启smtp服务，取得授权码==邮箱登录密码</span></span><br><span class="line"><span class="comment">#  email: "xxx@qq.com"</span></span><br><span class="line"><span class="comment">#  notice_email_list: "123@qq.com"</span></span><br><span class="line"><span class="comment">#  username: "xxxxx"</span></span><br><span class="line"><span class="comment">#  password: "授权码"</span></span><br><span class="line"><span class="comment">#  host: "smtp.qq.com"</span></span><br><span class="line">EMAIL_CONF = &#123;</span><br><span class="line">    <span class="string">"IS_MAIL"</span>: <span class="literal">True</span>,</span><br><span class="line">    <span class="string">"email"</span>: <span class="string">"www@teaper.dev"</span>,</span><br><span class="line">    <span class="string">"notice_email_list"</span>: <span class="string">"www@teaper.dev"</span>,</span><br><span class="line">    <span class="string">"username"</span>: <span class="string">"www@teaper.dev"</span>,</span><br><span class="line">    <span class="string">"password"</span>: <span class="string">"sjfkf3fg"</span>,</span><br><span class="line">    <span class="string">"host"</span>: <span class="string">"smtp.exmail.qq.com"</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启 server酱 微信提醒， 使用前需要前往 http://sc.ftqq.com/3.version 扫码绑定获取 SECRET 并关注获得抢票结果通知的公众号</span></span><br><span class="line">SERVER_CHAN_CONF = &#123;</span><br><span class="line">    <span class="string">"is_server_chan"</span>: <span class="literal">False</span>,</span><br><span class="line">    <span class="string">"secret"</span>: <span class="string">"SCU71142T22f940ddgh34f9f369dc6d75e0072465f9e6"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启cdn查询，可以更快的检测票票 1为开启，2为关闭</span></span><br><span class="line">IS_CDN = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下单接口分为两种，1 模拟网页自动捡漏下单（不稳定），2 模拟车次后面的购票按钮下单（稳如老狗）</span></span><br><span class="line">ORDER_TYPE = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下单模式 1 为预售，整点刷新，刷新间隔0.1-0.5S, 然后会校验时间，比如12点的预售，那脚本就会在12.00整检票，刷新订单</span></span><br><span class="line"><span class="comment">#         2 是捡漏，捡漏的刷新间隔时间为0.5-3秒，时间间隔长，不容易封ip</span></span><br><span class="line">ORDER_MODEL = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启代理, 0代表关闭， 1表示开始</span></span><br><span class="line"><span class="comment"># 开启此功能的时候请确保代理ip是否可用，在测试放里面经过充分的测试，再开启此功能，不然可能会耽误你购票的宝贵时间</span></span><br><span class="line"><span class="comment"># 使用方法：</span></span><br><span class="line"><span class="comment"># 1、在agency/proxy_list列表下填入代理ip</span></span><br><span class="line"><span class="comment"># 2、测试UnitTest/TestAll/testProxy 测试代理是否可以用</span></span><br><span class="line"><span class="comment"># 3、开启代理ip</span></span><br><span class="line">IS_PROXY = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 预售放票时间, 如果是捡漏模式，可以忽略此操作</span></span><br><span class="line">OPEN_TIME = <span class="string">"12:59:57"</span></span><br><span class="line"><span class="comment"># 1=使用selenium获取devicesID</span></span><br><span class="line"><span class="comment"># 2=使用网页端/otn/HttpZF/logdevice获取devicesId，这个接口的算法目前可能有点问题，如果登录一直302的请改为配置1</span></span><br><span class="line"><span class="comment"># 3=自己打开浏览器在headers-Cookies中抓取RAIL_DEVICEID和RAIL_EXPIRATION，这个就不用配置selenium</span></span><br><span class="line">COOKIE_TYPE = <span class="number">3</span></span><br><span class="line"><span class="comment"># 如果COOKIE_TYPE=1，则需配置chromeDriver路径,下载地址http://chromedriver.storage.googleapis.com/index.html</span></span><br><span class="line"><span class="comment"># chromedriver配置版本只要和chrome的大版本匹配就行</span></span><br><span class="line">CHROME_PATH = <span class="string">"/opt/google/chrome/google-chrome"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 为了docker37 准备的环境变量，windows环境可以不用管这个参数</span></span><br><span class="line">CHROME_CHROME_PATH = <span class="string">"/opt/google/chrome/google-chrome"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果COOKIE_TYPE=3, 则需配置RAIL_EXPIRATION、RAIL_DEVICEID的值</span></span><br><span class="line">RAIL_EXPIRATION = <span class="string">"1577394287684"</span></span><br><span class="line">RAIL_DEVICEID = <span class="string">"VbwdRQJ8tWqbACs-rCEMSKgU-juNgkqdJQ7j9Nt6KMrrS8RBJotuRdyPyS1WS1fkJY6sw7NDpxkMEL7ScTEGLvytNL_IVT_QKEOT_5tBCs71_WeR3Jp3bwHIBoIieVcrI9yKWPHqR36oXpvq4J1p2BEubXmBricl"</span></span><br><span class="line"><span class="comment"># RAIL_EXPIRATION = "1577034533293"</span></span><br><span class="line"><span class="comment"># RAIL_DEVICEID = "CDno29Erc_Pf3FSXb4dzq-Op64EhWrsi5yUZKVIKR1MAfYo2qFlCeXD8VkexY7_1qg-ClV-fE8j9jgVlPZxRh3wVc54qLe_5A8sdr62qZx4B22JPF8lFCjpgTKZ5ODW90HJd5tiQsJ1KR9nOqHRxHj1FT5LEIwfw"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1=&gt;为一直随机ua,2-&gt;只启动的时候随机一次ua</span></span><br><span class="line">RANDOM_AGENT = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">PASSENGER_TICKER_STR = &#123;</span><br><span class="line">    <span class="string">'一等座'</span>: <span class="string">'M'</span>,</span><br><span class="line">    <span class="string">'特等座'</span>: <span class="string">'P'</span>,</span><br><span class="line">    <span class="string">'二等座'</span>: <span class="string">'O'</span>,</span><br><span class="line">    <span class="string">'商务座'</span>: <span class="number">9</span>,</span><br><span class="line">    <span class="string">'硬座'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'无座'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'软座'</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">'软卧'</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="string">'硬卧'</span>: <span class="number">3</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保护12306官网请求频率，设置随机请求时间，原则为5分钟不大于80次</span></span><br><span class="line"><span class="comment"># 最大间隔请求时间</span></span><br><span class="line">MAX_TIME = <span class="number">3</span></span><br><span class="line"><span class="comment"># 最小间隔请求时间</span></span><br><span class="line">MIN_TIME = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 软件版本</span></span><br><span class="line">RE_VERSION = <span class="string">"1.2.004"</span></span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h5 id="这里重点注意以下地方："><a href="#这里重点注意以下地方：" class="headerlink" title="这里重点注意以下地方："></a>这里重点注意以下地方：</h5><p><strong>刷票模式</strong>：尽量选择第 2 种<code>候补+刷票</code><br><strong>出发时间</strong>：这个就是买的哪天的车<br><strong>购买的车次</strong>：参数是一个集合，可以选则多个车次去抢，增加概率，多个车次的出发城市保持一致，别一个是广州，一个是广州东<br><strong>出发城市</strong>：地名和 12306 保持一致，这没啥好说的<br><strong>到达城市</strong>：地名和 12306 保持一致，这没啥好说的<br><strong>座位</strong>：一般选择<code>硬座</code>，动车选择二等座<br><strong>乘车人</strong>：暂时填一个，别填太多<br><strong>12306登录账号</strong>：12306 账号密码，建议使用浏览器登录一遍，确保正确<br><strong>打码方式</strong>：本地打码 <code>AUTO_CODE_TYPE = 2</code>、<code>HOST = &quot;captcha:80&quot;</code>，云打码 <code>AUTO_CODE_TYPE = 3</code>、<code>HOST = &quot;120.77.154.140:8000&quot;</code>，云打码服务器有限，不是自己搭建的不推荐使用，官方提供的云打码文件，不需要再添加到 12306 项目根目录，里面已经有了<br><strong>邮箱配置</strong>：直接参照它注释中的邮箱，由于我的是域名邮箱，所以我的配置不同<br><strong>server酱</strong>：前往<a href="http://sc.ftqq.com/3.version" target="_blank" rel="noopener">server酱</a>扫码绑定获取 <code>SECRET</code> 并关注<strong>获得抢票结果通知的公众号</strong><br><strong>下单模式</strong>：预售 <code>RDER_MODEL = 1</code>；捡漏 <code>RDER_MODEL = 2</code>，预售模式记得一定要填写预售时间<br><strong>预售放票时间</strong>：预售模式下，直接用 <code>OPEN_TIME = &quot;12:59:57&quot;</code>，建议时间提前几秒，捡漏模式不做修改<br><strong>COOKIE_TYPE</strong>：一般选择第三个，需配置 <code>RAIL_EXPIRATION</code>、<code>RAIL_DEVICEID</code>  的值  </p>
+<ul>
+<li><strong>RAIL_EXPIRATION</strong>：打开<a href="https://kyfw.12306.cn/otn/leftTicket/init?linktypeid=dc" target="_blank" rel="noopener">12306</a>并且登录成功后，右击浏览器选择<strong>检查元素</strong>，在 <code>Application</code> -&gt; <code>Cookies</code> -&gt; Name/Value 中可以找到对应的值  </li>
+<li><strong>RAIL_DEVICEID</strong>：获取方式同上  </li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006kWbIogy1ga94bkpwaqj30v707yjsz.jpg" alt="Screenshot from 2019-12-25 17-55-23.png"> </p>
+<p>填写无误后保存修改后的 <code>TickerConfig.py</code> 文件</p>
+<h4 id="运行代码"><a href="#运行代码" class="headerlink" title="运行代码"></a>运行代码</h4><ul>
+<li>开始抢票：<code>docker-compose up --build -d</code></li>
+<li>查看抢票log: <code>docker logs --follow ticket</code></li>
+<li>停止抢票：<code>docker-compose down</code></li>
+</ul>
+<p><span style="color:#ff0000">注意：上面三个命令，一定要在 12306 开源项目的根目录运行</span><br>配置完 <code>TickerConfig.py</code> 文件之后就可以运行<strong>开始抢票</strong>命令了，如果运行日志没报错的话，就可以运行<strong>查看抢票log</strong>命令查看进度，不出意外的话，首先是加入 CDN ,检查 Cookie ，设置打码，登录账号，然后才开始抢票，如果一切顺利的话，日志输出如下</p>
+<details>
+<summary>查看抢票日志</summary>
+
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">当前配置：</span><br><span class="line">出发站：广州东</span><br><span class="line">到达站：赣州</span><br><span class="line">车次: K675,T219</span><br><span class="line">乘车日期：2020-01-20</span><br><span class="line">坐席：硬座</span><br><span class="line">是否有票优先提交：True</span><br><span class="line">乘车人：[<span class="string">'张三'</span>]</span><br><span class="line">刷新间隔: 随机(1-3S)</span><br><span class="line">僵尸票关小黑屋时长: 5</span><br><span class="line">下单接口: 2</span><br><span class="line">下单模式: 2</span><br><span class="line">预售踩点时间:12:59:57</span><br><span class="line">**************************************************</span><br><span class="line">cookie获取中</span><br><span class="line">需要验证码</span><br><span class="line">下载验证码...</span><br><span class="line">下载验证码成功</span><br><span class="line">Corrupt JPEG data: 15 extraneous bytes before marker 0xd9</span><br><span class="line">无需加载模型model.v2.0.h5</span><br><span class="line">题目为[<span class="string">'红酒'</span>]</span><br><span class="line">1 铃铛</span><br><span class="line">2 茶盅</span><br><span class="line">3 红酒</span><br><span class="line">4 手掌印</span><br><span class="line">5 铃铛</span><br><span class="line">6 红酒</span><br><span class="line">7 茶盅</span><br><span class="line">8 路灯</span><br><span class="line">验证码识别坐标为184,77,112,149</span><br><span class="line">184,77,112,149</span><br><span class="line">验证码通过,开始登录..</span><br><span class="line">登录成功</span><br><span class="line">欢迎 肖思成 登录</span><br><span class="line">车次：T3091 出发站：广州东 到达站：赣州 历时：08:14 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：-- 软座：-- 硬座：无 无座：无 预订</span><br><span class="line">车次：Z112 出发站：广州东 到达站：赣州 历时：05:07 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：无 预订</span><br><span class="line">车次：K675 出发站：广州东 到达站：赣州 历时：06:58 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：无 预订</span><br><span class="line">车次：T219 出发站：广州东 到达站：赣州 历时：06:40 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：无 预订</span><br><span class="line">车次：K729 出发站：广州东 到达站：赣州 历时：99:59 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：-- 软座：-- 硬座：-- 无座：-- 列车运行图调整,暂停发售</span><br><span class="line">车次：T170 出发站：广州东 到达站：赣州 历时：05:10 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：无 预订</span><br><span class="line">车次：T155 出发站：广州东 到达站：赣州 历时：06:22 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：9 预订</span><br><span class="line">车次：K795 出发站：广州东 到达站：赣州 历时：07:25 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：有 预订</span><br><span class="line">车次：K85 出发站：广州东 到达站：赣州 历时：06:53 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：1 预订</span><br><span class="line">车次：K210 出发站：广州东 到达站：赣州 历时：04:46 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：无 预订</span><br><span class="line">车次：K1666 出发站：广州东 到达站：赣州 历时：08:47 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：-- 硬座：无 无座：有 预订</span><br><span class="line">正在第1次查询 停留时间：2.81 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：925.563 183.134.42.158</span><br><span class="line">广州东-赣州 车次坐席查询为空，查询url: https://kyfw.12306.cn/otn/leftTicket/queryZ?leftTicketDTO.train_date=2020-01-20&amp;leftTicketDTO.from_station=GGQ&amp;leftTicketDTO.to_station=GZG&amp;purpose_codes=ADULT, 可以手动查询是否有票</span><br><span class="line">正在第2次查询 停留时间：1.1 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：18.326 112.47.56.174</span><br><span class="line">正在第3次查询 停留时间：1.12 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：936.732 111.161.122.67</span><br><span class="line">正在第4次查询 停留时间：1.43 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：426.435 112.28.196.251</span><br><span class="line">正在第5次查询 停留时间：1.19 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：526.847 42.81.144.180</span><br><span class="line">正在第6次查询 停留时间：1.53 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：901.608 223.111.18.161</span><br><span class="line">正在第7次查询 停留时间：1.53 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：612.251 116.77.75.147</span><br><span class="line">正在第8次查询 停留时间：1.09 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：797.085 183.134.42.158</span><br><span class="line">正在第9次查询 停留时间：1.42 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：553.276 42.81.144.179</span><br><span class="line">正在第10次查询 停留时间：2.74 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：335.643 14.204.185.123</span><br><span class="line">正在第11次查询 停留时间：1.96 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：463.363 223.86.219.66</span><br></pre></td></tr></table></figure>
+
+<p>如果抢到票了，将会邮件通知 30 分钟内前去 12306 付款，可以网页，也可以 App 中找未完成订单  </p>
+<p><img src="http://ww1.sinaimg.cn/large/006kWbIogy1ga95ddoy3nj30lh05kdgq.jpg" alt="Screenshot from 2019-12-25 18-32-04.png"></p>
+</details>
+
+<h4 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h4><details>
+<summary style="color:#ff0000">启动抢票命令直接报 python 代码错误</summary>
+
+
+<p>这种一看就是 <code>TickerConfig.py</code> 文件参数配置的有问题，建议检查清楚再运行</p>
+</details>
+
+<details>
+<summary style="color:#ff0000">抢票 log 一直提示 302 状态码</summary>
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">正在第46次查询 停留时间：1.17 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：534.931 113.5.80.33</span><br><span class="line">url: &#x2F;otn&#x2F;leftTicket&#x2F;queryZ?leftTicketDTO.train_date&#x3D;2020-01-20&amp;leftTicketDTO.from_station&#x3D;GGQ&amp;leftTicketDTO.to_station&#x3D;GZG&amp;purpose_codes&#x3D;ADULT返回参数为空, 接口状态码: 302</span><br><span class="line">广州东-赣州 车次坐席查询为空，查询url: https:&#x2F;&#x2F;kyfw.12306.cn&#x2F;otn&#x2F;leftTicket&#x2F;queryZ?leftTicketDTO.train_date&#x3D;2020-01-20&amp;leftTicketDTO.from_station&#x3D;GGQ&amp;leftTicketDTO.to_station&#x3D;GZG&amp;purpose_codes&#x3D;ADULT, 可以手动查询是否有票</span><br><span class="line">正在第47次查询 停留时间：2.82 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：597.988 183.222.97.164</span><br><span class="line">url: &#x2F;otn&#x2F;leftTicket&#x2F;queryZ?leftTicketDTO.train_date&#x3D;2020-01-20&amp;leftTicketDTO.from_station&#x3D;GGQ&amp;leftTicketDTO.to_station&#x3D;GZG&amp;purpose_codes&#x3D;ADULT返回参数为空, 接口状态码: 302</span><br><span class="line">广州东-赣州 车次坐席查询为空，查询url: https:&#x2F;&#x2F;kyfw.12306.cn&#x2F;otn&#x2F;leftTicket&#x2F;queryZ?leftTicketDTO.train_date&#x3D;2020-01-20&amp;leftTicketDTO.from_station&#x3D;GGQ&amp;leftTicketDTO.to_station&#x3D;GZG&amp;purpose_codes&#x3D;ADULT, 可以手动查询是否有票</span><br></pre></td></tr></table></figure>
+
+<p>这种情况就是服务器被 12306 识别出刷票，你的请求被转发到了别的地方，建议运行<strong>停止抢票</strong>命令，休息一下，过段时间再启动命令抢票</p>
+</details>
+
+<details>
+<summary style="color:#ff0000">运行开始抢票命令，有依赖下载失败</summary>
+
+
+<p>这种情况一般发生在国内服务器上，如果是本地电脑的话，建议翻下墙，服务器的话，做下代理或换下源，如果还是下载中断之类的，重新运行开始抢票命令，直到依赖下载下来为止<span style="color:#ff0000">（博主本地电脑也中断了好多次）</span></p>
+</details>
+
+<p><a href="https://www.teaper.dev/2019/12/25/12306/" target="_blank" rel="noopener">查看本家点击这里</a></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>bilibili</tag>
+        <tag>12306</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>markdown语法</title>
+    <url>/2020/01/10/20200110-markdown%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p><a href="#标题"><span style="color:#B900ff;">标题</span></a><br><a href="#列表"><span style="color:#B900ff;">列表</span></a><br><a href="#引用"><span style="color:#B900ff;">引用</span></a><br><a href="#图片与链接"><span style="color:#B900ff;">图片与链接</span></a><br><a href="#粗体和斜体"><span style="color:#B900ff;">粗体和斜体</span></a><br><a href="#删除线"><span style="color:#B900ff;">删除线</span></a><br><a href="#表格"><span style="color:#B900ff;">表格</span></a><br><a href="#内联代码"><span style="color:#B900ff;">内联代码</span></a><br><a href="#语法突出"><span style="color:#B900ff;">语法突出</span></a><br><a href="#任务列表"><span style="color:#B900ff;">任务列表</span></a><br><a href="#表情符号"><span style="color:#B900ff;">表情符号</span></a>  </p>
+<h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><blockquote>
+<h6 id="一级标题"><a href="#一级标题" class="headerlink" title="# 一级标题"></a># 一级标题</h6><h6 id="二级标题"><a href="#二级标题" class="headerlink" title="## 二级标题"></a>## 二级标题</h6><h6 id="三级标题"><a href="#三级标题" class="headerlink" title="### 三级标题"></a>### 三级标题</h6></blockquote>
+<a id="more"></a>
+
+<p>以此类推,总共六级,建议在<code>#</code>后面加上空格(标准写法);换行在当行后面加两个空格再回车  </p>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p>无序列表加 <code>-</code> 或 <code>*</code> 有序列表加 <code>1.</code> <code>2.</code> <code>3.</code> 符号  </p>
+<h5 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 1          -1</span><br><span class="line">* 2    或    -2</span><br><span class="line">* 3          -3</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>1  </li>
+<li>2  </li>
+<li>3  </li>
+</ul>
+<h5 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. Item1</span><br><span class="line">2. Item2</span><br><span class="line">3. Item3</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>Item1  </li>
+<li>Item2  </li>
+<li>Item3  </li>
+</ol>
+<h4 id="待办事项"><a href="#待办事项" class="headerlink" title="待办事项"></a>待办事项</h4><p>待办事项使用 <code>- [ ]</code> 加事项内容，勾选复选框在 <code>[ ]</code> 使用 <code>x</code> </p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>[x] 已勾选的待办事项</span><br><span class="line"><span class="bullet">- </span>[ ] 未勾选的待办事项</span><br><span class="line"><span class="bullet">    - </span>[x] 子集已勾选待办事项</span><br><span class="line"><span class="bullet">    - </span>[ ] 子集未勾选待事项</span><br><span class="line"><span class="bullet">- </span>[x] 回到一级待办事项</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 已勾选的待办事项</li>
+<li><input disabled="" type="checkbox"> 未勾选的待办事项<ul>
+<li><input checked="" disabled="" type="checkbox"> 子集已勾选待办事项</li>
+<li><input disabled="" type="checkbox"> 子集未勾选待事项</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 回到一级待办事项</li>
+</ul>
+<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><p>如果你需要引用一小段别处的句子,就要用引用的格式 <code>&gt;</code> 例如这样<br><code>&gt; 这里是引用</code>  </p>
+<blockquote>
+<p>这里是引用  </p>
+</blockquote>
+<h4 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h4><p>插入图片和插入链接很像,区别在于一个<code>!</code>号,插入图片需要<code>URL</code>地址<br>注意:<code>[]</code>与<code>()</code>之间没有空格  </p>
+<h5 id="插入链接"><a href="#插入链接" class="headerlink" title="插入链接"></a>插入链接</h5><p><code>[TEAPER](https://www.teaper.cn)</code><br><a href="https://www.teaper.cn" target="_blank" rel="noopener">TEAPER</a>  </p>
+<h5 id="锚链接"><a href="#锚链接" class="headerlink" title="锚链接"></a>锚链接</h5><p>锚链接起始位置为：<code>[标题](#标题)</code><br>目标位置为：<code>#### 标题</code>  </p>
+<blockquote>
+<p>注意：锚链接起始位置中的<code>(#标题)</code>，不论目标位置是几号标题，这里都只写一个<code>#</code>，并且后面不留空格，紧接着标题名字；并且<code>()</code>内标题名字中的大写字母需要转换成小写字母，有空格或<code>、</code>需要把空格或<code>、</code>替换成<code>-</code>，有<code>.</code>的需要删除<code>.</code>，并且标题名字中不能包含<code>&amp;￥$【】？*%@!{}/\,:;&quot;&#39;&lt;&gt;~</code>等特殊符号；<code>[]</code>中的标题文本保持和目标位置一致即可</p>
+</blockquote>
+<h5 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h5><p><code>![](https://github.blog/wp-content/uploads/2019/01/Company@2x-2.png)</code><br><img src="https://github.blog/wp-content/uploads/2019/01/Company@2x-2.png" alt=""></p>
+<h4 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h4><p>Markdown的粗体和斜体也非常简单,用<code>**粗体**</code>或者两个<code>__粗体__</code>包含一段文字就是<strong>粗体</strong>,用一个<code>*斜体*</code>或者一个<code>_斜体_</code>包含一段文字就是<em>斜体</em>  </p>
+<h4 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h4><p>使用两个<code>～～</code>包含一段文字效果如下<br><del>删除线</del></p>
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><p>表格可能是Markdown比较累人的地方,注意表格上行空行不打空格，下行空行打两个空格，右边直接换行，<code>:</code> 打在哪边就表示对应方向的对齐，不写 <code>:</code> 默认左对齐  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| Java | C# | Python |</span><br><span class="line">| :------ | :-------: | ------: |</span><br><span class="line">| 支持 | 支持 | 不支持 |</span><br><span class="line">| 不支持 | 支持 | 支持 |</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">Java</th>
+<th align="center">C#</th>
+<th align="right">Python</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">支持</td>
+<td align="center">支持</td>
+<td align="right">不支持</td>
+</tr>
+<tr>
+<td align="left">不支持</td>
+<td align="center">支持</td>
+<td align="right">支持</td>
+</tr>
+</tbody></table>
+<h4 id="内联代码"><a href="#内联代码" class="headerlink" title="内联代码"></a>内联代码</h4><p>只需要用一个撇号 <span style="color:#ff0000">(数字1左边那个键)</span> 包裹中间的代码,用 <strong>Tap</strong> 键缩进<br><code>Markdown</code>给了你多少钱,我双倍!  </p>
+<h4 id="语法突出"><a href="#语法突出" class="headerlink" title="语法突出"></a>语法突出</h4><p>首行由三个撇号加代码检索标准（例如:java bash C++）开头；尾行三个撇号；代码在中间</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Markdown</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"可以使用三个撇号包围代码,第一行撇号后面指定代码语言(推荐)"</span>);</span><br><span class="line">    System.out.println(<span class="string">"或者简单的将代码缩进四个空格"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="代码收缩"><a href="#代码收缩" class="headerlink" title="代码收缩"></a>代码收缩</h4><p>一对<code>&lt;details&gt;&lt;/details&gt;</code>标签内加一对<code>&lt;summary&gt;&lt;/summary&gt;</code>标签，在<code>&lt;summary&gt;</code>标签内写收缩说明，标签后第二行开始写需要收缩的内容  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;details&gt;</span><br><span class="line">&lt;summary&gt;CLICK ME&lt;/summary&gt;</span><br><span class="line"></span><br><span class="line">**&lt;summary&gt;标签与正文间一定要空一行！！！**</span><br><span class="line">&lt;/details&gt;</span><br></pre></td></tr></table></figure>
+
+<details>
+<summary>Markdown方法</summary>
+
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Markdown</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"可以使用三个撇号包围代码,第一行撇号后面指定代码语言(推荐)"</span>);</span><br><span class="line">    System.out.println(<span class="string">"或者简单的将代码缩进四个空格"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><p>在<a href="https://github.com/" target="_blank" rel="noopener">gitHub</a>中,如果你想向某人发表评论,你可以在他们名字前面加<code>@</code>符号:hello@TEAPER  </p>
+<h4 id="表情符号"><a href="#表情符号" class="headerlink" title="表情符号"></a>表情符号</h4><p>GitHub支持表情符号,语法<code>:ide:</code>,可以查看<a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" target="_blank" rel="noopener">表情大全</a>  </p>
+<h4 id="徽章"><a href="#徽章" class="headerlink" title="徽章"></a>徽章</h4><p>徽章一般使用一个开源项目<a href="https://shields.io/" target="_blank" rel="noopener">shields.io</a>制作  </p>
+<p><a href="https://github.com/996icu/996.ICU/blob/master/LICENSE" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/license-Anti%20996-blue.svg" alt="LICENSE"></a> <a href="https://996.icu" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996.icu"></a><br><img src="https://img.shields.io/badge/-%E9%9A%BE%E7%82%B9-blueviolet.svg" alt="难点"> <img src="https://img.shields.io/badge/-%E9%87%8D%E7%82%B9-red.svg" alt="重点"> <img src="https://img.shields.io/badge/-%E5%9F%BA%E7%A1%80-important.svg" alt="基础"> <img src="https://img.shields.io/badge/-%E7%AE%80%E5%8D%95-sccess.svg" alt="简单"> <img src="https://img.shields.io/badge/-%E5%86%B7%E9%97%A8-9cf.svg" alt="冷门"><br><img src="https://img.shields.io/badge/%E8%A6%81%E6%B1%82-%E7%B2%BE%E9%80%9A-blueviolet.svg" alt="要求精通"> <img src="https://img.shields.io/badge/%E8%A6%81%E6%B1%82-%E7%86%9F%E6%82%89-red.svg" alt="要求熟悉"> <img src="https://img.shields.io/badge/%E8%A6%81%E6%B1%82-%E4%BA%86%E8%A7%A3-important.svg" alt="要求了解">  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[![LICENSE](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;license-Anti%20996-blue.svg)](https:&#x2F;&#x2F;github.com&#x2F;996icu&#x2F;996.ICU&#x2F;blob&#x2F;master&#x2F;LICENSE) [![996.icu](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;link-996.icu-red.svg)](https:&#x2F;&#x2F;996.icu)  </span><br><span class="line">![难点](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;-%E9%9A%BE%E7%82%B9-blueviolet.svg) ![重点](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;-%E9%87%8D%E7%82%B9-red.svg) ![基础](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;-%E5%9F%BA%E7%A1%80-important.svg) ![简单](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;-%E7%AE%80%E5%8D%95-sccess.svg) ![冷门](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;-%E5%86%B7%E9%97%A8-9cf.svg)  </span><br><span class="line">![要求精通](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;%E8%A6%81%E6%B1%82-%E7%B2%BE%E9%80%9A-blueviolet.svg) ![要求熟悉](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;%E8%A6%81%E6%B1%82-%E7%86%9F%E6%82%89-red.svg) ![要求了解](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;%E8%A6%81%E6%B1%82-%E4%BA%86%E8%A7%A3-important.svg)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a href="https://www.teaper.dev/2019/05/26/markdown-format/" target="_blank" rel="noopener">查看本家点击这里</a></p>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>teaper</tag>
+        <tag>markdown</tag>
+        <tag>Typora</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何快速把网页部署到服务器上</title>
+    <url>/2020/01/10/20200110-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8A%8A%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/</url>
+    <content><![CDATA[<p>提示：1.本文章适用于使用Linux系统的服务器（centos7.5）</p>
+<p>2.举例的服务器的提供商为腾讯云</p>
+<p>3.本文使用的软件有 xshell6 和 xftp6（可以去官网下载）</p>
+<p>好了，开始正文吧</p>
+<a id="more"></a>
+
+<p>首先进入你服务器的控制台界面，记下服务器的IP（注意是公网IP）</p>
+<p>然后打开xshell</p>
+<p>这里说一下，xshell 和 xftp 到官网去下载可以选择免费版的，留电子邮件地址就行，下载链接会发到你留的电子邮件里，只不过免费版的有些功能有限制而已</p>
+<hr>
+<p>打开xshell后，点击红圈处<br>主机里面填服务器的公网IP</p>
+<p><img src="https://i0.hdslb.com/bfs/article/d75afcca5bb8e59fe592ee96a071b7807ebb808f.jpg@1320w_1226h.webp" alt="webp"><br>点击左侧的用户身份验证，用户名填root<del>应该都知道吧</del></p>
+<p><img src="https://i0.hdslb.com/bfs/article/watermark/27fcf537d50236284392166ee4dc0b279851c987.png@1320w_1226h.webp" alt="webp"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">密码就是服务器的密码，一般开了服务器都会告诉你</span><br><span class="line">别说什么不知道</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>填写完成后，就可以连接你的服务器了！<br>看到这个就是连接成功了</p>
+<p><img src="https://i0.hdslb.com/bfs/article/14a9de7438e82d50ab0bcf162b7cfdd6071c6ec8.png@1320w_586h.webp" alt="webp"></p>
+<p>然后就可以对服务器进行操作了</p>
+<p>不过要用到另一个软件 —— XFTP</p>
+<p>按<code>ctrl + N</code>新建对话，主机填服务器ip，用户名填root，密码就是服务器密码</p>
+<p><img src="https://i0.hdslb.com/bfs/article/0bf2b54856e93752b390097d655bd2500f195b84.png@1276w_1658h.webp" alt="webp"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">当然其实管理服务器还有种方法，就是使用宝塔面板</span><br><span class="line">这个可以百度搜索的到，界面蛮好的，数据都是图形化</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>出现这个就是连接成功了</p>
+<p>左边是你电脑文件，右边则是你服务器的目录</p>
+<p><img src="https://i0.hdslb.com/bfs/article/06d5faa11aedd5356b101c71d96702f5fd342072.png@1320w_708h.webp" alt="webp">  </p>
+<p>找到服务器目录的html文件夹 <code>路径是 /var/www/html</code></p>
+<p>如果没有的话就创建一个这样的路径（像我就是没有www文件夹，然后创建一个www文件夹再在里面创建html文件夹）</p>
+<p>XFTP可以很方便的创建文件夹，就和在电脑上一样</p>
+<p>然后把你电脑里的网页文件传输到服务器的<code>html</code>文件夹里</p>
+<hr>
+<h3 id="接下来就是传输文件到服务器了"><a href="#接下来就是传输文件到服务器了" class="headerlink" title="接下来就是传输文件到服务器了"></a>接下来就是传输文件到服务器了</h3><p><img src="https://i0.hdslb.com/bfs/article/2e03b99cdf23c15c455fffabce309da58f4b9638.png@1320w_710h.webp" alt="webp">  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">左边的文件全选</span><br><span class="line">然后右键选择传输就行</span><br></pre></td></tr></table></figure>
+
+<p>传输完成后，就可以通过 https:// + 服务器ip 的方式来访问你的网页</p>
+<p>不过这样好像还是不太好，因为不太好记 ，如果你有域名的话，可以通过绑定域名来使用域名访问</p>
+<hr>
+<p>我的是腾讯云买的域名，就拿这个当例子</p>
+<p>打开提供商的界面，选择域名，选择域名解析</p>
+<p>点击添加记录<br><img src="https://i0.hdslb.com/bfs/article/16701789fb94becc39309d26404f562c79c1e02f.png@366w_244h.webp" alt="webp">  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">上面两个记录</span><br><span class="line"></span><br><span class="line">记录类型A，线路类型默认即可，记录值填写你购买的云主机的公网IP，TTL默认</span><br><span class="line"></span><br><span class="line">然后保存</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i0.hdslb.com/bfs/article/7fbd8530de7b4532be7c0bdf8297c90784f66b40.png@1320w_518h.webp" alt="webp"></p>
+<p>然后等待个10分钟左右 <del>启动明日方舟来把剿灭</del></p>
+<p>下面检查看看能不能ping通</p>
+<p>按WIN+R，输入cmd然后回车 <del>别告诉我还有人不知道回车是哪个键</del></p>
+<p>输入<code>ping + 你的域名</code>，然后回车</p>
+<p>如果看到<code>ping</code>成功，而且 <code>IP</code> 和你的服务器 <code>IP</code> 一致（就是黄色涂抹处）</p>
+<p>说明成功了</p>
+<p><img src="https://i0.hdslb.com/bfs/article/2d83d9fc1848e859206a6b57601ea59f372f9375.png@1320w_690h.webp" alt="webp"></p>
+<p>然后你就可以使用域名来访问你的网页了</p>
+<p>直接在浏览器里输入你的域名，然后就可以打开你放上去的网页了，是不是很好？</p>
+<hr>
+<p>其实最开始我是用git把网页文件上传到GitHub，然后用GitHub来发布的。</p>
+<p>不过GitHub那个访问速度真的是慢啊…….，于是就想放到自己服务器上</p>
+<p><strong>呐呐</strong>，其实我网页这些东西没学多久的，基本都是自学来的，算萌萌新了</p>
+<p>如果不嫌弃的话可以看看我的网页  ——&gt; <a href="www.wdnmd233.top">明日方舟主题网页</a> （点击即可）</p>
+<p>拿电脑打开吧，我响应式布局那些还没开始emmmm，手机上那个效果唉。可能有些地方有点错误 <del>好吧是一定会</del> ，这个是早期作品，前面的地方有些可能会有bug</p>
+<p>但是看的效果还是不错的</p>
+<p>不过那个<code>live2d</code>小人有时候不稳定，加载不出来，没看到就算了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">作者：木得睡醒的XM8</span><br><span class="line">链接: https:&#x2F;&#x2F;www.bilibili.com&#x2F;read&#x2F;cv4301760</span><br><span class="line">出处：bilibili</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Webpage</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+        <tag>server</tag>
+        <tag>xshell</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hello,来访者</title>
+    <url>/2020/01/09/20200109-hello-%E6%9D%A5%E8%AE%BF%E8%80%85/</url>
+    <content><![CDATA[<h1 id="你好，来访者"><a href="#你好，来访者" class="headerlink" title="你好，来访者"></a>你好，来访者</h1><p>欢迎来参观我的博客</p>
+<p>这是一篇被顶置的文章，请先阅读它</p>
+<p>它可以让你快速的了解这个博客</p>
+<a id="more"></a>
+
+<p>说实话，这个博客在搭建的时候遇到了很多很多bug</p>
+<p>第一次的时候以为快成了，结果发现路子不对emmm，结果就重新搞了一边 <del>当时真的脑残了</del></p>
+<p>后面的搭建过程也不怎么顺利吧 <del>一度差点想砸电脑来了</del></p>
+<p>各种各样的事情都出过，然后其实最脑残的事情是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git提醒我执行 hexo init 错误</span><br><span class="line"></span><br><span class="line">然后我就很当然的去百度方法</span><br><span class="line"></span><br><span class="line">结果一直没百度出来</span><br><span class="line"></span><br><span class="line">最后还是我仔细看了看报错信息，发现</span><br><span class="line"></span><br><span class="line">这路径不对啊，我这玩意不安装在这里啊</span><br><span class="line"></span><br><span class="line">其实就是我以前把git的移动到别的地方，然后.....电脑不晓得</span><br></pre></td></tr></table></figure>
+
+<p>最后还是重新安装了一边 <strong>git</strong> 解决了</p>
+<p>这算是博客的第一篇文章了，后面会开始慢慢增加</p>
+<p>不过搭建起来确实不容易，遇到了很多问题，不过也知道了很多方法，也算是有收获吧</p>
+<p><font color=#00ffff size=6>也许博客后面要重新搭建，现在只是开发版，奥利给！！！</font></p>
+<p>可能想了想会换一个主题吧</p>
+<p>不过虽然现在是稳定了下来，但是还是有很多地方要修改，可能某天打开的时候会出现一些很迷的东西，那就先关掉吧</p>
+<p>关于我博客的开发进度可以在 <strong>主页</strong> 点击 <code>post</code> ，找到 <code>博客更新日志</code>，我会在那里更新博客的进度。</p>
+<p><font color=red size=4>我对于这方面也是个萌新，很多时候在搭建的过程中，会出现各种各样的 <code>bug</code> 。</font></p>
+<p><font color=yellow size=4>相信来看的人里面有很多人也搭建过自己的博客，对于这些东西早已了解，我也会慢慢的去了解这些来完善自己的博客。不过碍于还有自己的任务要做，可能这个过程会相对缓慢</font></p>
+<p>如果你对我的博客有什么好的建议，可以发送邮件到 <code>983562336@qq.com</code> 反馈给我</p>
+<p>—— <code>END</code> ——</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>hello</tag>
+      </tags>
+  </entry>
+</search>

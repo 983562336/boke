@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/psc.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/psc.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://www.hexoblog.top').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="这个是长期更新的，记录我自己的 python 学习笔记，当然我是刚学没多久的 所以咳咳，没什么特别的地方 python的语法和使用相关">
+<meta property="og:type" content="article">
+<meta property="og:title" content="萌新的python记录">
+<meta property="og:url" content="http://www.hexoblog.top/2020/01/12/20200112-%E8%90%8C%E6%96%B0%E7%9A%84python%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="杨帆的博客">
+<meta property="og:description" content="这个是长期更新的，记录我自己的 python 学习笔记，当然我是刚学没多久的 所以咳咳，没什么特别的地方 python的语法和使用相关">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-12T03:49:35.000Z">
+<meta property="article:modified_time" content="2020-01-14T06:44:06.133Z">
+<meta property="article:author" content="杨帆">
+<meta property="article:tag" content="markdown">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="IDLE">
+<meta property="article:tag" content="pycharm">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://www.hexoblog.top/2020/01/12/20200112-%E8%90%8C%E6%96%B0%E7%9A%84python%E8%AE%B0%E5%BD%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>萌新的python记录 | 杨帆的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+<!-- tianqi -->
+<script type="text/javascript">
+WIDGET = {FID: 'FnE0dHeou8'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">杨帆的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录我的一点一滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-照片">
+
+    <a href="/photos/" rel="section"><i class="fa fa-fw fa-image"></i>照片</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/983562336" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hexoblog.top/2020/01/12/20200112-%E8%90%8C%E6%96%B0%E7%9A%84python%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨帆">
+      <meta itemprop="description" content="每天都在努力学习，希望未来找到好工作！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨帆的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          萌新的python记录
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-12 11:49:35" itemprop="dateCreated datePublished" datetime="2020-01-12T11:49:35+08:00">2020-01-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 14:44:06" itemprop="dateModified" datetime="2020-01-14T14:44:06+08:00">2020-01-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/01/12/20200112-%E8%90%8C%E6%96%B0%E7%9A%84python%E8%AE%B0%E5%BD%95/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/12/20200112-%E8%90%8C%E6%96%B0%E7%9A%84python%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>16k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>14 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这个是长期更新的，记录我自己的 <code>python</code> 学习笔记，当然我是刚学没多久的</p>
+<p>所以咳咳，没什么特别的地方</p>
+<h1 id="python的语法和使用相关"><a href="#python的语法和使用相关" class="headerlink" title="python的语法和使用相关"></a>python的语法和使用相关</h1><a id="more"></a>
+
+<p>先从一个文字游戏来分析吧</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">print(&#39;----------------这是一个文字游戏哈哈哈-----------------&#39;)</span><br><span class="line">temp &#x3D; input(&quot;你来猜下现在我抽到的数字:&quot;)</span><br><span class="line">guess &#x3D; int(temp)</span><br><span class="line">if guess &#x3D;&#x3D; 6:</span><br><span class="line">    print(&quot;wdnmd，你是偷看了把&quot;)</span><br><span class="line">    print(&quot;老实交代&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;哈哈，弄错了，数字是6&quot;)</span><br><span class="line">print(&quot;GAME OVER!&quot;)</span><br></pre></td></tr></table></figure>
+<p>==print：== 作用是把括号里面的内容打印出来</p>
+<p>==input：== 内置函数，把里面的内容打印出来而且把输入值返回给temp</p>
+<p><strong>int</strong>的作用是把<strong>temp</strong>里面的东西变成整型。之后<strong>temp</strong>的值被返回给<strong>guess</strong>，然后比较。<br>代码缩进很重要，因为一起执行的代码要一样的缩进方式，不然不一样的缩进方式会没用的！</p>
+<p>==BIF=Built-in functions== 意思是内置函数</p>
+<p><strong>python</strong>并不是把值存储在变量中，更像是把名字贴在值的上面<br>注意  </p>
+<ul>
+<li>在使用变量前，需要先对其赋值  </li>
+<li>变量名可以是大写或小写，但是大小写是不同的  </li>
+<li>变量名可以包括字母，数字，下划线，但变量名不能以数字开头  </li>
+<li>等号（=）是赋值的意思，左边是名字，右边是值，不能搞反了  </li>
+</ul>
+<p><em>如果要创建字符串，就要在字符两边加上引号，可以是单引号或者双引号，但是必须成对。</em> 如果字符串包含引号的话，可以用转义符号 <code>\</code>来进行。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">例子  </span><br><span class="line"> Let\&#39;s go</span><br></pre></td></tr></table></figure>
+<p>还有个办法是在字符串前面加一个英文字母 <strong>r</strong> 即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str &#x3D; r&#39;C:\now&#39;</span><br></pre></td></tr></table></figure>
+<p>对于长字符串来说，要用三重引号来实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str &#x3D; &#39;&#39;&#39; C\dfdf\gf\hgh &#39;&#39;&#39;</span><br></pre></td></tr></table></figure>
+<p>python比较操作符  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;     左边大于右边</span><br><span class="line">&gt;&#x3D;    左边大于等于右边</span><br><span class="line">&lt;     左边小于右边</span><br><span class="line">&lt;&#x3D;    左边小于等于右边</span><br><span class="line">&#x3D;&#x3D;    左边等于右边</span><br><span class="line">！&#x3D;   左边不等于右边</span><br><span class="line"></span><br><span class="line">关于返回值，返回True意思是真的。返回False意思是假的</span><br></pre></td></tr></table></figure>
+<p>==TAB==是代码缩进的快捷键</p>
+<p><strong>and</strong>操作符，当两边都是结果都是<strong>True</strong>时，输出<strong>True</strong>。如果有一边结果是<strong>False</strong>，那么输出就是<strong>False</strong><br><strong>or</strong>操作符，只要两边有一边为真，就输出<strong>True</strong>，如果两边都是假，那就输出<strong>False</strong><br><strong>not</strong>操作符，输出相反的结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">示例如下</span><br><span class="line">（3&gt;2）and (1&lt;2)    左右两边都是正确的时候</span><br><span class="line"> True</span><br><span class="line"> </span><br><span class="line"> (3&gt;2) and (1&gt;2)    有一边是错误的时候</span><br><span class="line"> False</span><br><span class="line"> &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"> （3&gt;2) or (4&gt;5)    只要有一边正确就输出正确</span><br><span class="line"> True</span><br><span class="line"> &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"> not 0              0表示False，在not的作用下输出了Ture</span><br><span class="line"> True</span><br></pre></td></tr></table></figure>
+
+<p><strong>python的数据类型</strong><br>==Ture==   表示1<br>==False==  表示0</p>
+<p>==int()== 表示转换成整数型<br>==str()== 表示转换成字符串<br>==float()== 表示转换成浮点数</p>
+<p>获得类型信息的方法<br>==type()== 在括号里面输入数据就可以了<br>==isinstance== 使用方法在下面  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; &#39;憨憨&#39;</span><br><span class="line">isinstance(a,str)</span><br><span class="line">True</span><br><span class="line"></span><br><span class="line">a表示你要知道类型的，str则是类型名</span><br><span class="line">如果下面出现的是True的话，表示a就是str类型的数据</span><br></pre></td></tr></table></figure>
+<p><strong>python的运算符</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">大部分运算符和其他语言一样</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 这个除法运算符会把结果变成整型</span><br><span class="line">** 这个运算符的意思是平方，a**3 就是a的3次方</span><br><span class="line"></span><br><span class="line">但是运算可以简化的</span><br><span class="line">比如</span><br><span class="line"></span><br><span class="line">a*3</span><br><span class="line"></span><br><span class="line">可以简化成</span><br><span class="line"></span><br><span class="line">a*&#x3D;3</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">优先级问题，第一个是最高优先级</span><br><span class="line"></span><br><span class="line">幕运算  **</span><br><span class="line"></span><br><span class="line">正负号  +x  -x</span><br><span class="line"></span><br><span class="line">算术操作符  * &#x2F; &#x2F;&#x2F; + -</span><br><span class="line"></span><br><span class="line">比较操作符  &lt;  &lt;&#x3D;  &gt;  &gt;&#x3D;  &#x3D;&#x3D;  !&#x3D;</span><br><span class="line"></span><br><span class="line">逻辑运算符  not  and  or</span><br></pre></td></tr></table></figure>
+
+<p><strong>python的分支和循环</strong></p>
+<p>==elif：== 这相当于C语言里的<strong>else if</strong>，但是注意下这些循环什么的后面要加上<code>:</code>才可以正常使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">例子</span><br><span class="line">判断成绩属于什么层次</span><br><span class="line"></span><br><span class="line">score &#x3D; int(input(&#39;输入成绩&#39;))</span><br><span class="line">if 100 &gt;&#x3D; score &gt;&#x3D; 90:</span><br><span class="line">    print(&#39;A&#39;)</span><br><span class="line">elif 90 &gt; score &gt;&#x3D; 80:        这里的elif就是else if的意思</span><br><span class="line">    print(&#39;B&#39;)</span><br><span class="line">elif 80 &gt; score &gt;&#x3D; 60:  注意if，else等等这些后面要加：才行</span><br><span class="line">    print(&#39;C&#39;)</span><br><span class="line">elif 60 &gt; score &gt;&#x3D; 0:</span><br><span class="line">    print(&#39;D&#39;)</span><br><span class="line">else:</span><br><span class="line">    print(&#39;非法输入&#39;)</span><br></pre></td></tr></table></figure>
+<p><strong>条件表达式（三元操作符）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">用这个可以实现一条语句实现条件判断和赋值操作</span><br><span class="line"></span><br><span class="line">原来</span><br><span class="line">x,y &#x3D; 4,5 </span><br><span class="line">if x &lt; y:       如果x大于y</span><br><span class="line">    small &#x3D; x   把x的值赋给small</span><br><span class="line">else:           如果不是</span><br><span class="line">    small &#x3D; y   把y的值赋给small</span><br><span class="line"></span><br><span class="line">改进后</span><br><span class="line">small &#x3D; x if x &lt; y else y</span><br></pre></td></tr></table></figure>
+
+<p><strong>断言</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>例子<br>assert 3 &gt; 4</p>
+<p>一般来说，当需要确保程序中某个条件一定为真的时候，才能让程序<br>正常工作的话，assert关键字就很有用了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**for**循环</span><br></pre></td></tr></table></figure>
+<p>语法是</p>
+<p>for 目标 in 表达式：<br>    循环体</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**range**语法  </span><br><span class="line">包含&#96;&#96;&#96;range([strat,] stop[, step&#x3D;1])&#96;&#96;&#96;  </span><br><span class="line">- 有三个参数，其中用中括号括起来的表示这两个参数是可选的  。</span><br><span class="line">- &#96;&#96;&#96;step&#x3D;1&#96;&#96;&#96;表示第三个参数的值默认是1 。 </span><br><span class="line">- &#96;&#96;&#96;range&#96;&#96;&#96;的作用是生成一个从**start**参数的值开始到**stop**参数的值结束的数字序列。  </span><br><span class="line">- 当然&#96;&#96;&#96;range&#96;&#96;&#96;里面的数字是可以自己定义范围的，比如&#96;&#96;&#96;range(2,9)&#96;&#96;&#96;就是包含了数字&#96;&#96;&#96;2~8&#96;&#96;&#96;  </span><br><span class="line">- 还有种情况，&#96;&#96;&#96;range(1,10,2)&#96;&#96;&#96;意思是把&#96;&#96;&#96;1~9&#96;&#96;&#96;包含，但是每两个数字之间相隔&#96;&#96;&#96;2&#96;&#96;&#96;，也就是说包含了&#96;&#96;&#96;1,3,5,7,9&#96;&#96;&#96;这些数字</span><br></pre></td></tr></table></figure>
+<p>range(5)</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>range(0,5)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>list(range(5))      &lt;–这样是把它用列表方式打印出来</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>[0，1，2，3，4]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>与for循环的配合</p>
+<p>for i in range(5)<br>    print(i)</p>
+<p>0          &lt;——结果就是这样<br>1          &lt; for循环会把range里的<br>2          &lt; 打印出来<br>3<br>4</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**break 和 continue**  </span><br><span class="line">&#96;&#96;&#96;continue&#96;&#96;&#96;:当条件不成立，退出循环体；条件成立，继续执行。</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;**列表**&#x3D;&#x3D;  </span><br><span class="line">向列表里添加元素的方法是，使用&#96;&#96;&#96;append&#96;&#96;&#96;实现  </span><br><span class="line">比方说向**member数组**里面添加**emm**</span><br></pre></td></tr></table></figure>
+<p>例子<br>member.append(‘emmm’) </p>
+<p>还有<br>len可以获取数组包含的元素个数</p>
+<p>len(member)     括号里填的是数组名字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果要添加多个的话，就要用到&#96;&#96;&#96;extend&#96;&#96;&#96;了  </span><br><span class="line">比如向 *member* 添加两个元素(emmm 和 emm)</span><br></pre></td></tr></table></figure>
+<p>注意添加的时候要用中括号来括起来</p>
+<p>member.extend([‘emmm’,’emm’])</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">假使你要把元素放到数组的指定位置上，就要使用&#96;&#96;&#96;insert&#96;&#96;&#96;了</span><br><span class="line">比如把 first 放到数组第一个去。</span><br></pre></td></tr></table></figure>
+<p>括号里的 0 表示的是放到数组里的位置是第几个<br>‘’ 里面的则是添加的元素</p>
+<p>member.insert(0,’first’)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;**从列表里删除元素**&#x3D;&#x3D;  </span><br><span class="line">使用&#96;&#96;&#96;remove&#96;&#96;&#96;语法实现的</span><br></pre></td></tr></table></figure>
+<p>‘’ 里面就是输入你要删除的元素</p>
+<p>member.remove(‘emm’)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用&#96;&#96;&#96;del&#96;&#96;&#96;语法实现的</span><br></pre></td></tr></table></figure>
+<p>[] 里面的数字是你要删除的元素的位置，就是第几个的意思<br>如果只是执行    del member  那就会删除整个member列表</p>
+<p>del member[1]       &lt;—-示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">还有，使用&#96;&#96;&#96;pop&#96;&#96;&#96;语法可以把列表最后一个元素踢出来</span><br></pre></td></tr></table></figure>
+<p>member.pop()      而且被踢出的元素会显示出来</p>
+<p>因为会显示出来，相当于有返回值，所以可以把踢出来的值<br>赋值给另一个列表</p>
+<p>name = member.pop()  就是把踢出的元素赋给name</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;列表分片&#x3D;&#x3D;  </span><br><span class="line">快速从列表里提取出元素，但是不会改变被提取列表</span><br></pre></td></tr></table></figure>
+<p>中括号里的就是要提取的元素范围</p>
+<p>member[1:3]         &lt;— 提取1到2号元素</p>
+<p>如果是 [:] 的话，那么就是得到一个列表的拷贝，因为这相当于提<br>取第一个到最后一个元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;列表的常用操作符&#x3D;&#x3D;</span><br><span class="line">- 比较操作符</span><br></pre></td></tr></table></figure>
+<p>列表可以通过下面的比较符来进行比较<br>list1 &gt; list2<br>list1 = list2<br>list1 &lt; list2<br>如果正确就是 Ture ，错误就是False</p>
+<p>如果列表里有多个元素的话，拿去比较的是第一个元素<br>list1 = [111,222]<br>list2 = [222,111]<br>list1 &gt; list2       &lt;—比较的是每个列表的第一个元素<br>结果是 False</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 逻辑操作符</span><br></pre></td></tr></table></figure>
+<p>就是 and 这些</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 连接操作符</span><br></pre></td></tr></table></figure>
+<p>有 list1 和 list2 两个列表<br>如果想把两个列表拼接到一起</p>
+<p>list3 = list1 + list2    &lt;— list3就是拼接好的列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 重复操作符</span><br></pre></td></tr></table></figure>
+<p>list3 *=3</p>
+<p>意思是把列表 list3 给复制了三遍<br>如果 list3 = [1,2,3]<br>那么执行上面的命令后就是<br>list3 = [1,2,3,1,2,3,1,2,3]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 成员关系操作符</span><br></pre></td></tr></table></figure>
+<p>11 in list1<br>意思是查询 list1 列表里有没有元素 11 ，如果有返回Ture，没有<br>就返回False</p>
+<p>11 not in list1<br>意思是 11 元素不在列表 list1 里面，正确返回Ture，错误<br>返回False</p>
+<p>但是注意，如果列表里面还包含列表的话，那么上面那个就无效了<br>如果想要的话，就要使用另一个方法</p>
+<p>22 in list1[1]<br>中括号里的数字是第几个列表的意思（从0开始）</p>
+<p>list1[1][1]<br>意思是访问 list1 数组中，第[1]个数组的第[1]个元素，并返回值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 计数  </span><br><span class="line">通过&#96;&#96;&#96;count&#96;&#96;&#96;来实现</span><br></pre></td></tr></table></figure>
+<p>list1.count(123)<br>意思是记录元素 123 在 list1 这个列表里出现了多少次，并返回<br>出现次数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- &#96;&#96;&#96;index&#96;&#96;&#96;用法</span><br></pre></td></tr></table></figure>
+<p>list1.index(123)<br>意思是返回元素 123 在列表 list1 中的位置</p>
+<p>list1.index(123,3,7)<br>意思是寻找第3~7号元素里 123 的位置，并返回<br>如果范围里出现多次 123 ，那么返回的就是第一次出现的位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- &#96;&#96;&#96;reverse&#96;&#96;&#96;用法</span><br></pre></td></tr></table></figure>
+<p>list1.reverse<br>意思是把列表 list1 给反转，通俗的讲就是第一个变倒数第一个<br>倒数第二个变第二个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- &#96;&#96;&#96;sort&#96;&#96;&#96;用法</span><br></pre></td></tr></table></figure>
+<p>list1.sort()<br>意思是把列表 list1 的元素从小到大排序</p>
+<p>list1.sort(reverse=True)<br>意思是把列表 list1 的元素从大到小排序。<br>其实就是把执行 sort() 的结果反转过来了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;元组&#x3D;&#x3D;  </span><br><span class="line">由于和列表是近亲关系，所以元组和列表在实际使用上是非常相似的  </span><br><span class="line">操作符也可以通用</span><br><span class="line">- 创建和访问一个元组  </span><br><span class="line">注意元组的标志性符号是&#96;&#96;&#96;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tuple1 &#x3D; (1,2,3,4)</span><br><span class="line">这样就创建了一个名为 tuple1 的元组</span><br><span class="line"></span><br><span class="line">但是元组是不可以修改的！</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更新一个元组<br>如果要给一个元组里添加元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">temp &#x3D; (&#39;dsad&#39;,&#39;ffa&#39;,222,&#39;dff&#39;)</span><br><span class="line">这是一个元组，现在要向里面添加元素 nmd</span><br><span class="line"></span><br><span class="line">temp &#x3D; temp[:2] + (&#39;nmd&#39;,) + temp[2:]   &lt;---就是这样</span><br><span class="line">里面的 2 是你要添加的位置， nmd 则是添加进去的元素</span><br><span class="line"></span><br><span class="line">原理是把元组 temp 拆成两部分，然后把元素添加进去，然后给</span><br><span class="line">新元组贴上 temp 标签，旧元组被抛弃</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除元组里的元素  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">del temp</span><br><span class="line">意思就是删除名字为 temp 元组</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>==各种奇葩的内置方法（字符串）==  </p>
+<ul>
+<li>如果要查询某个位置的元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">str1 &#x3D; &#39;nmd wsm&#39;    &lt;-- 一个字符串</span><br><span class="line"></span><br><span class="line">str1[ :6]</span><br><span class="line">这样会提取出 0~5 号元素并返回</span><br><span class="line"></span><br><span class="line">str1[5]</span><br><span class="line">这样会把排在第5号的元素返回</span><br></pre></td></tr></table></figure>
+<ul>
+<li>插入元素<br>字符串和元组一样是不能轻易修改的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">str1[ :6] + &#39;插入的字符串&#39; + str1[6: ]</span><br><span class="line">用这个方法来把元素插入到指定的位置</span><br><span class="line"></span><br><span class="line">但是这相当于弄了个新的字符串，原来的那个 str1 的内容还是</span><br><span class="line">没有改变</span><br><span class="line"></span><br><span class="line">str1 &#x3D; str1[ :6] + &#39;插入的字符串&#39; + str1[6: ]</span><br><span class="line">这样子才可以</span><br></pre></td></tr></table></figure></li>
+<li><code>capitalize()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">str2.capitalize()</span><br><span class="line">意思是把 str2 字符串里的第一个字符变成大写</span><br><span class="line"></span><br><span class="line">示例</span><br><span class="line">str2 &#x3D; &#39;xiaoxie&#39;</span><br><span class="line">str2.capitalize()</span><br><span class="line">&gt;&gt;&gt; Xiaoxie      &lt;--- 看，第一个字符变成了大写</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>casefold()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">把整个字符串的所有字符改为小写</span><br><span class="line"></span><br><span class="line">str2 &#x3D; &#39;DAXIE&#39;</span><br><span class="line">str2.casefold()</span><br><span class="line">&gt;&gt;&gt; daxie        &lt;--全部变成小写了</span><br><span class="line"></span><br><span class="line">但是注意这返回的是一个新的字符串，并没有改变 str2 的内容</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>center(width)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">将字符串居中，并使用空格填充至长度 width 的新字符串</span><br><span class="line"></span><br><span class="line">str2.center(40)</span><br><span class="line">&gt;&gt;&gt;&#39;        daxie        &#39;</span><br><span class="line">可以看到字符串被居中了，而且左右两边空的距离为 40</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>count(sub[,start[,end]])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">返回 sub(这个自己选) 在字符串里出现的次数</span><br><span class="line">start 和 end 参数表示统计的范围，可选（如果没有就是整个字</span><br><span class="line">符串里统计）</span><br><span class="line"></span><br><span class="line">str2.count(&#39;xi&#39;)</span><br><span class="line">意思是查找字符 xi 在字符串里出现的次数，并返回</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>endswith(sub[,start[end]])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">检查字符串是不是以 sub(自己定义) 结束，如果是就返回True</span><br><span class="line">不是就返回False</span><br><span class="line">同样 start 和 end 参数表示统计的范围，可选（如果没有就</span><br><span class="line">是整个字符串里统计）</span><br><span class="line"></span><br><span class="line">str2.endswith(&#39;xie&#39;)</span><br><span class="line">&gt;&gt;&gt; True    &lt;-- 如果字符串是以 xie 结尾</span><br><span class="line">&gt;&gt;&gt; False   &lt;-- 如果字符串不是以 xie 结尾</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>expandtabs([tabsize=8])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">把字符串里的 tab 符号(\t)转换成空格，如果不指定参数</span><br><span class="line">默认空格数就是 tabsize&#x3D;8</span><br><span class="line"></span><br><span class="line">str3 &#x3D; &#39;wdnmd\t233\temm&#39;   &lt;-- 创建字符串 str3</span><br><span class="line">str3.expandtabs()          &lt;-- 没有指定参数，所以就是使用默认参数</span><br><span class="line">&gt;&gt;&gt;wdnmd       233       emm    &lt;-- \t 都变成了8个空格</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>find(sub[,start[,end]])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">检查 sub(自己定义) 是不是包含在字符串中，如果有返回索引值</span><br><span class="line">否则返回-1</span><br><span class="line">同样 start 和 end 参数表示统计的范围，可选（如果没有就</span><br><span class="line">是整个字符串里统计）</span><br><span class="line"></span><br><span class="line">str3.find(&#39;nfc&#39;)</span><br><span class="line">&gt;&gt;&gt; -1             &lt;-- 没有找到返回-1</span><br><span class="line">&gt;&gt;&gt; 如果找到就是返回它的位置</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>index(sub[,start[,end]])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">和上面的 find 使用方法一样</span><br><span class="line">唯一的不同在于如果没有找到就会报错</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">下面这些发用法和 find 的使用方法一样</span><br><span class="line"></span><br><span class="line">isalnum()       &lt;-- 如果字符串至少有一个字符并且所有字符都</span><br><span class="line">是字母或数字则返回True，否则返回False</span><br><span class="line"></span><br><span class="line">isalpha()       &lt;-- 如果字符串至少有一个字符并且所有字符都</span><br><span class="line">是字母则返回True，否则返回False</span><br><span class="line"></span><br><span class="line">isdecimal()     &lt;-- 如果字符串只包含十进制数字则返回True，</span><br><span class="line">否则返回False</span><br><span class="line"></span><br><span class="line">isdigit()       &lt;-- 如果字符串只包含数字则返回True，否则</span><br><span class="line">返回False</span><br><span class="line"></span><br><span class="line">islower()       &lt;-- 如果字符串至少包含一个区分大小写的字符</span><br><span class="line">，并且这些字符都是小写，则返回True，否则返回False</span><br><span class="line"></span><br><span class="line">isnumeric()     &lt;-- 如果字符串只包含数字字符，则返回True，</span><br><span class="line">否则返回False</span><br><span class="line"></span><br><span class="line">isspace()       &lt;-- 如果字符串只包含空格，则返回True，否则</span><br><span class="line">返回False</span><br><span class="line"></span><br><span class="line">istitle()       &lt;-- 如果字符串是标题化（所有单词以大写开</span><br><span class="line">始，其余都是小写），则返回True，否则返回False</span><br><span class="line"></span><br><span class="line">isupper()       &lt;-- 如果字符串至少包含一个区分大小写的字符</span><br><span class="line">并且这些字符都是大写，则返回True，否则返回False</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>jojn(sub)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">以字符串为分隔，插入到 sub 中所有的字符之间，并返回</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;emm&#39;          &lt;-- 创建一个字符串</span><br><span class="line">str1.jojn(&#39;1234&#39;)     &lt;-- sub 可以替换成你想插入的字符</span><br><span class="line">&gt;&gt;&gt; 1emm2emm3emm4</span><br><span class="line">结果就是这样</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>ljust(width)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">返回个左对齐的字符串，并用空格填充至长度为 width 的新字符串</span><br><span class="line">用法参考 center(width)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>lower()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">转换字符串中所有大写字符为小写</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>lstrip()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">去掉字符串左边的所有空格并返回</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;    emmm&#39;       &lt;-- 创建字符串</span><br><span class="line">str1.lstrip()</span><br><span class="line">&gt;&gt;&gt; emmm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">rstrip() 这个则是相反的，它是删除字符串末尾的空格</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>partition(sub)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">找到子字符串 sub ，把字符串分成一个3元组(pre_sub,sub,fol_sub)</span><br><span class="line">如果字符串不包含 sub 则返回(&#39;原字符串&#39;,&#39;&#39;,&#39;&#39;)</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;a bign boss&#39;     &lt;-- 创建字符串</span><br><span class="line">str1.partition(&#39;ig&#39;)       &lt;-- 设定为 ig</span><br><span class="line">&gt;&gt;&gt; (&#39;a b&#39;,&#39;ig&#39;,&#39;n boss&#39;)</span><br><span class="line">可以看到字符串被分成了3个元组</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>replace(old,new[,count])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">把字符串中的 old 子字符串替换成 new 子字符串，如果 count 指定，则替换不超过 count 次</span><br><span class="line">count 可以不指定</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;bili old&#39;       &lt;-- 创建字符串</span><br><span class="line">str1.replace(&#39;old&#39;,&#39;new&#39;)</span><br><span class="line">&gt;&gt;&gt; &#39;bili new&#39;</span><br><span class="line">可以发现原来的 old 被替换成了 new</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>rfinf(sub,[,start[,end]])</code> 用法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类似于 find() 的用法，不过是从右边开始查找</span><br></pre></td></tr></table></figure></li>
+<li><code>rindex(sub,[,start[,end]])</code> 用法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类似于 index() 的用法，不过是从右边开始查找</span><br></pre></td></tr></table></figure></li>
+<li><code>rjust(width)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">返回一个右对齐的字符串，并使用空格填充至长度为 width 的新字符串</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpartition(sub)         &lt;-- 类似 partition() 方法，不过是从右边开始查找</span><br><span class="line"></span><br><span class="line">rstrip()        &lt;-- 删除字符串末尾的空格</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>split(sep=None,maxsplit=-1)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">不带参数默认是以空格为分隔符切片字符串，如果 maxsplit 参数有设置，则仅分隔 maxsplit 个子字符串，并返回切片后的子字符串拼接的列表</span><br><span class="line"></span><br><span class="line">如果没参数的情况下</span><br><span class="line">str1 &#x3D; &#39;we are family&#39;      &lt;-- 创建字符串</span><br><span class="line">str1.split()        &lt;-- 没有设置参数</span><br><span class="line">&gt;&gt;&gt; [&#39;we&#39;,&#39;are&#39;,&#39;family&#39;]</span><br><span class="line">发现它以空格为标识来切片</span><br><span class="line"></span><br><span class="line">如果有参数的情况下</span><br><span class="line">str1 &#x3D; &#39;i love fishc&#39;       &lt;-- 创建字符串</span><br><span class="line">str1.split(&#39;i&#39;)     &lt;-- 设置参数为 i</span><br><span class="line">&gt;&gt;&gt; [&#39;&#39;,&#39; love f&#39;,&#39;shc&#39;]</span><br><span class="line">可以看到以 i 为标识来切片，而 i 则是被切没了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>splitlines(([keepends]))</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">按照 &#39;\n&#39; 分隔，返回一个包含各行作为元素的列表，如果 keepends 参数指定，则返回前 keepends 行</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>startswith(prefix[,start[,end]])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">检查字符串是否以 prefix 开头，是则返回True，否则返回False</span><br><span class="line"></span><br><span class="line">使用方法以及注意事项和上面的 endswith(sub[,start[,end]])  一样</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>strip([chars])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">删除字符串前边和后边所有的空格并返回， chars 参数可以指定范围（可选）</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;       ssaass       &#39;      &lt;-- 创建字符串</span><br><span class="line">str1.strip()        &lt;-- 不指定参数</span><br><span class="line">&gt;&gt;&gt; &#39;ssaass&#39;</span><br><span class="line">可以发现字符两边的空格被删除了</span><br><span class="line"></span><br><span class="line">str1.strip(&#39;s&#39;)     &lt;-- 指定参数 s 字符</span><br><span class="line">&gt;&gt;&gt; &#39;aa&#39;</span><br><span class="line">发现两边的 s 字符都被删除了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>swapcase()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">翻转字符串中的大小写并返回</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;Add&#39;        &lt;-- 创建字符串</span><br><span class="line">str1.swapcase()</span><br><span class="line">&gt;&gt;&gt; &#39;aDD&#39;</span><br><span class="line">可以看到大小写被翻转了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>title()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">返回标题化（所有的单词都是以大写开始，其余字母均小写）的字符串</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;lAST&#39;       &lt;-- 创建字符串</span><br><span class="line">str1.title()</span><br><span class="line">&gt;&gt;&gt; &#39;Last&#39;</span><br><span class="line">可以看到除了首字母大写外，其他的都变成小写了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>translat(table)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">根据 table 的规则(可以由 str.maketrans(&#39;a&#39;,&#39;b&#39;)定制)转换字符串中的字符</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;sssssaaaassss&#39;      &lt;-- 创建字符串</span><br><span class="line">str1.translate(str.maketrans(&#39;s&#39;,&#39;b&#39;))      &lt;-- 把所有 s 字符变成 b 字符</span><br><span class="line">&gt;&gt;&gt; &#39;bbbbbaaaabbbb&#39;</span><br><span class="line">可以看到字符 s 都变成了字符 b</span><br><span class="line"></span><br><span class="line">str.maketrans(&#39;s&#39;,&#39;b&#39;)      &lt;-- 如果只这样输入</span><br><span class="line">&#123;115:98&#125;        &lt;-- 就会返回 s 和 b 的ASCII编码</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>upper()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">转换字符串中的所有小写字符为大写</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;last&#39;       &lt;-- 创建字符串</span><br><span class="line">str1.upper()</span><br><span class="line">&gt;&gt;&gt; &#39;LAST&#39;</span><br><span class="line">可以看到都变成了大写</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>zfill(width)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">返回长度为 width 的字符串，原字符串右对齐，前边用0填充</span><br><span class="line"></span><br><span class="line">str1 &#x3D; &#39;last&#39;</span><br><span class="line">str1.zfill(10)      &lt;-- width 参数指定为10</span><br><span class="line">&gt;&gt;&gt; &#39;000000last&#39;</span><br><span class="line">可以看到返回了长度10的字符串，前面用0来填充</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#39;&#123;0&#125; love &#123;1&#125;.&#123;2&#125;&#39;.format(&#39;I&#39;,&#39;Fishc&#39;,&#39;com&#39;)</span><br><span class="line">&gt;&gt;&gt; &#39;I love Fishc.com&#39;</span><br><span class="line">可以看到 format 后面的字符被插入进去了。依照 &#123;&#125; 里面的数字编号</span><br><span class="line"></span><br><span class="line">除此之外还有一种方法，用字母来代替数字</span><br><span class="line">&#39;&#123;a&#125; love &#123;b&#125;.&#123;c&#125;&#39;.format(a&#x3D;&#39;I&#39;,b&#x3D;&#39;Fishc&#39;,c&#x3D;&#39;com&#39;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#39;&#123;0:.1f&#125;&#123;1&#125;&#39;.format(27.658,&#39;GB&#39;)</span><br><span class="line">&gt;&gt;&gt; &#39;27.7GB&#39;</span><br><span class="line">其中的 :.1f 意思是四舍五入保留一位小数并打印，所以 27.658 就变成了 27.7</span><br></pre></td></tr></table></figure>
+<p><strong>字符串格式化符号含义</strong></p>
+<ul>
+<li><code>%c</code> 用法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">格式化字符及其ASCII码</span><br><span class="line"></span><br><span class="line">&#39;%c&#39; % 97       &lt;-- 对 97 使用该符号</span><br><span class="line">&gt;&gt;&gt; &#39;a&#39;</span><br><span class="line">可以看到 97 变成了其在 ASCII 里面对应的字符</span><br><span class="line"></span><br><span class="line">如果对进行多次操作，最好用 () 括起来</span><br><span class="line">&#39;%c %c %c&#39; % (97,98,99)</span><br><span class="line">&gt;&gt;&gt; &#39;a b c&#39;</span><br></pre></td></tr></table></figure></li>
+<li><code>%s</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">格式化字符串</span><br><span class="line"></span><br><span class="line">&#39;%s&#39; % &#39;I love Fishc.com&#39;</span><br><span class="line">&gt;&gt;&gt; &#39;I love Fishc.com&#39;</span><br><span class="line">相当于通过这个把字符串合并进去</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%d</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">格式化整数</span><br><span class="line"></span><br><span class="line">&#39;%d + %d &#x3D; %d&#39; % (4 , 5, 4+5)</span><br><span class="line">&gt;&gt;&gt; &#39;4 + 5 &#x3D; 9&#39;</span><br><span class="line">相当于把括号里的数字打印出来</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%o</code>用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">格式化无符号八进制数</span><br><span class="line"></span><br><span class="line">&#39;%o&#39; % 10</span><br><span class="line">&gt;&gt;&gt; &#39;12&#39;</span><br><span class="line">可以看到把 10 变成了八进制数字 12 并返回</span><br><span class="line"></span><br><span class="line">扩展</span><br><span class="line">%x      格式化无符号十六进制数</span><br><span class="line">%X      格式化无符号十六进制数(大写)    &lt;-- 因为十六进制数包含英文字母，这个意思是把字母都变成大写</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%f</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">格式化定点数，可指定小数点后精度</span><br><span class="line"></span><br><span class="line">&#39;%f&#39; % 27.658</span><br><span class="line">&gt;&gt;&gt; &#39;27.658000&#39;</span><br><span class="line">因为 %f 默认是6位。所以位数不够会用 0 补齐</span><br><span class="line"></span><br><span class="line">&#39;%.1f&#39; % 27.658     &lt;-- .1表示留一位，数字可以自定义</span><br><span class="line">&gt;&gt;&gt; &#39;27.7&#39;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%e</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">用科学计数法格式化定点数</span><br><span class="line"></span><br><span class="line">&#39;%e&#39; % 27.658</span><br><span class="line">&gt;&gt;&gt; &#39;2.765800E+01&#39;      &lt;-- 返回值用科学计数法表示了</span><br><span class="line">E+01 表示的意思是 10 的一次方</span><br><span class="line"></span><br><span class="line">还有种表示方式是 &#39;%E&#39;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%g</code> 和 <code>%G</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">其实这两个一样的</span><br><span class="line">根据值的大小决定使用 %f 或 %e</span><br><span class="line"></span><br><span class="line">&#39;%g&#39; % 27.658</span><br><span class="line">&gt;&gt;&gt; &#39;27.658&#39;</span><br></pre></td></tr></table></figure>
+<p><strong>格式化操作符辅助命令</strong></p>
+<ul>
+<li><code>m.n</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">m 是显示的最小总宽度，n 是小数点后的位数</span><br><span class="line"></span><br><span class="line">&#39;%5.1f&#39; % 27.658        &lt;-- m 被指定位5，n 被指定为1</span><br><span class="line">&gt;&gt;&gt; &#39; 27.7&#39;</span><br><span class="line">5 是表示整个字符串宽度为5，而 1 则是表示小数点后只有一位数</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>-</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">用于左对齐</span><br><span class="line"></span><br><span class="line">&#39;%-10d&#39; % 5</span><br><span class="line">&gt;&gt;&gt; &#39;5         &#39;</span><br><span class="line">可以看到 5 被左对齐了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>+</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在正数前面显示加号。如果是个负数则原样输出</span><br><span class="line"></span><br><span class="line">&#39;%+d&#39; % 5</span><br><span class="line">&gt;&gt;&gt; &#39;+5&#39;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>#</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在八进制数前面显示零(&#39; 0&#39;)，在十六进制数前面显示 &#39; ox&#39; 或者 &#39; OX&#39;</span><br><span class="line"></span><br><span class="line">&#39;%#o&#39; % 10</span><br><span class="line">&gt;&gt;&gt; &#39;0o12&#39;      &lt;-- 0o 表示它是八进制数 12</span><br><span class="line"></span><br><span class="line">&#39;%#X&#39; % 108</span><br><span class="line">&#39;0X6C&#39;      &lt;-- 0X 表示它是十六进制数 6C</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>0</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">显示的数字前面填充 &#39;0&#39; 取代空格</span><br><span class="line"></span><br><span class="line">&#39;%010d&#39; % 5     &lt;-- 10 的意思是填充10个0</span><br><span class="line">&gt;&gt;&gt; &#39;0000000005&#39;</span><br><span class="line">可以看到前面被填充了10个0</span><br><span class="line"></span><br><span class="line">&#39;%-010d&#39; % 5        &lt;-- 如果多加一个 - 符号</span><br><span class="line">&gt;&gt;&gt; &#39;5         &#39;</span><br><span class="line">发现改成后面填充空格了</span><br></pre></td></tr></table></figure>
+<p><strong>字符串转义字符含义</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">\&#39;      单引号</span><br><span class="line"></span><br><span class="line">\&quot;      双引号</span><br><span class="line"></span><br><span class="line">\a      发出系统响声(实际并不会)</span><br><span class="line"></span><br><span class="line">\b      退格符</span><br><span class="line"></span><br><span class="line">\n      换行符</span><br><span class="line"></span><br><span class="line">\t      横向制表符(TAB)</span><br><span class="line"></span><br><span class="line">\v      纵向制表符</span><br><span class="line"></span><br><span class="line">\r      回车符</span><br><span class="line"></span><br><span class="line">\f      换页符</span><br><span class="line"></span><br><span class="line">\o      八进制数代表的字符</span><br><span class="line"></span><br><span class="line">\x      十六进制数代表的字符</span><br><span class="line"></span><br><span class="line">\0      表示一个空字符</span><br><span class="line"></span><br><span class="line">\\      反斜杠</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">列表、元组和字符串的共同点</span><br><span class="line"></span><br><span class="line">-- 都可以通过索引得到每一个元素</span><br><span class="line"></span><br><span class="line">-- 默认索引值总是从0开始</span><br><span class="line"></span><br><span class="line">-- 可以通过分片的方法得到一个范围内的元素的集合</span><br><span class="line"></span><br><span class="line">-- 有很多共同的操作符(重复操作符、拼接操作符、成员关系操作符)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>list()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">把一个对象转换成列表</span><br><span class="line"></span><br><span class="line">a &#x3D; list()      &lt;-- 如果不带参数</span><br><span class="line">&gt;&gt;&gt; []</span><br><span class="line">就是一个空列表</span><br><span class="line"></span><br><span class="line">a &#x3D; &#39;add big boss&#39;      &lt;-- 给 a 添加元素</span><br><span class="line">a &#x3D; list(a)     &lt;-- 参数选择为 a</span><br><span class="line">&gt;&gt;&gt; [&#39;a&#39;, &#39;d&#39;, &#39;d&#39;, &#39; &#39;, &#39;b&#39;, &#39;i&#39;, &#39;g&#39;, &#39; &#39;, &#39;b&#39;, &#39;o&#39;, &#39;s&#39;, &#39;s&#39;]</span><br><span class="line">字符串 a 通过 list 变成了一个每个字符单独出来的列表</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>tuple([iterable])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">把一个对象转换成元组</span><br><span class="line">使用方法和 list 一样</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>str(ojb)</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">把 ojb 对象转换为字符串</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>max()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">返回序列或者参数集合中的最大值</span><br><span class="line"></span><br><span class="line">numbers &#x3D; [1,18,13,0,-98,34,54,76,32]</span><br><span class="line">max(number)</span><br><span class="line">&gt;&gt;&gt; 76</span><br><span class="line">返回了 numbers 里面最大的数值</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>min()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">返回序列或者参数集合中的最小值</span><br><span class="line">使用方法和 max() 一样</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>sum(iterable[,start=0])</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">返回序列 iterable 和可选参数 start 的总和</span><br><span class="line"></span><br><span class="line">tuple &#x3D; (3.1,2.3,3.4)</span><br><span class="line">sum(tuple)</span><br><span class="line">&gt;&gt;&gt; 8.8</span><br><span class="line">把 tuple 里面的数值总和返回</span><br><span class="line"></span><br><span class="line">a &#x3D; (1,2,3,4)</span><br><span class="line">sum(a,10)       &lt;-- 如果添加</span><br><span class="line">&gt;&gt;&gt; 20</span><br><span class="line">那么就会在原 a 的总和(10)后再加上 10，返回值</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>sorted()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">把参数从小到大排序并返回</span><br><span class="line"></span><br><span class="line">a &#x3D; [23,3423,123,445,632,452,35]</span><br><span class="line">sorted(a)</span><br><span class="line">&gt;&gt;&gt; [23, 35, 123, 445, 452, 632, 3423]</span><br><span class="line">a 里面的参数被从小到大排序了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>reversed()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; [23,3423,123,445,632,452,35]</span><br><span class="line">reversed(a)</span><br><span class="line">&gt;&gt;&gt; &lt;list_reverseiterator object at 0x0000029322767A00&gt;</span><br><span class="line">返回了迭代器对象</span><br><span class="line"></span><br><span class="line">list(reversed(a))       &lt;-- 用这个可以逆转回来</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>enumerate()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; [23,3423,123,445,632,452,35]</span><br><span class="line">enumerate(a)</span><br><span class="line">&lt;enumerate object at 0x0000029322769080&gt;</span><br><span class="line"></span><br><span class="line">list(enumerate(a))      &lt;-- 使用逆操作</span><br><span class="line">&gt;&gt;&gt; [(0, 23), (1, 3423), (2, 123), (3, 445), (4, 632), (5, 452), (6, 35)</span><br><span class="line">发现每一个元素都变成了元组，并且前面都有索引值</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>zip()</code> 用法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">返回由各个参数的序列组成的元组</span><br><span class="line"></span><br><span class="line">a &#x3D; [1,2,3,4,5,6,7,8]</span><br><span class="line">b &#x3D; [4,5,6,7,8]</span><br><span class="line">zip(a,b)</span><br><span class="line">&gt;&gt;&gt; &lt;zip object at 0x0000029322769080&gt;</span><br><span class="line"></span><br><span class="line">list(zip(a,b))      &lt;-- 使用逆操作</span><br><span class="line">&gt;&gt;&gt; [(1, 4), (2, 5), (3, 6), (4, 7), (5, 8)]</span><br><span class="line">发现 a 和 b 合在一起了，每两两元素组成一个元组，但是这是成对存在的，所以多出的部分被省略了</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="函数：python的乐高积木"><a href="#函数：python的乐高积木" class="headerlink" title="函数：python的乐高积木"></a>函数：python的乐高积木</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def MyFirstFunction():</span><br><span class="line">	print(&#39;这是我创建的第一个函数！&#39;)</span><br><span class="line">	print(&#39;我表示很激动&#39;)</span><br><span class="line">	</span><br><span class="line">def 就是定义了一个函数，而 ：后面则是函数的执行体</span><br><span class="line"></span><br><span class="line">如何调用一个函数</span><br><span class="line">MyFirstFunction()               &lt;-- 直接输入函数名字</span><br><span class="line">&gt;&gt;&gt; 这是我创建的第一个函数！</span><br><span class="line">    我表示很激动</span><br><span class="line">这样就是调用了这个函数</span><br><span class="line"></span><br><span class="line">其实实现的原理就是 def 定义了一个叫 MyFirstFunction() 的函数，然后调用这个函数的话就会执行这个函数里面的内容</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">同时可以给函数一个参数</span><br><span class="line">def MyFirstFunction(name):      &lt;-- 给了一个参数 name</span><br><span class="line">print(name + &#39;表示很激动&#39;)</span><br><span class="line">但是注意这里是不能直接调用的，因为需要一个参数</span><br><span class="line"></span><br><span class="line">MyFirstFunction(&#39;你爸爸&#39;)       &lt;-- 调用的时候给一个参数 &#39;你爸爸&#39;</span><br><span class="line">&gt;&gt;&gt; 你爸爸表示很激动</span><br><span class="line">这才是正确的调用方法</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">如果是多个参数</span><br><span class="line"></span><br><span class="line">def add(num1,num2):</span><br><span class="line">	result &#x3D; num1 + num2        &lt;-- result 的值等于 num1 + num2</span><br><span class="line">	print(result)</span><br><span class="line">add(1,2)        &lt;-- 调用函数 add ，参数给定 1 和 2</span><br><span class="line">&gt;&gt;&gt; 3</span><br></pre></td></tr></table></figure>
+<p><strong>函数的返回值</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">使用 return </span><br><span class="line"></span><br><span class="line">def add(num1,num2):</span><br><span class="line">	return (num1 + num2)        &lt;-- 使用 return 返回 num1 + num2 的值</span><br><span class="line">print(add(5,6))                 &lt;-- 给定参数 5 和 6，并打印结果</span><br><span class="line">&gt;&gt;&gt; 11</span><br></pre></td></tr></table></figure>
+<p><strong>收集参数</strong> <code>*</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">收集参数是使用 * 来定义的</span><br><span class="line"></span><br><span class="line"> def test(*pa):     &lt;- * 就是收集参数</span><br><span class="line">	print(&#39;参数的长度是：&#39;,len(pa));</span><br><span class="line">	print(&#39;第二个参数是：&#39;,pa[1]);</span><br><span class="line">	</span><br><span class="line"> test(1,&#39;apk&#39;,222,3.33,2,3,4,5,6)</span><br><span class="line">&gt;&gt;&gt; 参数的长度是： 9</span><br><span class="line">&gt;&gt;&gt; 第二个参数是： apk</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/markdown/" rel="tag"><i class="fa fa-tag"></i> markdown</a>
+              <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+              <a href="/tags/IDLE/" rel="tag"><i class="fa fa-tag"></i> IDLE</a>
+              <a href="/tags/pycharm/" rel="tag"><i class="fa fa-tag"></i> pycharm</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/12/20200112-%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%87%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" rel="prev" title="博客样式显示不出的解决办法">
+      <i class="fa fa-chevron-left"></i> 博客样式显示不出的解决办法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/12/20200112-%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" rel="next" title="博客的更新日志">
+      博客的更新日志 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python的语法和使用相关"><span class="nav-number">1.</span> <span class="nav-text">python的语法和使用相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化"><span class="nav-number">1.0.1.</span> <span class="nav-text">格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序列"><span class="nav-number">1.0.2.</span> <span class="nav-text">序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数：python的乐高积木"><span class="nav-number">1.0.3.</span> <span class="nav-text">函数：python的乐高积木</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="杨帆"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">杨帆</p>
+  <div class="site-description" itemprop="description">每天都在努力学习，希望未来找到好工作！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/983562336" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;983562336" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/983562336@qq.com" title="E-Mail → 983562336@qq.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/6971647196/profile?topnav=1&wvr=6&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;6971647196&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">火星备案局  编号20200113号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">杨帆</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">41k</span>
+</div>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'hPBQEVeNShPwgYffzbrNpHug-gzGzoHsz',
+      appKey: 'pjj3E8i6eVqtnI5WVP2TssoU',
+      placeholder: "把你的疑问写下来吧！留下电子邮箱可以收到我的回复哦",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+  </pre>
+
+<link rel="stylesheet" href="/live2d/css/live2d.css" />
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://www.hexoblog.top'  //此处修改为你的域名
+</script>
+
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/tia/model.json");  //此处为你是用的模型文件，可以修改
+</script>
+
+<script type="text/javascript" src="/js/src/dynamic-title.js" ></script>
+
+</body>
+</html>

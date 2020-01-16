@@ -1,6 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>aliplayer实现文章里插入视频</title>
+    <url>/2020/01/16/aliplayer%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E9%87%8C%E6%8F%92%E5%85%A5%E8%A7%86%E9%A2%91/</url>
+    <content><![CDATA[<p>添加文章 播放视频的主要原因是因为</p>
+<p>如果想分享一个视频的话，直接发链接，估计很少有人会去看的</p>
+<p>但如果放在文章页直接可以播放的话就不一样了…</p>
+<a id="more"></a>
+
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>找到 <code>hexo</code> 根目录的 <code>themes</code> 文件夹，然后打开 <code>next</code> 文件夹</p>
+<p>然后进入 <code>\layout\_partials\head</code> 这个文件夹，找到 <code>head.swig</code>这个文件</p>
+<p>打开文件</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>在 <code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code> 下面添加代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https:&#x2F;&#x2F;g.alicdn.com&#x2F;de&#x2F;prismplayer&#x2F;2.8.7&#x2F;skins&#x2F;default&#x2F;aliplayer-min.css&quot; &#x2F;&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; charset&#x3D;&quot;utf-8&quot; src&#x3D;&quot;https:&#x2F;&#x2F;g.alicdn.com&#x2F;de&#x2F;prismplayer&#x2F;2.8.7&#x2F;aliplayer-min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>保存并退出</p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>新建一篇文章 或者使用 <code>hexo new 文章名字</code> 来新建</p>
+<p>当然这是一个 <code>md</code> 文件</p>
+<h3 id="写入"><a href="#写入" class="headerlink" title="写入"></a>写入</h3><p>在里面添加 <code>html</code> 标签并写入代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;player&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var player &#x3D; new Aliplayer(&#123;</span><br><span class="line">  &quot;id&quot;: &quot;player&quot;,</span><br><span class="line">  &quot;source&quot;: &quot;视频地址(绝对地址)&quot;,</span><br><span class="line">  &quot;width&quot;: &quot;100%&quot;,</span><br><span class="line">  &quot;height&quot;: &quot;500px&quot;,</span><br><span class="line">  &quot;autoplay&quot;: true,</span><br><span class="line">  &quot;isLive&quot;: false,</span><br><span class="line">  &quot;rePlay&quot;: false,</span><br><span class="line">  &quot;playsinline&quot;: true,</span><br><span class="line">  &quot;preload&quot;: true,</span><br><span class="line">  &quot;controlBarVisibility&quot;: &quot;hover&quot;,</span><br><span class="line">  &quot;useH5Prism&quot;: true</span><br><span class="line">&#125;, function (player) &#123;</span><br><span class="line">    console.log(&quot;The player is created&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>然后保存退出就完事了</p>
+<h3 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h3><div id="player"></div>
+<script>
+var player = new Aliplayer({
+  "id": "player",
+  "source": "https://img-chucun-1259696352.cos.ap-chengdu.myqcloud.com/%E6%95%99%E7%A8%8B/next%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E7%BB%84%E4%BB%B6/next%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E7%BB%84%E4%BB%B6.mp4",
+  "width": "100%",
+  "height": "500px",
+  "autoplay": true,
+  "isLive": false,
+  "rePlay": false,
+  "playsinline": true,
+  "preload": true,
+  "controlBarVisibility": "hover",
+  "useH5Prism": true
+}, function (player) {
+    console.log("The player is created");
+  }
+);
+</script>
+
+
+<h3 id="尾巴"><a href="#尾巴" class="headerlink" title="尾巴"></a>尾巴</h3><p>本</p>
+<p>方</p>
+<p>法</p>
+<p>来源于 <code>XLJ</code> 的博客，<a href="http://www.xlj0.com/2020/01/16/next-player/" target="_blank" rel="noopener">点此查看原博文</a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>boke</tag>
+        <tag>aliplayer</tag>
+        <tag>h5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>撞墙式吊机，汉诺螺旋，落叶飘</title>
+    <url>/2020/01/16/%E6%92%9E%E5%A2%99%E5%BC%8F%E5%90%8A%E6%9C%BA%EF%BC%8C%E6%B1%89%E8%AF%BA%E8%9E%BA%E6%97%8B%EF%BC%8C%E8%90%BD%E5%8F%B6%E9%A3%98/</url>
+    <content><![CDATA[<p>看到这个有没有感觉很炫？</p>
+<p>这些动作行云流水，一气呵成，说明操作者的技术十分的深厚</p>
+<a id="more"></a>
+
+<p>视频里那架航模的操作者就是 <strong>鸿鹄航模队</strong> 的队长，技术力相当的好</p>
+<p>我见过很多次了，而且前不久他还搞了一架 <code>F22</code> 的涵道机来飞</p>
+<p>不过首飞的时候我不在校了，只能看视频了。</p>
+<p>虽然视频清晰度不是很好，但是也不影响观看了</p>
+<p>如果对此感兴趣的，而且你恰好在南昌的话(青山湖区)，欢迎同好来南昌理工学院一起玩</p>
+<p><em>交流交流</em></p>
+<div id="player"></div>
+<script>
+var player = new Aliplayer({
+  "id": "player",
+  "source": "http://tb-video.bdstatic.com/tieba-smallvideo-transcode-crf/9970257_67db19b7af24b9496d65429f9dd18cc3_0.mp4",
+  "width": "100%",
+  "height": "500px",
+  "autoplay": true,
+  "isLive": false,
+  "rePlay": false,
+  "playsinline": true,
+  "preload": true,
+  "controlBarVisibility": "hover",
+  "useH5Prism": true
+}, function (player) {
+    console.log("The player is created");
+  }
+);
+</script>
+
+<p>如果视频出现无法播放的原因，<a href="http://tieba.baidu.com/p/6424953968?pid=129170806911&cid=#129170806911" target="_blank" rel="noopener">请点击这里查看视频</a></p>
+]]></content>
+      <categories>
+        <category>航空航天</category>
+      </categories>
+      <tags>
+        <tag>航模</tag>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于工具和知识管理</title>
     <url>/2020/01/16/%E5%85%B3%E4%BA%8E%E5%B7%A5%E5%85%B7%E5%92%8C%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<p>如果你也是计算机专业的话，相信对于一些开发工具都有了解</p>
@@ -176,7 +273,11 @@
 
 <h3 id="2020-1-14"><a href="#2020-1-14" class="headerlink" title="2020.1.14"></a>2020.1.14</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">博客增加鼠标点击特效</span><br><span class="line"></span><br><span class="line">大幅度修改主题样式</span><br><span class="line"></span><br><span class="line">增加音乐播放器(就是博客最上面那个)</span><br><span class="line"></span><br><span class="line">增加备案号</span><br><span class="line"></span><br><span class="line">修复一些 bug</span><br><span class="line"></span><br><span class="line">增加文章字数统计和阅读时间估计，修改文章样式</span><br><span class="line"></span><br><span class="line">博客迁移到 GitHub （因为coding受国家政策影响）</span><br></pre></td></tr></table></figure>
 
-<h3 id="2020-1-15"><a href="#2020-1-15" class="headerlink" title="2020.1.15"></a>2020.1.15</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">图标更换为 iconfont 提供的第三方图标</span><br><span class="line"></span><br><span class="line">增加博客底部网站运行时间</span><br><span class="line"></span><br><span class="line">接入统计代码</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="2020-1-15"><a href="#2020-1-15" class="headerlink" title="2020.1.15"></a>2020.1.15</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">图标更换为 iconfont 提供的第三方图标</span><br><span class="line"></span><br><span class="line">增加博客底部网站运行时间</span><br><span class="line"></span><br><span class="line">接入统计代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="2012-1-16"><a href="#2012-1-16" class="headerlink" title="2012.1.16"></a>2012.1.16</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">博客搬迁到码云发布，然后又搬到coding发布，启动备用域名</span><br><span class="line"></span><br><span class="line">修改音乐播放器，使其和网易云歌单同步，不会再出现音频错误了</span><br><span class="line"></span><br><span class="line">live2d小人的聊天框正常显示</span><br><span class="line"></span><br><span class="line">修复部分样式加载不出</span><br><span class="line"></span><br><span class="line">增加视频播放器</span><br><span class="line"></span><br><span class="line">音乐播放器的改进感谢 弥枳 ，在侧边栏的好朋友中有他的博客地址，大家去看看吧</span><br></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
         <category>blog</category>
       </categories>
@@ -902,8 +1003,8 @@
       </categories>
       <tags>
         <tag>bilibili</tag>
-        <tag>git</tag>
         <tag>linux</tag>
+        <tag>git</tag>
         <tag>12306</tag>
       </tags>
   </entry>
@@ -1085,10 +1186,10 @@
         <category>Webpage</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>html</tag>
         <tag>server</tag>
         <tag>xshell</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1101,7 +1202,7 @@
 
 <h3 id="快速开始-帮助你快速了解"><a href="#快速开始-帮助你快速了解" class="headerlink" title="快速开始(帮助你快速了解)"></a>快速开始(帮助你快速了解)</h3><ol>
 <li>主页侧边栏里放的是各个分区，可以随意点击查看，如果你想了解作者了相关信息，请点击 <code>关于</code> 来查看</li>
-<li>如果想知道博客的开发进度和相关功能，请查看文章 <code>博客更新日志</code> 或者 <a href="https://www.hexoblog.top/2020/01/12/20200112-%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/#more" target="_blank" rel="noopener">点击这里快速查看日志</a></li>
+<li>如果想知道博客的开发进度和相关功能，请查看文章 <code>博客更新日志</code> 或者 <a href="https://www.hexoblog.top/2020/01/12/20200112-%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/#more" target="_blank" rel="noopener">点击这里快速查看日志</a> （如果点击，没反应，请手动点开文章 <strong>博客更新日志</strong>）</li>
 <li>侧边栏的好朋友里是友链，相当于互相关注吧，点击就可以访问他们的博客<br>你也可以在评论区留下友链</li>
 <li>评论的使用方式很简单，而且它支持 <code>markdown</code> 语法，评论的时候可以编辑你的名称<br>如果想收到回复的话，可以填写你的邮箱再相关区域</li>
 <li>博客的顶部是音乐播放器，在查看文章时它会自动播放音乐，当然也可以手动，怎么用相信大家都会<br>可能有时候选择音乐会出现无法播放的原因，那是因为外链没用了，这个没办法<br>只能等换新的。至于为什么放最上面，因为左右下角都没有可用空间</li>

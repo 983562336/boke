@@ -643,9 +643,9 @@
         <category>hexo</category>
       </categories>
       <tags>
+        <tag>git</tag>
         <tag>coding</tag>
         <tag>github</tag>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -901,10 +901,10 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>bilibili</tag>
-        <tag>git</tag>
+        <tag>linux</tag>
         <tag>12306</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1007,8 +1007,8 @@
         <category>markdown</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>teaper</tag>
+        <tag>markdown</tag>
         <tag>Typora</tag>
       </tags>
   </entry>
@@ -1131,9 +1131,9 @@
         <category>hexo</category>
       </categories>
       <tags>
+        <tag>markdown</tag>
         <tag>hexo</tag>
         <tag>hello</tag>
-        <tag>markdown</tag>
       </tags>
   </entry>
 </search>

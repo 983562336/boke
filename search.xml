@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>关于工具和知识管理</title>
+    <url>/2020/01/16/%E5%85%B3%E4%BA%8E%E5%B7%A5%E5%85%B7%E5%92%8C%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<p>如果你也是计算机专业的话，相信对于一些开发工具都有了解</p>
+<p>而且学习了相关知识，自然也需要把一些重要的东西记录下来</p>
+<p>总结一年来学习的各种知识点，年初目标完成了多少，明年又要计划做什么？期间可能要翻翻自己的笔记、代码</p>
+<p>这里说一下我使用的吧！</p>
+<a id="more"></a>
+
+<h3 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h3><h4 id="python"><a href="#python" class="headerlink" title="python"></a>python</h4><p>看过侧边栏的关于的内容的都知道，我也学 <code>python</code> 的吧 <del>虽然也是新手</del></p>
+<p>如果说搞这个有什么好工具的话，嗯~</p>
+<p>最开始了解的应该是 <font color=red><code>IDLE</code> </font></p>
+<p>这个是下载 <code>python</code> 后自带的一个东西，初期使用还可以，界面相当相当的简洁 <del>跟个记事本一样</del> ，不过后期使用这个不推荐吧，看的难受啊不觉得吗</p>
+<p>最好使的应该就是 <font color=red><code>pycharm</code></font></p>
+<p>这个不陌生吧？ 这是使用率最高的编写 <code>python</code> 的软件，相当方便，内置功能也很齐全</p>
+<p>它分为两个版本，简单的说就是免费版和收钱版。</p>
+<p>社区版(免费)就可以满足一般的需求了，如果觉得还不够就加钱吧</p>
+<h4 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h4><p>我自己使用的是 <code>HBuilderX</code> 这款软件，个人认为吧，这个用来写这些很方便</p>
+<p>一些你能想到的功能它基本都支持，而且界面还蛮好看的</p>
+<p>如果需要什么插件的话，也可以在内部一键安装，相当方便</p>
+<p>而且它还可以用来开发 <code>app</code> 和小程序</p>
+<h4 id="Visual-Studio-code"><a href="#Visual-Studio-code" class="headerlink" title="Visual Studio code"></a>Visual Studio code</h4><p>一个运行于 Mac OS X、Windows和 Linux 之上的，针对于编写现代 Web 和云应用的跨平台源代码编辑器</p>
+<p>用起来也不错，这个轻量化编辑器</p>
+<p>需要什么插件也可以快速的在搜索里找到并安装</p>
+<h3 id="知识管理"><a href="#知识管理" class="headerlink" title="知识管理"></a>知识管理</h3><p>脑子不可能把你学习过的东西全给记得一清二楚吧？有的时候你也会忘记一些很重要的东西</p>
+<p>不是有句话这么说的吗，好记性不如烂笔头</p>
+<p>如果你看过我博客的评论区域的话，会发现它是支持 <code>markdown</code> 的，其实我记录这些资料也是使用 <code>markdown</code> 的</p>
+<p>对于使用 <code>markdown</code> 语法来记录，推荐的软件是<strong>有道云</strong>，它支持新建 <code>markdown</code> 文档，而且还支持同步功能，不仅可以随时随地查看，还可以把笔记分享给别人。</p>
+<p>兼容大部分 Markdown 平台（简书、Github、Hexo）的渲染样式</p>
+<h3 id="Gitgub"><a href="#Gitgub" class="headerlink" title="Gitgub"></a>Gitgub</h3><p>一个平台，你可以把自己的代码托管在上面保存，而且你还可以通过这个平台参加一些大佬的项目，来提高自己的能力</p>
+<p>并且你还发掘一些有趣的代码并把它们拉取到自己仓库，通过 <code>git cloen</code> 指令克隆到本地查看</p>
+<p>它还可以发布静态页面，你的一些网页就可以放到上面发布，我的博客就是托管在 <code>Github</code> 上面，还支持绑定域名</p>
+<p>不过因为访问速度比较慢，可以使用 <code>CDN</code> 来进行加速</p>
+<h3 id="码云"><a href="#码云" class="headerlink" title="码云"></a>码云</h3><p>这个好像之前有个水文讲过来着，其实这个和上面的 <code>Github</code> 在功能上差别并不大，但是码云的访问速度很快</p>
+<p>这个尤其体现在使用 <code>git</code> 进行克隆的时候，比使用 <code>Github</code> 仓库克隆的时候快得多</p>
+<p>而且码云可以同步 <code>GitHub</code> 仓库，解决了后顾之忧</p>
+<p>它同样也可以发布静态页面，不过免费版有很多限制了</p>
+<p><code>pro</code> 版的价格是 99元/年</p>
+]]></content>
+      <categories>
+        <category>开发者</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>gitte</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VT5-tank</title>
     <url>/2020/01/12/20200112-VT5-tank/</url>
     <content><![CDATA[<p>看题目也知道，这是一个 <code>军事</code> 向的文章，它是几年前我发在百度贴吧上的一个，不过当时资料有限，如果有错误见谅</p>
@@ -120,7 +168,15 @@
 
 <h3 id="2020-1-10"><a href="#2020-1-10" class="headerlink" title="2020.1.10"></a>2020.1.10</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主题更换为 --&gt; replica</span><br><span class="line"></span><br><span class="line">主页的介绍部分完成</span><br><span class="line"></span><br><span class="line">博客的主题样式显示不出（已解决）</span><br></pre></td></tr></table></figure>
 
-<h3 id="2020-1-11"><a href="#2020-1-11" class="headerlink" title="2020.1.11"></a>2020.1.11</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">博客迁移到 coding 发布</span><br><span class="line"></span><br><span class="line">修复了无法给文章添加 tags 和 categories 的问题</span><br><span class="line"></span><br><span class="line">给博客添加了统计代码，用来统计访问量（在主页底部看到的）</span><br><span class="line"></span><br><span class="line">绑定域名，并提交到百度站长平台（抽风行为，蜘蛛九成九看不上）</span><br><span class="line"></span><br><span class="line">修复了 markdown 渲染的问题</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="2020-1-11"><a href="#2020-1-11" class="headerlink" title="2020.1.11"></a>2020.1.11</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">博客迁移到 coding 发布</span><br><span class="line"></span><br><span class="line">修复了无法给文章添加 tags 和 categories 的问题</span><br><span class="line"></span><br><span class="line">给博客添加了统计代码，用来统计访问量（在主页底部看到的）</span><br><span class="line"></span><br><span class="line">绑定域名，并提交到百度站长平台（抽风行为，蜘蛛九成九看不上）</span><br><span class="line"></span><br><span class="line">修复了 markdown 渲染的问题</span><br></pre></td></tr></table></figure>
+
+<h3 id="2020-1-12"><a href="#2020-1-12" class="headerlink" title="2020.1.12"></a>2020.1.12</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">更换主题</span><br><span class="line"></span><br><span class="line">coding上部署的旧主题停止更新</span><br></pre></td></tr></table></figure>
+
+<h3 id="2020-1-13"><a href="#2020-1-13" class="headerlink" title="2020.1.13"></a>2020.1.13</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">进行文件迁移</span><br><span class="line"></span><br><span class="line">博客增加 live2d 小人</span><br><span class="line"></span><br><span class="line">完成主题定制</span><br><span class="line"></span><br><span class="line">增加文章评论功能</span><br></pre></td></tr></table></figure>
+
+<h3 id="2020-1-14"><a href="#2020-1-14" class="headerlink" title="2020.1.14"></a>2020.1.14</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">博客增加鼠标点击特效</span><br><span class="line"></span><br><span class="line">大幅度修改主题样式</span><br><span class="line"></span><br><span class="line">增加音乐播放器(就是博客最上面那个)</span><br><span class="line"></span><br><span class="line">增加备案号</span><br><span class="line"></span><br><span class="line">修复一些 bug</span><br><span class="line"></span><br><span class="line">增加文章字数统计和阅读时间估计，修改文章样式</span><br><span class="line"></span><br><span class="line">博客迁移到 GitHub （因为coding受国家政策影响）</span><br></pre></td></tr></table></figure>
+
+<h3 id="2020-1-15"><a href="#2020-1-15" class="headerlink" title="2020.1.15"></a>2020.1.15</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">图标更换为 iconfont 提供的第三方图标</span><br><span class="line"></span><br><span class="line">增加博客底部网站运行时间</span><br><span class="line"></span><br><span class="line">接入统计代码</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>blog</category>
       </categories>
@@ -508,10 +564,10 @@
 <p>我们换一个思路吧</p>
 <p>首先打开你的博客，依旧没有主题样式，只有个孤零零的框架在那儿</p>
 <p>按 <code>F12</code> 打开控制台，点到 <code>Neywork</code> </p>
-<p><img src="http://m.qpic.cn/psc?/V142tQBY1U8jyD/JFx.huugQnT.ko1ZRraxafY9ikYr7uJfg2.fj6iAnRTYt9IiQHYEKOzh0V1OkdLgJ2N8yEsz2xKKaIvVmUvqgdjcYou7VypGnYvl.i8yU.I!/b&bo=dwL8AncC*AIDByI!&rf=viewer_4" alt=""></p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%87%BA%E6%80%8E%E4%B9%88%E5%8A%9E/01.jpg" alt=""></p>
 <p><strong>发现样式什么的都没跟过来，唉</strong></p>
 <p>点一个文件，查看 <code>Headers</code></p>
-<p><img src="http://m.qpic.cn/psc?/V142tQBY1U8jyD/JFx.huugQnT.ko1ZRraxaQMeWEJO.qDjQIRrVpYc92Y6*bdmMjIc3.AHMTEpCZdaYdmdhcySDoghawmKb*bj85J9RUWqRrNQ99bMWFRIVM8!/b&bo=ewKEA3sChAMRBzA!&rf=viewer_4" alt=""></p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%87%BA%E6%80%8E%E4%B9%88%E5%8A%9E/02.png" alt=""></p>
 <p>结合上面百度到的方法，哇吼，知道了</p>
 <p>在博客的根目录里找到 <code>_config.yml</code> 文件，打开并找到下面</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: https:&#x2F;&#x2F;www.hexoblog.top&#x2F;     #网址</span><br><span class="line">root: &#x2F;       #网站根目录	</span><br><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;    #文章的网址链接格式</span><br><span class="line">permalink_defaults:     #永久链接中各部分的默认值</span><br></pre></td></tr></table></figure>
@@ -845,9 +901,9 @@
         <category>python</category>
       </categories>
       <tags>
+        <tag>linux</tag>
         <tag>bilibili</tag>
         <tag>git</tag>
-        <tag>linux</tag>
         <tag>12306</tag>
       </tags>
   </entry>
@@ -1023,16 +1079,16 @@
 <p>拿电脑打开吧，我响应式布局那些还没开始emmmm，手机上那个效果唉。可能有些地方有点错误 <del>好吧是一定会</del> ，这个是早期作品，前面的地方有些可能会有bug</p>
 <p>但是看的效果还是不错的</p>
 <p>不过那个<code>live2d</code>小人有时候不稳定，加载不出来，没看到就算了。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">作者：木得睡醒的XM8</span><br><span class="line">链接: https:&#x2F;&#x2F;www.bilibili.com&#x2F;read&#x2F;cv4301760</span><br><span class="line">出处：bilibili</span><br></pre></td></tr></table></figure>
-]]></content>
+<p>如果这篇文章的图片无法显示，<a href="https://www.bilibili.com/read/cv4301760" target="_blank" rel="noopener">点击这里查看</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">作者：木得睡醒的XM8</span><br><span class="line">链接: https:&#x2F;&#x2F;www.bilibili.com&#x2F;read&#x2F;cv4301760</span><br><span class="line">出处：bilibili</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Webpage</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>html</tag>
         <tag>server</tag>
         <tag>xshell</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1044,18 +1100,13 @@
 <a id="more"></a>
 
 <h3 id="快速开始-帮助你快速了解"><a href="#快速开始-帮助你快速了解" class="headerlink" title="快速开始(帮助你快速了解)"></a>快速开始(帮助你快速了解)</h3><ol>
-<li><p>主页侧边栏里放的是各个分区，可以随意点击查看，如果你想了解作者了相关信息，请点击 <code>关于</code> 来查看</p>
-</li>
-<li><p>如果想知道博客的开发进度和相关功能，请查看文章 <code>博客更新日志</code> 或者 <a href="https://www.hexoblog.top/2020/01/12/20200112-%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/#more">点击这里快速查看日志</a></p>
-</li>
-<li><p>侧边栏的好朋友里是友链，相当于互相关注吧，点击就可以访问他们的博客<br>你也可以在评论区留下友链</p>
-</li>
-<li><p>评论的使用方式很简单，而且它支持 <code>markdown</code> 语法，评论的时候可以编辑你的名称<br>如果想收到回复的话，可以填写你的邮箱再相关区域</p>
-</li>
-<li><p>博客的顶部是音乐播放器，在查看文章时它会自动播放音乐，当然也可以手动，怎么用相信大家都会<br>可能有时候选择音乐会出现无法播放的原因，那是因为外链没用了，这个没办法<br>只能等换新的。至于为什么放最上面，因为左右下角都没有可用空间</p>
-</li>
-<li><p>打赏？要是你觉得可以的话我不介意(滑稽)</p>
-</li>
+<li>主页侧边栏里放的是各个分区，可以随意点击查看，如果你想了解作者了相关信息，请点击 <code>关于</code> 来查看</li>
+<li>如果想知道博客的开发进度和相关功能，请查看文章 <code>博客更新日志</code> 或者 <a href="https://www.hexoblog.top/2020/01/12/20200112-%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/#more">点击这里快速查看日志</a></li>
+<li>侧边栏的好朋友里是友链，相当于互相关注吧，点击就可以访问他们的博客<br>你也可以在评论区留下友链</li>
+<li>评论的使用方式很简单，而且它支持 <code>markdown</code> 语法，评论的时候可以编辑你的名称<br>如果想收到回复的话，可以填写你的邮箱再相关区域</li>
+<li>博客的顶部是音乐播放器，在查看文章时它会自动播放音乐，当然也可以手动，怎么用相信大家都会<br>可能有时候选择音乐会出现无法播放的原因，那是因为外链没用了，这个没办法<br>只能等换新的。至于为什么放最上面，因为左右下角都没有可用空间</li>
+<li>打赏？要是你觉得可以的话我不介意(滑稽)</li>
+<li>侧边栏里的分类可以点击查看，我把文章都分类了，可以看看有没有你喜欢的类型</li>
 </ol>
 <h3 id="一些吐槽"><a href="#一些吐槽" class="headerlink" title="一些吐槽"></a>一些吐槽</h3><p>说实话，这个博客在搭建的时候遇到了很多很多bug</p>
 <p>第一次的时候以为快成了，结果发现路子不对emmm，结果就重新搞了一边 <del>当时真的脑残了</del></p>

@@ -1,6 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo+Github/coding搭建博客</title>
+    <url>/2020/01/17/Hexo+Github%E6%88%96coding%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>想要拥有一个属于自己的博客嘛?</p>
+<p>利用 <code>Hexo</code> 就可以实现</p>
+<p><code>Hexo</code> 是一个快速，简单和强大的博客框架。使用 <code>Markdown</code>（或其他语言）撰写帖子，Hexo会在几秒钟内生成具有漂亮主题的静态文件</p>
+<p>不定期更新</p>
+<a id="more"></a>
+
+<h3 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h3><p>首先要在电脑上下载 <code>Git</code> 和 <code>Node</code> </p>
+<p><a href="https://git-scm.com/" target="_blank" rel="noopener">git下载地址</a><br><a href="http://nodejs.cn/" target="_blank" rel="noopener">node下载地址</a></p>
+<p>下载后安装方法百度遍地都有，不过不熟悉的话最好按照教程来，不然出意外就不好了</p>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>安装完后，在桌面右键 <code>git bash</code> 然后输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br><span class="line"></span><br><span class="line">然后</span><br><span class="line"></span><br><span class="line">cnpm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>在某个盘下新建一个文件夹，取名随意<br>然后在这个文件夹下右键 <code>git bash</code> ，然后</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>再执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install    &lt;-- 意思是安装必备的 hexo 组件</span><br></pre></td></tr></table></figure>
+<p>你会看到在文件夹里出现以下目录结构</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml     #网站的配置信息，您可以在此配置参数</span><br><span class="line">├── node_modules    #npm安装的所有程序包</span><br><span class="line">├── package.json    #npm安装的应用程序的信息</span><br><span class="line">├── package-lock.json   #针对和package.json中的应用程序提供更多详细信息</span><br><span class="line">├── scaffolds       #文章模版文件夹</span><br><span class="line">├── source          #资源文件夹，以下划线开头的文件&#x2F;文件夹会被忽略</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">├── themes          #主题文件夹，Hexo会根据主题来生成网页</span><br><span class="line">|   └── landscape   #原始的hexo默认主题</span><br><span class="line">├── yarn-error.log  #日志文件</span><br><span class="line">└── .gitignore      #忽略文件，用于配置忽略条件</span><br></pre></td></tr></table></figure>
+<p>到这里前期工作基本完成，在根目录下打开 <code>git bash</code> 执行 <code>hexo g &amp;&amp; hexo s</code> 命令，就会生成一个网址，复制到浏览器打开就看的到了</p>
+<h3 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h3><p>HEXO默认的主题没怎么好看，但是我们可以更换不同的主题，具体的可以自行去查找心仪的主题</p>
+<p>这里提供两个主题和安装方法</p>
+<p><code>next</code> 主题，也就是我现在用的这个主题 <a href="https://blog.csdn.net/zgcr654321/article/details/86751765" target="_blank" rel="noopener">安装方法和配置</a></p>
+<p><code>replica</code> 主题 <a href="https://www.teaper.dev/2019/05/31/hexogithub/" target="_blank" rel="noopener">安装方法和配置</a></p>
+<h3 id="关于问题"><a href="#关于问题" class="headerlink" title="关于问题"></a>关于问题</h3><p>因为我用的是 <code>next</code> 主题，不过上面那个方法对于的是 6.0 版本的配置，和现在下载的最新版主题有些方面是不一样的，如果在配置过程遇到问题可以看看这里</p>
+<h4 id="头像圆形而且旋转"><a href="#头像圆形而且旋转" class="headerlink" title="头像圆形而且旋转"></a>头像圆形而且旋转</h4><p>可能是样式不支持吧，以前的 <code>next</code> 倒是支持</p>
+<h4 id="live2d"><a href="#live2d" class="headerlink" title="live2d"></a>live2d</h4><p>可以引用官方的 <code>live2d</code>  <a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">链接</a></p>
+<p>不过官方的没有什么特别，如果想实现更多的功能，建议自行查找并配置 <a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">高级版</a></p>
+<h4 id="天气预报"><a href="#天气预报" class="headerlink" title="天气预报"></a>天气预报</h4><p>首先打开</p>
+<p>中国天气网：<a href="https://cj.weather.com.cn/plugin/pc" target="_blank" rel="noopener">https://cj.weather.com.cn/plugin/pc</a></p>
+<p>选择自定义插件—&gt;自定义样式——&gt;生成代码</p>
+<p>把生成的代码放到博客根目录的 <code>themes/next/layout/_layout.swig</code> 里</p>
+<p>保存退出就行</p>
+<h4 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h4><p>在 <code>next</code> 主题的配置文件 <code>_config.yml</code> 里查找</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Reward (Donate)</span><br><span class="line"># Front-matter variable (unsupport animation).</span><br><span class="line">reward_settings:</span><br><span class="line">  # If true, reward will be displayed in every article by default.</span><br><span class="line">  enable: true      &lt;-- 把这里改成 true</span><br><span class="line">  animation: true</span><br><span class="line">  #comment:</span><br></pre></td></tr></table></figure>
+<p>接着在下面<br>把 <code>wechatpay</code> 和 <code>alipay</code> 前面的 <code>#</code> 去掉，后面加上图片链接，就可以了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">reward:    	</span><br><span class="line">  wechatpay: &#x2F;images&#x2F;wechatplay.png</span><br><span class="line">  alipay: &#x2F;images&#x2F;play.jpg</span><br><span class="line">  #bitcoin: &#x2F;images&#x2F;bitcoin.png</span><br></pre></td></tr></table></figure>
+
+<h4 id="valine评论"><a href="#valine评论" class="headerlink" title="valine评论"></a>valine评论</h4><p>就是我博客下面的评论</p>
+<p>valine是LeanCloud的一款极简的评论系统，并且还支持markdown功能</p>
+<p>打开 <a href="https://www.leancloud.cn/" target="_blank" rel="noopener">LeanCloud官网</a> ，注册并登陆</p>
+<p>注册完以后需要创建一个应用，名字可以随便起，然后 进入应用-&gt;设置-&gt;应用key</p>
+<p>获取你的 <code>appid</code> 和 <code>appkey</code></p>
+<p>然后打开主题配置文件 <code>_config.yml</code>，查找</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">valine:</span><br><span class="line">  enable: true</span><br><span class="line">  appid:  your app id  &lt;-- 填入appid</span><br><span class="line">  appkey: your app key  &lt;-- 填入appkey</span><br><span class="line">  notify: false # mail notifier , https:&#x2F;&#x2F;github.com&#x2F;xCss&#x2F;Valine&#x2F;wiki</span><br><span class="line">  verify: false # Verification code</span><br><span class="line">  placeholder: ヾﾉ≧∀≦)o来啊，快活啊!    &lt;--  这里添加评论区出现的话 </span><br><span class="line">  guest_info: nick,mail,link</span><br><span class="line">  pageSize: 10</span><br></pre></td></tr></table></figure>
+<p>而且还要在Leancloud -&gt; 设置 -&gt; 安全中心 -&gt; Web安全域名<br>把你的域名加进去，但是注意如果添加的是 <code>http</code> 协议的话，建议再添加一个 <code>https</code> 协议的，不然可能会被拒绝访问</p>
+<h4 id="音乐播放器"><a href="#音乐播放器" class="headerlink" title="音乐播放器"></a>音乐播放器</h4><p><a href="https://github.com/MoePlayer/hexo-tag-aplayer" target="_blank" rel="noopener">插件地址</a></p>
+<p>具体使用在官方文档有详细说明，这里说一下添加网易云歌单并且同步</p>
+<p>之前请确认在 <code>next/layout/_partials/head/head.swig</code> 里引用了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;jquery@v3.4.1&#x2F;dist&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后打开 <code>music.js</code> 里面内容修改为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(function() &#123;</span><br><span class="line">	var ap &#x3D; new APlayer(&#123;</span><br><span class="line">		container: document.getElementById(&#39;aplayer&#39;),</span><br><span class="line">		fixed: false,</span><br><span class="line">		autoplay: false,</span><br><span class="line">		volume: 1.0,</span><br><span class="line">		listFolded: true,</span><br><span class="line">		lrcType: 3,</span><br><span class="line">	&#125;);</span><br><span class="line">	$.getJSON(&quot;https:&#x2F;&#x2F;api.fczbl.vip&#x2F;163&#x2F;?type&#x3D;playlist&amp;id&#x3D; 注意这里填你的歌单的id &quot;, function(data) &#123;</span><br><span class="line">		ap.list.add(data)</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>保存退出，然后就可以了，播放器的目录会同步你的网易云歌单目录</p>
+<h4 id="视频播放器"><a href="#视频播放器" class="headerlink" title="视频播放器"></a>视频播放器</h4><p>在博客添加视频播放器的办法</p>
+<p>在博客里的文章有提到，可以去查看</p>
+<h4 id="Daovoice"><a href="#Daovoice" class="headerlink" title="Daovoice"></a>Daovoice</h4><p>有时候你看到一些博客的右下角不是有个会话吗，点一下就可以和作者交流</p>
+<p>就是这个实现的</p>
+<p><a href="https://blog.csdn.net/wugenqiang/article/details/89054853" target="_blank" rel="noopener">使用方法</a></p>
+<p>不过有可能添加后，博客页面空白情况发生</p>
+<h4 id="iconfont使用"><a href="#iconfont使用" class="headerlink" title="iconfont使用"></a>iconfont使用</h4><p><code>next</code> 主题可以自行添加社交图标(就是侧边栏那些)，不过有很多图标在库里是没有的</p>
+<p>这里推荐阿里巴巴矢量图，基本你想到的图标那里都有</p>
+<p><a href="https://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.2" target="_blank" rel="noopener">阿里巴巴矢量图</a></p>
+<p>进去后添加你想要的图标，然后点击这里，再点击添加到项目</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/Hexo+github%E6%88%96coding%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/1.png" alt="image"></p>
+<p>然后就会出现一段引用代码，就是打马赛克的地方</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/Hexo+github%E6%88%96coding%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/2.png" alt="image"></p>
+<p>打开主题文件夹的 <code>layout/_partials/head/head.swig</code> 里面添加</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;里面放引用代码&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>再打开 <code>_partials/sidebar/site-overview.swig</code> 把其中一段代码改成</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.social_icons.enable %&#125;</span><br><span class="line">        &#123;%- set sidebarIcon &#x3D; &#39;&lt;i class&#x3D;&quot;fa fa-fw iconfont &#39; + link.split(&#39;||&#39;)[1] | trim + &#39;&quot;&gt;&lt;&#x2F;i&gt;&#39; %&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在主题文件夹的配置文件 <code>_config.yml</code> 里修改</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bilibili: https:&#x2F;&#x2F;space.bilibili.com&#x2F;166385809 || icons-bilibili</span><br><span class="line"></span><br><span class="line">|| 后面的就是图标代码</span><br><span class="line"></span><br><span class="line">代码在 阿里 里面复制</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/Hexo+github%E6%88%96coding%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/3.jpg" alt="image"></p>
+<p>然后就可以了！</p>
+<h4 id="链接持久化"><a href="#链接持久化" class="headerlink" title="链接持久化"></a>链接持久化</h4><p>Hexo 默认的文章链接是“年/月/日/标题”。</p>
+<p>之所以要做链接持久化是因为，中文 url 不利于 SEO，另外如果标题修改了，会导致链接发生变化，不利于文章的推广。</p>
+<p>所以我们要做的就是把标题转成唯一的英文或数字字符串</p>
+<p><a href="https://github.com/Rozbo/hexo-abbrlink" target="_blank" rel="noopener">hexo-abbrlink</a></p>
+<p>使用方法在里面也很详细了</p>
+<h4 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h4><p>这个相当简单，看你要部署到那个地方了 <code>Github / coding / 码云</code></p>
+<p>先复制链接，如果是 <code>ssh</code> 链接的话，请做好相关配置</p>
+<p>修改博客配置文件 <code>根目录下的 _config.yml</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Deployment       </span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: 这里填链接</span><br><span class="line">  branch: master     上传的分支</span><br></pre></td></tr></table></figure>
+<p>保存退出，然后再 <code>git bash</code> 里执行 <code>hexo d</code> 命令就可以上传了！</p>
+<p>注意：上传前一定要先执行 <code>hexo g</code> （生成）</p>
+<h4 id="修改透明度"><a href="#修改透明度" class="headerlink" title="修改透明度"></a>修改透明度</h4><p>你应该发现了，我的页面是接近半透明的</p>
+<p>但 <code>NexT</code> 主题的各版块是纯白色的，这样给站点加上背景特效后，一些板块是不会显示特效的</p>
+<p>因为被白色覆盖了，但可以通过修改板块的背景样式为透明来让它显示特效</p>
+<p><strong>内容板块透明</strong></p>
+<p>博客根目录 <code>themes\next\source\css\_schemes\Pisces\_layout.styl</code> 文件</p>
+<p><code>content-wrap</code>标签下 <code>background: white</code> 修改为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background: rgba(255,255,255,0.5); &#x2F;&#x2F;0.5是透明度</span><br></pre></td></tr></table></figure>
+
+<p><strong>菜单栏背景</strong></p>
+<p>博客根目录 <code>themes\next\source\css\_schemes\Pisces\_layout.styl</code>文件</p>
+<p><code>header-inner</code> 标签下 <code>background: white</code> 修改为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background: rgba(255,255,255,0.5);</span><br></pre></td></tr></table></figure>
+
+<p><strong>站点概况背景</strong></p>
+<p>博客根目录 <code>themes\next\source\css\_schemes\Pisces\_sidebar.styl</code>文件</p>
+<p><code>sidebar-inner</code> 标签下 <code>background: white</code> 修改为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background: rgba(255,255,255,0.5);</span><br></pre></td></tr></table></figure>
+<p>然后修改博客根目录 <code>themes\next\source\css\_schemes\Pisces\_layout.styl</code> 文件</p>
+<p><code>sidebar</code> 标签下 <code>background: $body-bg-color</code>修改为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background: rgba(255,255,255,0.5);</span><br></pre></td></tr></table></figure>
+
+<p><strong>页数导航背景</strong></p>
+<p>博客根目录 <code>themes\next\source\css\_schemes\Gemini\index.styl</code></p>
+<p>搜索 <code>pagination</code>，修改此标签下 <code>background</code> 属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background: rgba(255,255,255,0.5);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>coding</tag>
+        <tag>git</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>aliplayer实现文章里插入视频</title>
     <url>/2020/01/16/aliplayer%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E9%87%8C%E6%8F%92%E5%85%A5%E8%A7%86%E9%A2%91/</url>
     <content><![CDATA[<p>添加文章 播放视频的主要原因是因为</p>
@@ -132,6 +254,7 @@ var player = new Aliplayer({
 <p>不过因为访问速度比较慢，可以使用 <code>CDN</code> 来进行加速</p>
 <h3 id="码云"><a href="#码云" class="headerlink" title="码云"></a>码云</h3><p>这个好像之前有个水文讲过来着，其实这个和上面的 <code>Github</code> 在功能上差别并不大，但是码云的访问速度很快</p>
 <p>这个尤其体现在使用 <code>git</code> 进行克隆的时候，比使用 <code>Github</code> 仓库克隆的时候快得多</p>
+<p>我拿博客上的图片，就是存放在码云的</p>
 <p>而且码云可以同步 <code>GitHub</code> 仓库，解决了后顾之忧</p>
 <p>它同样也可以发布静态页面，不过免费版有很多限制了</p>
 <p><code>pro</code> 版的价格是 99元/年</p>
@@ -744,9 +867,9 @@ var player = new Aliplayer({
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>coding</tag>
         <tag>github</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -841,9 +964,9 @@ var player = new Aliplayer({
         <category>轻小说</category>
       </categories>
       <tags>
+        <tag>bilibili</tag>
         <tag>Lily</tag>
         <tag>Chocolates</tag>
-        <tag>bilibili</tag>
         <tag>HE</tag>
       </tags>
   </entry>
@@ -1002,10 +1125,10 @@ var player = new Aliplayer({
         <category>python</category>
       </categories>
       <tags>
-        <tag>bilibili</tag>
         <tag>linux</tag>
-        <tag>12306</tag>
         <tag>git</tag>
+        <tag>12306</tag>
+        <tag>bilibili</tag>
       </tags>
   </entry>
   <entry>

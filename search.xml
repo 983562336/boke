@@ -744,9 +744,9 @@ var player = new Aliplayer({
         <category>hexo</category>
       </categories>
       <tags>
+        <tag>git</tag>
         <tag>coding</tag>
         <tag>github</tag>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1004,8 +1004,8 @@ var player = new Aliplayer({
       <tags>
         <tag>bilibili</tag>
         <tag>linux</tag>
-        <tag>git</tag>
         <tag>12306</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1205,7 +1205,7 @@ var player = new Aliplayer({
 <li>如果想知道博客的开发进度和相关功能，请查看文章 <code>博客更新日志</code> 或者 <a href="https://www.hexoblog.top/2020/01/12/20200112-%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/#more" target="_blank" rel="noopener">点击这里快速查看日志</a> （如果点击，没反应，请手动点开文章 <strong>博客更新日志</strong>）</li>
 <li>侧边栏的好朋友里是友链，相当于互相关注吧，点击就可以访问他们的博客<br>你也可以在评论区留下友链</li>
 <li>评论的使用方式很简单，而且它支持 <code>markdown</code> 语法，评论的时候可以编辑你的名称<br>如果想收到回复的话，可以填写你的邮箱再相关区域</li>
-<li>博客的顶部是音乐播放器，在查看文章时它会自动播放音乐，当然也可以手动，怎么用相信大家都会<br>可能有时候选择音乐会出现无法播放的原因，那是因为外链没用了，这个没办法<br>只能等换新的。至于为什么放最上面，因为左右下角都没有可用空间</li>
+<li>博客的顶部是音乐播放器，怎么用相信大家都会<br>至于为什么放最上面，因为左右下角都没有可用空间</li>
 <li>打赏？要是你觉得可以的话我不介意(滑稽)</li>
 <li>侧边栏里的分类可以点击查看，我把文章都分类了，可以看看有没有你喜欢的类型</li>
 </ol>

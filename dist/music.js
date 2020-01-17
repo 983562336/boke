@@ -2,7 +2,7 @@ $(function() {
 	var ap = new APlayer({
 		container: document.getElementById('aplayer'),
 		fixed: false,
-		autoplay: true,
+		autoplay: false,
 		volume: 1.0,
 		listFolded: true,
 		lrcType: 3,

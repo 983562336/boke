@@ -172,8 +172,8 @@
       </categories>
       <tags>
         <tag>git</tag>
-        <tag>coding</tag>
         <tag>Github</tag>
+        <tag>coding</tag>
       </tags>
   </entry>
   <entry>
@@ -836,67 +836,6 @@ var player = new Aliplayer({
       </tags>
   </entry>
   <entry>
-    <title>关于博客迁移到coding</title>
-    <url>/2020/01/11/20200111-%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E5%88%B0coding/</url>
-    <content><![CDATA[<p>原本我这个博客是用 <code>Hexo + github</code>来搭建的</p>
-<p>虽然过程磕磕碰碰的，遇到很多bug啥的，但好歹搭建起来了</p>
-<p>不过因为<code>github</code>那个速度确实感人 <del>几十kb的下载速度</del></p>
-<p>觉得还是换一个托管吧。</p>
-<a id="more"></a>
-
-<hr>
-<p><strong>不过在此之前我还是要推荐一个网站</strong></p>
-<p>名字叫 <em>码云</em> <del>不是马云</del></p>
-<p>有的时候用 <code>git</code> 来 <code>clone</code> 仓库的时候，会发现那个下载速度真的是慢，很多时候就是<strong>几十kb</strong>的下，遇到大一点的东西，等都会等死在这里</p>
-<p>我之前 <code>clone</code> 一个仓库的时候，就遇到过，结果一下午都没弄下来，白浪费时间了</p>
-<p>至于为什么说到<font color=#FF0000 >码云</font>，别的什么不说，估计说了你们也没有兴趣。</p>
-<p>最直观的一点就是它的速度</p>
-<table>
-<thead>
-<tr>
-<th>GitHub</th>
-<th>码云</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>下载速度</td>
-<td>下载速度</td>
-</tr>
-<tr>
-<td>几十 K</td>
-<td>几 M（看你家网速）</td>
-</tr>
-</tbody></table>
-<p>很直接吧，而且 码云 也支持 <code>git</code>，可以使用 <code>git clone</code> 命令来克隆仓库到本地；不过如果你使用 <code>ssh</code> 协议的话，记得把 <code>ssh密钥</code> 保存到码云的设置里（这个大家都会吧）</p>
-<p>不过很多人还是用惯了 <code>GitHub</code> 吧，很多东西都在上面，不过不要紧！</p>
-<p><strong>码云</strong> 可以导入 <code>GitHub</code> 仓库，只需要把它们关联一下，你就可以把 <code>GitHub</code> 上的仓库复制到 码云 了</p>
-<p>嘿嘿嘿，以后 <code>clone</code> 就快多了</p>
-<p><a href="https://gitee.com/yang_fan_m" target="_blank" rel="noopener">我的码云主页，点此查看</a></p>
-<hr>
-<p>好，回到标题</p>
-<p>简单说一下 <code>coding</code> 吧，当然这个百度的到</p>
-<p>在了解这个之前，各位也可以去了解下 <code>slack</code> 这个软件，这是一个多人团队协作软件，相当于电话和邮件相结合，不过是英文的。</p>
-<p><code>coding</code> 官方名字是 <strong>一站式软件研发管理平台</strong></p>
-<p>你可以用它创建一个团队，然后合作一个项目</p>
-<p><a href="https://coding.net/" target="_blank" rel="noopener">coding官网</a></p>
-<p>说明一下，这个东西对于 5人以下 的团队是免费的，如果超过的话就是要付费的，具体费用按团队规模。</p>
-<p>里面其实和 <code>GitHub</code> 功能有些一样，只不过访问速度快得多，有些功能也增加了</p>
-<p>项目也可以在里面发布，可能最主要的是，它是中文界面</p>
-<p>中文界面</p>
-<p>中文界面</p>
-<p>中文界面</p>
-<p>一般用来进行小团队合作的话，是很不错的<br>毕竟5人以下免费不是么</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>coding</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hair-pink[明日方舟/德安]</title>
     <url>/2020/01/10/20200110-Hair-pink-%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F-%E5%BE%B7%E5%AE%89/</url>
     <content><![CDATA[<p>明日方舟的一个同人文章，就是颗糖</p>
@@ -1151,8 +1090,8 @@ var player = new Aliplayer({
       <tags>
         <tag>bilibili</tag>
         <tag>linux</tag>
-        <tag>12306</tag>
         <tag>git</tag>
+        <tag>12306</tag>
       </tags>
   </entry>
   <entry>
@@ -1255,8 +1194,8 @@ var player = new Aliplayer({
         <category>markdown</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>teaper</tag>
+        <tag>markdown</tag>
         <tag>Typora</tag>
       </tags>
   </entry>
@@ -1333,10 +1272,10 @@ var player = new Aliplayer({
         <category>Webpage</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>html</tag>
         <tag>server</tag>
         <tag>xshell</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1379,9 +1318,9 @@ var player = new Aliplayer({
         <category>hexo</category>
       </categories>
       <tags>
+        <tag>markdown</tag>
         <tag>hexo</tag>
         <tag>hello</tag>
-        <tag>markdown</tag>
       </tags>
   </entry>
 </search>

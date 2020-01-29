@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python写成的图片爬虫</title>
+    <url>/2020/01/29/python%E5%86%99%E6%88%90%E7%9A%84%E5%9B%BE%E7%89%87%E7%88%AC%E8%99%AB/</url>
+    <content><![CDATA[<p>这是一个用来爬取百度贴吧帖子里的图片的爬虫，只要把链接给它</p>
+<p>它就可以将链接指向的页面中的图片给扒下来</p>
+<a id="more"></a>
+
+<h3 id="主要代码"><a href="#主要代码" class="headerlink" title="主要代码"></a>主要代码</h3><p>这是实现主要功能的代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line">import re</span><br><span class="line">import os</span><br><span class="line">import urllib</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def get_html(url):</span><br><span class="line">    page &#x3D; urllib.request.urlopen(url)</span><br><span class="line">    html_a &#x3D; page.read()</span><br><span class="line">    return html_a.decode(&#39;utf-8&#39;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def get_img(html):</span><br><span class="line">    reg &#x3D; r&#39;https:&#x2F;&#x2F;[^\s]*?\.jpg&#39;</span><br><span class="line">    imgre &#x3D; re.compile(reg)  # 转换成一个正则对象</span><br><span class="line">    imglist &#x3D; imgre.findall(html)  # 表示在整个网页过滤出所有图片的地址，放在imgList中</span><br><span class="line">    x &#x3D; 0        # 声明一个变量赋值</span><br><span class="line">    path &#x3D; &#39;C:\\图片&#39;  # 设置图片的保存地址</span><br><span class="line">    if not os.path.isdir(path):</span><br><span class="line">        os.makedirs(path)  # 判断没有此路径则创建</span><br><span class="line">    paths &#x3D; path + &#39;\\&#39;  # 保存在test路径下</span><br><span class="line">    for imgurl in imglist:</span><br><span class="line">        urllib.request.urlretrieve(imgurl, &#39;&#123;0&#125;&#123;1&#125;.jpg&#39;.format(paths, x))  # 打开imgList,下载图片到本地</span><br><span class="line">        x &#x3D; x + 1</span><br><span class="line">        print(&#39;图片开始下载，注意查看文件夹，图片保存在C盘图片文件夹&#39;)</span><br><span class="line">    return imglist</span><br><span class="line">    text.insert(END,print)</span><br><span class="line">    text.see(END)</span><br><span class="line">    text.update()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(&#39;这是一个爬取百度贴吧的帖子里的图片的爬虫&#39;)</span><br><span class="line">print(&#39;其实本来有个GUI的，不过因为一些问题没弄上来，只能凑合了&#39;)</span><br><span class="line">print(&#39;提示：图片保存在C盘的图片文件夹里。还有，只会爬取这个链接的页面中的图片。输入网址后按回车就行&#39;)</span><br><span class="line"></span><br><span class="line">html_b &#x3D; get_html(input(&quot;输入网址：&quot;)) # 获取该网页的详细信息</span><br><span class="line">print(get_img(html_b))  # 从网页源代码中分析下载保存图片</span><br></pre></td></tr></table></figure>
+
+<p>将上面的代码复制到 <code>pycharm</code> 里，然后运行就可以，不过输入网址的时候直接回车会跳转到页面</p>
+<p>遇到这种情况直接删除链接最后一个字母/数字，然后自己打上去就可以了</p>
+<h3 id="修改部分"><a href="#修改部分" class="headerlink" title="修改部分"></a>修改部分</h3><h4 id="图片保存位置"><a href="#图片保存位置" class="headerlink" title="图片保存位置"></a>图片保存位置</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">path &#x3D; &#39;C:\\图片&#39;  # 设置图片的保存地址</span><br></pre></td></tr></table></figure>
+<p>按照这个格式 <code>磁盘名//文件夹名</code> 就可以自定义图片保存位置了</p>
+<h4 id="链接修改"><a href="#链接修改" class="headerlink" title="链接修改"></a>链接修改</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">html_b &#x3D; get_html(input(&quot;输入网址：&quot;))   # 获取该网页的详细信息</span><br></pre></td></tr></table></figure>
+<p>原来是定死了的，不过我改了改，如果你只想在 <code>pycharm</code> 里使用的话，可以把 <code>input(&quot;输入网址：&quot;)</code> 给删除</p>
+<p>替换成 <code>html_b = get_html(&quot;输入你要爬取的网址&quot;)</code> ，注意那个 <strong>输入你要爬取的网址</strong> 是把网址放进去，别把这几个字放进去</p>
+<h4 id="显示文字"><a href="#显示文字" class="headerlink" title="显示文字"></a>显示文字</h4><p>很简单了</p>
+<p>就是 <code>print</code> 后面的了，想写什么就写什么</p>
+<h3 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h3><p>如果就这样打包成 <code>exe</code> 文件的话，使用的时候只能看到一个很朴素的，黑白界面</p>
+<p>通过 <code>python</code> 自带的包 <code>tkinter</code> ,可以弄出一个比较好看的界面</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from tkinter import *</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line"></span><br><span class="line">    #创建空白窗口,作为主载体</span><br><span class="line">    root &#x3D; Tk()</span><br><span class="line">    root.title(&#39;爬取百度贴吧里帖子的图片。 图片保存在C盘的图片文件夹里&#39;)</span><br><span class="line">    root.geometry(&#39;600x500+398+279&#39;)</span><br><span class="line">    # 标签控件，窗口中放置文本组件</span><br><span class="line">    Label(root, text&#x3D;&#39;请输入下载的url:&#39;, font&#x3D;(&quot;微软雅黑&quot;, 15), fg&#x3D;&#39;black&#39;).grid()</span><br><span class="line">    # Entry是可输入文本框</span><br><span class="line">    url_input &#x3D; Entry(root, font&#x3D;(&quot;微软雅黑&quot;, 20), width&#x3D;50)</span><br><span class="line">    url_input.grid(row&#x3D;0, column&#x3D;1)</span><br><span class="line">    # 列表控件</span><br><span class="line">    text &#x3D; Listbox(root, font&#x3D;(&#39;微软雅黑&#39;, 20), width&#x3D;65, height&#x3D;10)</span><br><span class="line">    # columnspan 组件所跨越的列数</span><br><span class="line">    text.grid(row&#x3D;1, columnspan&#x3D;2)</span><br><span class="line"></span><br><span class="line">    button &#x3D; Button(root, text&#x3D;&#39;开始下载&#39;, font&#x3D;(&quot;微软雅黑&quot;, 15)).grid(row&#x3D;2, column&#x3D;0, sticky&#x3D;W)</span><br><span class="line">    button &#x3D; Button(root, text&#x3D;&#39;退出&#39;, font&#x3D;(&quot;微软雅黑&quot;, 15), command&#x3D;root.quit).grid(row&#x3D;2, column&#x3D;0, sticky&#x3D;E)</span><br><span class="line"></span><br><span class="line">    #显示窗口</span><br><span class="line">    mainloop()</span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+
+<p>如果对这样有疑问的可以查看 <a href="https://www.bilibili.com/video/av26214247?p=1" target="_blank" rel="noopener">相关视频</a></p>
+<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p>如果你想把它弄成 <code>exe</code> 文件，可以随时随地使用，那么就要使用另一个东西 <code>pyinstaller</code> </p>
+<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p><strong>pycharm内部下载</strong></p>
+<p>找到其他设置里的 <code>Project Interpreter</code> ，然后按照图片的方法添加就可以了</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/python%E5%86%99%E6%88%90%E7%9A%84%E5%9B%BE%E7%89%87%E7%88%AC%E8%99%AB/1.png" alt=""></p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/python%E5%86%99%E6%88%90%E7%9A%84%E5%9B%BE%E7%89%87%E7%88%AC%E8%99%AB/2.png" alt=""></p>
+<p><strong>pip安装</strong></p>
+<p>按 <code>win+r</code> 输入 <code>cmd</code> ，在终端输入 <code>pip install pyinstaller</code></p>
+<p>然后就可以了，觉得下载速度慢的可以更换国内镜像，方法百度</p>
+<p>如果没有 <code>pip</code> 的话就去官网下载吧</p>
+<p><strong>官网下载</strong></p>
+<p>推荐上面两种方法，可以省去很多麻烦</p>
+<p><a href="http://www.pyinstaller.org/" target="_blank" rel="noopener">pyinstaller 官网</a></p>
+<p>下载对应版本 ,安装就行</p>
+<p><img src="https://img-blog.csdn.net/20160818153027605" alt=""></p>
+<p>解压出来后，在终端里 <code>cd</code> 到解压出来的文件夹里，执行 <code>python setup.py install</code></p>
+<h4 id="真·打包（xxx-里是你该文件的名字！！！）"><a href="#真·打包（xxx-里是你该文件的名字！！！）" class="headerlink" title="真·打包（xxx 里是你该文件的名字！！！）"></a>真·打包（xxx 里是你该文件的名字！！！）</h4><p>安装完 <code>pyinstaller</code> 后，就可以开始打包了</p>
+<p>在 <code>pycharm</code> 里 cd 到文件夹</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/python%E5%86%99%E6%88%90%E7%9A%84%E5%9B%BE%E7%89%87%E7%88%AC%E8%99%AB/3.png" alt=""></p>
+<p>当然你也可以在 <code>cmd</code> 里 cd 到文件夹</p>
+<p>然后执行命令 <code>pyinstaller -F xxx.py</code> ，等待一会</p>
+<p>然后再查看文件夹里，会发现多出了几个文件夹，找到 <code>dist</code> 文件夹</p>
+<p>点进去，会发现里面有个 <code>exe</code> 文件，那就是打包好的</p>
+<p>当然，打包好的文件的图标很不好看，你可以自己更换想要的图标</p>
+<p>首先把想放上去的图片转换为合适大小的 <code>ico</code> 文件，然后放到和你爬虫同一个文件夹</p>
+<p>再执行命令 <code>pyinstaller -i -F xxx.ico xxx.py</code> </p>
+<p>然后就完成了！</p>
+<p>如果没有看到图标改变，那是缓存问题，把名字改一下就可以看到了</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>爬虫</tag>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>制作一个模拟时钟</title>
     <url>/2020/01/18/%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E6%A8%A1%E6%8B%9F%E6%97%B6%E9%92%9F/</url>
     <content><![CDATA[<p>看时间一般我们都是看电脑右下角的小时钟</p>
@@ -270,8 +331,8 @@ var player = new Aliplayer({
         <category>航空航天</category>
       </categories>
       <tags>
-        <tag>航模</tag>
         <tag>技术</tag>
+        <tag>航模</tag>
       </tags>
   </entry>
   <entry>
@@ -1090,8 +1151,8 @@ var player = new Aliplayer({
       <tags>
         <tag>bilibili</tag>
         <tag>linux</tag>
-        <tag>git</tag>
         <tag>12306</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1194,8 +1255,8 @@ var player = new Aliplayer({
         <category>markdown</category>
       </categories>
       <tags>
-        <tag>teaper</tag>
         <tag>markdown</tag>
+        <tag>teaper</tag>
         <tag>Typora</tag>
       </tags>
   </entry>
@@ -1318,9 +1379,9 @@ var player = new Aliplayer({
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
         <tag>hello</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
 </search>

@@ -3,7 +3,8 @@
   <entry>
     <title>python写成的图片爬虫</title>
     <url>/2020/01/29/python%E5%86%99%E6%88%90%E7%9A%84%E5%9B%BE%E7%89%87%E7%88%AC%E8%99%AB/</url>
-    <content><![CDATA[<p>这是一个用来爬取百度贴吧帖子里的图片的爬虫，只要把链接给它</p>
+    <content><![CDATA[<p>这是一个用来爬取百度贴吧帖子里的图片的爬虫</p>
+<p>只要把链接给它</p>
 <p>它就可以将链接指向的页面中的图片给扒下来</p>
 <a id="more"></a>
 
@@ -231,8 +232,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>Github</tag>
         <tag>git</tag>
+        <tag>Github</tag>
         <tag>coding</tag>
       </tags>
   </entry>
@@ -1148,9 +1149,9 @@ var player = new Aliplayer({
         <category>python</category>
       </categories>
       <tags>
-        <tag>linux</tag>
-        <tag>bilibili</tag>
         <tag>git</tag>
+        <tag>bilibili</tag>
+        <tag>linux</tag>
         <tag>12306</tag>
       </tags>
   </entry>

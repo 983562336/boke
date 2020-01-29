@@ -67,7 +67,7 @@
 <meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/Hexo+github%E6%88%96coding%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/2.png">
 <meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/Hexo+github%E6%88%96coding%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/3.jpg">
 <meta property="article:published_time" content="2020-01-17T02:20:55.000Z">
-<meta property="article:modified_time" content="2020-01-17T08:10:48.492Z">
+<meta property="article:modified_time" content="2020-01-29T08:58:55.449Z">
 <meta property="article:author" content="杨帆">
 <meta property="article:tag" content="Github">
 <meta property="article:tag" content="git">
@@ -195,7 +195,12 @@ WIDGET = {FID: '5a7igfkKBX'}
   </li>
         <li class="menu-item menu-item-更新日志">
 
-    <a href="/Journal/" rel="section"><i class="fa fa-fw fa-link"></i>更新日志</a>
+    <a href="/Journal/" rel="section"><i class="fa fa-fw fa-user"></i>更新日志</a>
+
+  </li>
+        <li class="menu-item menu-item-友情链接">
+
+    <a href="/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/" rel="section"><i class="fa fa-fw fa-link"></i>友情链接</a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -280,10 +285,16 @@ WIDGET = {FID: '5a7igfkKBX'}
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-17 10:20:55 / 修改时间：16:10:48" itemprop="dateCreated datePublished" datetime="2020-01-17T10:20:55+08:00">2020-01-17</time>
+              <time title="创建时间：2020-01-17 10:20:55" itemprop="dateCreated datePublished" datetime="2020-01-17T10:20:55+08:00">2020-01-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-29 16:58:55" itemprop="dateModified" datetime="2020-01-29T16:58:55+08:00">2020-01-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -323,7 +334,7 @@ WIDGET = {FID: '5a7igfkKBX'}
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.7k</span>
+              <span>4.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -366,6 +377,10 @@ WIDGET = {FID: '5a7igfkKBX'}
 <p><code>replica</code> 主题 <a href="https://www.teaper.dev/2019/05/31/hexogithub/" target="_blank" rel="noopener">安装方法和配置</a></p>
 <h3 id="关于问题"><a href="#关于问题" class="headerlink" title="关于问题"></a>关于问题</h3><p>因为我用的是 <code>next</code> 主题，不过上面那个方法对于的是 6.0 版本的配置，和现在下载的最新版主题有些方面是不一样的，如果在配置过程遇到问题可以看看这里</p>
 <h4 id="头像圆形而且旋转"><a href="#头像圆形而且旋转" class="headerlink" title="头像圆形而且旋转"></a>头像圆形而且旋转</h4><p>可能是样式不支持吧，以前的 <code>next</code> 倒是支持</p>
+<p>hhh，是因为换了位置了</p>
+<p>找到下面的代码，并修改成如下样子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># If true, the avatar will be dispalyed in circle.</span><br><span class="line">rounded: true</span><br><span class="line"># If true, the avatar will be rotated with the cursor.</span><br><span class="line">rotated: true</span><br></pre></td></tr></table></figure>
+
 <h4 id="live2d"><a href="#live2d" class="headerlink" title="live2d"></a>live2d</h4><p>可以引用官方的 <code>live2d</code>  <a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">链接</a></p>
 <p>不过官方的没有什么特别，如果想实现更多的功能，建议自行查找并配置 <a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">高级版</a></p>
 <h4 id="天气预报"><a href="#天气预报" class="headerlink" title="天气预报"></a>天气预报</h4><p>首先打开</p>
@@ -677,12 +692,11 @@ WIDGET = {FID: '5a7igfkKBX'}
     </span>
     <span title="站点总字数">196k</span>
 </div>
-  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
-  </div>
 
 <!-- 网站运行时间的设置 -->
 <span id="timeDate">载入天数...</span>
-<span id="times">载入时分秒...</span>  风暴中，唯保守者屹立不倒
+<span id="times">载入时分秒...</span>  
+<br>风暴中，唯保守者屹立不倒
 <script>
     var now = new Date();
     function createtime() {

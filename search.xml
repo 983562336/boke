@@ -142,6 +142,10 @@
 <p><code>replica</code> 主题 <a href="https://www.teaper.dev/2019/05/31/hexogithub/" target="_blank" rel="noopener">安装方法和配置</a></p>
 <h3 id="关于问题"><a href="#关于问题" class="headerlink" title="关于问题"></a>关于问题</h3><p>因为我用的是 <code>next</code> 主题，不过上面那个方法对于的是 6.0 版本的配置，和现在下载的最新版主题有些方面是不一样的，如果在配置过程遇到问题可以看看这里</p>
 <h4 id="头像圆形而且旋转"><a href="#头像圆形而且旋转" class="headerlink" title="头像圆形而且旋转"></a>头像圆形而且旋转</h4><p>可能是样式不支持吧，以前的 <code>next</code> 倒是支持</p>
+<p>hhh，是因为换了位置了</p>
+<p>找到下面的代码，并修改成如下样子</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># If true, the avatar will be dispalyed in circle.</span><br><span class="line">rounded: true</span><br><span class="line"># If true, the avatar will be rotated with the cursor.</span><br><span class="line">rotated: true</span><br></pre></td></tr></table></figure>
+
 <h4 id="live2d"><a href="#live2d" class="headerlink" title="live2d"></a>live2d</h4><p>可以引用官方的 <code>live2d</code>  <a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">链接</a></p>
 <p>不过官方的没有什么特别，如果想实现更多的功能，建议自行查找并配置 <a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">高级版</a></p>
 <h4 id="天气预报"><a href="#天气预报" class="headerlink" title="天气预报"></a>天气预报</h4><p>首先打开</p>
@@ -891,8 +895,8 @@ var player = new Aliplayer({
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>markdown</tag>
+        <tag>git</tag>
         <tag>url</tag>
       </tags>
   </entry>
@@ -1149,8 +1153,8 @@ var player = new Aliplayer({
         <category>python</category>
       </categories>
       <tags>
-        <tag>bilibili</tag>
         <tag>git</tag>
+        <tag>bilibili</tag>
         <tag>linux</tag>
         <tag>12306</tag>
       </tags>

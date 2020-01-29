@@ -1,0 +1,98 @@
+.v .info {
+  display: none;
+}
+.v .vwrap {
+  border: 2px solid #000 !important;
+  overflow: visible !important;
+  counter-reset: avater;
+}
+.v .vbtn {
+  background-color: #5f5f5f !important;
+  color: #fff !important;
+}
+.v .vwrap .vedit .vctrl {
+  text-align: left !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.v .vlist .vquote .vcard {
+  border-left: 1px solid #e4e6f1;
+  margin-top: 5px;
+}
+.v .vlist .vcard .vhead .vsys {
+  background-color: #fff !important;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+  background-color: #7f7f7f !important;
+  color: #fff !important;
+  border-radius: 3px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+.v .vlist .vcard .vh .vquote .vmeta {
+  margin-right: 50px;
+}
+.v .vlist .vcard .vquote {
+  counter-reset: avaters;
+  border: none !important;
+}
+.v .vlist .vcard p {
+  margin-bottom: 0px !important;
+  color: #666;
+  text-align: left;
+  letter-spacing: 3px;
+  line-height: 25.59375px;
+}
+.v .vlist .vcard .vquote a.at {
+  float: left;
+  margin-right: 13px;
+  color: #567843;
+  text-decoration: none;
+}
+.v .vlist .vcard .vquote .vcontent {
+  font-size: 15px;
+  font-weight: 200;
+}
+.v .vlist .vcard .vcontent {
+  margin-top: 58px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  padding-top: 0px !important;
+}
+.v .vlist .vcard {
+  padding-top: 8px !important;
+}
+.v .vlist .vcard .vhead {
+  float: left !important;
+}
+.v .vlist .vcard .vh .vmeta {
+  float: right !important;
+}
+.v .vlist .vcard .vcontent.expand:after {
+  content: "点击查看全部" !important;
+  font-weight: 400 !important;
+}
+.v .item3 .vinput {
+  border: none !important;
+}
+.v .item3 {
+  border-bottom: 1px solid #5f5f5f;
+}
+.v .vinfo .vcount .vnum {
+  font-size: 16px !important;
+}
+.v .vinfo .col {
+  width: 100% !important;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.v .vlist .vquote .vcard {
+  border-left: 2px solid #7f7f7f !important;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.v .vlist .vcard .vh {
+  border-bottom: none !important;
+  padding-bottom: 0px !important;
+}

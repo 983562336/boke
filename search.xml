@@ -231,8 +231,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>Github</tag>
+        <tag>git</tag>
         <tag>coding</tag>
       </tags>
   </entry>
@@ -1148,10 +1148,10 @@ var player = new Aliplayer({
         <category>python</category>
       </categories>
       <tags>
-        <tag>bilibili</tag>
         <tag>linux</tag>
-        <tag>12306</tag>
+        <tag>bilibili</tag>
         <tag>git</tag>
+        <tag>12306</tag>
       </tags>
   </entry>
   <entry>
@@ -1254,8 +1254,8 @@ var player = new Aliplayer({
         <category>markdown</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>teaper</tag>
+        <tag>markdown</tag>
         <tag>Typora</tag>
       </tags>
   </entry>
@@ -1378,9 +1378,9 @@ var player = new Aliplayer({
         <category>hexo</category>
       </categories>
       <tags>
+        <tag>markdown</tag>
         <tag>hexo</tag>
         <tag>hello</tag>
-        <tag>markdown</tag>
       </tags>
   </entry>
 </search>

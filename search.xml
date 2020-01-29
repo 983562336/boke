@@ -56,7 +56,6 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>爬虫</tag>
         <tag>技术</tag>
       </tags>
@@ -1151,8 +1150,8 @@ var player = new Aliplayer({
       <tags>
         <tag>bilibili</tag>
         <tag>linux</tag>
-        <tag>git</tag>
         <tag>12306</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>

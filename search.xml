@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>F35为什么能在空中悬停</title>
+    <url>/2020/02/03/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E5%9C%A8%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/</url>
+    <content><![CDATA[<p>首先可以悬停的只是 <strong>F35B</strong></p>
+<p>并不是所有的肥电都可以悬停</p>
+<p>那么 F35B 是怎么实现空中悬停的呢？</p>
+<a id="more"></a>
+
+<p>反正 F35 是不用多介绍的，很多人都听过的吧，实在不知道的看看下面的链接</p>
+<p> <a href="https://baike.baidu.com/item/F-35%E6%88%98%E6%96%97%E6%9C%BA/995579?fromtitle=f35&fromid=2013581&fr=aladdin" target="_blank" rel="noopener">F35介绍</a></p>
+<p> 说起垂直起降战斗机，最耳熟能详的应该就是英国的鹞式了，作为第一款可以进行垂直起降的战斗机自然是受到了很多关注。</p>
+<p> <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4099635693,528989102&fm=26&gp=0.jpg" alt=""></p>
+<p> 但是相对于鹞的垂直起降方式，F35B的看上去就科幻了许多</p>
+<p> <img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/1.png" alt=""></p>
+<p> 但是了解的人应该都知道，作为一款单发战斗机，F35这个重量确实很重 <del>肥电的由来</del>  </p>
+<p> 但是它使用的发动机可不一般——F135，这款发动机是目前世界上推力最大的战斗机发动机，不仅可以推动F35起飞，还可以在没有使用加力燃烧室的情况下，让F35以1.2马赫的速度飞行150英里</p>
+<p> <img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/2.png" alt=""></p>
+<p> 为了让其具备垂直起降能力，F-35B配备了由罗尔斯罗伊斯开发的升降系统。该升降系统由升降风扇、驱动轴、两个滚柱和“三轴承旋转模块”（3BSM）组成。3BSM是推力矢量喷嘴，允许主发动机排气在飞机尾部向下偏转。升力风扇靠近飞机前部，使用两个反向旋转的叶片提供平衡推力。</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/3.png" alt=""></p>
+<p> 当然也只有B型号才有这个升降系统</p>
+<p>为了实现垂直起降，采用了发动机喷管向下偏转的模式，再加上升力风扇和调姿喷管来提供足够的升力。</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/1.png" alt=""></p>
+<p>F-35B进行垂直起降的过程相对比较缓慢，这可以被看作是一个进行缓慢动态变化的“悬停”过程，如果F-35B做不到空中短暂的悬停，也就不可能实现垂直起降。</p>
+<p>F-35B战斗机一共有四个喷口。机身中轴线上的两个喷口提供主要升力（约91%），机翼下方的两个喷口提供较小推力，用于平衡以及姿态调整。尾喷口喷出的是高温燃气 <del>想想也知道为什么</del> ，其他三个喷口喷出的都是冷空气。</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/5.png" alt=""></p>
+<p>F-35B发动机的主喷口向下偏折了90度，提供了竖直方向的推力，其喷出的是经过发动机涡轮的高温燃气。这个尾喷口偏折技术来源于前苏联的雅克141战机。</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/7.png" alt=""></p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/8.gif" alt=""></p>
+<p>F-35B两侧机翼下方的小喷口，是从发动机的低压压气机引气向下喷出。它们提供大约9%的升力，用于平衡和姿态调整，并不是主要的升力来源。</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/6.png" alt=""></p>
+<p>F-35B座舱后部有个竖直圆筒形的物体叫升力风扇。升力风扇自身不能产生动力，它需要一根长长的传动轴连接到主发动机上，由主发动机的低压涡轮带动。</p>
+<p>风扇后面的是辅助进气口</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/9.png" alt=""></p>
+<p>所以仔细看可以发现，F35B和其他型号的不同，它的驾驶舱后面一部分会凸起来</p>
+<p>平飞时，升力风扇与主发动机脱开不工作，主发动机仅用来提供平飞时的向后推力。当垂直起降时，升力风扇上方和下方的盖板打开，离合器将升力风扇与传动轴连接起来，主发动机的低压涡轮功率直接传递到升力风扇上，驱动升力风扇旋转，从风扇上方的进气口吸取空气并喷向下方，提供升力。</p>
+<p>直径1.27米的升力风扇是由风扇、涵道、D形喷管、联轴器、作动装置以及伺服系统组成，升力风扇有着超过40度的前后偏转角。在发动机正常工作的状态下，可以将机体上方的空气垂直向下喷出，喷气流量高达230kg/s，从而提供高达90000牛的升力，再加上发动机口下喷，使得悬停时的总推力达到175300牛。</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/10.png" alt=""></p>
+<p>升力风扇底部有一个VAVB喷管，能对升力风扇产生的升力进行矢量调节，这个组件被整合进飞机结构中，能承受结构载荷，这样做的目的是节省重量，要知道实现短距起飞垂直降落的一个关键因素就是：发动机产生的垂直升力要大于飞机重量 <del>当然这不是废话吗</del></p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/11.png" alt=""></p>
+<p>在红外摄像机下拍摄的画面</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/12.png" alt=""></p>
+<p>F-35B在不到3秒的时间里，就能把尾喷管15700磅的水平推力矢量偏转成垂直向下，使总升力达到39000磅，F-35B的垂直升力几乎相当于欧洲台风战机的全加力推力。这惊人的推力矢量能力是普惠公司专为F-35B的推进系统开发的。</p>
+<p>这就是为什么F35B可以实现垂直起降的原因了</p>
+<p>不过还有个问题，因为视线问题，飞行员在垂直起降时并不能看到自己飞机下面的情况</p>
+<p>不过得益于F35上装备的一项技术 <code>EODAS</code> ，也就是分散式孔径系统</p>
+<p>它由环绕飞机前后上下装设的6个红外线感应装置组成，即时提供驾驶员接近己方的飞行体数据</p>
+<p>再配合F-35的头盔显示器系统，可以让飞行员知晓自己周围的情况</p>
+<p>不过这头盔的形状确实很不咋滴</p>
+<p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1580722276087&di=f9734fe46d9baef34f2544461e7dfc33&imgtype=0&src=http%3A%2F%2Fclub-img.kdslife.com%2Fattach%2F1k0%2Fuv%2F32%2Focaja0-c6t.jpg" alt=""></p>
+<p>目前来说 <code>F35B</code> 主要是放在两栖攻击舰，比如最新的的美国级，不过还有些问题是要解决的，那就是高温燃气对甲板的侵蚀，虽然用隔热瓦可以起到作用，但是隔热瓦也有使用次数限制。</p>
+]]></content>
+      <categories>
+        <category>军事</category>
+      </categories>
+      <tags>
+        <tag>航空</tag>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python写成的图片爬虫</title>
     <url>/2020/01/29/python%E5%86%99%E6%88%90%E7%9A%84%E5%9B%BE%E7%89%87%E7%88%AC%E8%99%AB/</url>
     <content><![CDATA[<p>这是一个用来爬取百度贴吧帖子里的图片的爬虫</p>
@@ -57,8 +116,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>爬虫</tag>
         <tag>技术</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -337,61 +396,6 @@ var player = new Aliplayer({
       <tags>
         <tag>技术</tag>
         <tag>航模</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于工具和知识管理</title>
-    <url>/2020/01/16/%E5%85%B3%E4%BA%8E%E5%B7%A5%E5%85%B7%E5%92%8C%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<p>如果你也是计算机专业的话，相信对于一些开发工具都有了解</p>
-<p>而且学习了相关知识，自然也需要把一些重要的东西记录下来</p>
-<p>总结一年来学习的各种知识点，年初目标完成了多少，明年又要计划做什么？期间可能要翻翻自己的笔记、代码</p>
-<p>这里说一下我使用的吧！</p>
-<a id="more"></a>
-
-<h3 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h3><h4 id="python"><a href="#python" class="headerlink" title="python"></a>python</h4><p>看过侧边栏的关于的内容的都知道，我也学 <code>python</code> 的吧 <del>虽然也是新手</del></p>
-<p>如果说搞这个有什么好工具的话，嗯~</p>
-<p>最开始了解的应该是 <font color=red><code>IDLE</code> </font></p>
-<p>这个是下载 <code>python</code> 后自带的一个东西，初期使用还可以，界面相当相当的简洁 <del>跟个记事本一样</del> ，不过后期使用这个不推荐吧，看的难受啊不觉得吗</p>
-<p>最好使的应该就是 <font color=red><code>pycharm</code></font></p>
-<p>这个不陌生吧？ 这是使用率最高的编写 <code>python</code> 的软件，相当方便，内置功能也很齐全</p>
-<p>它分为两个版本，简单的说就是免费版和收钱版。</p>
-<p>社区版(免费)就可以满足一般的需求了，如果觉得还不够就加钱吧</p>
-<h4 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h4><p>我自己使用的是 <code>HBuilderX</code> 这款软件，个人认为吧，这个用来写这些很方便</p>
-<p>一些你能想到的功能它基本都支持，而且界面还蛮好看的</p>
-<p>如果需要什么插件的话，也可以在内部一键安装，相当方便</p>
-<p>而且它还可以用来开发 <code>app</code> 和小程序</p>
-<h4 id="Visual-Studio-code"><a href="#Visual-Studio-code" class="headerlink" title="Visual Studio code"></a>Visual Studio code</h4><p>一个运行于 Mac OS X、Windows和 Linux 之上的，针对于编写现代 Web 和云应用的跨平台源代码编辑器</p>
-<p>用起来也不错，这个轻量化编辑器</p>
-<p>也可以用来写写 <code>markdown</code> 真的是多功能爽歪歪</p>
-<p>需要什么插件也可以快速的在搜索里找到并安装</p>
-<h3 id="知识管理"><a href="#知识管理" class="headerlink" title="知识管理"></a>知识管理</h3><p>脑子不可能把你学习过的东西全给记得一清二楚吧？有的时候你也会忘记一些很重要的东西</p>
-<p>不是有句话这么说的吗，好记性不如烂笔头</p>
-<p>如果你看过我博客的评论区域的话，会发现它是支持 <code>markdown</code> 的，其实我记录这些资料也是使用 <code>markdown</code> 的</p>
-<p>对于使用 <code>markdown</code> 语法来记录，推荐的软件是<strong>有道云</strong>，它支持新建 <code>markdown</code> 文档，而且还支持同步功能，不仅可以随时随地查看，还可以把笔记分享给别人。</p>
-<p>兼容大部分 Markdown 平台（简书、Github、Hexo）的渲染样式</p>
-<h3 id="Gitgub"><a href="#Gitgub" class="headerlink" title="Gitgub"></a>Gitgub</h3><p>一个平台，你可以把自己的代码托管在上面保存，而且你还可以通过这个平台参加一些大佬的项目，来提高自己的能力</p>
-<p>并且你还发掘一些有趣的代码并把它们拉取到自己仓库，通过 <code>git cloen</code> 指令克隆到本地查看</p>
-<p>它还可以发布静态页面，你的一些网页就可以放到上面发布，我的博客就是托管在 <code>Github</code> 上面，还支持绑定域名</p>
-<p>不过因为访问速度比较慢，可以使用 <code>CDN</code> 来进行加速</p>
-<h3 id="码云"><a href="#码云" class="headerlink" title="码云"></a>码云</h3><p>这个好像之前有个水文讲过来着，其实这个和上面的 <code>Github</code> 在功能上差别并不大，但是码云的访问速度很快</p>
-<p>这个尤其体现在使用 <code>git</code> 进行克隆的时候，比使用 <code>Github</code> 仓库克隆的时候快得多</p>
-<p>我拿博客上的图片，就是存放在码云的</p>
-<p>而且码云可以同步 <code>GitHub</code> 仓库，解决了后顾之忧</p>
-<p>它同样也可以发布静态页面，不过免费版有很多限制了</p>
-<p><code>pro</code> 版的价格是 99元/年</p>
-<h3 id="coding"><a href="#coding" class="headerlink" title="coding"></a>coding</h3><p>这个是一个类似团队合作的平台个人觉得，如果你的团队5个人以下就是免费，但是超过5个人就是要收费的，按团队规模来收费</p>
-<p>相对来说还是可以，而且它同样可以部署静态网页</p>
-<p>只不过这东西老是容易抽风，有时候静态网页莫名其妙的打不开了WQ</p>
-<p>而且现在部署的话，它还一个代码审核，这个是真的无语，有事没事就说你的哪个里面非法，气都会气死在这里 </p>
-<p><font size=6><del>要不是Github国内访问速度慢的离谱我会用你？</del></font></p>
-]]></content>
-      <categories>
-        <category>开发者</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>gitte</tag>
-        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -895,8 +899,8 @@ var player = new Aliplayer({
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>git</tag>
+        <tag>markdown</tag>
         <tag>url</tag>
       </tags>
   </entry>

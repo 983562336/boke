@@ -948,8 +948,8 @@ var player = new Aliplayer({
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>git</tag>
+        <tag>markdown</tag>
         <tag>url</tag>
       </tags>
   </entry>

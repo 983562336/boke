@@ -339,7 +339,17 @@
 <p><strong>页数导航背景</strong></p>
 <p>博客根目录 <code>themes\next\source\css\_schemes\Gemini\index.styl</code></p>
 <p>搜索 <code>pagination</code>，修改此标签下 <code>background</code> 属性</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background: rgba(255,255,255,0.5);</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background: rgba(255,255,255,0.5);</span><br></pre></td></tr></table></figure>
+
+<h4 id="pjax"><a href="#pjax" class="headerlink" title="pjax"></a>pjax</h4><p>这个是什么大家可以自行百度，因为这也不是什么新奇的东西了</p>
+<p><code>next</code> 主题的配置文件里，查找 <code>pjax</code> 找到如下代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Easily enable fast Ajax navigation on your website.</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-pjax</span><br><span class="line">pjax: true        这里修改成true</span><br></pre></td></tr></table></figure>
+
+<p>当然不止这样，还需要修改一个地方</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Internal version: 0.2.8</span><br><span class="line"># pjax: &#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;theme-next&#x2F;theme-next-pjax@0&#x2F;pjax.min.js</span><br><span class="line">pjax: &#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;theme-next&#x2F;theme-next-pjax@0&#x2F;pjax.min.js</span><br></pre></td></tr></table></figure>
+
+<p>然后保存退出就行了</p>
+]]></content>
       <categories>
         <category>hexo</category>
       </categories>
@@ -1312,8 +1322,8 @@ var player = new Aliplayer({
         <category>markdown</category>
       </categories>
       <tags>
-        <tag>teaper</tag>
         <tag>markdown</tag>
+        <tag>teaper</tag>
         <tag>Typora</tag>
       </tags>
   </entry>
@@ -1436,9 +1446,9 @@ var player = new Aliplayer({
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
         <tag>hello</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
 </search>

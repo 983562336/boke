@@ -1206,8 +1206,8 @@ var player = new Aliplayer({
         <category>python</category>
       </categories>
       <tags>
-        <tag>bilibili</tag>
         <tag>git</tag>
+        <tag>bilibili</tag>
         <tag>linux</tag>
         <tag>12306</tag>
       </tags>

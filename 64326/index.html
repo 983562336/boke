@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.7/skins/default/aliplayer-min.css" />
+<script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.8.7/aliplayer-min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1609317_gj5rz4uohy4.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/psc.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/psc.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://www.hexoblog.top').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+
+  <meta name="description" content="每年恰逢国庆或新年，Github 的这个项目都会火，今天正好有时间，从头到尾带大家详细走两遍吧（本地预售+服务器捡漏）！    本机系统：Archlinux 服务器系统：Ubuntu 19.04 项目地址：testerSunshine&#x2F;12306 git 版本：2.24.1 python 版本：3.8.0 docker 版本：19.03.5-ce docker-compose 版本：1.25.1-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="过年抢票 12306 走起">
+<meta property="og:url" content="http://www.hexoblog.top/64326/index.html">
+<meta property="og:site_name" content="杨帆的博客">
+<meta property="og:description" content="每年恰逢国庆或新年，Github 的这个项目都会火，今天正好有时间，从头到尾带大家详细走两遍吧（本地预售+服务器捡漏）！    本机系统：Archlinux 服务器系统：Ubuntu 19.04 项目地址：testerSunshine&#x2F;12306 git 版本：2.24.1 python 版本：3.8.0 docker 版本：19.03.5-ce docker-compose 版本：1.25.1-">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006kWbIogy1ga94bkpwaqj30v707yjsz.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006kWbIogy1ga95ddoy3nj30lh05kdgq.jpg">
+<meta property="article:published_time" content="2020-01-10T13:30:52.000Z">
+<meta property="article:modified_time" content="2020-01-14T06:45:45.859Z">
+<meta property="article:author" content="杨帆">
+<meta property="article:tag" content="bilibili">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="12306">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006kWbIogy1ga94bkpwaqj30v707yjsz.jpg">
+
+<link rel="canonical" href="http://www.hexoblog.top/64326/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+
+  <title>过年抢票 12306 走起 | 杨帆的博客</title>
+  
+
+
+  <script pjax>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?32de29eb00a7578e46002349327ca5ad";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<!-- 天气 -->
+<script type="text/javascript">
+WIDGET = {FID: '5a7igfkKBX'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">杨帆的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">军事，航空航天，前沿技术爱好者</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-关于作者">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于作者</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-r18g">
+
+    <a href="/photos/" rel="section"><i class="fa fa-fw fa-image"></i>R18G</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-更新日志">
+
+    <a href="/Journal/" rel="section"><i class="fa fa-fw fa-user"></i>更新日志</a>
+
+  </li>
+        <li class="menu-item menu-item-友情链接">
+
+    <a href="/Friend/" rel="section"><i class="fa fa-fw fa-link"></i>友情链接</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/983562336" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hexoblog.top/64326/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨帆">
+      <meta itemprop="description" content="每天都在努力学习，希望未来找到好工作！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨帆的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          过年抢票 12306 走起
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-10 21:30:52" itemprop="dateCreated datePublished" datetime="2020-01-10T21:30:52+08:00">2020-01-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 14:45:45" itemprop="dateModified" datetime="2020-01-14T14:45:45+08:00">2020-01-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/64326/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/64326/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>15k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>14 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>每年恰逢国庆或新年，Github 的这个项目都会火，今天正好有时间，从头到尾带大家详细走两遍吧（本地预售+服务器捡漏）！  </p>
+<ul>
+<li>本机系统：Archlinux</li>
+<li>服务器系统：Ubuntu 19.04</li>
+<li>项目地址：<a href="https://github.com/testerSunshine/12306" target="_blank" rel="noopener">testerSunshine/12306</a></li>
+<li>git 版本：2.24.1</li>
+<li>python 版本：3.8.0</li>
+<li>docker 版本：19.03.5-ce</li>
+<li>docker-compose 版本：1.25.1-rc1</li>
+<li>视频教程：<a href="https://www.bilibili.com/video/av80673498#reply2210912155" target="_blank" rel="noopener">哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a></li>
+</ul>
+<a id="more"></a>
+
+
+<h4 id="安装Docker容器"><a href="#安装Docker容器" class="headerlink" title="安装Docker容器"></a>安装Docker容器</h4><p>安装 docker 我这里写了两种，一种本地 Archlinux 系统的，一种 Ubuntu 服务器的，看你是怎么选择，我是首先本地找个有票的目的地去抢，抢到票的话再搭建服务器捡漏</p>
+<details>
+<summary>本地系统</summary>
+
+
+<p><a href="https://wiki.archlinux.org/index.php/Docker_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">Arch Linux Docker</a>提供了两个版本，二选一喽（我选一）  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S docker    <span class="comment">#稳定版</span></span><br><span class="line">yaourt -S docker-git    <span class="comment">#开发版</span></span><br></pre></td></tr></table></figure>
+
+<p>启动Docker服务  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> docker.service</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，运行下面的命令，验证是否安装成功  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker version     <span class="comment">#由于还没把docker用户加入用户组，所以运行docker命令需要加sudo</span></span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line">sudo docker info</span><br></pre></td></tr></table></figure>
+
+<p><code>Docker</code>需要用户具有<code>sudo</code>权限，为了避免每次命令都输入<code>sudo</code>，可以把用户加入<code>Docker</code>用户组(系统重启后生效)  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG docker <span class="variable">$USER</span>   <span class="comment">#自动创建docker用户并加入到用户组</span></span><br><span class="line">cat /etc/group  <span class="comment">#查看文件中有没有出现docker</span></span><br></pre></td></tr></table></figure>
+
+<p>列出本机的镜像  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker image ls     <span class="comment">#列出本机的所有image文件</span></span><br><span class="line">docker images       <span class="comment">#列出本机的所有image文件 (等同于docker image ls)</span></span><br></pre></td></tr></table></figure>
+
+<p>想设置你自己的存储驱动选项和<code>docker</code>源，编辑 <code>/etc/docker/daemon.json</code> (如果不存在就自己创建)  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit &#x2F;etc&#x2F;docker&#x2F;daemon.json      #创建daemon.json文件</span><br><span class="line">#内容如下</span><br><span class="line">&#123;</span><br><span class="line">&quot;storage-driver&quot;: &quot;overlay2&quot;,   #存储驱动选项</span><br><span class="line">&quot;registry-mirrors&quot;: [&quot;http:&#x2F;&#x2F;hub-mirror.c.163.com&quot;]    #网易163源</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其他源如下：  </p>
+<blockquote>
+<p>阿里源：<a href="https://pee6w651.mirror.aliyuncs.com" target="_blank" rel="noopener">https://pee6w651.mirror.aliyuncs.com</a><br>网易163源：<a href="http://hub-mirror.c.163.com" target="_blank" rel="noopener">http://hub-mirror.c.163.com</a><br>docker中国区源：<a href="https://registry.docker-cn.com" target="_blank" rel="noopener">https://registry.docker-cn.com</a><br>中国科技大学：<a href="https://docker.mirrors.ustc.edu.cn" target="_blank" rel="noopener">https://docker.mirrors.ustc.edu.cn</a>  </p>
+</blockquote>
+<p>修改重新启动<code>docker</code>服务  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<p><strong>测试docker</strong><br>从远程仓库<a href="https://hub.docker.com/" target="_blank" rel="noopener">docker hub</a><code>pull</code>一个镜像到本地仓库<code>/var/lib/docker</code>，以<a href="https://hub.docker.com/_/hello-world" target="_blank" rel="noopener">hello-world</a>为例  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull hello-world     <span class="comment">#pull一个镜像</span></span><br><span class="line">docker images     <span class="comment">#查看本地镜像</span></span><br><span class="line">docker [container] run hello-world    <span class="comment">#运行hello-world镜像(本地仓库没有镜像，会自动运行远程仓库中的)</span></span><br></pre></td></tr></table></figure>
+
+<p><code>hello-world</code>镜像运行之后输出一大段文本，然后进程会自动停止，有的镜像不会自动停止(例如：<code>Ubuntu</code>系统<code>ubuntu bash</code>)，这时候就需要手动杀死进程<code>docker container kill &lt;CONTAINER ID&gt;</code>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it ubuntu bash  <span class="comment">#使用bash运行ubuntu镜像</span></span><br></pre></td></tr></table></figure>
+
+<p>再打开一个终端窗口，查看容器运行情况  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker container ls     <span class="comment">#列出本机正在运行的容器</span></span><br><span class="line">docker ps   <span class="comment">#列出本机正在运行的容器，等效于 docker container ls</span></span><br><span class="line">docker container ls --all     <span class="comment">#列出本机所有容器，包括终止运行的容器</span></span><br><span class="line">docker ps --all   <span class="comment">##列出本机所有容器，包括终止运行的容器，等效于 docker container ls --all</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到以下内容  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#集装箱ID           图像                命令                   创建               状态                端口                名称</span></span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">dadf7d24b756        ubuntu              <span class="string">"bash"</span>              6 seconds ago       Up 5 seconds                            hungry_stallman</span><br></pre></td></tr></table></figure>
+
+<p>手动杀死<code>ubuntu</code>进程  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker [container] <span class="built_in">kill</span> dadf7d24b756    <span class="comment">#dadf7d24b756是上面查出的CONTAINER ID</span></span><br></pre></td></tr></table></figure>
+
+<p>杀死进程，容器还在，如果容器也不要了，可以删除  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker container ls --all     <span class="comment">#列出本机所有容器，包括终止运行的容器</span></span><br><span class="line">docker [container] rm &lt;CONTAINER ID&gt;...      <span class="comment">#删除指定容器</span></span><br></pre></td></tr></table></figure>
+
+<p>容器是运行镜像之后产生的，你可以理解为镜像是个压缩包，容器就是解压出来的文件夹，如果还要把本地镜像也删除，可以  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker image rm &lt;REPOSITORY&gt;...     <span class="comment">#根据镜像名称删除image文件</span></span><br><span class="line">docker rmi &lt;IMAGE ID&gt;...     <span class="comment">#根据镜像id删除image文件</span></span><br></pre></td></tr></table></figure>
+
+<p><span style="color:#ff0000;">注意：删除镜像之前，必须把该镜像的所有容器删除（包括正在运行的容器和停止使用的容器）才能删除镜像，否则会报错</span>  </p>
+</details>
+
+<details>
+<summary>Ubuntu 服务器</summary>
+
+
+<p>安装 docker 容器，服务器是 ubuntu 19.04，直接安装即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ssh root@55.66.77.88    <span class="comment">#ssh 登录</span></span><br><span class="line">curl https://get.docker.com | bash  <span class="comment">#下载</span></span><br><span class="line">sudo apt install docker.io      <span class="comment">#安装 docker</span></span><br><span class="line">docker --version    <span class="comment">#查看docker 版本</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#设置开机启动</span></span><br><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h4 id="安装docker-compose"><a href="#安装docker-compose" class="headerlink" title="安装docker-compose"></a>安装docker-compose</h4><p><a href="https://github.com/docker/compose/releases" target="_blank" rel="noopener">Compose</a> 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YAML 文件来配置应用程序的服务。然后，使用一个命令，就可以从配置中创建并启动所有服务。要了解有关 Compose 的所有功能的更多信息，请参阅<a href="https://github.com/docker/docker.github.io/blob/master/compose/index.md#features" target="_blank" rel="noopener">功能列表</a>，这个不管是本地系统还是服务器都是一样安装的 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo -i <span class="comment">#使用 root 账号</span></span><br><span class="line">curl -L https://github.com/docker/compose/releases/download/1.25.1-rc1/docker-compose-`uname -s`-`uname -m` -o /usr/<span class="built_in">local</span>/bin/docker-compose  <span class="comment">#直接下载docker-compose文件到/usr/local/bin</span></span><br><span class="line">chmod +x /usr/<span class="built_in">local</span>/bin/docker-compose  <span class="comment">#授权</span></span><br><span class="line"><span class="built_in">exit</span> <span class="comment">#退出root</span></span><br><span class="line">docker-compose --version    <span class="comment">#查看docker-compose版本</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="克隆项目"><a href="#克隆项目" class="headerlink" title="克隆项目"></a>克隆项目</h4><p>把 <a href="https://github.com/testerSunshine/12306" target="_blank" rel="noopener">testerSunshine/12306</a> 克隆到本地电脑或服务器  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/testerSunshine/12306.git</span><br><span class="line"><span class="built_in">cd</span> 12306    <span class="comment">#进入文件夹</span></span><br><span class="line">vim TickerConfig.py   <span class="comment">#编辑配置文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>配置文件 <a href="https://github.com/testerSunshine/12306/blob/master/TickerConfig.py" target="_blank" rel="noopener">TickerConfig.py</a> 中需要填写一些基本的参数，要我们按情况修改，这里我提供两种配置方案</p>
+<details>
+<summary>本机：刷票+本地打码+预售</summary>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="comment"># 关于软件使用配置说明，一定要看！！！</span></span><br><span class="line"><span class="comment"># ps: 如果是候补车票，需要通过人证一致性核验的用户及激活的“铁路畅行”会员可以提交候补需求，请您按照操作说明在铁路12306app.上完成人证核验</span></span><br><span class="line"><span class="comment"># 关于候补了之后是否还能继续捡漏的问题在此说明： 软件为全自动候补加捡漏，如果软件候补成功则会停止抢票，发出邮件通知，但是不会影响你继续捡漏，</span></span><br><span class="line"><span class="comment"># 如果这个时候捡漏捡到的话，也是可以付款成功的，也就是说，捡漏+候补，可以最大程度提升抢票成功率</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 刷票模式：1=刷票 2=候补+刷票</span></span><br><span class="line">TICKET_TYPE = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 出发日期(list) "2018-01-06", "2018-01-07"</span></span><br><span class="line">STATION_DATES = [</span><br><span class="line">    <span class="string">"2020-01-23"</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 填入需要购买的车次(list)，"G1353"</span></span><br><span class="line"><span class="comment"># 修改车次填入规则，注：(以前设置的车次逻辑不变)，如果车次填入为空，那么就是当日乘车所有车次都纳入筛选返回</span></span><br><span class="line"><span class="comment"># 不填车次是整个list为空才算，如果不是为空，依然会判断车次的，这种是错误的写法 [""], 正确的写法 []</span></span><br><span class="line">STATION_TRAINS = [<span class="string">"D2357"</span>,<span class="string">"D6581"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 出发城市，比如深圳北，就填深圳就搜得到</span></span><br><span class="line">FROM_STATION = <span class="string">"赣州"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 到达城市 比如深圳北，就填深圳就搜得到</span></span><br><span class="line">TO_STATION = <span class="string">"于都"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 座位(list) 多个座位ex:</span></span><br><span class="line"><span class="comment"># "商务座",</span></span><br><span class="line"><span class="comment"># "一等座",</span></span><br><span class="line"><span class="comment"># "二等座",</span></span><br><span class="line"><span class="comment"># "特等座",</span></span><br><span class="line"><span class="comment"># "软卧",</span></span><br><span class="line"><span class="comment"># "硬卧",</span></span><br><span class="line"><span class="comment"># "硬座",</span></span><br><span class="line"><span class="comment"># "无座",</span></span><br><span class="line"><span class="comment"># "动卧",</span></span><br><span class="line">SET_TYPE = [<span class="string">"一等座"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当余票小于乘车人，如果选择优先提交，则删减联系人和余票数一致在提交</span></span><br><span class="line"><span class="comment"># bool</span></span><br><span class="line">IS_MORE_TICKET = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 乘车人(list) 多个乘车人ex:</span></span><br><span class="line"><span class="comment"># "张三",</span></span><br><span class="line"><span class="comment"># "李四"</span></span><br><span class="line">TICKET_PEOPLES = [<span class="string">"张三"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 12306登录账号</span></span><br><span class="line">USER = <span class="string">"teaper"</span></span><br><span class="line">PWD = <span class="string">"zdfvgh5g6"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 加入小黑屋时间默认为5分钟，此功能为了防止僵尸票导致一直下单不成功错过正常的票</span></span><br><span class="line">TICKET_BLACK_LIST_TIME = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动打码</span></span><br><span class="line">IS_AUTO_CODE = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置2本地自动打码，需要配置tensorflow和keras库，3为云打码，由于云打码服务器资源有限(为2h4C的cpu服务器)，请不要恶意请求，不然只能关闭服务器</span></span><br><span class="line"><span class="comment"># ps: 请不要一直依赖云服务器资源，在此向所有提供服务器同学表示感谢</span></span><br><span class="line">AUTO_CODE_TYPE = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 此处设置云打码服务器地址，如果有自建的服务器，可以自行更改</span></span><br><span class="line">HOST = <span class="string">"captcha:80"</span></span><br><span class="line">REQ_URL = <span class="string">"/verify/base64/"</span></span><br><span class="line">HTTP_TYPE = <span class="string">"http"</span></span><br><span class="line"><span class="comment"># HOST="12306.yinaoxiong.cn" #备用服务器稳定性较差</span></span><br><span class="line"><span class="comment"># REQ_URL="/verify/base64/"</span></span><br><span class="line"><span class="comment"># HTTP_TYPE="https"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  邮箱配置，如果抢票成功，将通过邮件配置通知给您</span></span><br><span class="line"><span class="comment">#  列举163</span></span><br><span class="line"><span class="comment">#  email: "xxx@163.com"</span></span><br><span class="line"><span class="comment">#  notice_email_list: "123@qq.com"</span></span><br><span class="line"><span class="comment">#  username: "xxxxx"</span></span><br><span class="line"><span class="comment">#  password: "xxxxx</span></span><br><span class="line"><span class="comment">#  host: "smtp.163.com"</span></span><br><span class="line"><span class="comment">#  列举qq  ，qq设置比较复杂，需要在邮箱--&gt;账户--&gt;开启smtp服务，取得授权码==邮箱登录密码</span></span><br><span class="line"><span class="comment">#  email: "xxx@qq.com"</span></span><br><span class="line"><span class="comment">#  notice_email_list: "123@qq.com"</span></span><br><span class="line"><span class="comment">#  username: "xxxxx"</span></span><br><span class="line"><span class="comment">#  password: "授权码"</span></span><br><span class="line"><span class="comment">#  host: "smtp.qq.com"</span></span><br><span class="line">EMAIL_CONF = &#123;</span><br><span class="line">    <span class="string">"IS_MAIL"</span>: <span class="literal">True</span>,</span><br><span class="line">    <span class="string">"email"</span>: <span class="string">"www@teaper.dev"</span>,</span><br><span class="line">    <span class="string">"notice_email_list"</span>: <span class="string">"www@teaper.dev"</span>,</span><br><span class="line">    <span class="string">"username"</span>: <span class="string">"www@teaper.dev"</span>,</span><br><span class="line">    <span class="string">"password"</span>: <span class="string">"sjfkf3fg"</span>,</span><br><span class="line">    <span class="string">"host"</span>: <span class="string">"smtp.exmail.qq.com"</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启 server酱 微信提醒， 使用前需要前往 http://sc.ftqq.com/3.version 扫码绑定获取 SECRET 并关注获得抢票结果通知的公众号</span></span><br><span class="line">SERVER_CHAN_CONF = &#123;</span><br><span class="line">    <span class="string">"is_server_chan"</span>: <span class="literal">False</span>,</span><br><span class="line">    <span class="string">"secret"</span>: <span class="string">"SCU71142T22f940ddgh34f9f369dc6d75e0072465f9e6"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启cdn查询，可以更快的检测票票 1为开启，2为关闭</span></span><br><span class="line">IS_CDN = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下单接口分为两种，1 模拟网页自动捡漏下单（不稳定），2 模拟车次后面的购票按钮下单（稳如老狗）</span></span><br><span class="line">ORDER_TYPE = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下单模式 1 为预售，整点刷新，刷新间隔0.1-0.5S, 然后会校验时间，比如12点的预售，那脚本就会在12.00整检票，刷新订单</span></span><br><span class="line"><span class="comment">#         2 是捡漏，捡漏的刷新间隔时间为0.5-3秒，时间间隔长，不容易封ip</span></span><br><span class="line">ORDER_MODEL = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启代理, 0代表关闭， 1表示开始</span></span><br><span class="line"><span class="comment"># 开启此功能的时候请确保代理ip是否可用，在测试放里面经过充分的测试，再开启此功能，不然可能会耽误你购票的宝贵时间</span></span><br><span class="line"><span class="comment"># 使用方法：</span></span><br><span class="line"><span class="comment"># 1、在agency/proxy_list列表下填入代理ip</span></span><br><span class="line"><span class="comment"># 2、测试UnitTest/TestAll/testProxy 测试代理是否可以用</span></span><br><span class="line"><span class="comment"># 3、开启代理ip</span></span><br><span class="line">IS_PROXY = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 预售放票时间, 如果是捡漏模式，可以忽略此操作</span></span><br><span class="line">OPEN_TIME = <span class="string">"12:59:57"</span></span><br><span class="line"><span class="comment"># 1=使用selenium获取devicesID</span></span><br><span class="line"><span class="comment"># 2=使用网页端/otn/HttpZF/logdevice获取devicesId，这个接口的算法目前可能有点问题，如果登录一直302的请改为配置1</span></span><br><span class="line"><span class="comment"># 3=自己打开浏览器在headers-Cookies中抓取RAIL_DEVICEID和RAIL_EXPIRATION，这个就不用配置selenium</span></span><br><span class="line">COOKIE_TYPE = <span class="number">3</span></span><br><span class="line"><span class="comment"># 如果COOKIE_TYPE=1，则需配置chromeDriver路径,下载地址http://chromedriver.storage.googleapis.com/index.html</span></span><br><span class="line"><span class="comment"># chromedriver配置版本只要和chrome的大版本匹配就行</span></span><br><span class="line">CHROME_PATH = <span class="string">"/opt/google/chrome/google-chrome"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 为了docker37 准备的环境变量，windows环境可以不用管这个参数</span></span><br><span class="line">CHROME_CHROME_PATH = <span class="string">"/opt/google/chrome/google-chrome"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果COOKIE_TYPE=3, 则需配置RAIL_EXPIRATION、RAIL_DEVICEID的值</span></span><br><span class="line">RAIL_EXPIRATION = <span class="string">"1577394287684"</span></span><br><span class="line">RAIL_DEVICEID = <span class="string">"VbwdRQJ8tWqbACs-rCEMSKgU-juNgkqdJQ7j9Nt6KMrrS8RBJotuRdyPyS1WS1fkJY6sw7NDpxkMEL7ScTEGLvytNL_IVT_QKEOT_5tBCs71_WeR3Jp3bwHIBoIieVcrI9yKWPHqR36oXpvq4J1p2BEubXmBricl"</span></span><br><span class="line"><span class="comment"># RAIL_EXPIRATION = "1577034533293"</span></span><br><span class="line"><span class="comment"># RAIL_DEVICEID = "CDno29Erc_Pf3FSXb4dzq-Op64EhWrsi5yUZKVIKR1MAfYo2qFlCeXD8VkexY7_1qg-ClV-fE8j9jgVlPZxRh3wVc54qLe_5A8sdr62qZx4B22JPF8lFCjpgTKZ5ODW90HJd5tiQsJ1KR9nOqHRxHj1FT5LEIwfw"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1=&gt;为一直随机ua,2-&gt;只启动的时候随机一次ua</span></span><br><span class="line">RANDOM_AGENT = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">PASSENGER_TICKER_STR = &#123;</span><br><span class="line">    <span class="string">'一等座'</span>: <span class="string">'M'</span>,</span><br><span class="line">    <span class="string">'特等座'</span>: <span class="string">'P'</span>,</span><br><span class="line">    <span class="string">'二等座'</span>: <span class="string">'O'</span>,</span><br><span class="line">    <span class="string">'商务座'</span>: <span class="number">9</span>,</span><br><span class="line">    <span class="string">'硬座'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'无座'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'软座'</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">'软卧'</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="string">'硬卧'</span>: <span class="number">3</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保护12306官网请求频率，设置随机请求时间，原则为5分钟不大于80次</span></span><br><span class="line"><span class="comment"># 最大间隔请求时间</span></span><br><span class="line">MAX_TIME = <span class="number">3</span></span><br><span class="line"><span class="comment"># 最小间隔请求时间</span></span><br><span class="line">MIN_TIME = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 软件版本</span></span><br><span class="line">RE_VERSION = <span class="string">"1.2.004"</span></span><br></pre></td></tr></table></figure>
+
+</details>
+
+<details>
+<summary>服务器：候补+刷票+本地打码+捡漏</summary>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="comment"># 关于软件使用配置说明，一定要看！！！</span></span><br><span class="line"><span class="comment"># ps: 如果是候补车票，需要通过人证一致性核验的用户及激活的“铁路畅行”会员可以提交候补需求，请您按照操作说明在铁路12306app.上完成人证核验</span></span><br><span class="line"><span class="comment"># 关于候补了之后是否还能继续捡漏的问题在此说明： 软件为全自动候补加捡漏，如果软件候补成功则会停止抢票，发出邮件通知，但是不会影响你继续捡漏，</span></span><br><span class="line"><span class="comment"># 如果这个时候捡漏捡到的话，也是可以付款成功的，也就是说，捡漏+候补，可以最大程度提升抢票成功率</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 刷票模式：1=刷票 2=候补+刷票</span></span><br><span class="line">TICKET_TYPE = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 出发日期(list) "2018-01-06", "2018-01-07"</span></span><br><span class="line">STATION_DATES = [</span><br><span class="line">    <span class="string">"2020-01-23"</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 填入需要购买的车次(list)，"G1353"</span></span><br><span class="line"><span class="comment"># 修改车次填入规则，注：(以前设置的车次逻辑不变)，如果车次填入为空，那么就是当日乘车所有车次都纳入筛选返回</span></span><br><span class="line"><span class="comment"># 不填车次是整个list为空才算，如果不是为空，依然会判断车次的，这种是错误的写法 [""], 正确的写法 []</span></span><br><span class="line">STATION_TRAINS = [<span class="string">"D2357"</span>,<span class="string">"D6581"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 出发城市，比如深圳北，就填深圳就搜得到</span></span><br><span class="line">FROM_STATION = <span class="string">"赣州"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 到达城市 比如深圳北，就填深圳就搜得到</span></span><br><span class="line">TO_STATION = <span class="string">"于都"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 座位(list) 多个座位ex:</span></span><br><span class="line"><span class="comment"># "商务座",</span></span><br><span class="line"><span class="comment"># "一等座",</span></span><br><span class="line"><span class="comment"># "二等座",</span></span><br><span class="line"><span class="comment"># "特等座",</span></span><br><span class="line"><span class="comment"># "软卧",</span></span><br><span class="line"><span class="comment"># "硬卧",</span></span><br><span class="line"><span class="comment"># "硬座",</span></span><br><span class="line"><span class="comment"># "无座",</span></span><br><span class="line"><span class="comment"># "动卧",</span></span><br><span class="line">SET_TYPE = [<span class="string">"一等座"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当余票小于乘车人，如果选择优先提交，则删减联系人和余票数一致在提交</span></span><br><span class="line"><span class="comment"># bool</span></span><br><span class="line">IS_MORE_TICKET = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 乘车人(list) 多个乘车人ex:</span></span><br><span class="line"><span class="comment"># "张三",</span></span><br><span class="line"><span class="comment"># "李四"</span></span><br><span class="line">TICKET_PEOPLES = [<span class="string">"张三"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 12306登录账号</span></span><br><span class="line">USER = <span class="string">"teaper"</span></span><br><span class="line">PWD = <span class="string">"zdfvgh5g6"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 加入小黑屋时间默认为5分钟，此功能为了防止僵尸票导致一直下单不成功错过正常的票</span></span><br><span class="line">TICKET_BLACK_LIST_TIME = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动打码</span></span><br><span class="line">IS_AUTO_CODE = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置2本地自动打码，需要配置tensorflow和keras库，3为云打码，由于云打码服务器资源有限(为2h4C的cpu服务器)，请不要恶意请求，不然只能关闭服务器</span></span><br><span class="line"><span class="comment"># ps: 请不要一直依赖云服务器资源，在此向所有提供服务器同学表示感谢</span></span><br><span class="line">AUTO_CODE_TYPE = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 此处设置云打码服务器地址，如果有自建的服务器，可以自行更改</span></span><br><span class="line">HOST = <span class="string">"captcha:80"</span></span><br><span class="line">REQ_URL = <span class="string">"/verify/base64/"</span></span><br><span class="line">HTTP_TYPE = <span class="string">"http"</span></span><br><span class="line"><span class="comment"># HOST="12306.yinaoxiong.cn" #备用服务器稳定性较差</span></span><br><span class="line"><span class="comment"># REQ_URL="/verify/base64/"</span></span><br><span class="line"><span class="comment"># HTTP_TYPE="https"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  邮箱配置，如果抢票成功，将通过邮件配置通知给您</span></span><br><span class="line"><span class="comment">#  列举163</span></span><br><span class="line"><span class="comment">#  email: "xxx@163.com"</span></span><br><span class="line"><span class="comment">#  notice_email_list: "123@qq.com"</span></span><br><span class="line"><span class="comment">#  username: "xxxxx"</span></span><br><span class="line"><span class="comment">#  password: "xxxxx</span></span><br><span class="line"><span class="comment">#  host: "smtp.163.com"</span></span><br><span class="line"><span class="comment">#  列举qq  ，qq设置比较复杂，需要在邮箱--&gt;账户--&gt;开启smtp服务，取得授权码==邮箱登录密码</span></span><br><span class="line"><span class="comment">#  email: "xxx@qq.com"</span></span><br><span class="line"><span class="comment">#  notice_email_list: "123@qq.com"</span></span><br><span class="line"><span class="comment">#  username: "xxxxx"</span></span><br><span class="line"><span class="comment">#  password: "授权码"</span></span><br><span class="line"><span class="comment">#  host: "smtp.qq.com"</span></span><br><span class="line">EMAIL_CONF = &#123;</span><br><span class="line">    <span class="string">"IS_MAIL"</span>: <span class="literal">True</span>,</span><br><span class="line">    <span class="string">"email"</span>: <span class="string">"www@teaper.dev"</span>,</span><br><span class="line">    <span class="string">"notice_email_list"</span>: <span class="string">"www@teaper.dev"</span>,</span><br><span class="line">    <span class="string">"username"</span>: <span class="string">"www@teaper.dev"</span>,</span><br><span class="line">    <span class="string">"password"</span>: <span class="string">"sjfkf3fg"</span>,</span><br><span class="line">    <span class="string">"host"</span>: <span class="string">"smtp.exmail.qq.com"</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启 server酱 微信提醒， 使用前需要前往 http://sc.ftqq.com/3.version 扫码绑定获取 SECRET 并关注获得抢票结果通知的公众号</span></span><br><span class="line">SERVER_CHAN_CONF = &#123;</span><br><span class="line">    <span class="string">"is_server_chan"</span>: <span class="literal">False</span>,</span><br><span class="line">    <span class="string">"secret"</span>: <span class="string">"SCU71142T22f940ddgh34f9f369dc6d75e0072465f9e6"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启cdn查询，可以更快的检测票票 1为开启，2为关闭</span></span><br><span class="line">IS_CDN = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下单接口分为两种，1 模拟网页自动捡漏下单（不稳定），2 模拟车次后面的购票按钮下单（稳如老狗）</span></span><br><span class="line">ORDER_TYPE = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下单模式 1 为预售，整点刷新，刷新间隔0.1-0.5S, 然后会校验时间，比如12点的预售，那脚本就会在12.00整检票，刷新订单</span></span><br><span class="line"><span class="comment">#         2 是捡漏，捡漏的刷新间隔时间为0.5-3秒，时间间隔长，不容易封ip</span></span><br><span class="line">ORDER_MODEL = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启代理, 0代表关闭， 1表示开始</span></span><br><span class="line"><span class="comment"># 开启此功能的时候请确保代理ip是否可用，在测试放里面经过充分的测试，再开启此功能，不然可能会耽误你购票的宝贵时间</span></span><br><span class="line"><span class="comment"># 使用方法：</span></span><br><span class="line"><span class="comment"># 1、在agency/proxy_list列表下填入代理ip</span></span><br><span class="line"><span class="comment"># 2、测试UnitTest/TestAll/testProxy 测试代理是否可以用</span></span><br><span class="line"><span class="comment"># 3、开启代理ip</span></span><br><span class="line">IS_PROXY = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 预售放票时间, 如果是捡漏模式，可以忽略此操作</span></span><br><span class="line">OPEN_TIME = <span class="string">"12:59:57"</span></span><br><span class="line"><span class="comment"># 1=使用selenium获取devicesID</span></span><br><span class="line"><span class="comment"># 2=使用网页端/otn/HttpZF/logdevice获取devicesId，这个接口的算法目前可能有点问题，如果登录一直302的请改为配置1</span></span><br><span class="line"><span class="comment"># 3=自己打开浏览器在headers-Cookies中抓取RAIL_DEVICEID和RAIL_EXPIRATION，这个就不用配置selenium</span></span><br><span class="line">COOKIE_TYPE = <span class="number">3</span></span><br><span class="line"><span class="comment"># 如果COOKIE_TYPE=1，则需配置chromeDriver路径,下载地址http://chromedriver.storage.googleapis.com/index.html</span></span><br><span class="line"><span class="comment"># chromedriver配置版本只要和chrome的大版本匹配就行</span></span><br><span class="line">CHROME_PATH = <span class="string">"/opt/google/chrome/google-chrome"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 为了docker37 准备的环境变量，windows环境可以不用管这个参数</span></span><br><span class="line">CHROME_CHROME_PATH = <span class="string">"/opt/google/chrome/google-chrome"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果COOKIE_TYPE=3, 则需配置RAIL_EXPIRATION、RAIL_DEVICEID的值</span></span><br><span class="line">RAIL_EXPIRATION = <span class="string">"1577394287684"</span></span><br><span class="line">RAIL_DEVICEID = <span class="string">"VbwdRQJ8tWqbACs-rCEMSKgU-juNgkqdJQ7j9Nt6KMrrS8RBJotuRdyPyS1WS1fkJY6sw7NDpxkMEL7ScTEGLvytNL_IVT_QKEOT_5tBCs71_WeR3Jp3bwHIBoIieVcrI9yKWPHqR36oXpvq4J1p2BEubXmBricl"</span></span><br><span class="line"><span class="comment"># RAIL_EXPIRATION = "1577034533293"</span></span><br><span class="line"><span class="comment"># RAIL_DEVICEID = "CDno29Erc_Pf3FSXb4dzq-Op64EhWrsi5yUZKVIKR1MAfYo2qFlCeXD8VkexY7_1qg-ClV-fE8j9jgVlPZxRh3wVc54qLe_5A8sdr62qZx4B22JPF8lFCjpgTKZ5ODW90HJd5tiQsJ1KR9nOqHRxHj1FT5LEIwfw"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1=&gt;为一直随机ua,2-&gt;只启动的时候随机一次ua</span></span><br><span class="line">RANDOM_AGENT = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">PASSENGER_TICKER_STR = &#123;</span><br><span class="line">    <span class="string">'一等座'</span>: <span class="string">'M'</span>,</span><br><span class="line">    <span class="string">'特等座'</span>: <span class="string">'P'</span>,</span><br><span class="line">    <span class="string">'二等座'</span>: <span class="string">'O'</span>,</span><br><span class="line">    <span class="string">'商务座'</span>: <span class="number">9</span>,</span><br><span class="line">    <span class="string">'硬座'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'无座'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'软座'</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">'软卧'</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="string">'硬卧'</span>: <span class="number">3</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保护12306官网请求频率，设置随机请求时间，原则为5分钟不大于80次</span></span><br><span class="line"><span class="comment"># 最大间隔请求时间</span></span><br><span class="line">MAX_TIME = <span class="number">3</span></span><br><span class="line"><span class="comment"># 最小间隔请求时间</span></span><br><span class="line">MIN_TIME = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 软件版本</span></span><br><span class="line">RE_VERSION = <span class="string">"1.2.004"</span></span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h5 id="这里重点注意以下地方："><a href="#这里重点注意以下地方：" class="headerlink" title="这里重点注意以下地方："></a>这里重点注意以下地方：</h5><p><strong>刷票模式</strong>：尽量选择第 2 种<code>候补+刷票</code><br><strong>出发时间</strong>：这个就是买的哪天的车<br><strong>购买的车次</strong>：参数是一个集合，可以选则多个车次去抢，增加概率，多个车次的出发城市保持一致，别一个是广州，一个是广州东<br><strong>出发城市</strong>：地名和 12306 保持一致，这没啥好说的<br><strong>到达城市</strong>：地名和 12306 保持一致，这没啥好说的<br><strong>座位</strong>：一般选择<code>硬座</code>，动车选择二等座<br><strong>乘车人</strong>：暂时填一个，别填太多<br><strong>12306登录账号</strong>：12306 账号密码，建议使用浏览器登录一遍，确保正确<br><strong>打码方式</strong>：本地打码 <code>AUTO_CODE_TYPE = 2</code>、<code>HOST = &quot;captcha:80&quot;</code>，云打码 <code>AUTO_CODE_TYPE = 3</code>、<code>HOST = &quot;120.77.154.140:8000&quot;</code>，云打码服务器有限，不是自己搭建的不推荐使用，官方提供的云打码文件，不需要再添加到 12306 项目根目录，里面已经有了<br><strong>邮箱配置</strong>：直接参照它注释中的邮箱，由于我的是域名邮箱，所以我的配置不同<br><strong>server酱</strong>：前往<a href="http://sc.ftqq.com/3.version" target="_blank" rel="noopener">server酱</a>扫码绑定获取 <code>SECRET</code> 并关注<strong>获得抢票结果通知的公众号</strong><br><strong>下单模式</strong>：预售 <code>RDER_MODEL = 1</code>；捡漏 <code>RDER_MODEL = 2</code>，预售模式记得一定要填写预售时间<br><strong>预售放票时间</strong>：预售模式下，直接用 <code>OPEN_TIME = &quot;12:59:57&quot;</code>，建议时间提前几秒，捡漏模式不做修改<br><strong>COOKIE_TYPE</strong>：一般选择第三个，需配置 <code>RAIL_EXPIRATION</code>、<code>RAIL_DEVICEID</code>  的值  </p>
+<ul>
+<li><strong>RAIL_EXPIRATION</strong>：打开<a href="https://kyfw.12306.cn/otn/leftTicket/init?linktypeid=dc" target="_blank" rel="noopener">12306</a>并且登录成功后，右击浏览器选择<strong>检查元素</strong>，在 <code>Application</code> -&gt; <code>Cookies</code> -&gt; Name/Value 中可以找到对应的值  </li>
+<li><strong>RAIL_DEVICEID</strong>：获取方式同上  </li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006kWbIogy1ga94bkpwaqj30v707yjsz.jpg" alt="Screenshot from 2019-12-25 17-55-23.png"> </p>
+<p>填写无误后保存修改后的 <code>TickerConfig.py</code> 文件</p>
+<h4 id="运行代码"><a href="#运行代码" class="headerlink" title="运行代码"></a>运行代码</h4><ul>
+<li>开始抢票：<code>docker-compose up --build -d</code></li>
+<li>查看抢票log: <code>docker logs --follow ticket</code></li>
+<li>停止抢票：<code>docker-compose down</code></li>
+</ul>
+<p><span style="color:#ff0000">注意：上面三个命令，一定要在 12306 开源项目的根目录运行</span><br>配置完 <code>TickerConfig.py</code> 文件之后就可以运行<strong>开始抢票</strong>命令了，如果运行日志没报错的话，就可以运行<strong>查看抢票log</strong>命令查看进度，不出意外的话，首先是加入 CDN ,检查 Cookie ，设置打码，登录账号，然后才开始抢票，如果一切顺利的话，日志输出如下</p>
+<details>
+<summary>查看抢票日志</summary>
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">当前配置：</span><br><span class="line">出发站：广州东</span><br><span class="line">到达站：赣州</span><br><span class="line">车次: K675,T219</span><br><span class="line">乘车日期：2020-01-20</span><br><span class="line">坐席：硬座</span><br><span class="line">是否有票优先提交：True</span><br><span class="line">乘车人：[<span class="string">'张三'</span>]</span><br><span class="line">刷新间隔: 随机(1-3S)</span><br><span class="line">僵尸票关小黑屋时长: 5</span><br><span class="line">下单接口: 2</span><br><span class="line">下单模式: 2</span><br><span class="line">预售踩点时间:12:59:57</span><br><span class="line">**************************************************</span><br><span class="line">cookie获取中</span><br><span class="line">需要验证码</span><br><span class="line">下载验证码...</span><br><span class="line">下载验证码成功</span><br><span class="line">Corrupt JPEG data: 15 extraneous bytes before marker 0xd9</span><br><span class="line">无需加载模型model.v2.0.h5</span><br><span class="line">题目为[<span class="string">'红酒'</span>]</span><br><span class="line">1 铃铛</span><br><span class="line">2 茶盅</span><br><span class="line">3 红酒</span><br><span class="line">4 手掌印</span><br><span class="line">5 铃铛</span><br><span class="line">6 红酒</span><br><span class="line">7 茶盅</span><br><span class="line">8 路灯</span><br><span class="line">验证码识别坐标为184,77,112,149</span><br><span class="line">184,77,112,149</span><br><span class="line">验证码通过,开始登录..</span><br><span class="line">登录成功</span><br><span class="line">欢迎 肖思成 登录</span><br><span class="line">车次：T3091 出发站：广州东 到达站：赣州 历时：08:14 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：-- 软座：-- 硬座：无 无座：无 预订</span><br><span class="line">车次：Z112 出发站：广州东 到达站：赣州 历时：05:07 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：无 预订</span><br><span class="line">车次：K675 出发站：广州东 到达站：赣州 历时：06:58 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：无 预订</span><br><span class="line">车次：T219 出发站：广州东 到达站：赣州 历时：06:40 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：无 预订</span><br><span class="line">车次：K729 出发站：广州东 到达站：赣州 历时：99:59 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：-- 软座：-- 硬座：-- 无座：-- 列车运行图调整,暂停发售</span><br><span class="line">车次：T170 出发站：广州东 到达站：赣州 历时：05:10 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：无 预订</span><br><span class="line">车次：T155 出发站：广州东 到达站：赣州 历时：06:22 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：9 预订</span><br><span class="line">车次：K795 出发站：广州东 到达站：赣州 历时：07:25 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：有 预订</span><br><span class="line">车次：K85 出发站：广州东 到达站：赣州 历时：06:53 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：1 预订</span><br><span class="line">车次：K210 出发站：广州东 到达站：赣州 历时：04:46 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：无 硬座：无 无座：无 预订</span><br><span class="line">车次：K1666 出发站：广州东 到达站：赣州 历时：08:47 商务/特等座：-- 一等座：-- 二等座：-- 动卧：-- 硬卧：无 软座：-- 硬座：无 无座：有 预订</span><br><span class="line">正在第1次查询 停留时间：2.81 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：925.563 183.134.42.158</span><br><span class="line">广州东-赣州 车次坐席查询为空，查询url: https://kyfw.12306.cn/otn/leftTicket/queryZ?leftTicketDTO.train_date=2020-01-20&amp;leftTicketDTO.from_station=GGQ&amp;leftTicketDTO.to_station=GZG&amp;purpose_codes=ADULT, 可以手动查询是否有票</span><br><span class="line">正在第2次查询 停留时间：1.1 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：18.326 112.47.56.174</span><br><span class="line">正在第3次查询 停留时间：1.12 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：936.732 111.161.122.67</span><br><span class="line">正在第4次查询 停留时间：1.43 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：426.435 112.28.196.251</span><br><span class="line">正在第5次查询 停留时间：1.19 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：526.847 42.81.144.180</span><br><span class="line">正在第6次查询 停留时间：1.53 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：901.608 223.111.18.161</span><br><span class="line">正在第7次查询 停留时间：1.53 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：612.251 116.77.75.147</span><br><span class="line">正在第8次查询 停留时间：1.09 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：797.085 183.134.42.158</span><br><span class="line">正在第9次查询 停留时间：1.42 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：553.276 42.81.144.179</span><br><span class="line">正在第10次查询 停留时间：2.74 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：335.643 14.204.185.123</span><br><span class="line">正在第11次查询 停留时间：1.96 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：463.363 223.86.219.66</span><br></pre></td></tr></table></figure>
+
+<p>如果抢到票了，将会邮件通知 30 分钟内前去 12306 付款，可以网页，也可以 App 中找未完成订单  </p>
+<p><img src="http://ww1.sinaimg.cn/large/006kWbIogy1ga95ddoy3nj30lh05kdgq.jpg" alt="Screenshot from 2019-12-25 18-32-04.png"></p>
+</details>
+
+<h4 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h4><details>
+<summary style="color:#ff0000">启动抢票命令直接报 python 代码错误</summary>
+
+
+<p>这种一看就是 <code>TickerConfig.py</code> 文件参数配置的有问题，建议检查清楚再运行</p>
+</details>
+
+<details>
+<summary style="color:#ff0000">抢票 log 一直提示 302 状态码</summary>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">正在第46次查询 停留时间：1.17 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：534.931 113.5.80.33</span><br><span class="line">url: &#x2F;otn&#x2F;leftTicket&#x2F;queryZ?leftTicketDTO.train_date&#x3D;2020-01-20&amp;leftTicketDTO.from_station&#x3D;GGQ&amp;leftTicketDTO.to_station&#x3D;GZG&amp;purpose_codes&#x3D;ADULT返回参数为空, 接口状态码: 302</span><br><span class="line">广州东-赣州 车次坐席查询为空，查询url: https:&#x2F;&#x2F;kyfw.12306.cn&#x2F;otn&#x2F;leftTicket&#x2F;queryZ?leftTicketDTO.train_date&#x3D;2020-01-20&amp;leftTicketDTO.from_station&#x3D;GGQ&amp;leftTicketDTO.to_station&#x3D;GZG&amp;purpose_codes&#x3D;ADULT, 可以手动查询是否有票</span><br><span class="line">正在第47次查询 停留时间：2.82 乘车日期: 2020-01-20 车次：K675,T219 下单无票 无候补机会 耗时：597.988 183.222.97.164</span><br><span class="line">url: &#x2F;otn&#x2F;leftTicket&#x2F;queryZ?leftTicketDTO.train_date&#x3D;2020-01-20&amp;leftTicketDTO.from_station&#x3D;GGQ&amp;leftTicketDTO.to_station&#x3D;GZG&amp;purpose_codes&#x3D;ADULT返回参数为空, 接口状态码: 302</span><br><span class="line">广州东-赣州 车次坐席查询为空，查询url: https:&#x2F;&#x2F;kyfw.12306.cn&#x2F;otn&#x2F;leftTicket&#x2F;queryZ?leftTicketDTO.train_date&#x3D;2020-01-20&amp;leftTicketDTO.from_station&#x3D;GGQ&amp;leftTicketDTO.to_station&#x3D;GZG&amp;purpose_codes&#x3D;ADULT, 可以手动查询是否有票</span><br></pre></td></tr></table></figure>
+
+<p>这种情况就是服务器被 12306 识别出刷票，你的请求被转发到了别的地方，建议运行<strong>停止抢票</strong>命令，休息一下，过段时间再启动命令抢票</p>
+</details>
+
+<details>
+<summary style="color:#ff0000">运行开始抢票命令，有依赖下载失败</summary>
+
+
+<p>这种情况一般发生在国内服务器上，如果是本地电脑的话，建议翻下墙，服务器的话，做下代理或换下源，如果还是下载中断之类的，重新运行开始抢票命令，直到依赖下载下来为止<span style="color:#ff0000">（博主本地电脑也中断了好多次）</span></p>
+</details>
+
+<p><a href="https://www.teaper.dev/2019/12/25/12306/" target="_blank" rel="noopener">查看本家点击这里</a></p>
+
+    </div>
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">----------------本文结束<i class="fa fa-heart"></i>感谢阅读----------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>如果觉得文章好的话，就打个赏吧！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatplay.gif" alt="杨帆 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/play.gif" alt="杨帆 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/bilibili/" rel="tag"><i class="fa fa-tag"></i> bilibili</a>
+              <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/tags/12306/" rel="tag"><i class="fa fa-tag"></i> 12306</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/47193/" rel="prev" title="markdown语法">
+      <i class="fa fa-chevron-left"></i> markdown语法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/4130/" rel="next" title="Hair-pink[明日方舟/德安]">
+      Hair-pink[明日方舟/德安] <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Docker容器"><span class="nav-number">1.</span> <span class="nav-text">安装Docker容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装docker-compose"><span class="nav-number">2.</span> <span class="nav-text">安装docker-compose</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#克隆项目"><span class="nav-number">3.</span> <span class="nav-text">克隆项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改配置文件"><span class="nav-number">4.</span> <span class="nav-text">修改配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#这里重点注意以下地方："><span class="nav-number">4.1.</span> <span class="nav-text">这里重点注意以下地方：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行代码"><span class="nav-number">5.</span> <span class="nav-text">运行代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见问题"><span class="nav-number">6.</span> <span class="nav-text">常见问题</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="杨帆"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">杨帆</p>
+  <div class="site-description" itemprop="description">每天都在努力学习，希望未来找到好工作！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/983562336" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;983562336" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-git-copy"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/983562336@qq.com" title="E-Mail → 983562336@qq.com"><i class="fa fa-fw iconfont icons-weixin"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/6971647196/profile?topnav=1&wvr=6&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;6971647196&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/166385809" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;166385809" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-bilibili"></i>bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://mp.csdn.net/" title="CSDN → https:&#x2F;&#x2F;mp.csdn.net&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-csdn"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://nut-edu.herokuapp.com/" title="Slack → https:&#x2F;&#x2F;nut-edu.herokuapp.com&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-slack"></i>Slack</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/yang_fan_m" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;yang_fan_m" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-mayun"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://tieba.baidu.com/home/main?un=%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%BE%88%E7%83%A6%E4%BA%BA&id=tb.1.57bfe3bc.jEvUXgA1iobwHnBt4U10Kg?t=1573180693&fr=index&red_tag=i2306081957" title="tieba → http:&#x2F;&#x2F;tieba.baidu.com&#x2F;home&#x2F;main?un&#x3D;%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%BE%88%E7%83%A6%E4%BA%BA&amp;id&#x3D;tb.1.57bfe3bc.jEvUXgA1iobwHnBt4U10Kg?t&#x3D;1573180693&amp;fr&#x3D;index&amp;red_tag&#x3D;i2306081957" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-baidutieba"></i>tieba</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      好朋友
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.coor.top/" title="https:&#x2F;&#x2F;blog.coor.top" rel="noopener" target="_blank">弥枳</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://oao.ooo/" title="https:&#x2F;&#x2F;oao.ooo" rel="noopener" target="_blank">冬景哥哥</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ixk.me/" title="https:&#x2F;&#x2F;ixk.me" rel="noopener" target="_blank">青空之蓝</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://bestzuo.cn/" title="https:&#x2F;&#x2F;bestzuo.cn" rel="noopener" target="_blank">Sanarous</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dp2px.com/" title="https:&#x2F;&#x2F;dp2px.com" rel="noopener" target="_blank">水寒</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://liuyib.github.io/" title="https:&#x2F;&#x2F;liuyib.github.io&#x2F;" rel="noopener" target="_blank">liuyib</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">火星备案局  编号20200113号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2045 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">杨帆</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">199k</span>
+</div>
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>  
+<br>风暴中，唯保守者屹立不倒
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/09/2019 13:14:21");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+        
+<div class="busuanzi-count">
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.9' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'hPBQEVeNShPwgYffzbrNpHug-gzGzoHsz',
+      appKey: 'pjj3E8i6eVqtnI5WVP2TssoU',
+      placeholder: "把你的疑问写下来吧！留下电子邮箱可以收到我的回复哦",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+    </div>
+
+  
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+  </pre>
+
+<link rel="stylesheet" href="/live2d/css/live2d.css" />
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://www.hexoblog.top'  //此处修改为你的域名
+</script>
+
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/tia/model.json");  //此处为你是用的模型文件，可以修改
+</script>
+
+<script type="text/javascript" src="/js/src/dynamic-title.js" ></script>
+
+</body>
+</html>

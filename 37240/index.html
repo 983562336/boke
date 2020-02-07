@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.7/skins/default/aliplayer-min.css" />
+<script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.8.7/aliplayer-min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1609317_gj5rz4uohy4.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/psc.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/psc.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://www.hexoblog.top').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+
+  <meta name="description" content="首先可以悬停的只是 F35B 并不是所有的肥电都可以悬停 那么 F35B 是怎么实现空中悬停的呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="F35为什么能在空中悬停">
+<meta property="og:url" content="http://www.hexoblog.top/37240/index.html">
+<meta property="og:site_name" content="杨帆的博客">
+<meta property="og:description" content="首先可以悬停的只是 F35B 并不是所有的肥电都可以悬停 那么 F35B 是怎么实现空中悬停的呢？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4099635693,528989102&fm=26&gp=0.jpg">
+<meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/1.png">
+<meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/2.png">
+<meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/3.png">
+<meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/1.png">
+<meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/5.png">
+<meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/7.png">
+<meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/8.gif">
+<meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/6.png">
+<meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/9.png">
+<meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/10.png">
+<meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/11.png">
+<meta property="og:image" content="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/12.png">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1580722276087&di=f9734fe46d9baef34f2544461e7dfc33&imgtype=0&src=http%253A%252F%252Fclub-img.kdslife.com%252Fattach%252F1k0%252Fuv%252F32%252Focaja0-c6t.jpg">
+<meta property="article:published_time" content="2020-02-03T05:48:07.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:52:03.624Z">
+<meta property="article:author" content="杨帆">
+<meta property="article:tag" content="航空">
+<meta property="article:tag" content="技术">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4099635693,528989102&fm=26&gp=0.jpg">
+
+<link rel="canonical" href="http://www.hexoblog.top/37240/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+
+  <title>F35为什么能在空中悬停 | 杨帆的博客</title>
+  
+
+
+  <script pjax>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?32de29eb00a7578e46002349327ca5ad";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<!-- 天气 -->
+<script type="text/javascript">
+WIDGET = {FID: '5a7igfkKBX'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">杨帆的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">军事，航空航天，前沿技术爱好者</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-关于作者">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于作者</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-r18g">
+
+    <a href="/photos/" rel="section"><i class="fa fa-fw fa-image"></i>R18G</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-更新日志">
+
+    <a href="/Journal/" rel="section"><i class="fa fa-fw fa-user"></i>更新日志</a>
+
+  </li>
+        <li class="menu-item menu-item-友情链接">
+
+    <a href="/Friend/" rel="section"><i class="fa fa-fw fa-link"></i>友情链接</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/983562336" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hexoblog.top/37240/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨帆">
+      <meta itemprop="description" content="每天都在努力学习，希望未来找到好工作！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨帆的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          F35为什么能在空中悬停
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-03 13:48:07 / 修改时间：14:52:03" itemprop="dateCreated datePublished" datetime="2020-02-03T13:48:07+08:00">2020-02-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%86%9B%E4%BA%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">军事</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/37240/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/37240/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>首先可以悬停的只是 <strong>F35B</strong></p>
+<p>并不是所有的肥电都可以悬停</p>
+<p>那么 F35B 是怎么实现空中悬停的呢？</p>
+<a id="more"></a>
+
+<p>反正 F35 是不用多介绍的，很多人都听过的吧，实在不知道的看看下面的链接</p>
+<p> <a href="https://baike.baidu.com/item/F-35%E6%88%98%E6%96%97%E6%9C%BA/995579?fromtitle=f35&fromid=2013581&fr=aladdin" target="_blank" rel="noopener">F35介绍</a></p>
+<p> 说起垂直起降战斗机，最耳熟能详的应该就是英国的鹞式了，作为第一款可以进行垂直起降的战斗机自然是受到了很多关注。</p>
+<p> <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4099635693,528989102&fm=26&gp=0.jpg" alt=""></p>
+<p> 但是相对于鹞的垂直起降方式，F35B的看上去就科幻了许多</p>
+<p> <img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/1.png" alt=""></p>
+<p> 但是了解的人应该都知道，作为一款单发战斗机，F35这个重量确实很重 <del>肥电的由来</del>  </p>
+<p> 但是它使用的发动机可不一般——F135，这款发动机是目前世界上推力最大的战斗机发动机，不仅可以推动F35起飞，还可以在没有使用加力燃烧室的情况下，让F35以1.2马赫的速度飞行150英里</p>
+<p> <img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/2.png" alt=""></p>
+<p> 为了让其具备垂直起降能力，F-35B配备了由罗尔斯罗伊斯开发的升降系统。该升降系统由升降风扇、驱动轴、两个滚柱和“三轴承旋转模块”（3BSM）组成。3BSM是推力矢量喷嘴，允许主发动机排气在飞机尾部向下偏转。升力风扇靠近飞机前部，使用两个反向旋转的叶片提供平衡推力。</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/3.png" alt=""></p>
+<p> 当然也只有B型号才有这个升降系统</p>
+<p>为了实现垂直起降，采用了发动机喷管向下偏转的模式，再加上升力风扇和调姿喷管来提供足够的升力。</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/1.png" alt=""></p>
+<p>F-35B进行垂直起降的过程相对比较缓慢，这可以被看作是一个进行缓慢动态变化的“悬停”过程，如果F-35B做不到空中短暂的悬停，也就不可能实现垂直起降。</p>
+<p>F-35B战斗机一共有四个喷口。机身中轴线上的两个喷口提供主要升力（约91%），机翼下方的两个喷口提供较小推力，用于平衡以及姿态调整。尾喷口喷出的是高温燃气 <del>想想也知道为什么</del> ，其他三个喷口喷出的都是冷空气。</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/5.png" alt=""></p>
+<p>F-35B发动机的主喷口向下偏折了90度，提供了竖直方向的推力，其喷出的是经过发动机涡轮的高温燃气。这个尾喷口偏折技术来源于前苏联的雅克141战机。</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/7.png" alt=""></p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/8.gif" alt=""></p>
+<p>F-35B两侧机翼下方的小喷口，是从发动机的低压压气机引气向下喷出。它们提供大约9%的升力，用于平衡和姿态调整，并不是主要的升力来源。</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/6.png" alt=""></p>
+<p>F-35B座舱后部有个竖直圆筒形的物体叫升力风扇。升力风扇自身不能产生动力，它需要一根长长的传动轴连接到主发动机上，由主发动机的低压涡轮带动。</p>
+<p>风扇后面的是辅助进气口</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/9.png" alt=""></p>
+<p>所以仔细看可以发现，F35B和其他型号的不同，它的驾驶舱后面一部分会凸起来</p>
+<p>平飞时，升力风扇与主发动机脱开不工作，主发动机仅用来提供平飞时的向后推力。当垂直起降时，升力风扇上方和下方的盖板打开，离合器将升力风扇与传动轴连接起来，主发动机的低压涡轮功率直接传递到升力风扇上，驱动升力风扇旋转，从风扇上方的进气口吸取空气并喷向下方，提供升力。</p>
+<p>直径1.27米的升力风扇是由风扇、涵道、D形喷管、联轴器、作动装置以及伺服系统组成，升力风扇有着超过40度的前后偏转角。在发动机正常工作的状态下，可以将机体上方的空气垂直向下喷出，喷气流量高达230kg/s，从而提供高达90000牛的升力，再加上发动机口下喷，使得悬停时的总推力达到175300牛。</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/10.png" alt=""></p>
+<p>升力风扇底部有一个VAVB喷管，能对升力风扇产生的升力进行矢量调节，这个组件被整合进飞机结构中，能承受结构载荷，这样做的目的是节省重量，要知道实现短距起飞垂直降落的一个关键因素就是：发动机产生的垂直升力要大于飞机重量 <del>当然这不是废话吗</del></p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/11.png" alt=""></p>
+<p>在红外摄像机下拍摄的画面</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/F35%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E7%A9%BA%E4%B8%AD%E6%82%AC%E5%81%9C/12.png" alt=""></p>
+<p>F-35B在不到3秒的时间里，就能把尾喷管15700磅的水平推力矢量偏转成垂直向下，使总升力达到39000磅，F-35B的垂直升力几乎相当于欧洲台风战机的全加力推力。这惊人的推力矢量能力是普惠公司专为F-35B的推进系统开发的。</p>
+<p>这就是为什么F35B可以实现垂直起降的原因了</p>
+<p>不过还有个问题，因为视线问题，飞行员在垂直起降时并不能看到自己飞机下面的情况</p>
+<p>不过得益于F35上装备的一项技术 <code>EODAS</code> ，也就是分散式孔径系统</p>
+<p>它由环绕飞机前后上下装设的6个红外线感应装置组成，即时提供驾驶员接近己方的飞行体数据</p>
+<p>再配合F-35的头盔显示器系统，可以让飞行员知晓自己周围的情况</p>
+<p>不过这头盔的形状确实很不咋滴</p>
+<p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1580722276087&di=f9734fe46d9baef34f2544461e7dfc33&imgtype=0&src=http%3A%2F%2Fclub-img.kdslife.com%2Fattach%2F1k0%2Fuv%2F32%2Focaja0-c6t.jpg" alt=""></p>
+<p>目前来说 <code>F35B</code> 主要是放在两栖攻击舰，比如最新的的美国级，不过还有些问题是要解决的，那就是高温燃气对甲板的侵蚀，虽然用隔热瓦可以起到作用，但是隔热瓦也有使用次数限制。</p>
+
+    </div>
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">----------------本文结束<i class="fa fa-heart"></i>感谢阅读----------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>如果觉得文章好的话，就打个赏吧！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatplay.gif" alt="杨帆 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/play.gif" alt="杨帆 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E8%88%AA%E7%A9%BA/" rel="tag"><i class="fa fa-tag"></i> 航空</a>
+              <a href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag"><i class="fa fa-tag"></i> 技术</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/15419/" rel="prev" title="python写成的图片爬虫">
+      <i class="fa fa-chevron-left"></i> python写成的图片爬虫
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/49810/" rel="next" title="给二维码添加gif">
+      给二维码添加gif <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="杨帆"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">杨帆</p>
+  <div class="site-description" itemprop="description">每天都在努力学习，希望未来找到好工作！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/983562336" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;983562336" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-git-copy"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/983562336@qq.com" title="E-Mail → 983562336@qq.com"><i class="fa fa-fw iconfont icons-weixin"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/6971647196/profile?topnav=1&wvr=6&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;6971647196&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/166385809" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;166385809" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-bilibili"></i>bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://mp.csdn.net/" title="CSDN → https:&#x2F;&#x2F;mp.csdn.net&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-csdn"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://nut-edu.herokuapp.com/" title="Slack → https:&#x2F;&#x2F;nut-edu.herokuapp.com&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-slack"></i>Slack</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/yang_fan_m" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;yang_fan_m" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-mayun"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://tieba.baidu.com/home/main?un=%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%BE%88%E7%83%A6%E4%BA%BA&id=tb.1.57bfe3bc.jEvUXgA1iobwHnBt4U10Kg?t=1573180693&fr=index&red_tag=i2306081957" title="tieba → http:&#x2F;&#x2F;tieba.baidu.com&#x2F;home&#x2F;main?un&#x3D;%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%BE%88%E7%83%A6%E4%BA%BA&amp;id&#x3D;tb.1.57bfe3bc.jEvUXgA1iobwHnBt4U10Kg?t&#x3D;1573180693&amp;fr&#x3D;index&amp;red_tag&#x3D;i2306081957" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-baidutieba"></i>tieba</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      好朋友
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.coor.top/" title="https:&#x2F;&#x2F;blog.coor.top" rel="noopener" target="_blank">弥枳</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://oao.ooo/" title="https:&#x2F;&#x2F;oao.ooo" rel="noopener" target="_blank">冬景哥哥</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ixk.me/" title="https:&#x2F;&#x2F;ixk.me" rel="noopener" target="_blank">青空之蓝</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://bestzuo.cn/" title="https:&#x2F;&#x2F;bestzuo.cn" rel="noopener" target="_blank">Sanarous</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dp2px.com/" title="https:&#x2F;&#x2F;dp2px.com" rel="noopener" target="_blank">水寒</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://liuyib.github.io/" title="https:&#x2F;&#x2F;liuyib.github.io&#x2F;" rel="noopener" target="_blank">liuyib</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">火星备案局  编号20200113号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2045 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">杨帆</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">199k</span>
+</div>
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>  
+<br>风暴中，唯保守者屹立不倒
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/09/2019 13:14:21");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+        
+<div class="busuanzi-count">
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.9' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'hPBQEVeNShPwgYffzbrNpHug-gzGzoHsz',
+      appKey: 'pjj3E8i6eVqtnI5WVP2TssoU',
+      placeholder: "把你的疑问写下来吧！留下电子邮箱可以收到我的回复哦",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+    </div>
+
+  
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+  </pre>
+
+<link rel="stylesheet" href="/live2d/css/live2d.css" />
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://www.hexoblog.top'  //此处修改为你的域名
+</script>
+
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/tia/model.json");  //此处为你是用的模型文件，可以修改
+</script>
+
+<script type="text/javascript" src="/js/src/dynamic-title.js" ></script>
+
+</body>
+</html>

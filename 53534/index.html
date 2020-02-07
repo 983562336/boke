@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.7/skins/default/aliplayer-min.css" />
+<script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.8.7/aliplayer-min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1609317_gj5rz4uohy4.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/psc.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/psc.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://www.hexoblog.top').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+
+  <meta name="description" content="看题目也知道，这是一个 军事 向的文章，它是几年前我发在百度贴吧上的一个，不过当时资料有限，如果有错误见谅 使用 markdown 编写，因为某些原因排版可能有错误 以下正文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VT5-tank">
+<meta property="og:url" content="http://www.hexoblog.top/53534/index.html">
+<meta property="og:site_name" content="杨帆的博客">
+<meta property="og:description" content="看题目也知道，这是一个 军事 向的文章，它是几年前我发在百度贴吧上的一个，不过当时资料有限，如果有错误见谅 使用 markdown 编写，因为某些原因排版可能有错误 以下正文">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=3446213fbc3533faf5b6932698d2fdca/344bf200baa1cd115f15da11b412c8fcc2ce2df3.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=2de2b0f4edfe9925cb0c695804a95ee4/d54f9f3eb13533fa95403b1fa5d3fd1f40345ba0.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=b0de2e1abd51f819f1250342eab54a76/809f4d061d950a7b8bc4e6f507d162d9f3d3c9a2.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=8dd090ee05fa513d51aa6cd60d6d554c/3e889d096b63f624773f3c318a44ebf81a4ca33d.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=06c869ec306d55fbc5c6762e5d224f40/a7f72f338744ebf83a13610dd4f9d72a6059a73d.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=c942a7dfac44ad342ebf878fe0a20c08/987015d12f2eb938c3317fc0d8628535e5dd6f3f.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=efd6e0a001f431adbcd243317b36ac0f/8355f6628535e5ddba70a0ed7bc6a7efce1b623f.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=74c3f2fff1039245a1b5e107b794a4a8/5bbcf70735fae6cdcc84af5302b30f2442a70f63.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=6832b696a9c27d1ea5263bcc2bd5adaf/52c62cb30f2442a7653ef997dc43ad4bd1130263.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=9b6be1140424ab18e016e13f05fae69a/876cd8edab64034fb1fdc634a2c379310a551d63.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=1a0a04f8ebcd7b89e96c3a8b3f244291/3ba18cc379310a557d14dac6ba4543a982261063.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=1f98e041a04bd11304cdb73a6aafa488/036b3d178a82b9019d9dc7017e8da9773912ef6c.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=e99c7dfff1039245a1b5e107b794a4a8/5bbcf70735fae6cd51db205302b30f2442a70f28.jpg">
+<meta property="article:published_time" content="2020-01-12T04:49:22.000Z">
+<meta property="article:modified_time" content="2020-01-15T12:00:09.347Z">
+<meta property="article:author" content="杨帆">
+<meta property="article:tag" content="tank">
+<meta property="article:tag" content="tieba">
+<meta property="article:tag" content="weapon">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imgsa.baidu.com/forum/w%3D580/sign=3446213fbc3533faf5b6932698d2fdca/344bf200baa1cd115f15da11b412c8fcc2ce2df3.jpg">
+
+<link rel="canonical" href="http://www.hexoblog.top/53534/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+
+  <title>VT5-tank | 杨帆的博客</title>
+  
+
+
+  <script pjax>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?32de29eb00a7578e46002349327ca5ad";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<!-- 天气 -->
+<script type="text/javascript">
+WIDGET = {FID: '5a7igfkKBX'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">杨帆的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">军事，航空航天，前沿技术爱好者</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-关于作者">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于作者</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-r18g">
+
+    <a href="/photos/" rel="section"><i class="fa fa-fw fa-image"></i>R18G</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-更新日志">
+
+    <a href="/Journal/" rel="section"><i class="fa fa-fw fa-user"></i>更新日志</a>
+
+  </li>
+        <li class="menu-item menu-item-友情链接">
+
+    <a href="/Friend/" rel="section"><i class="fa fa-fw fa-link"></i>友情链接</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/983562336" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hexoblog.top/53534/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨帆">
+      <meta itemprop="description" content="每天都在努力学习，希望未来找到好工作！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨帆的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          VT5-tank
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-12 12:49:22" itemprop="dateCreated datePublished" datetime="2020-01-12T12:49:22+08:00">2020-01-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-15 20:00:09" itemprop="dateModified" datetime="2020-01-15T20:00:09+08:00">2020-01-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%86%9B%E4%BA%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">军事</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/53534/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/53534/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>看题目也知道，这是一个 <code>军事</code> 向的文章，它是几年前我发在百度贴吧上的一个，不过当时资料有限，如果有错误见谅</p>
+<p>使用 <code>markdown</code> 编写，因为某些原因排版可能有错误</p>
+<p><em>以下正文</em></p>
+<a id="more"></a>
+
+<h3 id="唠叨"><a href="#唠叨" class="headerlink" title="唠叨"></a>唠叨</h3><p>—-咸鱼又开坑了—————–</p>
+<p>说到轻型坦克，可能搁在以前大家应该都是不怎么感兴趣的，因为那时候大家估计都喜欢的是看上去高端大气威猛的主战坦克！</p>
+<p>但是在2017年的装甲与反装甲日中，在 <del>萝莉控工业</del> 北方工业展示的一票高科技玩意中，除了那外形涂装民主，配置阵容豪华的VT4外<br>还有另一个引人注目的焦点-VT5坦克，相比于VT4那庞大的身材（50+ t），VT5显得娇小可怜惹人爱（30+ t），显得与众不同。<br>这就是兔子最新推销的轻型坦克，当然，除了卖出去之外，自家也有一种新研发的轻型坦克（2010年露面），作为世界上唯一一款作为独立型号研制的轻型坦克<br>（其他的国家都是从步兵战车或者装甲运输车族发展衍生的型号）。<br>它的前世今生是什么？它的性能怎么样？这背后又体现出了兔子怎样的装甲作战理？</p>
+<p>一切请看下回分解</p>
+<h3 id="新型坦克的道路"><a href="#新型坦克的道路" class="headerlink" title="新型坦克的道路"></a>新型坦克的道路</h3><p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=3446213fbc3533faf5b6932698d2fdca/344bf200baa1cd115f15da11b412c8fcc2ce2df3.jpg" alt="image"></p>
+<p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=2de2b0f4edfe9925cb0c695804a95ee4/d54f9f3eb13533fa95403b1fa5d3fd1f40345ba0.jpg" alt="image"></p>
+<p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=b0de2e1abd51f819f1250342eab54a76/809f4d061d950a7b8bc4e6f507d162d9f3d3c9a2.jpg" alt="image"></p>
+<h3 id="新轻坦的防护和体重"><a href="#新轻坦的防护和体重" class="headerlink" title="新轻坦的防护和体重"></a>新轻坦的防护和体重</h3><p>西部边疆有着漫长的防护线，依靠前沿部署的少量边防部队，难以起到及时遏止突发事件的作用，这就决定负责应急机动，边境反击和反恐的快速反应部队必须具备强大的快速机动和远程投送能力，采用攻防兼备的合成化，模块化编组，快速介入抢占要点，及时遏制局势的恶化。</p>
+<p>一般传统的重型装甲机械化部队，在这类作战中编制臃肿，行动缓慢，远程投送能力不足，没有办法满足新的形势下应对多样化安全威胁的要求，所以包括我们在内的各国军队纷纷组建装备轮式装甲车辆的轻型机械化部队进行应急机动和快速投送。</p>
+<p>可以看看美国的斯特赖克旅，真就各种装了不同玩意的</p>
+<p>随着时间的推移，各国军队渐渐的发现轻型装甲机械化部队虽然能够快速投送到战区，进行应急作战，但过于注重远程投送的需求，也使得式装甲车辆的底盘承载能力不足，战斗全重偏轻，轻型装甲机械化部队的火力和防护力不足以适应复杂多样化的安全威胁，制约了其战斗力和战场生存能力。</p>
+<p>另一方面来，近年各国或者各个势力之间爆发的武装冲突和局部战争，很少出现大规模的野战场景，更多的是围绕城市居民点和交通枢纽进行反复争夺，在城市作战环境中，轻型装甲车辆的装甲防护能力在先进的便携式反战车飞弹与多种多样的简易爆炸装置面前受到了极大的挑战，其战场生存能力颇显不足。</p>
+<p>于是各国便开始把目光放在底盘，承载能力更强，战斗全重提高，火力防护力与机动性能更加强大，均衡的新型装甲车辆。</p>
+<p>我们说到这里，就不得不提一下美国上世纪80年代到90年代，为空降兵部队和装甲骑兵部队进行远程投送和机动作战的需求研制的 <strong>XM8</strong> 装甲火炮系统<del>和一把枪重名</del>，其卓越的火力综合防护能力，可维护性和快速投送能力，都具有划时代的意义。</p>
+<p>XM8装甲火炮系统采用与艾布拉姆斯主战坦克类似的稳像式指挥仪火控系统，安装有一门XM35低后坐力105mm正义炮，其发射M900尾翼稳定脱壳贫铀穿甲弹，可以在2000米距离上有效毁伤t72主战坦克。</p>
+<p>通过采用自动装弹机，减少成员来实现减小车辆轮廓和重量的目的，同时为了能够平衡远程投送，快速部署与战场生存性之间的矛盾，采用了新颖的分级防护理念。</p>
+<ol>
+<li>一级防护模式时，xm8装甲火炮系统的战斗全重只有18吨，可以通过c130战术运输机进行空运和空投，此时装甲防护能力只能全向抗击7.62毫米穿甲弹和155毫米榴弹炮片，正面装甲可以抗击14.5毫米重机枪弹。  </li>
+<li>二级防护模式时，战斗全重达到了20吨，这时候已经没有办法通过c130战术运输机进行空投和空运，但是能通过挂装附加装甲，可以全向抗击14.5毫米重机枪枪弹，正面防护可以抗击俄式30毫米穿甲弹。</li>
+<li>三级防护模式时，战斗全重达到了23.6吨，通过在炮塔和车体四周披挂间隔装甲和爆炸反应装甲，可以抵御火箭弹和便携式反战车飞弹。</li>
+</ol>
+<p>虽然美国的要求是必须可由c130战术运输机快速投送的硬性要求，限制了xm8装甲火炮系统的发展潜力，限制了其综合防护能力的进一步提升，难以利用其底盘技术进行车族化发展，但是其中的发展理念，还是有借鉴意义的。</p>
+<p>反过来看我们的新轻坦，因为战术航空运输能力薄弱，陆军并不指望通过战术运输机来实现快速反应部队的应急机动和远程投送，而更倾向于通过公路，铁路投送或者摩托化投送，对战斗全重的限制得以适当的放缓，使得新型轻型坦克的火力，机动性，防护力这三大要素之间更加均衡。</p>
+<p>确实，中国这个方面和美国没法比是吧</p>
+<p>不过其中也借鉴了xm8装甲火炮系统的分级防护理念，采用安全性更好的为超市自动装弹机，减少坦克乘员的同时控制了车体的尺寸和战斗全重。</p>
+<p>基础的防护模式是30吨左右的战斗全重进行远程投送，应对中低安全威胁作战环境的需要，炮塔正面装甲抗击老式一百毫米穿甲弹，车体正面可免疫俄式30毫米穿甲弹。<br>披挂高硬度装甲钢和重型聚能双防爆炸反应装甲后，防护增强模式下的新型坦克的炮塔正面可以抵御m111型105毫米尾翼稳定脱壳穿甲弹，BM12型125mm尾翼稳定脱壳穿甲弹，和第二代便携式反战车飞弹的攻击。</p>
+<p>北方工业集团在2016年的珠海航展上，将vt5轻型坦克标示为轻量化主战坦克，表示了其性能。</p>
+<p><strong>尾舱布置的自动装弹机</strong></p>
+<p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=8dd090ee05fa513d51aa6cd60d6d554c/3e889d096b63f624773f3c318a44ebf81a4ca33d.jpg" alt="image"></p>
+<p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=06c869ec306d55fbc5c6762e5d224f40/a7f72f338744ebf83a13610dd4f9d72a6059a73d.jpg" alt="image"></p>
+<p><strong>VT5 防护部分细节</strong></p>
+<p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=c942a7dfac44ad342ebf878fe0a20c08/987015d12f2eb938c3317fc0d8628535e5dd6f3f.jpg" alt="image"></p>
+<p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=efd6e0a001f431adbcd243317b36ac0f/8355f6628535e5ddba70a0ed7bc6a7efce1b623f.jpg" alt="image"></p>
+<h3 id="自动装弹机"><a href="#自动装弹机" class="headerlink" title="自动装弹机"></a>自动装弹机</h3><p>现代坦克装甲车辆普遍采用自动填装技术，自动填装技术代替手动填装，既可以减少成员数，也提高了填装速度。本文旨在科普一下坦克自动装弹机的特点和原理。</p>
+<p>自动填装的优点：如果是高频率发射，自动填装机的优点将十分显著。这一点在自行榴弹炮上体现的非常明显，美国测试美制 <code>paladin</code> 手动填装自行榴弹炮打15发用时8分58秒，而自动填装的十字军火炮系统打15发只用了1分21秒。<br>抛开十字军的高度信息化不谈，就射速而言就完秒帕拉丁。当然十字军系统的装弹机结构是比较大的，主要是榴弹炮不需要过多考虑炮塔的外形。</p>
+<p>坦克就不一样，作为战场一线的主战兵器，从某种意义上（苏式思想）坦克需要较低矮的外形来提高自己的生存能力。<br>那么苏制坦克使用的自动填装机就必须适应这一点，尽可能减小体积。<br>简要的回顾一下坦克自动装弹机的发展历史：1950年代，法兰西首先在AMX-13坦克上安装了自动装弹机。60年苏联在其T-64坦克上也采用了自动装弹机，此后此技术在世界各国的坦克上得到广泛应用。<br>目前各国现役的比较有名的有T-72系列，T-80系列，T-90系列，日本90式，法国“勒克莱尔”，中国96式，中国99式。<br>而到处打仗的美国，现役的M1系列主战坦克却没有采用自动填装系统。</p>
+<p>几种自动填装机的分类与原理：</p>
+<p>按弹药安放位置可以把自动装弹机分成炮塔尾仓式和炮塔吊篮式（车体弹仓式）。西方坦克一般采用尾仓式设计，而苏系坦克基本上全部采用了炮塔吊篮式的装弹机。</p>
+<p>简单的从安全性上比较一下这两种布置方式：吊篮式的把弹药存放在炮塔下面的吊篮里面（一般是圆周排布），处于坦克的类几何中心处且位置较低，从理论上减少了弹药仓被击穿的可能性。<br>可一旦被击中该部位，弹药可能会产生二次效应（殉爆）。<br>如果发生殉爆，那么这种情况下坦克乘员的生存率基本为零。而且整个炮塔可能会被掀翻，甚至至会飞出去。</p>
+<p>炮塔尾仓式一般把弹药存放在炮塔后侧的隔离尾仓内，假如被命中发生连锁爆炸，有的设计是把爆炸的压力从炮塔尾仓上方的“气浪排放板”泄放出去，大大提高了车内乘员的生存率。<br>在改善坦克外形方面，炮塔吊篮式的可以降低坦克的高度；尾仓式的增大了炮塔的体积，理论上增大了被击中的可能性。</p>
+<p><strong>T-64/T-72/T-80系列坦克用自动装弹机：</strong><br>这几种苏制坦克均是炮塔底仓式的弹仓布置。<br>其主要由底部旋转输弹机，提弹机构，推弹机，抛壳机，选弹和记忆系统组成。这种设备工作时，首先底部的旋转输弹机根据指令将所需要的弹药转到提弹口，然后由提弹机构将弹药输送至火炮后方轴线位置处，再由推弹机将弹药推送入膛，火炮射击后由抛壳机将弹壳抽出并抛至炮塔外。<br>这几坦克使用种装弹机之间也是有一些差别的，T-64的弹丸和药筒（苏制坦克普遍采用分装弹）是竖着放在旋转输弹机里的。T-72的弹药都是平躺在旋转输弹机里的，且弹丸和药筒是放在。T-80的弹丸和药筒是成垂直布置在输弹机内的。<br>T-72的提弹机就向电梯一样将弹药垂直提升至推弹位置，再依次将弹丸和药筒推送入炮膛。T-80的提弹机是一种类似于摇臂的机构，它一次性将原本垂直放置的弹丸和药筒提起至推弹线，使它们在同一轴线上，再由推弹链一次将弹丸和药筒推送入膛。</p>
+<p><strong>西方国家广泛采用的尾仓式自动填装机：</strong><br>尾仓式的自动装弹机弹药放置在尾仓内，由取弹机构从尾仓内取出后直接推送至炮膛。<br>“勒克莱尔”的弹药在尾仓中呈带式排列，送弹和推弹过程都比较简单。还有布局弹药不是平行于炮轴放置，那么送弹的过程中就要调整弹药的方向。<br>由于西方坦克基本都使用定装弹，这一过程的完成相对分装弹要简洁的多。<br>这两种填装系统的比较：除了之前所说的被击中后的人员安全性和占用体积之外，两者在填装速度上也存在差异。苏制坦克射速大约是8发/分，勒克莱尔和90式能达到6发/分。中国96式坦克自动装弹机基本就是T-72所用的翻版，猜测也是8发/分。</p>
+<p><strong>目前自动装弹机有待改进之处和发展方向：</strong></p>
+<p>可靠性问题：一般机械的结构越复杂，可靠性就越差。比如左轮枪的可靠性肯定比自动步枪高的多得多。而且坦克自动装弹机要在交变振动的环境（比如中等起伏地形）中运行，工作环境温度，湿度，尘埃都可能随战场的改变而发生大范围的变动。机器难免会出问题。  </p>
+<p>特别是长时间使用，战时野外检修条件也较差，也增加了故障发生的可能性。一旦发生故障，虽然有些型号也可以实现应急的手动填装，但填装效率不言而喻。  </p>
+<p>还有故障的检修也是一个大问题，要是在前线交战地区把炮塔拿下来检修，那要多麻烦啊！如果可靠性达不到要求，还不如手动填装来的好。  </p>
+<p>补充弹药的速度问题：自动装弹机弹药的补充是比较缓慢的，填装一次往往需要比较长的时间。未来可能研发类似弹夹的自动装弹系统，能快速整体的更换一组弹药，改变一发一发的填装模式。</p>
+<p>任意角填装问题：目前主流主战坦克使用的自动装弹机都是定角填装。比如我国96式主战坦克使用的装弹机就是4.5°定角填装。意思是自动装弹机只工作在这一个角度，火炮在完成一次射击后要旋转回这个角度装弹，装完后再重新去俯仰瞄准和打击目标。<br>这其中会浪费宝贵的交战时间，实现任意角填装，对增加坦克的作战性能有一定的意义。<br>值得一说的是有几种坦克早已变相实现这种填装，法国1953年装备的AMX-13轻型坦克和瑞典的S主战坦克。前者使用了摇摆式炮塔的设计，火炮和炮塔固定在一起，以炮塔的俯仰代替火炮的俯仰。后者采用了独特的无炮塔设计，即火炮和车体刚性固定，用坦克底盘的悬挂装置控制车体的前后倾斜来达到控制火炮俯仰的目的。由于火炮相对于自动装弹机没有转动，这两种坦克理所当然的实现了任意角填装。</p>
+<p>前三张是转盘式，后两张是尾舱式</p>
+<p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=74c3f2fff1039245a1b5e107b794a4a8/5bbcf70735fae6cdcc84af5302b30f2442a70f63.jpg" alt="image"></p>
+<p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=6832b696a9c27d1ea5263bcc2bd5adaf/52c62cb30f2442a7653ef997dc43ad4bd1130263.jpg" alt="image"></p>
+<p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=9b6be1140424ab18e016e13f05fae69a/876cd8edab64034fb1fdc634a2c379310a551d63.jpg" alt="image"></p>
+<p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=1a0a04f8ebcd7b89e96c3a8b3f244291/3ba18cc379310a557d14dac6ba4543a982261063.jpg" alt="image"></p>
+<p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=1f98e041a04bd11304cdb73a6aafa488/036b3d178a82b9019d9dc7017e8da9773912ef6c.jpg" alt="image"></p>
+<h3 id="105mm正义炮怎么样"><a href="#105mm正义炮怎么样" class="headerlink" title="105mm正义炮怎么样"></a>105mm正义炮怎么样</h3><p>火力选择上没有什么悬念，作为高原山地机动作战部队的突击武器。  </p>
+<p>在2000米处甚至更远的距离上，可以有效的毁伤印度装备的t90s和t72m1一主战坦克成为了必须实现的目标，此外，应该还和其他类型应急机动部队的装甲车辆通用弹种，用来减轻后勤支援的难度，随着11突定型并装备部队，105毫米高压线膛炮便成为了新型坦克火力的不二选择。  </p>
+<p>从1979年引进105mm炮至今，随着新轻坦上某型加长型105毫米坦克炮以及新型弹药的成熟，其综合作战效能已经接近甚至达到了2000年的125毫米炮的水平。   </p>
+<p>以前在国际市场上推销的BTA-2 105mm尾翼稳定脱壳穿甲弹为例子，用94型加长型105毫米坦克炮发射时，初速达 <code>1540m/s</code> ，可以在2000m距离上有效击穿 <code>550mm</code> 均质钢装甲，与之对应的自用型105毫米先进尾翼稳定脱壳穿甲弹在2000米距离上，应该至少可以有效击穿600毫米均质钢装甲。 </p>
+<p>近几年来，随着发射药和高密度穿甲弹新领域的巨大进步，105毫米尾翼稳定脱壳穿甲弹在2000米处击穿700毫米左右的均质钢装甲，再也不是奢望。  </p>
+<p>而在1500米距离，可穿透一米厚钢筋混凝土结构工事。战斗部杀伤半径达6m的BTM1型105mm攻坚弹和杀伤集群有生力量、器材的BTC1型105毫米多用途弹，使得新轻坦在城市和山地的环境下的综合作战能力得到极大的提升，新型坦克的火力系统的发展带动了105毫米弹药家族的全面进化，同时对提高05/05A式两栖装甲车，11式装甲车等一系列使用105mm线膛炮的车辆的火力性能，规模效应十分显著。</p>
+<p><img src="https://imgsa.baidu.com/forum/w%3D580/sign=e99c7dfff1039245a1b5e107b794a4a8/5bbcf70735fae6cd51db205302b30f2442a70f28.jpg" alt="image"></p>
+<h3 id="关于悬挂"><a href="#关于悬挂" class="headerlink" title="关于悬挂"></a>关于悬挂</h3><p>轻坦在选型时有采用主动控制技术的液气悬挂方案和采用半主动控制技术的扭杆悬挂方案两款样车，用来满足在高原山地的环境下进行机动作战时，对车辆姿态和火炮俯仰角度的苛刻要求。<br>随着采用半主动控制技术的扭杆悬挂方案样车在竞争中脱颖而出，许多人对此并不理解，对性能优异的主动控制技术的液气悬挂方案落选而感到惋惜。</p>
+<p>坦克装甲车辆只是作战体系下一个有机组成部分，性能的先进与否固然很重要，但如果盲目的追求武器装备的先进性，往往会陷入唯武器论的误区，只有与作战需求相结合，适当取舍，才能实现作战效能的最大化。</p>
+<p>从技术上看，液气悬挂是应用液油传递压力，氮气为弹性介质的一种悬挂装置，具有负重轮行程大，车底距地好，良好的非线性特性，车辆行驶的平顺性与射击稳定性好等优点。<br>一些注重山地作战的新型坦克，比如韩国的k2主战坦克，日本的10式主战坦克的，往往倾向于采用主动控制技术的液气悬挂，根据车辆运动状态和道路状况，利用液压主动施加作用力抵消车辆的震动，调整车辆在各种地形与路面上的姿态，能够很好的满足坦克装甲车辆在山地机动时对机动性，行驶平顺性和射击稳定性的要求，还可以通过增加车体俯仰姿态的，进一步增大火炮的俯仰角，新型坦克的液气悬挂方案就属于这种类型。</p>
+<p>至于采用半主动控制技术的扭杆悬挂方案，则是在成熟的扭杆悬挂基础上，加入了可控阻尼元件，在传感器探测到车辆运动状态和道路状况变化时，通过改变悬挂的阻尼力，能够有效降低车辆的震动，能够较好地满足坦克车辆在山地机动作战时对机动性，行驶平顺性和射击稳定性的要求。</p>
+<p>从性能上看，采用主动控制技术的烟气悬挂方案，的确要比采用半主动控制技术的扭杆悬挂方案稍强一些，坦克的行驶平顺性和射击稳定性更好，还可以通过车高，俯仰，倾斜的姿态调整来增大火炮的俯仰角度，在山地机动作战时有着更强的地形适应能力，但采用主动控制技术的业绩神话方案也有一定的缺陷，那就是曾在高寒环境下可靠性不足，结构较为<br>复杂，战地简易维修不易的问题。</p>
+<p>以中印边境的山地作战为例，在自卫反击战作战中，我军装甲兵需要编组合成化作战集群，以小群多路的形式从印军防线的薄弱部位突破，并迅速穿插迂回，到印军防御体系的纵深进行运动战，夺取并控制对战役的胜负事关重要的山道，独立或引导我军空军战术航空兵，陆军航空兵，野战炮兵对印军防御体系中的指挥控制系统，通信系统，后勤保障补给点，人员集结地的空地一体的破击战。对坦克车辆在高寒缺氧的高原环境下，进行独立机动作战的能力有着苛刻的要求，这也是液气悬挂方案不得不重视的问题。</p>
+<p>在强调敌后独立作战，缺乏后方及时有效后勤保障的合成化作战分队，采用液气悬挂的装甲车辆的行动装置一旦出现战损或者故障，海南对其进行抢修，战损或故障车辆只能采取遗弃处理，而半主动控制技术的扭杆悬挂方案，可靠性高，维修方便的优点，在高原高寒机动环境作战下显得尤为珍贵，在性能与环境适应性之间的取舍，由此可见。</p>
+<h3 id="信息化下的坦克"><a href="#信息化下的坦克" class="headerlink" title="信息化下的坦克"></a>信息化下的坦克</h3><p>在信息化战场上，作为联合作战的重要组成部分，往往需要地面部队编组侦查突击群通过其他兵种共享的战场信息和火力打击效果，选择有利的突击穿插路线，与时机进行战斗侦察，战场监视，跟进引导和隐蔽穿插。<br>信息化条件下的联合作战，围绕着信息的获取，控制和使用，进行激烈的争夺。<br>目前大量装备的96A和99主战坦克为代表的第二代改进型和第三代早期坦克，虽然火力防护力，机动力尚好，但缺乏对战场信息的有效获取利用，无法满足信息化条件下的联合作战的需求。<br>在遭遇敌方部队时，装备轮式侦察车的轻型侦察分队由于自卫手段和装甲防护的薄弱，往往会被消灭或驱逐，从而失能，让我方战场信息获取能力遭到遏制，进而影响对你我事态的判断和决策。</p>
+<p>随着我们由数量规模型向质量效能型转变，以信息为主导的新轻坦就更能胜任这一任务。<br>较轻的战斗全重配合加宽的单销履带使得它在复杂地形下通过性好。一体化动力组的高原最大功率达到1000马力，单位功率达到30马力每吨，在液力机械综合传动装置的配合下，新轻坦的平原最大速度超过70km/h，从而具备了极佳的高原机动性。</p>
+<p>新轻坦可以利用较强的火力，综合防护力和复杂地形的通过能力，在适当的时机以出其不意的突击，通过快速机动到达恰当的位置，利用其强大的战场态势感知能力，通过毫米波综合探测系统，热成像仪光学仪器，数字化火控系统和北斗卫星导航系统，构成立体，多样化，多层次的侦察监视系统，可以实时获取可靠的战场信息。</p>
+<p>由战场信息网络系统传输到联合作战的各个节点，实现战场信息的全面共享，引导实施联合作战的陆航，炮兵以及其他军种实施远程精确打击行动，并评估毁伤效果，充分发挥信息力和火力优势的敌方作战体系进行攻击。</p>
+<p>在执行侦察引导任务时，新轻坦既可以保持和敌方的接触，确保对战场的持续获取，同时又可以通过机动作战抗击敌军抵近侦察获取我发信息的企图。但敌方则很容易陷入冒着暴露指挥控制信息网络节点的风险，动用作战部队主力强吃我战斗侦察分队，还是抽身回避，进而暴露防御纵深和退却路线的两难境地，进而丧失其主动权。</p>
+<p>PS：看过国家意志这本书的都知道吧，里面就出现了新轻坦！</p>
+<h3 id="兔子的动力系统和火炮选择"><a href="#兔子的动力系统和火炮选择" class="headerlink" title="兔子的动力系统和火炮选择"></a>兔子的动力系统和火炮选择</h3><p>因为今天七夕有大事要干，所以来个别的更新吧，跟VT4有点关系。</p>
+<p>vt4不多说，14年亮相，当然今天讲的是它安装的新动力传动系统。</p>
+<p>由北京理工大学研制的 <code>CH</code> 系列的传动系统，安装在多型国产坦克和装甲车上。其中的 CH1000 传动系统+大功率的柴油发动机的配置已经安装在了99a和vt4上，其中双流传动的应用让坦克的操控变得更加简单，甚至像普通的开车一样就行<br>就算你没开过挖掘机，只要你知道点开车，就可以飚坦克了</p>
+<p>从火力上看，vt4用的是 <code>ztp98</code> 125正义炮，因为以前兔子火力不足恐惧症，所以一向追求高穿，然后当巴铁把 <code>ap</code> 弹兴冲冲的安在 T80UD 上时，发现弹芯长度超过了自动装弹机的设计<br>那尴尬了，怎么办(｡•́︿•̀｡)</p>
+<p><del>于是某巴大刀一挥，截掉了一部分弹芯！</del></p>
+<p>对于为什么兔子用125mm而不用120mm，虽然说可能跟火力不足恐惧症有关，但其实是—最初论证时，125mm拥有更大的药室，当时我们的发射药比西方弱，所以希望靠更大的药室来取得一样的效果，而且如果将来有了更好的发射药时，它的潜力也更大。</p>
+<p>说道这里，就不得不提一下获得最高国家科学技术奖的 <strong>王泽山</strong> 院士，他的研究成果使得我国的发射药技术达到了国际先进水平，这样我们未来装备的穿甲弹就能拥有更强大的威力。除此之外，他的另一项技术 <code>慢燃发射药技术</code> ，也可以为炮射导弹技术带来很大的优势。</p>
+<p>当然，国内有些人的一种想法是把vt5出售给巴铁，但貌似现在巴铁并没有进行轻型坦克招标计划。</p>
+<p>不过 Z10 武装直升机出售过，只不过最后巴基斯坦选择的是土耳其的货 <del>就是没卖成</del></p>
+<p>而且VT5虽然是国产的，但是它的发动机变速箱还有一系列的火炮弹药，电子设备和其他坦克有很大的不同，如果进入巴基斯坦的陆军作战序列，无疑有违于巴基斯坦后勤精简再精简再精简再精简的概念。</p>
+<p>而且它对于体系的依赖也很多，因为它本身的火力和防护力比较主战坦克要弱，所以更需要后方的支持来消灭或避开他无法消灭的目标，空运或者用直升机运输油料和弹药，但巴基斯坦并不具备这样的能力。</p>
+<p>大家如果有看过小说《国家意志》的就应该知道吧，贺同志驾驶的坦克就是轻型坦克，虽然后面被友军筒子打了那部分  <del>快停火，你打的是友军！</del></p>
+<hr>
+
+    </div>
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">----------------本文结束<i class="fa fa-heart"></i>感谢阅读----------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>如果觉得文章好的话，就打个赏吧！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatplay.gif" alt="杨帆 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/play.gif" alt="杨帆 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/tank/" rel="tag"><i class="fa fa-tag"></i> tank</a>
+              <a href="/tags/tieba/" rel="tag"><i class="fa fa-tag"></i> tieba</a>
+              <a href="/tags/weapon/" rel="tag"><i class="fa fa-tag"></i> weapon</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/32385/" rel="prev" title="萌新的python记录">
+      <i class="fa fa-chevron-left"></i> 萌新的python记录
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2583/" rel="next" title="撞墙式吊机，汉诺螺旋，落叶飘">
+      撞墙式吊机，汉诺螺旋，落叶飘 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#唠叨"><span class="nav-number">1.</span> <span class="nav-text">唠叨</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新型坦克的道路"><span class="nav-number">2.</span> <span class="nav-text">新型坦克的道路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新轻坦的防护和体重"><span class="nav-number">3.</span> <span class="nav-text">新轻坦的防护和体重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动装弹机"><span class="nav-number">4.</span> <span class="nav-text">自动装弹机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#105mm正义炮怎么样"><span class="nav-number">5.</span> <span class="nav-text">105mm正义炮怎么样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于悬挂"><span class="nav-number">6.</span> <span class="nav-text">关于悬挂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息化下的坦克"><span class="nav-number">7.</span> <span class="nav-text">信息化下的坦克</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兔子的动力系统和火炮选择"><span class="nav-number">8.</span> <span class="nav-text">兔子的动力系统和火炮选择</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="杨帆"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">杨帆</p>
+  <div class="site-description" itemprop="description">每天都在努力学习，希望未来找到好工作！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/983562336" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;983562336" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-git-copy"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/983562336@qq.com" title="E-Mail → 983562336@qq.com"><i class="fa fa-fw iconfont icons-weixin"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/6971647196/profile?topnav=1&wvr=6&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;6971647196&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/166385809" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;166385809" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-bilibili"></i>bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://mp.csdn.net/" title="CSDN → https:&#x2F;&#x2F;mp.csdn.net&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-csdn"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://nut-edu.herokuapp.com/" title="Slack → https:&#x2F;&#x2F;nut-edu.herokuapp.com&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-slack"></i>Slack</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/yang_fan_m" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;yang_fan_m" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-mayun"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://tieba.baidu.com/home/main?un=%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%BE%88%E7%83%A6%E4%BA%BA&id=tb.1.57bfe3bc.jEvUXgA1iobwHnBt4U10Kg?t=1573180693&fr=index&red_tag=i2306081957" title="tieba → http:&#x2F;&#x2F;tieba.baidu.com&#x2F;home&#x2F;main?un&#x3D;%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%BE%88%E7%83%A6%E4%BA%BA&amp;id&#x3D;tb.1.57bfe3bc.jEvUXgA1iobwHnBt4U10Kg?t&#x3D;1573180693&amp;fr&#x3D;index&amp;red_tag&#x3D;i2306081957" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-baidutieba"></i>tieba</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      好朋友
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.coor.top/" title="https:&#x2F;&#x2F;blog.coor.top" rel="noopener" target="_blank">弥枳</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://oao.ooo/" title="https:&#x2F;&#x2F;oao.ooo" rel="noopener" target="_blank">冬景哥哥</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ixk.me/" title="https:&#x2F;&#x2F;ixk.me" rel="noopener" target="_blank">青空之蓝</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://bestzuo.cn/" title="https:&#x2F;&#x2F;bestzuo.cn" rel="noopener" target="_blank">Sanarous</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dp2px.com/" title="https:&#x2F;&#x2F;dp2px.com" rel="noopener" target="_blank">水寒</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://liuyib.github.io/" title="https:&#x2F;&#x2F;liuyib.github.io&#x2F;" rel="noopener" target="_blank">liuyib</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">火星备案局  编号20200113号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2045 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">杨帆</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">199k</span>
+</div>
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>  
+<br>风暴中，唯保守者屹立不倒
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/09/2019 13:14:21");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+        
+<div class="busuanzi-count">
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.9' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'hPBQEVeNShPwgYffzbrNpHug-gzGzoHsz',
+      appKey: 'pjj3E8i6eVqtnI5WVP2TssoU',
+      placeholder: "把你的疑问写下来吧！留下电子邮箱可以收到我的回复哦",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+    </div>
+
+  
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+  </pre>
+
+<link rel="stylesheet" href="/live2d/css/live2d.css" />
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://www.hexoblog.top'  //此处修改为你的域名
+</script>
+
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/tia/model.json");  //此处为你是用的模型文件，可以修改
+</script>
+
+<script type="text/javascript" src="/js/src/dynamic-title.js" ></script>
+
+</body>
+</html>

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.7/skins/default/aliplayer-min.css" />
+<script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.8.7/aliplayer-min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1609317_gj5rz4uohy4.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/psc.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/psc.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://www.hexoblog.top').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+
+  <meta name="description" content="标题列表引用图片与链接粗体和斜体删除线表格内联代码语法突出任务列表表情符号   标题 # 一级标题## 二级标题### 三级标题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown语法">
+<meta property="og:url" content="http://www.hexoblog.top/47193/index.html">
+<meta property="og:site_name" content="杨帆的博客">
+<meta property="og:description" content="标题列表引用图片与链接粗体和斜体删除线表格内联代码语法突出任务列表表情符号   标题 # 一级标题## 二级标题### 三级标题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.blog/wp-content/uploads/2019/01/Company@2x-2.png">
+<meta property="og:image" content="https://img.shields.io/badge/license-Anti%20996-blue.svg">
+<meta property="og:image" content="https://img.shields.io/badge/link-996.icu-red.svg">
+<meta property="og:image" content="https://img.shields.io/badge/-%E9%9A%BE%E7%82%B9-blueviolet.svg">
+<meta property="og:image" content="https://img.shields.io/badge/-%E9%87%8D%E7%82%B9-red.svg">
+<meta property="og:image" content="https://img.shields.io/badge/-%E5%9F%BA%E7%A1%80-important.svg">
+<meta property="og:image" content="https://img.shields.io/badge/-%E7%AE%80%E5%8D%95-sccess.svg">
+<meta property="og:image" content="https://img.shields.io/badge/-%E5%86%B7%E9%97%A8-9cf.svg">
+<meta property="og:image" content="https://img.shields.io/badge/%E8%A6%81%E6%B1%82-%E7%B2%BE%E9%80%9A-blueviolet.svg">
+<meta property="og:image" content="https://img.shields.io/badge/%E8%A6%81%E6%B1%82-%E7%86%9F%E6%82%89-red.svg">
+<meta property="og:image" content="https://img.shields.io/badge/%E8%A6%81%E6%B1%82-%E4%BA%86%E8%A7%A3-important.svg">
+<meta property="article:published_time" content="2020-01-10T13:28:17.000Z">
+<meta property="article:modified_time" content="2020-01-14T06:46:06.403Z">
+<meta property="article:author" content="杨帆">
+<meta property="article:tag" content="markdown">
+<meta property="article:tag" content="teaper">
+<meta property="article:tag" content="Typora">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.blog/wp-content/uploads/2019/01/Company@2x-2.png">
+
+<link rel="canonical" href="http://www.hexoblog.top/47193/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+
+  <title>markdown语法 | 杨帆的博客</title>
+  
+
+
+  <script pjax>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?32de29eb00a7578e46002349327ca5ad";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<!-- 天气 -->
+<script type="text/javascript">
+WIDGET = {FID: '5a7igfkKBX'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">杨帆的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">军事，航空航天，前沿技术爱好者</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-关于作者">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于作者</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-r18g">
+
+    <a href="/photos/" rel="section"><i class="fa fa-fw fa-image"></i>R18G</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-更新日志">
+
+    <a href="/Journal/" rel="section"><i class="fa fa-fw fa-user"></i>更新日志</a>
+
+  </li>
+        <li class="menu-item menu-item-友情链接">
+
+    <a href="/Friend/" rel="section"><i class="fa fa-fw fa-link"></i>友情链接</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/983562336" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hexoblog.top/47193/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨帆">
+      <meta itemprop="description" content="每天都在努力学习，希望未来找到好工作！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨帆的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          markdown语法
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-10 21:28:17" itemprop="dateCreated datePublished" datetime="2020-01-10T21:28:17+08:00">2020-01-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 14:46:06" itemprop="dateModified" datetime="2020-01-14T14:46:06+08:00">2020-01-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/markdown/" itemprop="url" rel="index">
+                    <span itemprop="name">markdown</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/47193/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/47193/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a href="#标题"><span style="color:#B900ff;">标题</span></a><br><a href="#列表"><span style="color:#B900ff;">列表</span></a><br><a href="#引用"><span style="color:#B900ff;">引用</span></a><br><a href="#图片与链接"><span style="color:#B900ff;">图片与链接</span></a><br><a href="#粗体和斜体"><span style="color:#B900ff;">粗体和斜体</span></a><br><a href="#删除线"><span style="color:#B900ff;">删除线</span></a><br><a href="#表格"><span style="color:#B900ff;">表格</span></a><br><a href="#内联代码"><span style="color:#B900ff;">内联代码</span></a><br><a href="#语法突出"><span style="color:#B900ff;">语法突出</span></a><br><a href="#任务列表"><span style="color:#B900ff;">任务列表</span></a><br><a href="#表情符号"><span style="color:#B900ff;">表情符号</span></a>  </p>
+<h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><blockquote>
+<h6 id="一级标题"><a href="#一级标题" class="headerlink" title="# 一级标题"></a># 一级标题</h6><h6 id="二级标题"><a href="#二级标题" class="headerlink" title="## 二级标题"></a>## 二级标题</h6><h6 id="三级标题"><a href="#三级标题" class="headerlink" title="### 三级标题"></a>### 三级标题</h6></blockquote>
+<a id="more"></a>
+
+<p>以此类推,总共六级,建议在<code>#</code>后面加上空格(标准写法);换行在当行后面加两个空格再回车  </p>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p>无序列表加 <code>-</code> 或 <code>*</code> 有序列表加 <code>1.</code> <code>2.</code> <code>3.</code> 符号  </p>
+<h5 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 1          -1</span><br><span class="line">* 2    或    -2</span><br><span class="line">* 3          -3</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>1  </li>
+<li>2  </li>
+<li>3  </li>
+</ul>
+<h5 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. Item1</span><br><span class="line">2. Item2</span><br><span class="line">3. Item3</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>Item1  </li>
+<li>Item2  </li>
+<li>Item3  </li>
+</ol>
+<h4 id="待办事项"><a href="#待办事项" class="headerlink" title="待办事项"></a>待办事项</h4><p>待办事项使用 <code>- [ ]</code> 加事项内容，勾选复选框在 <code>[ ]</code> 使用 <code>x</code> </p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>[x] 已勾选的待办事项</span><br><span class="line"><span class="bullet">- </span>[ ] 未勾选的待办事项</span><br><span class="line"><span class="bullet">    - </span>[x] 子集已勾选待办事项</span><br><span class="line"><span class="bullet">    - </span>[ ] 子集未勾选待事项</span><br><span class="line"><span class="bullet">- </span>[x] 回到一级待办事项</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 已勾选的待办事项</li>
+<li><input disabled="" type="checkbox"> 未勾选的待办事项<ul>
+<li><input checked="" disabled="" type="checkbox"> 子集已勾选待办事项</li>
+<li><input disabled="" type="checkbox"> 子集未勾选待事项</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 回到一级待办事项</li>
+</ul>
+<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><p>如果你需要引用一小段别处的句子,就要用引用的格式 <code>&gt;</code> 例如这样<br><code>&gt; 这里是引用</code>  </p>
+<blockquote>
+<p>这里是引用  </p>
+</blockquote>
+<h4 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h4><p>插入图片和插入链接很像,区别在于一个<code>!</code>号,插入图片需要<code>URL</code>地址<br>注意:<code>[]</code>与<code>()</code>之间没有空格  </p>
+<h5 id="插入链接"><a href="#插入链接" class="headerlink" title="插入链接"></a>插入链接</h5><p><code>[TEAPER](https://www.teaper.cn)</code><br><a href="https://www.teaper.cn" target="_blank" rel="noopener">TEAPER</a>  </p>
+<h5 id="锚链接"><a href="#锚链接" class="headerlink" title="锚链接"></a>锚链接</h5><p>锚链接起始位置为：<code>[标题](#标题)</code><br>目标位置为：<code>#### 标题</code>  </p>
+<blockquote>
+<p>注意：锚链接起始位置中的<code>(#标题)</code>，不论目标位置是几号标题，这里都只写一个<code>#</code>，并且后面不留空格，紧接着标题名字；并且<code>()</code>内标题名字中的大写字母需要转换成小写字母，有空格或<code>、</code>需要把空格或<code>、</code>替换成<code>-</code>，有<code>.</code>的需要删除<code>.</code>，并且标题名字中不能包含<code>&amp;￥$【】？*%@!{}/\,:;&quot;&#39;&lt;&gt;~</code>等特殊符号；<code>[]</code>中的标题文本保持和目标位置一致即可</p>
+</blockquote>
+<h5 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h5><p><code>![](https://github.blog/wp-content/uploads/2019/01/Company@2x-2.png)</code><br><img src="https://github.blog/wp-content/uploads/2019/01/Company@2x-2.png" alt=""></p>
+<h4 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h4><p>Markdown的粗体和斜体也非常简单,用<code>**粗体**</code>或者两个<code>__粗体__</code>包含一段文字就是<strong>粗体</strong>,用一个<code>*斜体*</code>或者一个<code>_斜体_</code>包含一段文字就是<em>斜体</em>  </p>
+<h4 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h4><p>使用两个<code>～～</code>包含一段文字效果如下<br><del>删除线</del></p>
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><p>表格可能是Markdown比较累人的地方,注意表格上行空行不打空格，下行空行打两个空格，右边直接换行，<code>:</code> 打在哪边就表示对应方向的对齐，不写 <code>:</code> 默认左对齐  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| Java | C# | Python |</span><br><span class="line">| :------ | :-------: | ------: |</span><br><span class="line">| 支持 | 支持 | 不支持 |</span><br><span class="line">| 不支持 | 支持 | 支持 |</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">Java</th>
+<th align="center">C#</th>
+<th align="right">Python</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">支持</td>
+<td align="center">支持</td>
+<td align="right">不支持</td>
+</tr>
+<tr>
+<td align="left">不支持</td>
+<td align="center">支持</td>
+<td align="right">支持</td>
+</tr>
+</tbody></table>
+<h4 id="内联代码"><a href="#内联代码" class="headerlink" title="内联代码"></a>内联代码</h4><p>只需要用一个撇号 <span style="color:#ff0000">(数字1左边那个键)</span> 包裹中间的代码,用 <strong>Tap</strong> 键缩进<br><code>Markdown</code>给了你多少钱,我双倍!  </p>
+<h4 id="语法突出"><a href="#语法突出" class="headerlink" title="语法突出"></a>语法突出</h4><p>首行由三个撇号加代码检索标准（例如:java bash C++）开头；尾行三个撇号；代码在中间</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Markdown</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"可以使用三个撇号包围代码,第一行撇号后面指定代码语言(推荐)"</span>);</span><br><span class="line">    System.out.println(<span class="string">"或者简单的将代码缩进四个空格"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="代码收缩"><a href="#代码收缩" class="headerlink" title="代码收缩"></a>代码收缩</h4><p>一对<code>&lt;details&gt;&lt;/details&gt;</code>标签内加一对<code>&lt;summary&gt;&lt;/summary&gt;</code>标签，在<code>&lt;summary&gt;</code>标签内写收缩说明，标签后第二行开始写需要收缩的内容  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;details&gt;</span><br><span class="line">&lt;summary&gt;CLICK ME&lt;/summary&gt;</span><br><span class="line"></span><br><span class="line">**&lt;summary&gt;标签与正文间一定要空一行！！！**</span><br><span class="line">&lt;/details&gt;</span><br></pre></td></tr></table></figure>
+
+<details>
+<summary>Markdown方法</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Markdown</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"可以使用三个撇号包围代码,第一行撇号后面指定代码语言(推荐)"</span>);</span><br><span class="line">    System.out.println(<span class="string">"或者简单的将代码缩进四个空格"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><p>在<a href="https://github.com/" target="_blank" rel="noopener">gitHub</a>中,如果你想向某人发表评论,你可以在他们名字前面加<code>@</code>符号:hello@TEAPER  </p>
+<h4 id="表情符号"><a href="#表情符号" class="headerlink" title="表情符号"></a>表情符号</h4><p>GitHub支持表情符号,语法<code>:ide:</code>,可以查看<a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" target="_blank" rel="noopener">表情大全</a>  </p>
+<h4 id="徽章"><a href="#徽章" class="headerlink" title="徽章"></a>徽章</h4><p>徽章一般使用一个开源项目<a href="https://shields.io/" target="_blank" rel="noopener">shields.io</a>制作  </p>
+<p><a href="https://github.com/996icu/996.ICU/blob/master/LICENSE" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/license-Anti%20996-blue.svg" alt="LICENSE"></a> <a href="https://996.icu" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996.icu"></a><br><img src="https://img.shields.io/badge/-%E9%9A%BE%E7%82%B9-blueviolet.svg" alt="难点"> <img src="https://img.shields.io/badge/-%E9%87%8D%E7%82%B9-red.svg" alt="重点"> <img src="https://img.shields.io/badge/-%E5%9F%BA%E7%A1%80-important.svg" alt="基础"> <img src="https://img.shields.io/badge/-%E7%AE%80%E5%8D%95-sccess.svg" alt="简单"> <img src="https://img.shields.io/badge/-%E5%86%B7%E9%97%A8-9cf.svg" alt="冷门"><br><img src="https://img.shields.io/badge/%E8%A6%81%E6%B1%82-%E7%B2%BE%E9%80%9A-blueviolet.svg" alt="要求精通"> <img src="https://img.shields.io/badge/%E8%A6%81%E6%B1%82-%E7%86%9F%E6%82%89-red.svg" alt="要求熟悉"> <img src="https://img.shields.io/badge/%E8%A6%81%E6%B1%82-%E4%BA%86%E8%A7%A3-important.svg" alt="要求了解">  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[![LICENSE](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;license-Anti%20996-blue.svg)](https:&#x2F;&#x2F;github.com&#x2F;996icu&#x2F;996.ICU&#x2F;blob&#x2F;master&#x2F;LICENSE) [![996.icu](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;link-996.icu-red.svg)](https:&#x2F;&#x2F;996.icu)  </span><br><span class="line">![难点](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;-%E9%9A%BE%E7%82%B9-blueviolet.svg) ![重点](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;-%E9%87%8D%E7%82%B9-red.svg) ![基础](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;-%E5%9F%BA%E7%A1%80-important.svg) ![简单](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;-%E7%AE%80%E5%8D%95-sccess.svg) ![冷门](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;-%E5%86%B7%E9%97%A8-9cf.svg)  </span><br><span class="line">![要求精通](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;%E8%A6%81%E6%B1%82-%E7%B2%BE%E9%80%9A-blueviolet.svg) ![要求熟悉](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;%E8%A6%81%E6%B1%82-%E7%86%9F%E6%82%89-red.svg) ![要求了解](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;%E8%A6%81%E6%B1%82-%E4%BA%86%E8%A7%A3-important.svg)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a href="https://www.teaper.dev/2019/05/26/markdown-format/" target="_blank" rel="noopener">查看本家点击这里</a></p>
+
+    </div>
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">----------------本文结束<i class="fa fa-heart"></i>感谢阅读----------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>如果觉得文章好的话，就打个赏吧！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatplay.gif" alt="杨帆 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/play.gif" alt="杨帆 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/markdown/" rel="tag"><i class="fa fa-tag"></i> markdown</a>
+              <a href="/tags/teaper/" rel="tag"><i class="fa fa-tag"></i> teaper</a>
+              <a href="/tags/Typora/" rel="tag"><i class="fa fa-tag"></i> Typora</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/51498/" rel="prev" title="如何快速把网页部署到服务器上">
+      <i class="fa fa-chevron-left"></i> 如何快速把网页部署到服务器上
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/64326/" rel="next" title="过年抢票 12306 走起">
+      过年抢票 12306 走起 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#标题"><span class="nav-number">1.</span> <span class="nav-text">标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#一级标题"><span class="nav-number">1.0.1.</span> <span class="nav-text"># 一级标题</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#二级标题"><span class="nav-number">1.0.2.</span> <span class="nav-text">## 二级标题</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#三级标题"><span class="nav-number">1.0.3.</span> <span class="nav-text">### 三级标题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表"><span class="nav-number">2.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#无序列表"><span class="nav-number">2.1.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有序列表"><span class="nav-number">2.2.</span> <span class="nav-text">有序列表</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#待办事项"><span class="nav-number">3.</span> <span class="nav-text">待办事项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用"><span class="nav-number">4.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图片与链接"><span class="nav-number">5.</span> <span class="nav-text">图片与链接</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#插入链接"><span class="nav-number">5.1.</span> <span class="nav-text">插入链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#锚链接"><span class="nav-number">5.2.</span> <span class="nav-text">锚链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#插入图片"><span class="nav-number">5.3.</span> <span class="nav-text">插入图片</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#粗体和斜体"><span class="nav-number">6.</span> <span class="nav-text">粗体和斜体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除线"><span class="nav-number">7.</span> <span class="nav-text">删除线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表格"><span class="nav-number">8.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内联代码"><span class="nav-number">9.</span> <span class="nav-text">内联代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语法突出"><span class="nav-number">10.</span> <span class="nav-text">语法突出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码收缩"><span class="nav-number">11.</span> <span class="nav-text">代码收缩</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#任务列表"><span class="nav-number">12.</span> <span class="nav-text">任务列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表情符号"><span class="nav-number">13.</span> <span class="nav-text">表情符号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#徽章"><span class="nav-number">14.</span> <span class="nav-text">徽章</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="杨帆"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">杨帆</p>
+  <div class="site-description" itemprop="description">每天都在努力学习，希望未来找到好工作！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/983562336" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;983562336" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-git-copy"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/983562336@qq.com" title="E-Mail → 983562336@qq.com"><i class="fa fa-fw iconfont icons-weixin"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/6971647196/profile?topnav=1&wvr=6&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;6971647196&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/166385809" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;166385809" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-bilibili"></i>bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://mp.csdn.net/" title="CSDN → https:&#x2F;&#x2F;mp.csdn.net&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-csdn"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://nut-edu.herokuapp.com/" title="Slack → https:&#x2F;&#x2F;nut-edu.herokuapp.com&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-slack"></i>Slack</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/yang_fan_m" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;yang_fan_m" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-mayun"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://tieba.baidu.com/home/main?un=%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%BE%88%E7%83%A6%E4%BA%BA&id=tb.1.57bfe3bc.jEvUXgA1iobwHnBt4U10Kg?t=1573180693&fr=index&red_tag=i2306081957" title="tieba → http:&#x2F;&#x2F;tieba.baidu.com&#x2F;home&#x2F;main?un&#x3D;%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%BE%88%E7%83%A6%E4%BA%BA&amp;id&#x3D;tb.1.57bfe3bc.jEvUXgA1iobwHnBt4U10Kg?t&#x3D;1573180693&amp;fr&#x3D;index&amp;red_tag&#x3D;i2306081957" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-baidutieba"></i>tieba</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      好朋友
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.coor.top/" title="https:&#x2F;&#x2F;blog.coor.top" rel="noopener" target="_blank">弥枳</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://oao.ooo/" title="https:&#x2F;&#x2F;oao.ooo" rel="noopener" target="_blank">冬景哥哥</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ixk.me/" title="https:&#x2F;&#x2F;ixk.me" rel="noopener" target="_blank">青空之蓝</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://bestzuo.cn/" title="https:&#x2F;&#x2F;bestzuo.cn" rel="noopener" target="_blank">Sanarous</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dp2px.com/" title="https:&#x2F;&#x2F;dp2px.com" rel="noopener" target="_blank">水寒</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://liuyib.github.io/" title="https:&#x2F;&#x2F;liuyib.github.io&#x2F;" rel="noopener" target="_blank">liuyib</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">火星备案局  编号20200113号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2045 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">杨帆</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">199k</span>
+</div>
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>  
+<br>风暴中，唯保守者屹立不倒
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/09/2019 13:14:21");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+        
+<div class="busuanzi-count">
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.9' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'hPBQEVeNShPwgYffzbrNpHug-gzGzoHsz',
+      appKey: 'pjj3E8i6eVqtnI5WVP2TssoU',
+      placeholder: "把你的疑问写下来吧！留下电子邮箱可以收到我的回复哦",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+    </div>
+
+  
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+  </pre>
+
+<link rel="stylesheet" href="/live2d/css/live2d.css" />
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://www.hexoblog.top'  //此处修改为你的域名
+</script>
+
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/tia/model.json");  //此处为你是用的模型文件，可以修改
+</script>
+
+<script type="text/javascript" src="/js/src/dynamic-title.js" ></script>
+
+</body>
+</html>

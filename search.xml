@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>网页然后禁止保存图片和使用控制台</title>
+    <title>网页禁止保存图片和使用控制台</title>
     <url>/31060/</url>
     <content><![CDATA[<p>这些方法主要的作用是让你的网页无法被<br>被人保存图片或者复制里面的内容，以及禁止控制台的使用</p>
 <a id="more"></a>
@@ -1265,8 +1265,8 @@ var player = new Aliplayer({
         <category>python</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>bilibili</tag>
+        <tag>git</tag>
         <tag>linux</tag>
         <tag>12306</tag>
       </tags>

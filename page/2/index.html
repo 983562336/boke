@@ -22,6 +22,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
   <script src="/lib/pace/pace.min.js"></script>
 
@@ -35,10 +36,10 @@
     version: '7.7.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
+    bookmark: {"enable":true,"color":"#222","save":"manual"},
+    fancybox: true,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
@@ -165,7 +166,8 @@ WIDGET = {FID: '5a7igfkKBX'}
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-        <p class="site-subtitle">军事，航空航天，前沿技术爱好者</p>
+        <h1 class="site-subtitle" itemprop="description">军事，航空航天，前沿技术爱好者</h1>
+      
   </div>
 
   <div class="site-nav-toggle">
@@ -191,24 +193,9 @@ WIDGET = {FID: '5a7igfkKBX'}
     <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于作者</a>
 
   </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
-
-  </li>
         <li class="menu-item menu-item-r18g">
 
     <a href="/photos/" rel="section"><i class="fa fa-fw fa-image"></i>R18G</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-更新日志">
@@ -267,8 +254,10 @@ WIDGET = {FID: '5a7igfkKBX'}
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
-  <a href="https://github.com/983562336" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+  <a href="https://github.com/983562336" class="github-corner" title="查看的GitHub主页" aria-label="查看的GitHub主页" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main class="main">
@@ -280,6 +269,120 @@ WIDGET = {FID: '5a7igfkKBX'}
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hexoblog.top/32385/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨帆">
+      <meta itemprop="description" content="每天都在努力学习，希望未来找到好工作！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨帆的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/32385/" class="post-title-link" itemprop="url">萌新的python记录</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-12 11:49:35" itemprop="dateCreated datePublished" datetime="2020-01-12T11:49:35+08:00">2020-01-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 14:44:06" itemprop="dateModified" datetime="2020-01-14T14:44:06+08:00">2020-01-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/32385/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/32385/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>16k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>14 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这个是长期更新的，记录我自己的 <code>python</code> 学习笔记，当然我是刚学没多久的</p>
+<p>所以咳咳，没什么特别的地方</p>
+<h1 id="python的语法和使用相关"><a href="#python的语法和使用相关" class="headerlink" title="python的语法和使用相关"></a>python的语法和使用相关</h1>
+          <!--noindex-->
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -296,10 +399,10 @@ WIDGET = {FID: '5a7igfkKBX'}
       <meta itemprop="name" content="杨帆的博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/45708/" class="post-title-link" itemprop="url">博客样式显示不出的解决办法</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
 
@@ -409,10 +512,10 @@ WIDGET = {FID: '5a7igfkKBX'}
       <meta itemprop="name" content="杨帆的博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/4130/" class="post-title-link" itemprop="url">Hair-pink[明日方舟/德安]</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
 
@@ -522,10 +625,10 @@ WIDGET = {FID: '5a7igfkKBX'}
       <meta itemprop="name" content="杨帆的博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/64326/" class="post-title-link" itemprop="url">过年抢票 12306 走起</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
 
@@ -644,10 +747,10 @@ WIDGET = {FID: '5a7igfkKBX'}
       <meta itemprop="name" content="杨帆的博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/47193/" class="post-title-link" itemprop="url">markdown语法</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
 
@@ -758,10 +861,10 @@ WIDGET = {FID: '5a7igfkKBX'}
       <meta itemprop="name" content="杨帆的博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/51498/" class="post-title-link" itemprop="url">如何快速把网页部署到服务器上</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
 
@@ -927,22 +1030,19 @@ WIDGET = {FID: '5a7igfkKBX'}
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">15</span>
+          <a href="/archives">
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-          
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-          
-        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-count">34</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -952,16 +1052,10 @@ WIDGET = {FID: '5a7igfkKBX'}
         <a href="https://github.com/983562336" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;983562336" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-git-copy"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/983562336@qq.com" title="E-Mail → 983562336@qq.com"><i class="fa fa-fw iconfont icons-weixin"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
         <a href="https://weibo.com/6971647196/profile?topnav=1&wvr=6&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;6971647196&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-weibo"></i>Weibo</a>
       </span>
       <span class="links-of-author-item">
         <a href="https://space.bilibili.com/166385809" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;166385809" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-bilibili"></i>bilibili</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://mp.csdn.net/" title="CSDN → https:&#x2F;&#x2F;mp.csdn.net&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-csdn"></i>CSDN</a>
       </span>
       <span class="links-of-author-item">
         <a href="https://nut-edu.herokuapp.com/" title="Slack → https:&#x2F;&#x2F;nut-edu.herokuapp.com&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-slack"></i>Slack</a>
@@ -970,7 +1064,7 @@ WIDGET = {FID: '5a7igfkKBX'}
         <a href="https://gitee.com/yang_fan_m" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;yang_fan_m" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-mayun"></i>Gitee</a>
       </span>
       <span class="links-of-author-item">
-        <a href="http://tieba.baidu.com/home/main?un=%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%BE%88%E7%83%A6%E4%BA%BA&id=tb.1.57bfe3bc.jEvUXgA1iobwHnBt4U10Kg?t=1573180693&fr=index&red_tag=i2306081957" title="tieba → http:&#x2F;&#x2F;tieba.baidu.com&#x2F;home&#x2F;main?un&#x3D;%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%BE%88%E7%83%A6%E4%BA%BA&amp;id&#x3D;tb.1.57bfe3bc.jEvUXgA1iobwHnBt4U10Kg?t&#x3D;1573180693&amp;fr&#x3D;index&amp;red_tag&#x3D;i2306081957" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-baidutieba"></i>tieba</a>
+        <a href="http://tieba.baidu.com/home/main?un=%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%BE%88%E7%83%A6%E4%BA%BA&id=tb.1.57bfe3bc.jEvUXgA1iobwHnBt4U10Kg?t=1573180693&fr=index&red_tag=i2306081957" title="贴吧 → http:&#x2F;&#x2F;tieba.baidu.com&#x2F;home&#x2F;main?un&#x3D;%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%BE%88%E7%83%A6%E4%BA%BA&amp;id&#x3D;tb.1.57bfe3bc.jEvUXgA1iobwHnBt4U10Kg?t&#x3D;1573180693&amp;fr&#x3D;index&amp;red_tag&#x3D;i2306081957" rel="noopener" target="_blank"><i class="fa fa-fw iconfont icons-baidutieba"></i>贴吧</a>
       </span>
   </div>
 
@@ -1023,14 +1117,14 @@ WIDGET = {FID: '5a7igfkKBX'}
   &copy; 2045 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">杨帆</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">199k</span>
+    <span title="站点总字数">201k</span>
 </div>
 
 <!-- 网站运行时间的设置 -->
@@ -1092,6 +1186,8 @@ setInterval("createtime()",250);
   <script color='0,0,255' opacity='0.9' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -1104,6 +1200,8 @@ setInterval("createtime()",250);
 
 
 <script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
 
   <script>
 var pjax = new Pjax({
@@ -1170,6 +1268,15 @@ window.addEventListener('pjax:success', () => {
 
 
   
+  <script pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1180,6 +1287,18 @@ window.addEventListener('pjax:success', () => {
 
 
 
+  <script>
+    (function(d, w, c) {
+      w.ChatraID = '';
+      var s = d.createElement('script');
+      w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+  </script>
 
 
 

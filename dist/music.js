@@ -7,7 +7,7 @@ $(function() {
 		listFolded: true,
 		lrcType: 3,
 	});
-	$.getJSON("https://api.i-meto.com/meting/api?type=playlist&id=3195679094", function(data) {
+	$.getJSON("https://api.fczbl.vip/163/?type=playlist&id=3195679094", function(data) {
 		ap.list.add(data)
 	});
 })

@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>bootstrap使用指南</title>
+    <url>/57383/</url>
+    <content><![CDATA[<p>Bootstarp是一个前端开发框架，来自Twitter</p>
+<p>它基于 <code>Html</code> , <code>css</code> , <code>javascript</code> </p>
+<p>它简洁灵活，使得WEB开发变得更加快捷</p>
+<a id="more"></a>
+
+<p>提示自己，多看官方文档</p>
+<p>多看官方文档</p>
+<p>多看官方文档</p>
+<p>多看官方文档</p>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>一个半成品软件，开发人员可以在框架基础上，在进行开发，简化编码</p>
+<h2 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h2><ol>
+<li>定义了很多的 <code>css</code> 样式和 <code>js</code> 插件，我们开发人员可以使用这些样式和插件得到丰富的页面效果</li>
+<li>响应式布局（同一套页面可以兼容不同分辨率的设备）</li>
+</ol>
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="下载-Bootstarp"><a href="#下载-Bootstarp" class="headerlink" title="下载 Bootstarp"></a>下载 <code>Bootstarp</code></h3><p>进入 <a href="https://www.bootcss.com/" target="_blank" rel="noopener">Bootstarp中文网</a></p>
+<p>点击中文文档，然后下载即可</p>
+<p>也可以使用Bower进行安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">执行以下命令</span><br><span class="line"></span><br><span class="line">$ bower install bootstrap</span><br></pre></td></tr></table></figure>
+
+<p>还可以使用npm进行安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">执行以下命令</span><br><span class="line"></span><br><span class="line">$ npm install bootstrap@3</span><br></pre></td></tr></table></figure>
+
+<p>更多资料查看官方文档了解</p>
+<h3 id="在项目中使用"><a href="#在项目中使用" class="headerlink" title="在项目中使用"></a>在项目中使用</h3><p>把下载下来的压缩包解压后，将里面的东西复制到你的项目里</p>
+<p>然后创建里 <code>html</code> 文件（如果有可以不用创建），引入必要的资源文件</p>
+<p>查看 <a href="https://v3.bootcss.com/getting-started/#template" target="_blank" rel="noopener">说明文档</a> 里的基本模板</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">以下就是基本模板里的代码</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;zh-CN&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;IE&#x3D;edge&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1&quot;&gt;</span><br><span class="line">    &lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br><span class="line">    &lt;title&gt;Bootstrap 101 Template&lt;&#x2F;title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Bootstrap --&gt;</span><br><span class="line">    &lt;link href&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;bootstrap@3.3.7&#x2F;dist&#x2F;css&#x2F;bootstrap.min.css&quot; rel&#x3D;&quot;stylesheet&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 --&gt;</span><br><span class="line">    &lt;!-- 警告：通过 file:&#x2F;&#x2F; 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 --&gt;</span><br><span class="line">    &lt;!--[if lt IE 9]&gt;</span><br><span class="line">      &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;html5shiv@3.7.3&#x2F;dist&#x2F;html5shiv.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">      &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;respond.js@1.4.2&#x2F;dest&#x2F;respond.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;![endif]--&gt;</span><br><span class="line">  &lt;&#x2F;head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;h1&gt;你好，世界！&lt;&#x2F;h1&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;jquery@1.12.4&#x2F;dist&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;bootstrap@3.3.7&#x2F;dist&#x2F;js&#x2F;bootstrap.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>里面引用的文件来自远端，如果你已经下载的 <code>bootstrap</code> 那么可以修改 <code>link</code> 后面的地址为本地文件地址</p>
+<h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><p>响应式布局的实现依赖于栅格系统，相当于把一行分成12个格子，可以指定元素占几个格子</p>
+<p><strong>步骤（详细的查看官方文档）</strong></p>
+<ol>
+<li><p>定义容器，相当于之前的 <code>table</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">容器也有分类</span><br><span class="line"></span><br><span class="line">container-fluid：每一种设备都是100%宽度</span><br><span class="line"></span><br><span class="line">container：两边有留白，不会占满，具体查阅官方文档</span><br></pre></td></tr></table></figure></li>
+<li><p>定义行，相当于 <code>tr</code></p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/bootstrap/1.png" alt="image"></p>
+</li>
+<li><p>定义元素，指定该元素在不同的设备上占的格子数目</p>
+<p><img src="https://gitee.com/yang_fan_m/photo/raw/master/blog_image/bootstrap/2.png" alt="image"></p>
+<p>下面提供代码来展现栅格系统，把代码复制进去然后运行到浏览器就行，但是注意看引用的地址是不是正确</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> &lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;zh-CN&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;IE&#x3D;edge&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1&quot;&gt;</span><br><span class="line">    &lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br><span class="line">    &lt;title&gt;Bootstrap 101 Template&lt;&#x2F;title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Bootstrap --&gt;</span><br><span class="line">    &lt;link href&#x3D;&quot;css&#x2F;bootstrap.min.css&quot; rel&#x3D;&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;jquery@1.12.4&#x2F;dist&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;js&#x2F;bootstrap.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		.inner&#123;</span><br><span class="line">			border: 1px solid red;</span><br><span class="line">			&#125;							&#x2F;* 加上边框 *&#x2F;</span><br><span class="line">	&lt;&#x2F;style&gt;</span><br><span class="line">	</span><br><span class="line">  &lt;&#x2F;head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">   &lt;!-- 定义容器 --&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;container-fluid&quot;&gt;</span><br><span class="line">	   &lt;!-- 定义行 --&gt;</span><br><span class="line">	   &lt;div class&#x3D;&quot;row&quot;&gt;</span><br><span class="line">		   &lt;!-- 定义元素 --&gt;</span><br><span class="line">		   &lt;div class&#x3D;&quot;col-lg-1 col-sm-2 inner&quot;&gt;栅格&lt;&#x2F;div&gt;</span><br><span class="line">		   &lt;div class&#x3D;&quot;col-lg-1 col-sm-2 inner&quot;&gt;栅格&lt;&#x2F;div&gt;</span><br><span class="line">		   &lt;div class&#x3D;&quot;col-lg-1 col-sm-2 inner&quot;&gt;栅格&lt;&#x2F;div&gt;</span><br><span class="line">		   &lt;div class&#x3D;&quot;col-lg-1 col-sm-2 inner&quot;&gt;栅格&lt;&#x2F;div&gt;</span><br><span class="line">		   &lt;div class&#x3D;&quot;col-lg-1 col-sm-2 inner&quot;&gt;栅格&lt;&#x2F;div&gt;</span><br><span class="line">		   &lt;div class&#x3D;&quot;col-lg-1 col-sm-2 inner&quot;&gt;栅格&lt;&#x2F;div&gt;</span><br><span class="line">		   &lt;div class&#x3D;&quot;col-lg-1 col-sm-2 inner&quot;&gt;栅格&lt;&#x2F;div&gt;</span><br><span class="line">		   &lt;div class&#x3D;&quot;col-lg-1 col-sm-2 inner&quot;&gt;栅格&lt;&#x2F;div&gt;</span><br><span class="line">		   &lt;div class&#x3D;&quot;col-lg-1 col-sm-2 inner&quot;&gt;栅格&lt;&#x2F;div&gt;</span><br><span class="line">		   &lt;div class&#x3D;&quot;col-lg-1 col-sm-2 inner&quot;&gt;栅格&lt;&#x2F;div&gt;</span><br><span class="line">		   &lt;div class&#x3D;&quot;col-lg-1 col-sm-2 inner&quot;&gt;栅格&lt;&#x2F;div&gt;</span><br><span class="line">		   &lt;div class&#x3D;&quot;col-lg-1 col-sm-2 inner&quot;&gt;栅格&lt;&#x2F;div&gt;</span><br><span class="line">	   &lt;&#x2F;div&gt;   </span><br><span class="line">   &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>注意：</p>
+<ul>
+<li>一行中如果格子数目超过12，超过部分自动换行</li>
+<li>栅格类属于向上兼容，适用于与屏幕宽度大于或等于分界点大小的设备</li>
+<li>如果真实设备宽度小于设置栅格类属性的设备代码的最小值，会一个元素占满一整行</li>
+</ul>
+<h2 id="全局CSS样式"><a href="#全局CSS样式" class="headerlink" title="全局CSS样式"></a>全局CSS样式</h2><p>全局CSS样式：</p>
+<ul>
+<li>按钮</li>
+<li>图片</li>
+<li>表格</li>
+<li>表单</li>
+</ul>
+<p>组件：</p>
+<ul>
+<li>导航条</li>
+<li>分页条</li>
+</ul>
+<p>插件：</p>
+<ul>
+<li>轮播图</li>
+</ul>
+<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><p>在 <code>bootstrap</code> 的中文文档里找到全局CSS样式，翻到按钮</p>
+<p>将展示代码复制到编辑器里即可查看效果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">或者复制下面这段代码也可以</span><br><span class="line"></span><br><span class="line">&lt;a class&#x3D;&quot;btn btn-default&quot; href&#x3D;&quot;#&quot; role&#x3D;&quot;button&quot;&gt;Link&lt;&#x2F;a&gt;</span><br><span class="line">&lt;button class&#x3D;&quot;btn btn-default&quot; type&#x3D;&quot;submit&quot;&gt;Button&lt;&#x2F;button&gt;</span><br><span class="line">&lt;input class&#x3D;&quot;btn btn-default&quot; type&#x3D;&quot;button&quot; value&#x3D;&quot;Input&quot;&gt;</span><br><span class="line">&lt;input class&#x3D;&quot;btn btn-default&quot; type&#x3D;&quot;submit&quot; value&#x3D;&quot;Submit&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>文档下面也提供了很多样式，可以自行查阅修改</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>依旧查看官方文档</p>
+<p>这里放上一个例子，可以让图片适应响应式布局，即随着窗口的大小变化，图片一直会保持100%的显示</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用下面代码引用图片即可</span><br><span class="line"></span><br><span class="line">&lt;img src&#x3D;&quot;...&quot; class&#x3D;&quot;img-responsive&quot; alt&#x3D;&quot;Responsive image&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>官方文档还提供了很多改变图片形状等的例子，自行查阅体验</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>通过对 <code>table</code> 表情添加不同的 <code>class</code> 属性就可以弄出不同的表格</p>
+<p>条纹状表格：<code>class=&quot;table table-striped&quot;</code></p>
+<p>带边框的表格: <code>class=&quot;table table-bordered&quot;</code></p>
+<p>鼠标悬停: <code>class=&quot;table table-hover&quot;</code></p>
+<p>更多的样式查看官方文档了解 <del>官方文档是个神奇的东西</del></p>
+]]></content>
+      <categories>
+        <category>bootstrap</category>
+      </categories>
+      <tags>
+        <tag>WEB</tag>
+        <tag>bootstrap</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网页禁止保存图片和使用控制台</title>
     <url>/31060/</url>
     <content><![CDATA[<p>这些方法主要的作用是让你的网页无法被<br>被人保存图片或者复制里面的内容，以及禁止控制台的使用</p>
@@ -1371,8 +1463,8 @@ var player = new Aliplayer({
         <category>markdown</category>
       </categories>
       <tags>
-        <tag>teaper</tag>
         <tag>markdown</tag>
+        <tag>teaper</tag>
         <tag>Typora</tag>
       </tags>
   </entry>
@@ -1495,9 +1587,9 @@ var player = new Aliplayer({
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
         <tag>hello</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
 </search>

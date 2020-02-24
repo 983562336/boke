@@ -58,15 +58,15 @@
 </script>
 
 
-  <meta name="description" content="这个是长期更新的，记录我自己的 python 学习笔记，当然我是刚学没多久的 所以咳咳，没什么特别的地方 python的语法和使用相关">
+  <meta name="description" content="这个是长期更新的，记录我自己的 python 学习笔记，当然我是刚学没多久的 所以咳咳，没什么特别的地方 以下开始正文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="萌新的python记录">
 <meta property="og:url" content="http://www.hexoblog.top/32385/index.html">
 <meta property="og:site_name" content="杨帆的博客">
-<meta property="og:description" content="这个是长期更新的，记录我自己的 python 学习笔记，当然我是刚学没多久的 所以咳咳，没什么特别的地方 python的语法和使用相关">
+<meta property="og:description" content="这个是长期更新的，记录我自己的 python 学习笔记，当然我是刚学没多久的 所以咳咳，没什么特别的地方 以下开始正文">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-01-12T03:49:35.000Z">
-<meta property="article:modified_time" content="2020-01-14T06:44:06.133Z">
+<meta property="article:published_time" content="2020-02-24T03:49:35.000Z">
+<meta property="article:modified_time" content="2020-02-24T10:07:52.644Z">
 <meta property="article:author" content="杨帆">
 <meta property="article:tag" content="markdown">
 <meta property="article:tag" content="python">
@@ -302,16 +302,10 @@ WIDGET = {FID: '5a7igfkKBX'}
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-01-12 11:49:35" itemprop="dateCreated datePublished" datetime="2020-01-12T11:49:35+08:00">2020-01-12</time>
+              <time title="创建时间：2020-02-24 11:49:35 / 修改时间：18:07:52" itemprop="dateCreated datePublished" datetime="2020-02-24T11:49:35+08:00">2020-02-24</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-14 14:44:06" itemprop="dateModified" datetime="2020-01-14T14:44:06+08:00">2020-01-14</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -351,14 +345,14 @@ WIDGET = {FID: '5a7igfkKBX'}
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>16k</span>
+              <span>21k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>14 分钟</span>
+              <span>19 分钟</span>
             </span>
 
         </div>
@@ -372,9 +366,10 @@ WIDGET = {FID: '5a7igfkKBX'}
       
         <p>这个是长期更新的，记录我自己的 <code>python</code> 学习笔记，当然我是刚学没多久的</p>
 <p>所以咳咳，没什么特别的地方</p>
-<h1 id="python的语法和使用相关"><a href="#python的语法和使用相关" class="headerlink" title="python的语法和使用相关"></a>python的语法和使用相关</h1><a id="more"></a>
+<p>以下开始正文</p>
+<a id="more"></a>
 
-<p>先从一个文字游戏来分析吧</p>
+<p><strong>python的语法和使用相关</strong><br>先从一个文字游戏来分析吧</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">print(&#39;----------------这是一个文字游戏哈哈哈-----------------&#39;)</span><br><span class="line">temp &#x3D; input(&quot;你来猜下现在我抽到的数字:&quot;)</span><br><span class="line">guess &#x3D; int(temp)</span><br><span class="line">if guess &#x3D;&#x3D; 6:</span><br><span class="line">    print(&quot;wdnmd，你是偷看了把&quot;)</span><br><span class="line">    print(&quot;老实交代&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;哈哈，弄错了，数字是6&quot;)</span><br><span class="line">print(&quot;GAME OVER!&quot;)</span><br></pre></td></tr></table></figure>
 <p>==print：== 作用是把括号里面的内容打印出来</p>
 <p>==input：== 内置函数，把里面的内容打印出来而且把输入值返回给temp</p>
@@ -388,40 +383,49 @@ WIDGET = {FID: '5a7igfkKBX'}
 <li>等号（=）是赋值的意思，左边是名字，右边是值，不能搞反了  </li>
 </ul>
 <p><em>如果要创建字符串，就要在字符两边加上引号，可以是单引号或者双引号，但是必须成对。</em> 如果字符串包含引号的话，可以用转义符号 <code>\</code>来进行。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">例子  </span><br><span class="line"> Let\&#39;s go</span><br></pre></td></tr></table></figure>
-<p>还有个办法是在字符串前面加一个英文字母 <strong>r</strong> 即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str &#x3D; r&#39;C:\now&#39;</span><br></pre></td></tr></table></figure>
-<p>对于长字符串来说，要用三重引号来实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str &#x3D; &#39;&#39;&#39; C\dfdf\gf\hgh &#39;&#39;&#39;</span><br></pre></td></tr></table></figure>
-<p>python比较操作符  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;     左边大于右边</span><br><span class="line">&gt;&#x3D;    左边大于等于右边</span><br><span class="line">&lt;     左边小于右边</span><br><span class="line">&lt;&#x3D;    左边小于等于右边</span><br><span class="line">&#x3D;&#x3D;    左边等于右边</span><br><span class="line">！&#x3D;   左边不等于右边</span><br><span class="line"></span><br><span class="line">关于返回值，返回True意思是真的。返回False意思是假的</span><br></pre></td></tr></table></figure>
-<p>==TAB==是代码缩进的快捷键</p>
-<p><strong>and</strong>操作符，当两边都是结果都是<strong>True</strong>时，输出<strong>True</strong>。如果有一边结果是<strong>False</strong>，那么输出就是<strong>False</strong><br><strong>or</strong>操作符，只要两边有一边为真，就输出<strong>True</strong>，如果两边都是假，那就输出<strong>False</strong><br><strong>not</strong>操作符，输出相反的结果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">示例如下</span><br><span class="line">（3&gt;2）and (1&lt;2)    左右两边都是正确的时候</span><br><span class="line"> True</span><br><span class="line"> </span><br><span class="line"> (3&gt;2) and (1&gt;2)    有一边是错误的时候</span><br><span class="line"> False</span><br><span class="line"> &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"> （3&gt;2) or (4&gt;5)    只要有一边正确就输出正确</span><br><span class="line"> True</span><br><span class="line"> &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"> not 0              0表示False，在not的作用下输出了Ture</span><br><span class="line"> True</span><br></pre></td></tr></table></figure>
-
-<p><strong>python的数据类型</strong><br>==Ture==   表示1<br>==False==  表示0</p>
-<p>==int()== 表示转换成整数型<br>==str()== 表示转换成字符串<br>==float()== 表示转换成浮点数</p>
-<p>获得类型信息的方法<br>==type()== 在括号里面输入数据就可以了<br>==isinstance== 使用方法在下面  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; &#39;憨憨&#39;</span><br><span class="line">isinstance(a,str)</span><br><span class="line">True</span><br><span class="line"></span><br><span class="line">a表示你要知道类型的，str则是类型名</span><br><span class="line">如果下面出现的是True的话，表示a就是str类型的数据</span><br></pre></td></tr></table></figure>
-<p><strong>python的运算符</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">大部分运算符和其他语言一样</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 这个除法运算符会把结果变成整型</span><br><span class="line">** 这个运算符的意思是平方，a**3 就是a的3次方</span><br><span class="line"></span><br><span class="line">但是运算可以简化的</span><br><span class="line">比如</span><br><span class="line"></span><br><span class="line">a*3</span><br><span class="line"></span><br><span class="line">可以简化成</span><br><span class="line"></span><br><span class="line">a*&#x3D;3</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">优先级问题，第一个是最高优先级</span><br><span class="line"></span><br><span class="line">幕运算  **</span><br><span class="line"></span><br><span class="line">正负号  +x  -x</span><br><span class="line"></span><br><span class="line">算术操作符  * &#x2F; &#x2F;&#x2F; + -</span><br><span class="line"></span><br><span class="line">比较操作符  &lt;  &lt;&#x3D;  &gt;  &gt;&#x3D;  &#x3D;&#x3D;  !&#x3D;</span><br><span class="line"></span><br><span class="line">逻辑运算符  not  and  or</span><br></pre></td></tr></table></figure>
-
-<p><strong>python的分支和循环</strong></p>
-<p>==elif：== 这相当于C语言里的<strong>else if</strong>，但是注意下这些循环什么的后面要加上<code>:</code>才可以正常使用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">例子</span><br><span class="line">判断成绩属于什么层次</span><br><span class="line"></span><br><span class="line">score &#x3D; int(input(&#39;输入成绩&#39;))</span><br><span class="line">if 100 &gt;&#x3D; score &gt;&#x3D; 90:</span><br><span class="line">    print(&#39;A&#39;)</span><br><span class="line">elif 90 &gt; score &gt;&#x3D; 80:        这里的elif就是else if的意思</span><br><span class="line">    print(&#39;B&#39;)</span><br><span class="line">elif 80 &gt; score &gt;&#x3D; 60:  注意if，else等等这些后面要加：才行</span><br><span class="line">    print(&#39;C&#39;)</span><br><span class="line">elif 60 &gt; score &gt;&#x3D; 0:</span><br><span class="line">    print(&#39;D&#39;)</span><br><span class="line">else:</span><br><span class="line">    print(&#39;非法输入&#39;)</span><br></pre></td></tr></table></figure>
-<p><strong>条件表达式（三元操作符）</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">用这个可以实现一条语句实现条件判断和赋值操作</span><br><span class="line"></span><br><span class="line">原来</span><br><span class="line">x,y &#x3D; 4,5 </span><br><span class="line">if x &lt; y:       如果x大于y</span><br><span class="line">    small &#x3D; x   把x的值赋给small</span><br><span class="line">else:           如果不是</span><br><span class="line">    small &#x3D; y   把y的值赋给small</span><br><span class="line"></span><br><span class="line">改进后</span><br><span class="line">small &#x3D; x if x &lt; y else y</span><br></pre></td></tr></table></figure>
-
-<p><strong>断言</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例子  </span><br><span class="line"> Let\&#39;s go</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">还有个办法是在字符串前面加一个英文字母 **r** 即可</span><br></pre></td></tr></table></figure>
+<p>str = r’C:\now’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对于长字符串来说，要用三重引号来实现</span><br></pre></td></tr></table></figure>
+<p>str = ‘’’ C\dfdf\gf\hgh ‘’’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python比较操作符</span><br></pre></td></tr></table></figure>
+<blockquote>
+<pre><code>左边大于右边</code></pre><p>=    左边大于等于右边<br> &lt;     左边小于右边<br> &lt;=    左边小于等于右边<br> ==    左边等于右边<br> ！=   左边不等于右边</p>
+</blockquote>
+<p> 关于返回值，返回True意思是真的。返回False意思是假的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D;TAB&#x3D;&#x3D;是代码缩进的快捷键</span><br><span class="line"></span><br><span class="line">**and**操作符，当两边都是结果都是**True**时，输出**True**。如果有一边结果是**False**，那么输出就是**False**  </span><br><span class="line">**or**操作符，只要两边有一边为真，就输出**True**，如果两边都是假，那就输出**False**  </span><br><span class="line">**not**操作符，输出相反的结果</span><br></pre></td></tr></table></figure>
+<p>示例如下<br>（3&gt;2）and (1&lt;2)    左右两边都是正确的时候<br> True</p>
+<p> (3&gt;2) and (1&gt;2)    有一边是错误的时候<br> False<br> ============================================<br> （3&gt;2) or (4&gt;5)    只要有一边正确就输出正确<br> True<br> ============================================<br> not 0              0表示False，在not的作用下输出了Ture<br> True</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### python的数据类型</span><br><span class="line">&#x3D;&#x3D;Ture&#x3D;&#x3D;   表示1  </span><br><span class="line">&#x3D;&#x3D;False&#x3D;&#x3D;  表示0</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;int()&#x3D;&#x3D; 表示转换成整数型  </span><br><span class="line">&#x3D;&#x3D;str()&#x3D;&#x3D; 表示转换成字符串  </span><br><span class="line">&#x3D;&#x3D;float()&#x3D;&#x3D; 表示转换成浮点数</span><br><span class="line"></span><br><span class="line">获得类型信息的方法  </span><br><span class="line">&#x3D;&#x3D;type()&#x3D;&#x3D; 在括号里面输入数据就可以了  </span><br><span class="line">&#x3D;&#x3D;isinstance&#x3D;&#x3D; 使用方法在下面</span><br></pre></td></tr></table></figure>
+<p>a = ‘憨憨’<br>isinstance(a,str)<br>True</p>
+<p>a表示你要知道类型的，str则是类型名<br>如果下面出现的是True的话，表示a就是str类型的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### python的运算符</span><br></pre></td></tr></table></figure>
+<p>大部分运算符和其他语言一样</p>
+<p>// 这个除法运算符会把结果变成整型<br>** 这个运算符的意思是平方，a**3 就是a的3次方</p>
+<p>但是运算可以简化的<br>比如</p>
+<p>a*3</p>
+<p>可以简化成</p>
+<p>a*=3</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>优先级问题，第一个是最高优先级</p>
+<p>幕运算  **</p>
+<p>正负号  +x  -x</p>
+<p>算术操作符  * / // + -</p>
+<p>比较操作符  &lt;  &lt;=  &gt;  &gt;=  ==  !=</p>
+<p>逻辑运算符  not  and  or</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### python的分支和循环</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;elif：&#x3D;&#x3D; 这相当于C语言里的**else if**，但是注意下这些循环什么的后面要加上&#96;&#96;&#96;:&#96;&#96;&#96;才可以正常使用。</span><br></pre></td></tr></table></figure>
+<p>例子<br>判断成绩属于什么层次</p>
+<p>score = int(input(‘输入成绩’))<br>if 100 &gt;= score &gt;= 90:<br>    print(‘A’)<br>elif 90 &gt; score &gt;= 80:        这里的elif就是else if的意思<br>    print(‘B’)<br>elif 80 &gt; score &gt;= 60:  注意if，else等等这些后面要加：才行<br>    print(‘C’)<br>elif 60 &gt; score &gt;= 0:<br>    print(‘D’)<br>else:<br>    print(‘非法输入’)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### 条件表达式（三元操作符）</span><br></pre></td></tr></table></figure>
+<p>用这个可以实现一条语句实现条件判断和赋值操作</p>
+<p>原来<br>x,y = 4,5<br>if x &lt; y:       如果x大于y<br>    small = x   把x的值赋给small<br>else:           如果不是<br>    small = y   把y的值赋给small</p>
+<p>改进后<br>small = x if x &lt; y else y</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 断言  </span><br><span class="line">&#96;&#96;&#96;assert&#96;&#96;&#96;这个关键字被称为“断言”，当这个关键字后面的条件为假的时候，程序自动崩溃并抛出&#96;&#96;&#96;AssertionError&#96;&#96;&#96;的异常</span><br></pre></td></tr></table></figure>
 <p>例子<br>assert 3 &gt; 4</p>
 <p>一般来说，当需要确保程序中某个条件一定为真的时候，才能让程序<br>正常工作的话，assert关键字就很有用了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**for**循环</span><br></pre></td></tr></table></figure>
 <p>语法是</p>
 <p>for 目标 in 表达式：<br>    循环体</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**range**语法  </span><br><span class="line">包含&#96;&#96;&#96;range([strat,] stop[, step&#x3D;1])&#96;&#96;&#96;  </span><br><span class="line">- 有三个参数，其中用中括号括起来的表示这两个参数是可选的  。</span><br><span class="line">- &#96;&#96;&#96;step&#x3D;1&#96;&#96;&#96;表示第三个参数的值默认是1 。 </span><br><span class="line">- &#96;&#96;&#96;range&#96;&#96;&#96;的作用是生成一个从**start**参数的值开始到**stop**参数的值结束的数字序列。  </span><br><span class="line">- 当然&#96;&#96;&#96;range&#96;&#96;&#96;里面的数字是可以自己定义范围的，比如&#96;&#96;&#96;range(2,9)&#96;&#96;&#96;就是包含了数字&#96;&#96;&#96;2~8&#96;&#96;&#96;  </span><br><span class="line">- 还有种情况，&#96;&#96;&#96;range(1,10,2)&#96;&#96;&#96;意思是把&#96;&#96;&#96;1~9&#96;&#96;&#96;包含，但是每两个数字之间相隔&#96;&#96;&#96;2&#96;&#96;&#96;，也就是说包含了&#96;&#96;&#96;1,3,5,7,9&#96;&#96;&#96;这些数字</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#### range语法  </span><br><span class="line">包含&#96;&#96;&#96;range([strat,] stop[, step&#x3D;1])&#96;&#96;&#96;  </span><br><span class="line">- 有三个参数，其中用中括号括起来的表示这两个参数是可选的  。</span><br><span class="line">- &#96;&#96;&#96;step&#x3D;1&#96;&#96;&#96;表示第三个参数的值默认是1 。 </span><br><span class="line">- &#96;&#96;&#96;range&#96;&#96;&#96;的作用是生成一个从**start**参数的值开始到**stop**参数的值结束的数字序列。  </span><br><span class="line">- 当然&#96;&#96;&#96;range&#96;&#96;&#96;里面的数字是可以自己定义范围的，比如&#96;&#96;&#96;range(2,9)&#96;&#96;&#96;就是包含了数字&#96;&#96;&#96;2~8&#96;&#96;&#96;  </span><br><span class="line">- 还有种情况，&#96;&#96;&#96;range(1,10,2)&#96;&#96;&#96;意思是把&#96;&#96;&#96;1~9&#96;&#96;&#96;包含，但是每两个数字之间相隔&#96;&#96;&#96;2&#96;&#96;&#96;，也就是说包含了&#96;&#96;&#96;1,3,5,7,9&#96;&#96;&#96;这些数字</span><br></pre></td></tr></table></figure>
 <p>range(5)</p>
 <blockquote>
 <blockquote>
@@ -441,7 +445,7 @@ WIDGET = {FID: '5a7igfkKBX'}
 <p>与for循环的配合</p>
 <p>for i in range(5)<br>    print(i)</p>
 <p>0          &lt;——结果就是这样<br>1          &lt; for循环会把range里的<br>2          &lt; 打印出来<br>3<br>4</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**break 和 continue**  </span><br><span class="line">&#96;&#96;&#96;continue&#96;&#96;&#96;:当条件不成立，退出循环体；条件成立，继续执行。</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;**列表**&#x3D;&#x3D;  </span><br><span class="line">向列表里添加元素的方法是，使用&#96;&#96;&#96;append&#96;&#96;&#96;实现  </span><br><span class="line">比方说向**member数组**里面添加**emm**</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**break 和 continue**  </span><br><span class="line">&#96;&#96;&#96;continue&#96;&#96;&#96;:当条件不成立，退出循环体；条件成立，继续执行。</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### 列表</span><br><span class="line">向列表里添加元素的方法是，使用&#96;&#96;&#96;append&#96;&#96;&#96;实现  </span><br><span class="line">比方说向**member数组**里面添加**emm**</span><br></pre></td></tr></table></figure>
 <p>例子<br>member.append(‘emmm’) </p>
 <p>还有<br>len可以获取数组包含的元素个数</p>
 <p>len(member)     括号里填的是数组名字</p>
@@ -451,7 +455,7 @@ WIDGET = {FID: '5a7igfkKBX'}
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">假使你要把元素放到数组的指定位置上，就要使用&#96;&#96;&#96;insert&#96;&#96;&#96;了</span><br><span class="line">比如把 first 放到数组第一个去。</span><br></pre></td></tr></table></figure>
 <p>括号里的 0 表示的是放到数组里的位置是第几个<br>‘’ 里面的则是添加的元素</p>
 <p>member.insert(0,’first’)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;**从列表里删除元素**&#x3D;&#x3D;  </span><br><span class="line">使用&#96;&#96;&#96;remove&#96;&#96;&#96;语法实现的</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">#### 从列表里删除元素 </span><br><span class="line">使用&#96;&#96;&#96;remove&#96;&#96;&#96;语法实现的</span><br></pre></td></tr></table></figure>
 <p>‘’ 里面就是输入你要删除的元素</p>
 <p>member.remove(‘emm’)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用&#96;&#96;&#96;del&#96;&#96;&#96;语法实现的</span><br></pre></td></tr></table></figure>
@@ -461,11 +465,11 @@ WIDGET = {FID: '5a7igfkKBX'}
 <p>member.pop()      而且被踢出的元素会显示出来</p>
 <p>因为会显示出来，相当于有返回值，所以可以把踢出来的值<br>赋值给另一个列表</p>
 <p>name = member.pop()  就是把踢出的元素赋给name</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;列表分片&#x3D;&#x3D;  </span><br><span class="line">快速从列表里提取出元素，但是不会改变被提取列表</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">#### 列表分片</span><br><span class="line">快速从列表里提取出元素，但是不会改变被提取列表</span><br></pre></td></tr></table></figure>
 <p>中括号里的就是要提取的元素范围</p>
 <p>member[1:3]         &lt;— 提取1到2号元素</p>
 <p>如果是 [:] 的话，那么就是得到一个列表的拷贝，因为这相当于提<br>取第一个到最后一个元素</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;列表的常用操作符&#x3D;&#x3D;</span><br><span class="line">- 比较操作符</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">#### 列表的常用操作符</span><br><span class="line">- 比较操作符</span><br></pre></td></tr></table></figure>
 <p>列表可以通过下面的比较符来进行比较<br>list1 &gt; list2<br>list1 = list2<br>list1 &lt; list2<br>如果正确就是 Ture ，错误就是False</p>
 <p>如果列表里有多个元素的话，拿去比较的是第一个元素<br>list1 = [111,222]<br>list2 = [222,111]<br>list1 &gt; list2       &lt;—比较的是每个列表的第一个元素<br>结果是 False</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 逻辑操作符</span><br></pre></td></tr></table></figure>
@@ -492,7 +496,7 @@ WIDGET = {FID: '5a7igfkKBX'}
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- &#96;&#96;&#96;sort&#96;&#96;&#96;用法</span><br></pre></td></tr></table></figure>
 <p>list1.sort()<br>意思是把列表 list1 的元素从小到大排序</p>
 <p>list1.sort(reverse=True)<br>意思是把列表 list1 的元素从大到小排序。<br>其实就是把执行 sort() 的结果反转过来了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;元组&#x3D;&#x3D;  </span><br><span class="line">由于和列表是近亲关系，所以元组和列表在实际使用上是非常相似的  </span><br><span class="line">操作符也可以通用</span><br><span class="line">- 创建和访问一个元组  </span><br><span class="line">注意元组的标志性符号是&#96;&#96;&#96;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### 元组</span><br><span class="line">由于和列表是近亲关系，所以元组和列表在实际使用上是非常相似的  </span><br><span class="line">操作符也可以通用</span><br><span class="line">- 创建和访问一个元组  </span><br><span class="line">注意元组的标志性符号是&#96;&#96;&#96;,</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tuple1 &#x3D; (1,2,3,4)</span><br><span class="line">这样就创建了一个名为 tuple1 的元组</span><br><span class="line"></span><br><span class="line">但是元组是不可以修改的！</span><br></pre></td></tr></table></figure>
 <ul>
 <li>更新一个元组<br>如果要给一个元组里添加元素</li>
@@ -504,8 +508,7 @@ WIDGET = {FID: '5a7igfkKBX'}
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">del temp</span><br><span class="line">意思就是删除名字为 temp 元组</span><br></pre></td></tr></table></figure>
 
 <hr>
-<p>==各种奇葩的内置方法（字符串）==  </p>
-<ul>
+<h3 id="各种奇葩的内置方法（字符串）"><a href="#各种奇葩的内置方法（字符串）" class="headerlink" title="各种奇葩的内置方法（字符串）"></a>各种奇葩的内置方法（字符串）</h3><ul>
 <li>如果要查询某个位置的元素</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">str1 &#x3D; &#39;nmd wsm&#39;    &lt;-- 一个字符串</span><br><span class="line"></span><br><span class="line">str1[ :6]</span><br><span class="line">这样会提取出 0~5 号元素并返回</span><br><span class="line"></span><br><span class="line">str1[5]</span><br><span class="line">这样会把排在第5号的元素返回</span><br></pre></td></tr></table></figure>
@@ -643,8 +646,7 @@ WIDGET = {FID: '5a7igfkKBX'}
 <li><code>%g</code> 和 <code>%G</code> 用法</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">其实这两个一样的</span><br><span class="line">根据值的大小决定使用 %f 或 %e</span><br><span class="line"></span><br><span class="line">&#39;%g&#39; % 27.658</span><br><span class="line">&gt;&gt;&gt; &#39;27.658&#39;</span><br></pre></td></tr></table></figure>
-<p><strong>格式化操作符辅助命令</strong></p>
-<ul>
+<h4 id="格式化操作符辅助命令"><a href="#格式化操作符辅助命令" class="headerlink" title="格式化操作符辅助命令"></a>格式化操作符辅助命令</h4><ul>
 <li><code>m.n</code> 用法</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">m 是显示的最小总宽度，n 是小数点后的位数</span><br><span class="line"></span><br><span class="line">&#39;%5.1f&#39; % 27.658        &lt;-- m 被指定位5，n 被指定为1</span><br><span class="line">&gt;&gt;&gt; &#39; 27.7&#39;</span><br><span class="line">5 是表示整个字符串宽度为5，而 1 则是表示小数点后只有一位数</span><br></pre></td></tr></table></figure>
@@ -664,8 +666,7 @@ WIDGET = {FID: '5a7igfkKBX'}
 <li><code>0</code> 用法</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">显示的数字前面填充 &#39;0&#39; 取代空格</span><br><span class="line"></span><br><span class="line">&#39;%010d&#39; % 5     &lt;-- 10 的意思是填充10个0</span><br><span class="line">&gt;&gt;&gt; &#39;0000000005&#39;</span><br><span class="line">可以看到前面被填充了10个0</span><br><span class="line"></span><br><span class="line">&#39;%-010d&#39; % 5        &lt;-- 如果多加一个 - 符号</span><br><span class="line">&gt;&gt;&gt; &#39;5         &#39;</span><br><span class="line">发现改成后面填充空格了</span><br></pre></td></tr></table></figure>
-<p><strong>字符串转义字符含义</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">\&#39;      单引号</span><br><span class="line"></span><br><span class="line">\&quot;      双引号</span><br><span class="line"></span><br><span class="line">\a      发出系统响声(实际并不会)</span><br><span class="line"></span><br><span class="line">\b      退格符</span><br><span class="line"></span><br><span class="line">\n      换行符</span><br><span class="line"></span><br><span class="line">\t      横向制表符(TAB)</span><br><span class="line"></span><br><span class="line">\v      纵向制表符</span><br><span class="line"></span><br><span class="line">\r      回车符</span><br><span class="line"></span><br><span class="line">\f      换页符</span><br><span class="line"></span><br><span class="line">\o      八进制数代表的字符</span><br><span class="line"></span><br><span class="line">\x      十六进制数代表的字符</span><br><span class="line"></span><br><span class="line">\0      表示一个空字符</span><br><span class="line"></span><br><span class="line">\\      反斜杠</span><br></pre></td></tr></table></figure>
+<h4 id="字符串转义字符含义"><a href="#字符串转义字符含义" class="headerlink" title="字符串转义字符含义"></a>字符串转义字符含义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">\&#39;      单引号</span><br><span class="line"></span><br><span class="line">\&quot;      双引号</span><br><span class="line"></span><br><span class="line">\a      发出系统响声(实际并不会)</span><br><span class="line"></span><br><span class="line">\b      退格符</span><br><span class="line"></span><br><span class="line">\n      换行符</span><br><span class="line"></span><br><span class="line">\t      横向制表符(TAB)</span><br><span class="line"></span><br><span class="line">\v      纵向制表符</span><br><span class="line"></span><br><span class="line">\r      回车符</span><br><span class="line"></span><br><span class="line">\f      换页符</span><br><span class="line"></span><br><span class="line">\o      八进制数代表的字符</span><br><span class="line"></span><br><span class="line">\x      十六进制数代表的字符</span><br><span class="line"></span><br><span class="line">\0      表示一个空字符</span><br><span class="line"></span><br><span class="line">\\      反斜杠</span><br></pre></td></tr></table></figure>
 
 <hr>
 <h3 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">列表、元组和字符串的共同点</span><br><span class="line"></span><br><span class="line">-- 都可以通过索引得到每一个元素</span><br><span class="line"></span><br><span class="line">-- 默认索引值总是从0开始</span><br><span class="line"></span><br><span class="line">-- 可以通过分片的方法得到一个范围内的元素的集合</span><br><span class="line"></span><br><span class="line">-- 有很多共同的操作符(重复操作符、拼接操作符、成员关系操作符)</span><br></pre></td></tr></table></figure>
@@ -711,15 +712,164 @@ WIDGET = {FID: '5a7igfkKBX'}
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">返回由各个参数的序列组成的元组</span><br><span class="line"></span><br><span class="line">a &#x3D; [1,2,3,4,5,6,7,8]</span><br><span class="line">b &#x3D; [4,5,6,7,8]</span><br><span class="line">zip(a,b)</span><br><span class="line">&gt;&gt;&gt; &lt;zip object at 0x0000029322769080&gt;</span><br><span class="line"></span><br><span class="line">list(zip(a,b))      &lt;-- 使用逆操作</span><br><span class="line">&gt;&gt;&gt; [(1, 4), (2, 5), (3, 6), (4, 7), (5, 8)]</span><br><span class="line">发现 a 和 b 合在一起了，每两两元素组成一个元组，但是这是成对存在的，所以多出的部分被省略了</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="函数：python的乐高积木"><a href="#函数：python的乐高积木" class="headerlink" title="函数：python的乐高积木"></a>函数：python的乐高积木</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def MyFirstFunction():</span><br><span class="line">	print(&#39;这是我创建的第一个函数！&#39;)</span><br><span class="line">	print(&#39;我表示很激动&#39;)</span><br><span class="line">	</span><br><span class="line">def 就是定义了一个函数，而 ：后面则是函数的执行体</span><br><span class="line"></span><br><span class="line">如何调用一个函数</span><br><span class="line">MyFirstFunction()               &lt;-- 直接输入函数名字</span><br><span class="line">&gt;&gt;&gt; 这是我创建的第一个函数！</span><br><span class="line">    我表示很激动</span><br><span class="line">这样就是调用了这个函数</span><br><span class="line"></span><br><span class="line">其实实现的原理就是 def 定义了一个叫 MyFirstFunction() 的函数，然后调用这个函数的话就会执行这个函数里面的内容</span><br></pre></td></tr></table></figure>
+<h3 id="函数：python的乐高积木"><a href="#函数：python的乐高积木" class="headerlink" title="函数：python的乐高积木"></a>函数：python的乐高积木</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def MyFirstFunction():</span><br><span class="line">	print(&#39;这是我创建的第一个函数！&#39;)</span><br><span class="line">	print(&#39;我表示很激动&#39;)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">同时可以给函数一个参数</span><br><span class="line">def MyFirstFunction(name):      &lt;-- 给了一个参数 name</span><br><span class="line">print(name + &#39;表示很激动&#39;)</span><br><span class="line">但是注意这里是不能直接调用的，因为需要一个参数</span><br><span class="line"></span><br><span class="line">MyFirstFunction(&#39;你爸爸&#39;)       &lt;-- 调用的时候给一个参数 &#39;你爸爸&#39;</span><br><span class="line">&gt;&gt;&gt; 你爸爸表示很激动</span><br><span class="line">这才是正确的调用方法</span><br></pre></td></tr></table></figure>
+<p><code>def</code> 就是定义了一个函数，而 <code>:</code> 后面则是函数的执行体</p>
+<p>如何调用一个函数 ↓</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MyFirstFunction()               &lt;-- 直接输入函数名字</span><br><span class="line">&gt;&gt;&gt; 这是我创建的第一个函数！</span><br><span class="line">    我表示很激动</span><br><span class="line">这样就是调用了这个函数</span><br></pre></td></tr></table></figure>
+<p>其实实现的原理就是 <code>def</code> 定义了一个叫 <code>MyFirstFunction()</code> 的函数，然后调用这个函数的话就会执行这个函数里面的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">同时可以给函数一个参数</span><br><span class="line">def MyFirstFunction(name):      &lt;-- 给了一个参数 name</span><br><span class="line">print(name + &#39;表示很激动&#39;)</span><br><span class="line">但是注意这里是不能直接调用的，因为需要一个参数</span><br><span class="line"></span><br><span class="line">MyFirstFunction(&#39;你爸爸&#39;)       &lt;-- 调用的时候给一个参数 &#39;你爸爸&#39;</span><br><span class="line">&gt;&gt;&gt; 你爸爸表示很激动</span><br></pre></td></tr></table></figure>
+<p>这才是正确的调用方法</p>
+<p>如果是多个参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def add(num1,num2):</span><br><span class="line">	result &#x3D; num1 + num2        &lt;-- result 的值等于 num1 + num2</span><br><span class="line">	print(result)</span><br><span class="line">add(1,2)        &lt;-- 调用函数 add ，参数给定 1 和 2</span><br><span class="line">&gt;&gt;&gt; 3</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">如果是多个参数</span><br><span class="line"></span><br><span class="line">def add(num1,num2):</span><br><span class="line">	result &#x3D; num1 + num2        &lt;-- result 的值等于 num1 + num2</span><br><span class="line">	print(result)</span><br><span class="line">add(1,2)        &lt;-- 调用函数 add ，参数给定 1 和 2</span><br><span class="line">&gt;&gt;&gt; 3</span><br></pre></td></tr></table></figure>
-<p><strong>函数的返回值</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">使用 return </span><br><span class="line"></span><br><span class="line">def add(num1,num2):</span><br><span class="line">	return (num1 + num2)        &lt;-- 使用 return 返回 num1 + num2 的值</span><br><span class="line">print(add(5,6))                 &lt;-- 给定参数 5 和 6，并打印结果</span><br><span class="line">&gt;&gt;&gt; 11</span><br></pre></td></tr></table></figure>
-<p><strong>收集参数</strong> <code>*</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">收集参数是使用 * 来定义的</span><br><span class="line"></span><br><span class="line"> def test(*pa):     &lt;- * 就是收集参数</span><br><span class="line">	print(&#39;参数的长度是：&#39;,len(pa));</span><br><span class="line">	print(&#39;第二个参数是：&#39;,pa[1]);</span><br><span class="line">	</span><br><span class="line"> test(1,&#39;apk&#39;,222,3.33,2,3,4,5,6)</span><br><span class="line">&gt;&gt;&gt; 参数的长度是： 9</span><br><span class="line">&gt;&gt;&gt; 第二个参数是： apk</span><br></pre></td></tr></table></figure>
+<h4 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">使用 return </span><br><span class="line"></span><br><span class="line">def add(num1,num2):</span><br><span class="line">	return (num1 + num2)        &lt;-- 使用 return 返回 num1 + num2 的值</span><br><span class="line">print(add(5,6))                 &lt;-- 给定参数 5 和 6，并打印结果</span><br><span class="line">&gt;&gt;&gt; 11</span><br></pre></td></tr></table></figure>
+<h4 id="收集参数"><a href="#收集参数" class="headerlink" title="收集参数 *"></a>收集参数 <code>*</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">收集参数是使用 * 来定义的</span><br><span class="line"></span><br><span class="line"> def test(*pa):     &lt;- * 就是收集参数</span><br><span class="line">	print(&#39;参数的长度是：&#39;,len(pa));</span><br><span class="line">	print(&#39;第二个参数是：&#39;,pa[1]);</span><br><span class="line">	</span><br><span class="line"> test(1,&#39;apk&#39;,222,3.33,2,3,4,5,6)</span><br><span class="line">&gt;&gt;&gt; 参数的长度是： 9</span><br><span class="line">&gt;&gt;&gt; 第二个参数是： apk</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="形参和实参"><a href="#形参和实参" class="headerlink" title="形参和实参"></a>形参和实参</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def MyFirstFunction(name):</span><br><span class="line">	&#39;函数的定义过程中的name是叫形参&#39;</span><br><span class="line">	print(&#39;传递进来的&#39;+ name + &#39;叫做实参，因为TA是具体的参数值！&#39;)</span><br><span class="line">	</span><br><span class="line">当输入的时候</span><br><span class="line">MyFirstFunction(&#39;嘿嘿嘿&#39;)</span><br><span class="line">&gt;&gt;&gt; 传递进来的嘿嘿嘿叫做实参，因为TA是具体的参数值！</span><br><span class="line"></span><br><span class="line">如果要打印出它的属性的话，使用</span><br><span class="line">MyFirstFunction.__doc__</span><br><span class="line"></span><br><span class="line">就会打印出</span><br><span class="line">&gt;&gt;&gt; &#39;函数的定义过程中的name是叫形参&#39;</span><br></pre></td></tr></table></figure>
+<p>当然还有别的方法也可以打印出 <code>MyFirstFunction</code> 的文档</p>
+<p>比如使用 <code>help(MyFirstFunction)</code> 或者 <code>print.__doc__</code>，但是使用前一个方法打印出来的更加美观</p>
+<h4 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h4><p>开始举例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def SaySome(name,words):</span><br><span class="line">	print(name + &#39;-&gt;&#39; + words)</span><br></pre></td></tr></table></figure>
+<p>然后进行调用，打印出效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SaySome(&#39;你是谁&#39;,&#39;我是谁&#39;)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; 你是谁-&gt;我是谁</span><br></pre></td></tr></table></figure>
+
+<p>但是如果参数的位置反了的话，打印出来的结果也会不一样，所以可以给参数加上关键字来防止</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SaySome(words&#x3D;&#39;我是谁&#39;,name&#x3D;&#39;你是谁&#39;)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; 你是谁-&gt;我是谁</span><br></pre></td></tr></table></figure>
+
+<p>可能看起来像是多此一举，但是当以后代码量变得多起来的是hi，你就会发现这个其实很有用的</p>
+<h4 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h4><p>默认参数是定义了默认值的参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def SaySome(name&#x3D;&#39;我是谁&#39;,words&#x3D;&#39;你是谁&#39;):</span><br><span class="line">	print(name + &#39;-&gt;&#39; + words)</span><br></pre></td></tr></table></figure>
+
+<p>当你调用的时候，没给参数它也不会报错，因为它是有默认参数的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SaySome()</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; 我是谁-&gt;你是谁</span><br></pre></td></tr></table></figure>
+
+<p>但是，你也可以给它参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SaySome(&#39;你好&#39;,&#39;我好&#39;)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; 你好-&gt;我好</span><br></pre></td></tr></table></figure>
+
+<p>当你没有给定参数的时候它就会使用默认参数，防止你忘了给参数导致报错</p>
+<h4 id="收集参数-1"><a href="#收集参数-1" class="headerlink" title="收集参数"></a>收集参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def test(*params):</span><br><span class="line">	print(&#39;参数的长度是：&#39;,len(params));</span><br><span class="line">	print(&#39;第二个参数是：&#39;,params[1]);</span><br></pre></td></tr></table></figure>
+
+<p>当你调用并输入时</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">test(1,&#39;你好啊&#39;,3.14,5,6,7,8)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; 参数的长度是： 7</span><br><span class="line">&gt;&gt;&gt; 第二个参数是： 你好啊</span><br></pre></td></tr></table></figure>
+
+<p>注意是从 <code>0</code> 开始数的哈，不是从 <code>1</code> 开始</p>
+<p>但是需要注意的一点是，如果收集参数的后面你还要加上其它参数的话，那么在调用的时候就应该使用<strong>关键字参数</strong>，不然 <code>python</code> 就会把后面的也列为收集参数的范畴了</p>
+<p>举个例子，如果我们在后面加上一个参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def test(*params,exp):</span><br><span class="line">	print(&#39;参数的长度是：&#39;,len(params),exp);</span><br><span class="line">	print(&#39;第二个参数是：&#39;,params[1]);</span><br></pre></td></tr></table></figure>
+
+<p>然后再调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">test(1,&#39;你好啊&#39;,3.14,5,6,7,8)</span><br><span class="line"></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;pyshell#32&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">    test(1,&#39;你好啊&#39;,3.14,5,6,7,8)</span><br><span class="line">TypeError: test() missing 1 required keyword-only argument: &#39;exp&#39;</span><br></pre></td></tr></table></figure>
+
+<p>就会发现报错了，那是因为它会把前面所有内容都给收集参数，那么 <code>exp</code> 参数就得不到内容了。如果想要正常运行的话，那应该使用默认参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def test(*params,exp):</span><br><span class="line">	print(&#39;参数的长度是：&#39;,len(params),exp);</span><br><span class="line">	print(&#39;第二个参数是：&#39;,params[1]);</span><br><span class="line">	</span><br><span class="line">在调用的时候给exp指定一个值，这样就可以了</span><br><span class="line">test(1,&#39;你好啊&#39;,3.14,5,6,7,8,exp &#x3D; 8)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; 参数的长度是： 7 8</span><br><span class="line">    第二个参数是： 你好啊</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数与过程"><a href="#函数与过程" class="headerlink" title="函数与过程"></a>函数与过程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def hello():</span><br><span class="line">	print(&#39;Hello ppt&#39;)</span><br><span class="line">	</span><br><span class="line">将其赋值给</span><br><span class="line">temo &#x3D; hello()</span><br><span class="line"></span><br><span class="line">打印结果</span><br><span class="line">&gt;&gt;&gt; Hello ppt</span><br></pre></td></tr></table></figure>
+
+<p>但是如果只输入 <code>temo</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">发现什么也没有打印出来</span><br></pre></td></tr></table></figure>
+
+<p>因为 <code>hello</code> 这个函数并没有返回任何东西，自然也没有东西可以给 <code>temo</code>，所以不会显示</p>
+<p>如果你想强行弄出来，可以输入 <code>print(temo)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; None</span><br></pre></td></tr></table></figure>
+
+<p>如果没有值，那么它也会返回一个 <code>None</code></p>
+<h4 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4><p>如果想要 <code>python</code> 返回多个值，可以使用列表来实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def back():</span><br><span class="line">	return [1,&#39;哈哈&#39;,6.66]</span><br><span class="line">	</span><br><span class="line">输入</span><br><span class="line">back()</span><br><span class="line"></span><br><span class="line">返回</span><br><span class="line">&gt;&gt;&gt; [1, &#39;哈哈&#39;, 6.66]</span><br></pre></td></tr></table></figure>
+
+<p>不过也可以不加上 <code>()</code>，改成这种写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def back():</span><br><span class="line">	return 1,&#39;哈哈&#39;,6.66</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">打印结果</span><br><span class="line">&gt;&gt;&gt; (1, &#39;哈哈&#39;, 6.66)</span><br></pre></td></tr></table></figure>
+
+<h4 id="全局变量和局部变量"><a href="#全局变量和局部变量" class="headerlink" title="全局变量和局部变量"></a>全局变量和局部变量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def discounts(price,rate):</span><br><span class="line">	final_price &#x3D; price * rate</span><br><span class="line">	return final_price</span><br><span class="line">	</span><br><span class="line">old_price &#x3D; float(input(&#39;请输入原价：&#39;))</span><br><span class="line">rate &#x3D; float(input(&#39;请输入折扣率：&#39;))</span><br><span class="line">new_price &#x3D; discounts(old_price,rate)</span><br><span class="line">print(&#39;打折后的价格是：&#39;,new_price)</span><br></pre></td></tr></table></figure>
+
+<p>在这里试图打印局部变量的值，在最后加入代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def discounts(price,rate):</span><br><span class="line">	final_price &#x3D; price * rate</span><br><span class="line">	return final_price</span><br><span class="line">	</span><br><span class="line">old_price &#x3D; float(input(&#39;请输入原价：&#39;))</span><br><span class="line">rate &#x3D; float(input(&#39;请输入折扣率：&#39;))</span><br><span class="line">new_price &#x3D; discounts(old_price,rate)</span><br><span class="line">print(&#39;打折后的价格是：&#39;,new_price)</span><br><span class="line">print(&#39;打印局部变量final_price的值：&#39;,final_price)</span><br></pre></td></tr></table></figure>
+
+<p>但是报错了，那是因为 <code>final_price</code> 是一个局部变量，因为它的生效范围只在 <code>discounts</code> 函数里，如果出了这个范围，那它就是无效的。<br>这就是局部变量，只在局部范围里生效</p>
+<p>与局部变量相对于的是全局变量，全局变量的作用域是整个代码</p>
+<p>下面尝试打印全局变量的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def discounts(price,rate):</span><br><span class="line">	final_price &#x3D; price * rate</span><br><span class="line">	print(&#39;这里试图打印全局变量old_price的值&#39;,old_price)</span><br><span class="line">	return final_price</span><br><span class="line">	</span><br><span class="line">old_price &#x3D; float(input(&#39;请输入原价：&#39;))</span><br><span class="line">rate &#x3D; float(input(&#39;请输入折扣率：&#39;))</span><br><span class="line">new_price &#x3D; discounts(old_price,rate)</span><br><span class="line">print(&#39;打折后的价格是：&#39;,new_price)</span><br></pre></td></tr></table></figure>
+
+<p>运行后会发现，值被成功打印出来了</p>
+<p>但是如果在函数内试图修改一个全局变量，那么 <code>python</code> 会自动创建一个新的局部变量代替，名字和全局变量是一模一样的</p>
+<blockquote>
+<p>总结：全局变量在整个代码里都是可以被访问得到的</p>
+<p>但是不要尝试在函数内部去修改它，因为那样的话python会自动新建一个名字一模一样的局部变量去代替</p>
+</blockquote>
+<hr>
+<h3 id="内嵌函数和闭包"><a href="#内嵌函数和闭包" class="headerlink" title="内嵌函数和闭包"></a>内嵌函数和闭包</h3><p>前面提到过，不要在函数内部去修改全局变量，但是如果你一定要修改的话，可以使用 <code>global</code> 关键字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">先定义全局变量</span><br><span class="line">count &#x3D; 5</span><br><span class="line"></span><br><span class="line">def MyFun():</span><br><span class="line">    global count        &lt;- 使用 global 关键字来修改全局变量 count</span><br><span class="line">    count &#x3D; 10</span><br><span class="line">    print(10)</span><br></pre></td></tr></table></figure>
+
+<h4 id="内嵌函数"><a href="#内嵌函数" class="headerlink" title="内嵌函数"></a>内嵌函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def fun1():</span><br><span class="line">	print(&#39;fun1()正在被调用...&#39;)</span><br><span class="line">	def fun2():</span><br><span class="line">		print(&#39;fun2()正在被调用...&#39;)</span><br><span class="line">	fun2()</span><br></pre></td></tr></table></figure>
+
+<p>输入 <code>fun1()</code>，可以看到打印的结果是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fun1()正在被调用...</span><br><span class="line">fun2()正在被调用...</span><br></pre></td></tr></table></figure>
+
+<p>可以看出 <code>python</code> 是支持函数的嵌套的，<code>fun1()</code> 里面套了个 <code>fun2()</code></p>
+<p>需要注意的是<strong>内部函数的整个作用域都在外部函数之内</strong></p>
+<p>简单的说就是如果你输入 <code>fun2()</code> 的话，它是会报错的，因为 <code>python</code> 是访问不到内部函数的</p>
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><p>我们可以将闭包理解为一种特殊的函数，这种函数由两个函数的嵌套组成，且称之为外函数和内函数，外函数返回值是内函数的引用，此时就构成了闭包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def FunX(x):</span><br><span class="line">	def FunY(y):</span><br><span class="line">		return x * y</span><br><span class="line">	return FunY</span><br><span class="line">	</span><br><span class="line">调用</span><br><span class="line">FunX(8)(5)</span><br><span class="line"></span><br><span class="line">打印的结果是</span><br><span class="line">&gt;&gt;&gt; 40</span><br></pre></td></tr></table></figure>
+
+<p>注意的是因为闭包是由内部函数的定义演变而来，所以不能在外部函数的外面对内部函数进行调用</p>
+<p>下面就是一个错误例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def Fun1():</span><br><span class="line">	x &#x3D; 5</span><br><span class="line">	def Fun2():</span><br><span class="line">		x *&#x3D; x</span><br><span class="line">		return x</span><br><span class="line">	return Fun2()</span><br><span class="line"></span><br><span class="line">当你输入</span><br><span class="line">Fun1()</span><br><span class="line"></span><br><span class="line">就会报错</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;pyshell#30&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">    Fun1()</span><br><span class="line">  File &quot;&lt;pyshell#29&gt;&quot;, line 6, in Fun1</span><br><span class="line">    return Fun2()</span><br><span class="line">  File &quot;&lt;pyshell#29&gt;&quot;, line 4, in Fun2</span><br><span class="line">    x *&#x3D; x</span><br><span class="line">UnboundLocalError: local variable &#39;x&#39; referenced before assignment</span><br></pre></td></tr></table></figure>
+
+<p>这是因为内部函数无法访问到 x 的值，所以报错中提示到没有定义。如果想要正确执行这个，那就要使用元组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def Fun1():</span><br><span class="line">	x &#x3D; [5]</span><br><span class="line">	def Fun2():</span><br><span class="line">		x[0] *&#x3D; x[0]</span><br><span class="line">		return x[0]</span><br><span class="line">	return Fun2()</span><br></pre></td></tr></table></figure>
+
+<p>这个时候在输入 <code>Fun1()</code>，就可以打印正确的结果了</p>
+<p>当然还有额外的方法，不使用元组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def Fun1():</span><br><span class="line">	x &#x3D; 5</span><br><span class="line">	def Fun2():</span><br><span class="line">		nonlocal x</span><br><span class="line">		x *&#x3D; x</span><br><span class="line">		return x</span><br><span class="line">	return Fun2()</span><br></pre></td></tr></table></figure>
+
+<p>添加 <code>nonlocal</code> 即可，这样做的目的是把 x 强制声明为全局变量</p>
+<hr>
+<h3 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h3><p>先来个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def ds(x):</span><br><span class="line">	return 2 * x + 1</span><br><span class="line"></span><br><span class="line">输入</span><br><span class="line">ds(5)</span><br><span class="line"></span><br><span class="line">打印结果</span><br><span class="line">&gt;&gt;&gt; 11</span><br></pre></td></tr></table></figure>
+<p>我们可以使用 <code>lambda</code> 表达式对其进行简化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">g &#x3D; lambda x : 2 * x + 1</span><br><span class="line"></span><br><span class="line">输入</span><br><span class="line">g(5)</span><br><span class="line"></span><br><span class="line">打印结果</span><br><span class="line">&gt;&gt;&gt; 11</span><br></pre></td></tr></table></figure>
+
+<p>看上去使用 <code>lambda</code> 后减少了 <code>def</code> 过程，不用再为函数的命名而烦恼了。因为 <code>lambda</code> 返回的是一个没有名字的函数，我们只需要给函数一个名字然后赋值就可以使用了</p>
+<p>而当不使用后，它就会自动删除</p>
+<p><code>lambda</code> 还可以使用多个参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">g &#x3D; lambda x,y : x+y</span><br><span class="line"></span><br><span class="line">输入</span><br><span class="line">g(3,4)</span><br><span class="line"></span><br><span class="line">打印结果</span><br><span class="line">&gt;&gt;&gt; 7</span><br></pre></td></tr></table></figure>
+
+<p><strong>lambda表达式的作用</strong></p>
+<ul>
+<li><code>python</code>写一些执行脚本时，使用 <code>lambda</code> 就可以省下定义函数的过程，可以让代码更加简洁</li>
+<li>对于一些比较抽象并且整个程序执行下来只需要调用一两次的函数，有时候给函数起个名字也是头疼的问题，使用 <code>lambda</code> 就不需要考虑命名问题了</li>
+<li>简化代码的可读性，</li>
+</ul>
+<h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><p>这是一个过滤器，它会把任何非true的内容都给过滤掉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list(filter(None,[1,0,False,True]))</span><br><span class="line"></span><br><span class="line">打印的结果是</span><br><span class="line">[1, True]</span><br></pre></td></tr></table></figure>
+
+<p>当然你也可以自己来定义要过滤掉什么，比如弄一个过滤掉奇数的过滤器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">首先定义函数</span><br><span class="line">def odd(x):</span><br><span class="line">	return x % 2</span><br><span class="line">	</span><br><span class="line">temp &#x3D; range(10)</span><br><span class="line"></span><br><span class="line">show &#x3D; filter(odd,temp)</span><br><span class="line"></span><br><span class="line">输入</span><br><span class="line">list(show)</span><br><span class="line"></span><br><span class="line">最后显示列表里的奇数</span><br><span class="line">[1, 3, 5, 7, 9]</span><br></pre></td></tr></table></figure>
+
+<p>但是使用 <code>lambda</code> 语句就可以简化这个过程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list(filter(lambda x : x % 2,range(10)))</span><br></pre></td></tr></table></figure>
+
+<p>这个的打印结果和上面的是一样的，但是代码却压缩到只有一句</p>
+<h4 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h4><p>一般解释为映射，会根据提供的函数对指定序列做映射</p>
+<p>继续举例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list(map(lambda x : x * 2,range(10)))</span><br><span class="line"></span><br><span class="line">打印的结果为</span><br><span class="line">[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</span><br></pre></td></tr></table></figure>
+<p><code>map</code> 在里面起到的作用是，将函数和后面 <code>range</code> 里的元素进行运算，并把结果放到函数的参数里</p>
+<p>最后返回的值就组成了一个序列</p>
+<hr>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>首先来一个用递归求阶乘的</p>
+<ul>
+<li>正整数阶乘指从1乘以2乘以3乘以4一直乘到所要求的数</li>
+<li>例如给的数是5，则阶乘是1X2X3X4X5，得到的积是120，所以120就算4的阶乘</li>
+</ul>
+<p>下面是实现的代码，但是不是用递归</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def factorial(n)</span><br><span class="line">    result &#x3D; n</span><br><span class="line">    for i in range (1,n)</span><br><span class="line">        result *&#x3D;i</span><br><span class="line">    </span><br><span class="line">    return result</span><br><span class="line">    </span><br><span class="line">number &#x3D; int(input(&#39;请输入一个正整数：&#39;))</span><br><span class="line">result &#x3D; factorial(number)</span><br><span class="line">print(&#39;%d 的阶乘是 %d&#39; % (number,result))</span><br></pre></td></tr></table></figure>
+
+<p>下面的才是递归版的（虽然没必要用递归，因为python限制了层数为100，如果输入过大会崩溃）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def factorial(n)</span><br><span class="line">    if n &#x3D;&#x3D; 1:</span><br><span class="line">        retuen 1</span><br><span class="line">    else:</span><br><span class="line">        return n * factorial(n-1)</span><br><span class="line"></span><br><span class="line">number &#x3D; int(input(&#39;请输入正整数：&#39;))</span><br><span class="line">result &#x3D; factorial(number)</span><br><span class="line">print(&#39;%d 的阶乘是 %d&#39; % (number,result))</span><br></pre></td></tr></table></figure>
+
+<p>虽然使用递归可以让代码精炼，但是也要小心，因为它对内存和时间的消耗很大，</p>
+
     </div>
 
     <div>
@@ -772,13 +922,10 @@ WIDGET = {FID: '5a7igfkKBX'}
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/45708/" rel="prev" title="博客样式显示不出的解决办法">
-      <i class="fa fa-chevron-left"></i> 博客样式显示不出的解决办法
+    <a href="/57383/" rel="prev" title="bootstrap使用指南">
+      <i class="fa fa-chevron-left"></i> bootstrap使用指南
     </a></div>
-      <div class="post-nav-item">
-    <a href="/53534/" rel="next" title="VT5-tank">
-      VT5-tank <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -839,7 +986,7 @@ WIDGET = {FID: '5a7igfkKBX'}
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python的语法和使用相关"><span class="nav-number">1.</span> <span class="nav-text">python的语法和使用相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化"><span class="nav-number">1.0.1.</span> <span class="nav-text">格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序列"><span class="nav-number">1.0.2.</span> <span class="nav-text">序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数：python的乐高积木"><span class="nav-number">1.0.3.</span> <span class="nav-text">函数：python的乐高积木</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#各种奇葩的内置方法（字符串）"><span class="nav-number">1.</span> <span class="nav-text">各种奇葩的内置方法（字符串）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化"><span class="nav-number">2.</span> <span class="nav-text">格式化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#格式化操作符辅助命令"><span class="nav-number">2.1.</span> <span class="nav-text">格式化操作符辅助命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串转义字符含义"><span class="nav-number">2.2.</span> <span class="nav-text">字符串转义字符含义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序列"><span class="nav-number">3.</span> <span class="nav-text">序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数：python的乐高积木"><span class="nav-number">4.</span> <span class="nav-text">函数：python的乐高积木</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的返回值"><span class="nav-number">4.1.</span> <span class="nav-text">函数的返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#收集参数"><span class="nav-number">4.2.</span> <span class="nav-text">收集参数 *</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#形参和实参"><span class="nav-number">5.</span> <span class="nav-text">形参和实参</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关键字参数"><span class="nav-number">5.1.</span> <span class="nav-text">关键字参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认参数"><span class="nav-number">5.2.</span> <span class="nav-text">默认参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#收集参数-1"><span class="nav-number">5.3.</span> <span class="nav-text">收集参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数与过程"><span class="nav-number">6.</span> <span class="nav-text">函数与过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#返回值"><span class="nav-number">6.1.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局变量和局部变量"><span class="nav-number">6.2.</span> <span class="nav-text">全局变量和局部变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内嵌函数和闭包"><span class="nav-number">7.</span> <span class="nav-text">内嵌函数和闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内嵌函数"><span class="nav-number">7.1.</span> <span class="nav-text">内嵌函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包"><span class="nav-number">7.2.</span> <span class="nav-text">闭包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda表达式"><span class="nav-number">8.</span> <span class="nav-text">lambda表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">8.1.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map"><span class="nav-number">8.2.</span> <span class="nav-text">map()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归"><span class="nav-number">9.</span> <span class="nav-text">递归</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -950,7 +1097,7 @@ WIDGET = {FID: '5a7igfkKBX'}
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">214k</span>
+    <span title="站点总字数">220k</span>
 </div>
 
 <!-- 网站运行时间的设置 -->
@@ -1190,7 +1337,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 <script type="text/javascript" src="/js/src/dynamic-title.js" ></script>
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1582534624807')
+  navigator.serviceWorker.register('/sw.js?t=1582539002302')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

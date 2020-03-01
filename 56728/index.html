@@ -58,17 +58,22 @@
 </script>
 
 
-  <meta name="description" content="每天都在努力学习，希望未来找到好工作！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="杨帆的博客">
-<meta property="og:url" content="http://www.hexoblog.top/categories/%E5%86%9B%E4%BA%8B/index.html">
+  <meta name="description" content="对于端口放行一般都是在服务器提供商的控制面板里，通过修改安全组规则来实现的 不过有时候你就算在安全组规则里放行了这个端口，可能后面还是发现没有用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos防火墙开放端口">
+<meta property="og:url" content="http://www.hexoblog.top/56728/index.html">
 <meta property="og:site_name" content="杨帆的博客">
-<meta property="og:description" content="每天都在努力学习，希望未来找到好工作！">
+<meta property="og:description" content="对于端口放行一般都是在服务器提供商的控制面板里，通过修改安全组规则来实现的 不过有时候你就算在安全组规则里放行了这个端口，可能后面还是发现没有用">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-01T07:50:15.000Z">
+<meta property="article:modified_time" content="2020-03-01T08:01:21.457Z">
 <meta property="article:author" content="杨帆">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="firewall">
+<meta property="article:tag" content="安全">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://www.hexoblog.top/categories/%E5%86%9B%E4%BA%8B/">
+<link rel="canonical" href="http://www.hexoblog.top/56728/">
 
 
 <script id="page-configurations">
@@ -76,12 +81,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
 
-  <title>分类: 军事 | 杨帆的博客</title>
+  <title>centos防火墙开放端口 | 杨帆的博客</title>
   
 
 
@@ -267,74 +272,198 @@ WIDGET = {FID: '5a7igfkKBX'}
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">军事
-          <small>分类</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hexoblog.top/56728/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨帆">
+      <meta itemprop="description" content="每天都在努力学习，希望未来找到好工作！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨帆的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          centos防火墙开放端口
         </h2>
-      </div>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-03-01 15:50:15 / 修改时间：16:01:21" itemprop="dateCreated datePublished" datetime="2020-03-01T15:50:15+08:00">2020-03-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/56728/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/56728/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>848</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h2 class="collection-header">2020</h2>
-    </div>
+        <p>对于端口放行一般都是在服务器提供商的控制面板里，通过修改安全组规则来实现的</p>
+<p>不过有时候你就算在安全组规则里放行了这个端口，可能后面还是发现没有用</p>
+<a id="more"></a>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>我就是在弄 <code>halo</code> 的时候遇到这个坎了，我还以为是我部署的有问题，结果是端口没放行</p>
+<p>遇到这个情况是要在服务器防火墙里面把端口放行了</p>
+<p>当然你安全组里面先要放行</p>
+<p>直接输入命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;sysconfig&#x2F;iptables</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-03T13:48:07+08:00"
-              content="2020-02-03">
-          02-03
-        </time>
-      </div>
+<p>然后按 <code>i</code>，开始修改，在里面添加一段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-A INPUT -p tcp -m state --state NEW -m tcp --dport 123(端口自定义) -j ACCEPT</span><br></pre></td></tr></table></figure>
 
-      <h3 class="post-title">
-          <a class="post-title-link" href="/37240/" itemprop="url">
-            <span itemprop="name">F35为什么能在空中悬停</span>
-          </a>
-      </h3>
+<p>完成后按 <code>ESC</code> 退出编辑模式，再输入 <code>:wq</code> 然后回车，完成保存并退出</p>
+<p>接下来使用下面的命令重启使其生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>
+<p>你要是觉得上面的太复杂了，可以直接使用一个简单粗暴的办法，就是直接关闭防火墙<br>使用 <code>chkconfig iptables off</code> 命令就可以永久关闭防火墙了</p>
+<p>但是有人实践后可能会发现，输入命令并没有用，修改也没用，按照提示输入命令后蹦出来个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error reading information on service iptables: No such file or directory</span><br></pre></td></tr></table></figure>
+<p>这就很难受了</p>
+<p>导致这样的原因是你的 <code>centos</code> 版本，因为在 <code>centos7</code> 以上的版本里，默认使用的防火墙是 <code>firewall</code> 了</p>
+<p>所以命令也不一样</p>
+<p>在 <code>centos7</code> 以上的系统里，如果要查看防火墙放行的端口，使用下面命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
+<p>如果要放行端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;80(端口自己定义，80只是案例)&#x2F;tcp --permanent</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-12T12:49:22+08:00"
-              content="2020-01-12">
-          01-12
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/53534/" itemprop="url">
-            <span itemprop="name">VT5-tank</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
+<p>如果想关闭防火墙使用命令 <code>systemctl stop firewalld.service</code></p>
+<p>禁止防火墙开机启动 <code>systemctl disable firewalld.service</code></p>
+<p>但是不建议关闭防火墙，毕竟多一道防线多一份安全不是？</p>
 
     </div>
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">----------------本文结束<i class="fa fa-heart"></i>感谢阅读----------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>如果觉得文章好的话，就打个赏吧！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatplay.gif" alt="杨帆 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/play.gif" alt="杨帆 支付宝">
+        <p>支付宝</p>
+      </div>
+
   </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/tags/firewall/" rel="tag"><i class="fa fa-tag"></i> firewall</a>
+              <a href="/tags/%E5%AE%89%E5%85%A8/" rel="tag"><i class="fa fa-tag"></i> 安全</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/32385/" rel="prev" title="萌新的python记录">
+      <i class="fa fa-chevron-left"></i> 萌新的python记录
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-
+  </div>
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {

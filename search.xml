@@ -768,8 +768,8 @@
       </categories>
       <tags>
         <tag>技术</tag>
-        <tag>python</tag>
         <tag>二维码</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -910,7 +910,7 @@
             <canvas id="canvas" width="500px" height="500px" />
         </div>
     <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1585443993900')
+  navigator.serviceWorker.register('/sw.js?t=1585444160612')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
@@ -1581,8 +1581,8 @@ var player = new Aliplayer({
         <category>python</category>
       </categories>
       <tags>
-        <tag>bilibili</tag>
         <tag>git</tag>
+        <tag>bilibili</tag>
         <tag>linux</tag>
         <tag>12306</tag>
       </tags>
@@ -1687,8 +1687,8 @@ var player = new Aliplayer({
         <category>markdown</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>teaper</tag>
+        <tag>markdown</tag>
         <tag>Typora</tag>
       </tags>
   </entry>
@@ -1765,10 +1765,10 @@ var player = new Aliplayer({
         <category>Webpage</category>
       </categories>
       <tags>
+        <tag>linux</tag>
         <tag>html</tag>
         <tag>server</tag>
         <tag>xshell</tag>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1812,9 +1812,9 @@ var player = new Aliplayer({
         <category>hexo</category>
       </categories>
       <tags>
+        <tag>markdown</tag>
         <tag>hexo</tag>
         <tag>hello</tag>
-        <tag>markdown</tag>
       </tags>
   </entry>
 </search>

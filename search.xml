@@ -1,72 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>v2ray搭建小飞机</title>
-    <url>/53020/</url>
-    <content><![CDATA[<p>V2Ray是近几年兴起的科学上网技术，采用新的协议，因功能强大、能有效抵抗墙的干扰而广受好评</p>
-<p>相对于<strong>SSR</strong>更加稳定，下面就来说说怎么使用<strong>v2ray</strong>来搭建小飞机吧</p>
-<a id="more"></a>
-
-<h3 id="服务器准备"><a href="#服务器准备" class="headerlink" title="服务器准备"></a>服务器准备</h3><p>首先你需要一台部署在中国大陆之外的服务器，你要是用部署在国内的服务器那是没什么用的</p>
-<p><code>vultr</code>是一个好选择，但是最近好像查的严，经常会出现IP被墙的情况，它的好处是它使用的是按时长计费的方式</p>
-<p>万一被墙了就换一台，反正它是按时长计费的</p>
-<p>这里推荐使用阿里云的轻量应用服务器，比<code>vultr</code>要稳定的多，不会出现连接半天连不上服务器的问题</p>
-<p>进入阿里云的轻量应用服务器的购买界面，地域选择中国香港或者新加坡(推荐香港)，系统镜像选<code>centos</code>，套餐看你自己的需求而选择了</p>
-<p><img src="https://gitee.com/pixz/photo/raw/master/blog_image/v2ray%E6%90%AD%E5%BB%BA%E5%B0%8F%E9%A3%9E%E6%9C%BA/1.png" alt="imags"></p>
-<p>选择完成后，支付就行，之后等待产品开通</p>
-<h3 id="服务器内准备"><a href="#服务器内准备" class="headerlink" title="服务器内准备"></a>服务器内准备</h3><p>等开通成功后，进入阿里云的控制台，远程连接你的服务器</p>
-<p>连接成功后就可以开始搭建了，这一步很简单，直接使用一键搭建脚本就行</p>
-<p>复制下面的命令到服务器并运行</p>
-<p><code>bash &lt;(curl -Ls https://blog.sprov.xyz/v2-ui.sh)</code></p>
-<blockquote>
-<p>若出现 bash curl: command not found 等错误，请先安装 curl<br>CentOS 系统：yum install curl -y<br>Debian 或 Ubuntu 系统：apt install curl -y</p>
-</blockquote>
-<p>更新与升级都是这条命令，升级不会造成数据丢失，你所做的个性化面板设置也会保留。</p>
-<p>全新安装后，在浏览器中打开 <code>http://服务器IP:65432</code> 即可访问面板，默认用户名和密码都是 <code>admin</code></p>
-<p>当然，之前最好看看你服务器的安全组有没有放行端口，不然会出现访问不了的情况</p>
-<p>升级后，仍然使用你升级前的方式进入面板。</p>
-<h3 id="面板操作"><a href="#面板操作" class="headerlink" title="面板操作"></a>面板操作</h3><p>进入面板后，就可以看见运行情况了</p>
-<p><img src="https://gitee.com/pixz/photo/raw/master/blog_image/v2ray%E6%90%AD%E5%BB%BA%E5%B0%8F%E9%A3%9E%E6%9C%BA/1.png" alt="imags"></p>
-<p>点击账号列表，再点击左上角的 + </p>
-<p>只需要把其中的传输协议改成 <code>ws</code> 就行，其他的不要动，备注随意填写</p>
-<p><img src="https://gitee.com/pixz/photo/raw/master/blog_image/v2ray%E6%90%AD%E5%BB%BA%E5%B0%8F%E9%A3%9E%E6%9C%BA/3.png" alt="imags"></p>
-<p>然后点完成，别忘了在服务器安全组里把对应的端口放行</p>
-<p>到此服务器这边就完成了，下面配置客户端</p>
-<p>客户端下载直接点目录里的客户端，然后按你自己的平台下载就好</p>
-<h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><h4 id="PC"><a href="#PC" class="headerlink" title="PC"></a>PC</h4><p>因为我是 <code>win</code> 平台所以就说说 <code>win</code> 上面怎么配置</p>
-<p>打开 <code>v2rayN</code>，点击服务器，创建 <code>vmess</code> 服务器</p>
-<p>地址(IP)，端口，ID，额外id都按照你账号列表里，创建的账号的参数来配置</p>
-<p><img src="https://gitee.com/pixz/photo/raw/master/blog_image/v2ray%E6%90%AD%E5%BB%BA%E5%B0%8F%E9%A3%9E%E6%9C%BA/4.png" alt="imags"></p>
-<p>加密方式选 <code>auto</code>，传输协议选 <code>ws</code></p>
-<p>然后保存，接下来对着任务栏的应用图标按右键，Http代理里选择 开启PAC，并自动配置PAC(PAC模式)</p>
-<p>如果你浏览器里启用了类似谷歌上网助手的插件，最好将其关闭</p>
-<p>当 <code>v2rayN</code> 下面出现类似 <code>tcp:127.0.0.1:63167 accepted tcp:mtalk.google.com:5248 [proxy]</code> 之类的字样，就说明成功了</p>
-<h4 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h4><p>客户端的下载依旧和上面的一样，顺带说一下 <code>ios</code> 里相关的软件已经下架了，如果想使用的话得自己找找了</p>
-<p>手机上配置相当简单，在面板的账号列表里，点击账号旁边的二维码图标，就会出现一个二维码，然后软件里直接扫描二维码</p>
-<p>就可以完成自动配置了，然后启用就行</p>
-<p>是不是相当简单</p>
-<h3 id="ws-tls"><a href="#ws-tls" class="headerlink" title="ws + tls"></a>ws + tls</h3><p>这个方法可以提高你的飞机速度，不过前提条件是你要有个域名</p>
-<p>获得域名的方法这里就不提及了。直接说配置方法</p>
-<p>首先需要给你的域名申请SSL证书，这个百度一下就可以找到很多，阿里腾讯也提供相关服务，你有它们的域名可以直接申请</p>
-<p>申请完成后，打开面板，在账号列表里点开你的账号配置，打开 <code>tls</code> ，域名这里填写你申请证书的域名</p>
-<p>下面证书这里点击证书文件内容，证书文件内容这里把你的SSL证书内容复制进去，下面的密钥就把你的私钥内容复制进去(<code>-----BEGIN PRIVATE KEY-----</code> 开头的)</p>
-<p>完成后保存即可</p>
-<p>当然你客户端也是需要改配置的，客户端中的地址改为你的域名，伪装类型 <code>none</code>，路径里填 <code>/</code>，底层传输安全选 <code>tls</code>，allowinsecure让它保持为空</p>
-<p>保存就行，至于手机端就再扫一次二维码就行了</p>
-<h3 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h3><p>这是 <code>v2-ui</code> 的仓库地址，有兴趣的可以去看看</p>
-<p>如果发现有什么问题的也可以前去反馈</p>
-<p><a href="https://github.com/sprov065/v2-ui" target="_blank" rel="noopener">v2-ui</a></p>
-]]></content>
-      <categories>
-        <category>v2ray</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>vps</tag>
-        <tag>v2ray</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>centos防火墙开放端口</title>
     <url>/56728/</url>
     <content><![CDATA[<p>对于端口放行一般都是在服务器提供商的控制面板里，通过修改安全组规则来实现的</p>
@@ -976,7 +910,7 @@
             <canvas id="canvas" width="500px" height="500px" />
         </div>
     <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1585832627887')
+  navigator.serviceWorker.register('/sw.js?t=1586324246766')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

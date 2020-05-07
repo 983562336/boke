@@ -1225,7 +1225,7 @@
             <canvas id="canvas" width="500px" height="500px" />
         </div>
     <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1587532901143')
+  navigator.serviceWorker.register('/sw.js?t=1588825681046')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
@@ -1798,8 +1798,8 @@ var player = new Aliplayer({
         <category>python</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>git</tag>
+        <tag>linux</tag>
         <tag>12306</tag>
         <tag>bilibili</tag>
       </tags>

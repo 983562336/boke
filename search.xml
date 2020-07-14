@@ -2146,7 +2146,7 @@ switch 语句在比较值时使用的是全等操作符, 因此不会发生类�
             <canvas id="canvas" width="500px" height="500px" />
         </div>
     <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1594704335385')
+  navigator.serviceWorker.register('/sw.js?t=1594704470462')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
@@ -2782,8 +2782,8 @@ var player = new Aliplayer({
         <category>markdown</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>teaper</tag>
+        <tag>markdown</tag>
         <tag>Typora</tag>
       </tags>
   </entry>
@@ -2904,9 +2904,9 @@ var player = new Aliplayer({
         <category>hexo</category>
       </categories>
       <tags>
+        <tag>markdown</tag>
         <tag>hexo</tag>
         <tag>hello</tag>
-        <tag>markdown</tag>
       </tags>
   </entry>
 </search>

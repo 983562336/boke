@@ -2146,7 +2146,7 @@ switch 语句在比较值时使用的是全等操作符, 因此不会发生类�
             <canvas id="canvas" width="500px" height="500px" />
         </div>
     <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1592189421142')
+  navigator.serviceWorker.register('/sw.js?t=1594704335385')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
@@ -2887,20 +2887,17 @@ var player = new Aliplayer({
 <h3 id="一些吐槽"><a href="#一些吐槽" class="headerlink" title="一些吐槽"></a>一些吐槽</h3><p>说实话，这个博客在搭建的时候遇到了很多很多bug</p>
 <p>第一次的时候以为快成了，结果发现路子不对emmm，结果就重新搞了一边 <del>当时真的脑残了</del></p>
 <p>后面的搭建过程也不怎么顺利吧 <del>一度差点想砸电脑来了</del></p>
-<p>各种各样的事情都出过，然后其实最脑残的事情是</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git提醒我执行 hexo init 错误</span><br><span class="line"></span><br><span class="line">然后我就很当然的去百度方法</span><br><span class="line"></span><br><span class="line">结果一直没百度出来</span><br><span class="line"></span><br><span class="line">最后还是我仔细看了看报错信息，发现</span><br><span class="line"></span><br><span class="line">这路径不对啊，我这玩意不安装在这里啊</span><br><span class="line"></span><br><span class="line">其实就是我以前把git的移动到别的地方，然后.....电脑不晓得</span><br></pre></td></tr></table></figure>
-
-<p>最后还是重新安装了一边 <strong>git</strong> 解决了</p>
+<p>一直解决各种各样的 <code>bug</code></p>
 <p>这算是博客的第一篇文章了，后面会开始慢慢增加</p>
 <p>不过搭建起来确实不容易，遇到了很多问题，不过也知道了很多方法，也算是有收获吧</p>
-<p><font color=#00ffff size=6>也许博客后面要重新搭建，现在只是开发版，奥利给！！！</p>
+<p><font color=#00ffff size=6>也许博客后面要重新搭建，现在只是开发版</p>
 <p>其实你现在看到的就是重新搭建过的博客<br></font></p>
 <p>可能想了想会换一个主题吧（已更换）</p>
 <p>不过虽然现在是稳定了下来，但是还是有很多地方要修改，可能某天打开的时候会出现一些很迷的东西，那就先关掉吧</p>
 <p>如果出现严重 <code>bug</code> ，会出现维护界面</p>
-<p><font color=red size=4>我对于这方面也是个萌新，接触这些没有多久，很多时候在搭建的过程中，会出现各种各样的 <code>bug</code> 。</font></p>
 <p><font color=blue size=4>相信来看的人里面有很多人也搭建过自己的博客，对于这些东西早已了解，我也会慢慢的去了解这些来完善自己的博客。不过碍于还有自己的任务要做，可能这个过程会相对缓慢</font></p>
 <p>如果你对我的博客有什么好的建议，可以发送邮件到 <code>983562336@qq.com</code> 反馈给我，也可以在下面评论</p>
+<p>本站托管在 <code>GitHub</code> 上，使用腾讯云CDN进行加速（刷新期为3天）</p>
 <p>—— <code>END</code> ——</p>
 ]]></content>
       <categories>
